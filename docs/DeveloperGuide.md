@@ -290,6 +290,24 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 (For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
 
+**Use case: Add a person**
+
+**MSS**
+
+1.  User requests to add a person.
+2.  User provides the required person details.
+3.  AddressBook creates a new person entry with the provided details.
+
+    Use case ends.
+
+**Extensions**
+
+* 3a. User does not provide all required details.
+
+    * 3a1. AddressBook displays an error message and prompts the user to provide missing details.
+
+      Use case resumes at step 2.
+
 **Use case: Delete a person**
 
 **MSS**
@@ -313,7 +331,42 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 2.
 
-*{More to be added}*
+**Use case: Find a person**
+
+**MSS**
+
+1.  User requests to find a person.
+2.  User provides the full or partial search keyword.
+3.  AddressBook searches for persons matching the keyword.
+4.  AddressBook displays a list of matching persons.
+
+    Use case ends.
+
+**Extensions**
+
+* 5a. No persons match the search keyword.
+
+    * 5a1. AddressBook displays a message indicating no matching persons were found.
+
+      Use case ends.
+
+**Use case: List all persons**
+
+**MSS**
+
+1.  User requests to list all persons.
+2.  AddressBook retrieves the list of all persons.
+3.  AddressBook displays a list of all persons.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. There are no persons in the address book.
+
+    * 2a1. AddressBook displays a message indicating that the address book is empty.
+
+      Use case ends.
 
 ### Non-Functional Requirements
 

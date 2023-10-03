@@ -1,4 +1,3 @@
-
 ---
 layout: page
 title: et's Project Portfolio Page
@@ -11,3 +10,31 @@ having the benefits of a Graphical User Interface (GUI). If you can type fast, N
 management tasks done faster than traditional GUI apps.
 
 Given below are my contributions to the project.
+
+### Code Contributions
+
+- [Link to My Code Contributions on tP Code Dashboard](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=et-irl&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code&since=2023-09-22)
+
+### Enhancements Implemented
+
+- to be added
+
+### Contributions to the User Guide (UG)
+
+- to be added
+
+### Contributions to the Developer Guide (DG) and UML Diagrams
+
+- to be added
+
+### Contributions to Team-Based Tasks
+
+- to be added
+
+### Review and Mentoring Contributions
+
+- to be added
+
+### Contributions Beyond the Project Team
+
+- to be added
