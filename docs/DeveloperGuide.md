@@ -257,27 +257,32 @@ _{Explain here how the data archiving feature will be implemented}_
 
 **Target user profile**:
 
-* has a need to manage a significant number of contacts
+* teaching assistant at NUS
+* has a need to manage a significant number of students
 * prefer desktop apps over other types
 * can type fast
 * prefers typing to mouse interactions
 * is reasonably comfortable using CLI apps
 
-**Value proposition**: manage contacts faster than a typical mouse/GUI driven app
+**Value proposition**: our app offers teaching assistants an efficient solution to student management. It provides quick
+access to student details, course organisation, and secure data handling. Communication logs, customization, and
+integration with university systems enhance personalized support. Cross-platform access ensures flexibility, supporting
+various teaching activities seamlessly.
 
 
 ### User stories
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
-| -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
-| `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person               |                                                                        |
-| `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
+| Priority | As a …​      | I want to …​                 | So that I can…​                                       |
+| -------- |--------------|------------------------------|-------------------------------------------------------|
+| `* * *`  | new user     | see usage instructions       | refer to instructions when I forget how to use the App |
+| `* * *`  | TA           | add students to a class      |                                                       |
+| `* * *`  | TA           | delete students from a class | remove students who are not part of the class anymore |
+| `* * *`  | TA           | find students by keyword     | reduce time taken to locate student details           |
+| `* *`    | TA           | hide private contact details | minimize chance of someone else seeing them by accident |
+| `*`      | TA           | list all students in a class | have an overview of all the students in a class       |
+| `*`      | TA           | exit the app                 | close the program                                     |
 
 *{More to be added}*
 
