@@ -275,13 +275,13 @@ various teaching activities seamlessly.
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
 | Priority | As a …​      | I want to …​                 | So that I can…​                                       |
-| -------- |--------------|------------------------------|-------------------------------------------------------|
+|----------|--------------|------------------------------|-------------------------------------------------------|
 | `* * *`  | new user     | see usage instructions       | refer to instructions when I forget how to use the App |
 | `* * *`  | TA           | add students to a class      |                                                       |
 | `* * *`  | TA           | delete students from a class | remove students who are not part of the class anymore |
 | `* * *`  | TA           | find students by keyword     | reduce time taken to locate student details           |
 | `* *`    | TA           | hide private contact details | minimize chance of someone else seeing them by accident |
-| `*`      | TA           | list all students in a class | have an overview of all the students in a class       |
+| `**`     | TA           | list all students in a class | have an overview of all the students in a class       |
 | `*`      | TA           | exit the app                 | close the program                                     |
 
 *{More to be added}*
