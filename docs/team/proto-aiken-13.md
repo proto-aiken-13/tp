@@ -1,6 +1,6 @@
 ---
 layout: page
-title: John Doe's Project Portfolio Page
+title: Miguel's Project Portfolio Page
 ---
 
 ### Project: npc_track
@@ -10,5 +10,20 @@ having the benefits of a Graphical User Interface (GUI). If you can type fast, N
 management tasks done faster than traditional GUI apps.
 
 
-Given below are my contributions to the project.
+Given below are my contributions to the project:
+
+- **New Feature**
+(to be added)
+- **Code contributed**
+(to be added)
+- **Project management**
+	- Managed release `v1.1` as a practice on Github
+- **Enhancements to existing features:**
+	- Made the Ui mockup
+-**Documentation:**
+(to be added)
+-**Community**
+(To be added)
+-**Tools**
+(to be added)
 
