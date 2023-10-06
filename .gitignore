@@ -22,4 +22,9 @@ src/test/data/sandbox/
 .DS_Store
 docs/_site/
 
+# Neovim JDTLS LSP files
+.classpath
+.project
+.settings/
+
 /bin/

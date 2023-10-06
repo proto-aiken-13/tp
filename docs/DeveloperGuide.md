@@ -275,13 +275,13 @@ various teaching activities seamlessly.
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
 | Priority | As a …​      | I want to …​                 | So that I can…​                                       |
-| -------- |--------------|------------------------------|-------------------------------------------------------|
+|----------|--------------|------------------------------|-------------------------------------------------------|
 | `* * *`  | new user     | see usage instructions       | refer to instructions when I forget how to use the App |
 | `* * *`  | TA           | add students to a class      |                                                       |
 | `* * *`  | TA           | delete students from a class | remove students who are not part of the class anymore |
 | `* * *`  | TA           | find students by keyword     | reduce time taken to locate student details           |
 | `* *`    | TA           | hide private contact details | minimize chance of someone else seeing them by accident |
-| `*`      | TA           | list all students in a class | have an overview of all the students in a class       |
+| `**`     | TA           | list all students in a class | have an overview of all the students in a class       |
 | `*`      | TA           | exit the app                 | close the program                                     |
 
 *{More to be added}*
@@ -289,6 +289,24 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 ### Use cases
 
 (For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+
+**Use case: Add a person**
+
+**MSS**
+
+1.  User requests to add a person.
+2.  User provides the required person details.
+3.  AddressBook creates a new person entry with the provided details.
+
+    Use case ends.
+
+**Extensions**
+
+* 3a. User does not provide all required details.
+
+    * 3a1. AddressBook displays an error message and prompts the user to provide missing details.
+
+      Use case resumes at step 2.
 
 **Use case: Delete a person**
 
@@ -313,13 +331,50 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 2.
 
-*{More to be added}*
+**Use case: Find a person**
+
+**MSS**
+
+1.  User requests to find a person.
+2.  User provides the full or partial search keyword.
+3.  AddressBook searches for persons matching the keyword.
+4.  AddressBook displays a list of matching persons.
+
+    Use case ends.
+
+**Extensions**
+
+* 5a. No persons match the search keyword.
+
+    * 5a1. AddressBook displays a message indicating no matching persons were found.
+
+      Use case ends.
+
+**Use case: List all persons**
+
+**MSS**
+
+1.  User requests to list all persons.
+2.  AddressBook retrieves the list of all persons.
+3.  AddressBook displays a list of all persons.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. There are no persons in the address book.
+
+    * 2a1. AddressBook displays a message indicating that the address book is empty.
+
+      Use case ends.
 
 ### Non-Functional Requirements
 
 1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
 2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+4.  Any teaching assistant from any faculty should know how to use it.
+5.  Data of the students should not be easily accessible.
 
 *{More to be added}*
 
@@ -327,6 +382,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * **Mainstream OS**: Windows, Linux, Unix, OS-X
 * **Private contact detail**: A contact detail that is not meant to be shared with others
+* **CLI**: Command Line Interface
+* **GUI**: Graphical User Interface
+* **UI**: User Interface
+* **TA**: Teaching Assistant
+* **MSS**: Main Success Scenario
 
 --------------------------------------------------------------------------------------------------------------------
 
