@@ -2,6 +2,7 @@ package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TELEGRAM_HANDLE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_COMMENT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
@@ -21,9 +22,13 @@ import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.person.*;
+import seedu.address.model.person.Person;
+import seedu.address.model.fields.Comment;
+import seedu.address.model.fields.Tag;
+import seedu.address.model.person.Email;
+import seedu.address.model.person.Name;
 import seedu.address.model.person.TelegramHandle;
-import seedu.address.model.tag.Tag;
+import seedu.address.model.person.Phone;
 
 /**
  * Edits the details of an existing person in the address book.
@@ -97,8 +102,8 @@ public class EditCommand extends Command {
         Email updatedEmail = editPersonDescriptor.getEmail().orElse(personToEdit.getEmail());
         TelegramHandle updatedTelegramHandle = editPersonDescriptor.getTelegramHandle().orElse(personToEdit.getTelegramHandle());
         Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
-
-        return new Person(updatedName, updatedPhone, updatedEmail, updatedTelegramHandle, updatedTags);
+        Set<Comment> updatedComments = editPersonDescriptor.getComments().orElse(personToEdit.getComments());
+        return new Person(updatedName, updatedPhone, updatedEmail, updatedTelegramHandle, updatedTags, updatedComments);
     }
 
     @Override
@@ -135,6 +140,7 @@ public class EditCommand extends Command {
         private Email email;
         private TelegramHandle telegramHandle;
         private Set<Tag> tags;
+        private Set<Comment> comments;
 
         public EditPersonDescriptor() {}
 
@@ -148,6 +154,7 @@ public class EditCommand extends Command {
             setEmail(toCopy.email);
             setTelegramHandle(toCopy.telegramHandle);
             setTags(toCopy.tags);
+            setComments(toCopy.comments);
         }
 
         /**
@@ -206,6 +213,23 @@ public class EditCommand extends Command {
             return (tags != null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();
         }
 
+        /**
+         * Sets {@code comments} to this object's {@code comments}.
+         * A defensive copy of {@code comments} is used internally.
+         */
+        public void setComments(Set<Comment> comments) {
+            this.comments = (comments != null) ? new HashSet<>(comments) : null;
+        }
+
+        /**
+         * Returns an unmodifiable comment set, which throws {@code UnsupportedOperationException}
+         * if modification is attempted.
+         * Returns {@code Optional#empty()} if {@code comments} is null.
+         */
+        public Optional<Set<Comment>> getComments() {
+            return (comments != null) ? Optional.of(Collections.unmodifiableSet(comments)) : Optional.empty();
+        }
+
         @Override
         public boolean equals(Object other) {
             if (other == this) {
@@ -222,7 +246,8 @@ public class EditCommand extends Command {
                     && Objects.equals(phone, otherEditPersonDescriptor.phone)
                     && Objects.equals(email, otherEditPersonDescriptor.email)
                     && Objects.equals(telegramHandle, otherEditPersonDescriptor.telegramHandle)
-                    && Objects.equals(tags, otherEditPersonDescriptor.tags);
+                    && Objects.equals(tags, otherEditPersonDescriptor.tags)
+                    && Objects.equals(comments, otherEditPersonDescriptor.comments);
         }
 
         @Override
@@ -233,6 +258,7 @@ public class EditCommand extends Command {
                     .add("email", email)
                     .add("telegram", telegramHandle)
                     .add("tags", tags)
+                    .add("comments", comments)
                     .toString();
         }
     }
