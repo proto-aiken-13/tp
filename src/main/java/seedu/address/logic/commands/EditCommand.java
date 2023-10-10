@@ -21,6 +21,7 @@ import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
+import seedu.address.model.fields.Comment;
 import seedu.address.model.fields.Tag;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
@@ -100,8 +101,9 @@ public class EditCommand extends Command {
         Email updatedEmail = editPersonDescriptor.getEmail().orElse(personToEdit.getEmail());
         Address updatedAddress = editPersonDescriptor.getAddress().orElse(personToEdit.getAddress());
         Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
+        Set<Comment> updatedComments = editPersonDescriptor.getComments().orElse(personToEdit.getComments());
 
-        return new Person(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedTags);
+        return new Person(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedTags, updatedComments);
     }
 
     @Override
@@ -138,6 +140,7 @@ public class EditCommand extends Command {
         private Email email;
         private Address address;
         private Set<Tag> tags;
+        private Set<Comment> comments;
 
         public EditPersonDescriptor() {}
 
@@ -151,6 +154,7 @@ public class EditCommand extends Command {
             setEmail(toCopy.email);
             setAddress(toCopy.address);
             setTags(toCopy.tags);
+            setComments(toCopy.comments);
         }
 
         /**
@@ -207,6 +211,23 @@ public class EditCommand extends Command {
          */
         public Optional<Set<Tag>> getTags() {
             return (tags != null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();
+        }
+
+        /**
+         * Sets {@code comments} to this object's {@code comments}.
+         * A defensive copy of {@code comments} is used internally.
+         */
+        public void setComments(Set<Comment> comments) {
+            this.comments = (comments != null) ? new HashSet<>(comments) : null;
+        }
+
+        /**
+         * Returns an unmodifiable comment set, which throws {@code UnsupportedOperationException}
+         * if modification is attempted.
+         * Returns {@code Optional#empty()} if {@code comments} is null.
+         */
+        public Optional<Set<Comment>> getComments() {
+            return (comments != null) ? Optional.of(Collections.unmodifiableSet(comments)) : Optional.empty();
         }
 
         @Override
