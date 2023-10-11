@@ -30,7 +30,8 @@ public class Person {
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, TelegramHandle telegramHandle, Set<Tag> tags, Set<Comment> comments) {
+    public Person(Name name, Phone phone, Email email, TelegramHandle telegramHandle,
+                  Set<Tag> tags, Set<Comment> comments) {
         requireAllNonNull(name, phone, email, telegramHandle, tags);
         this.name = name;
         this.phone = phone;
@@ -65,9 +66,7 @@ public class Person {
     }
 
     /**
-<<<<<<< HEAD
      * Returns true if both persons have the same name and same telegram handle.
-=======
      * Returns an immutable comment set, which throws {@code UnsupportedOperationException}
      * if modification is attempted.
      */
@@ -77,7 +76,6 @@ public class Person {
 
     /**
      * Returns true if both persons have the same name.
->>>>>>> f56fce14d52350e46ef04eaabe07a8d8663c7939
      * This defines a weaker notion of equality between two persons.
      */
     public boolean isSamePerson(Person otherPerson) {
