@@ -13,8 +13,8 @@ public class TelegramHandle {
             + "use a-z, 0-9 and underscores. Minimum length is 5 characters";
 
     /*
-     * The first character of the address must not be a whitespace,
-     * otherwise " " (a blank string) becomes a valid input.
+     * The telegram handle uses a-z, 0-9 and underscores.
+     * Minimum length is 5 characters.
      */
     public static final String VALIDATION_REGEX = "^[a-zA-Z0-9_]{5,32}$";
 

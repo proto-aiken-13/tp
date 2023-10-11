@@ -52,7 +52,7 @@ public class EditCommand extends Command {
 
     public static final String MESSAGE_EDIT_PERSON_SUCCESS = "Edited Person: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
-    public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists "
+    public static final String MESSAGE_DUPLICATE_PERSON = "This person and telegram handle already exists "
             + "in the address book. Either the name or telegram handle already exist";
 
     private final Index index;
@@ -163,7 +163,7 @@ public class EditCommand extends Command {
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(name, phone, email, telegramHandle, tags);
+            return CollectionUtil.isAnyNonNull(name, phone, email, telegramHandle, tags, comments);
         }
 
         public void setName(Name name) {
