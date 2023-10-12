@@ -12,6 +12,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.fields.Comment;
 import seedu.address.model.fields.Tag;
 import seedu.address.model.person.Address;
+import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
@@ -34,6 +35,21 @@ public class ParserUtil {
             throw new ParseException(MESSAGE_INVALID_INDEX);
         }
         return Index.fromOneBased(Integer.parseInt(trimmedIndex));
+    }
+
+    /**
+     * Parses a {@code week} into an {@code int} and returns it. Leading and trailing whitespaces will be trimmed.
+     * @param week String value of week
+     * @return int value of week if valid
+     * @throws ParseException if the given {@code week} is invalid
+     */
+    public static int parseWeek(String week) throws ParseException {
+        requireNonNull(week);
+        String trimmedWeek = week.trim();
+        if (!Attendance.isValidWeek(trimmedWeek)) {
+            throw new ParseException(Attendance.WEEK_ERROR_MSG);
+        }
+        return Attendance.convertToIntegerWeek(trimmedWeek);
     }
 
     /**
