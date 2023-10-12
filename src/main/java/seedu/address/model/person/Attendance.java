@@ -120,6 +120,6 @@ public class Attendance {
                 s += "0,";
             }
         }
-        return s.substring(0, 23);
+        return s.substring(0, 22);
     }
 }

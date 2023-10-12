@@ -38,9 +38,9 @@ public class Person {
         this.phone = phone;
         this.email = email;
         this.address = address;
+        this.attendance = attendance;
         this.tags.addAll(tags);
         this.comments.addAll(comments);
-        this.attendance = attendance;
     }
 
     public Name getName() {
