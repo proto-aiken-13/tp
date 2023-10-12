@@ -120,6 +120,6 @@ public class Attendance {
                 s += "0,";
             }
         }
-        return s.substring(0, this.totalWeek * 2 - 1);
+        return s.substring(0, 23);
     }
 }
