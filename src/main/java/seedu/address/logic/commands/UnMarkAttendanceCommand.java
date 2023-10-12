@@ -9,8 +9,12 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.person.Person;
 import seedu.address.model.person.Attendance;
+import seedu.address.model.person.Person;
+
+/**
+ * UnMarks the attendance of an existing student in the taa.
+ */
 public class UnMarkAttendanceCommand extends Command {
     public static final String COMMAND_WORD = "unmarkAtd";
     public static final String ATTENDANCE_UNMARK_SUCCESS = "Attendance unmarked successfully!";

@@ -7,7 +7,7 @@ package seedu.address.model.person;
 public class Attendance {
     public static final String WEEK_ERROR_MSG = "Week number is out of range, should be integer between 1-12";
     public static final String ORIGINAL_ATD = "0,0,0,0,0,0,0,0,0,0,0,0";
-    public int totalWeek;
+    private int totalWeek;
     private final boolean[] attendanceList = new boolean[12];
 
 
