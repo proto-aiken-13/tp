@@ -24,7 +24,6 @@
         <URL value="@DarkTheme.css" />
         <URL value="@Extensions.css" />
       </stylesheets>
-      
       <VBox>
         <Label text="npc_track" styleClass="title-header"/>
         <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
@@ -49,7 +48,6 @@
             <Insets top="5" right="10" bottom="5" left="10" />
           </padding>
         </StackPane>
-        
         <StackPane VBox.vgrow="NEVER" fx:id="commandBoxPlaceholder" styleClass="pane-with-border">
           <padding>
             <Insets top="5" right="10" bottom="5" left="10" />
