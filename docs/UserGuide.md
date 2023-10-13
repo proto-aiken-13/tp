@@ -90,7 +90,7 @@ Format: `help`
 
 Adds a student to the student book.
 
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/telegramHandle [t/TAG]… [c/COMMENT]…​`
+Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/TELEGRAM_HANDLE [t/TAG]… [c/COMMENT]…​`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 A student can have any number of tags (including 0)
@@ -206,7 +206,7 @@ _Details coming soon ..._
 
 Action | Format, Examples
 --------|------------------
-**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL a/telegramHandle [t/TAG]… [c/COMMENT]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/jamesTele t/friend t/colleague c/Owes a cookie`
+**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL a/TELEGRAM_HANDLE [t/TAG]… [c/COMMENT]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/jamesTele t/friend t/colleague c/Owes a cookie`
 **Clear** | `clear​`
 **Delete** | `delete INDEX​` <br> e.g., `delete 3`
 **Edit** | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…​` <br> e.g., `n/New Name t/`
