@@ -33,11 +33,11 @@ public class UnMarkAttendanceParser implements Parser<UnMarkAttendanceCommand> {
         }
 
         if (argMultimap.getValue(PREFIX_TUTORIAL).isPresent()) {
-            week = ParserUtil.parseWeek(argMultimap.getValue(PREFIX_TUTORIAL).get());
+            week = ParserUtil.parseTutorial(argMultimap.getValue(PREFIX_TUTORIAL).get());
         }
 
         if (week == 0) {
-            throw new ParseException(Attendance.WEEK_ERROR_MSG);
+            throw new ParseException(Attendance.TUTORIAL_ERROR_MSG);
         }
 
         return new UnMarkAttendanceCommand(index, Index.fromOneBased(week));

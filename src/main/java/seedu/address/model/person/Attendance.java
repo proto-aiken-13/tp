@@ -5,7 +5,7 @@ package seedu.address.model.person;
  * It provides methods for managing and querying attendance information.
  */
 public class Attendance {
-    public static final String WEEK_ERROR_MSG = "Week number is out of range, should be integer between 1-12";
+    public static final String TUTORIAL_ERROR_MSG = "Tutorial number is out of range, should be integer between 1-12";
     public static final String ORIGINAL_ATD = "0,0,0,0,0,0,0,0,0,0,0,0";
     private int totalTut;
     private final boolean[] attendanceList = new boolean[12];

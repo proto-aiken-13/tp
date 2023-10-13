@@ -38,18 +38,18 @@ public class ParserUtil {
     }
 
     /**
-     * Parses a {@code week} into an {@code int} and returns it. Leading and trailing whitespaces will be trimmed.
-     * @param week String value of week
+     * Parses a {@code tutorial} into an {@code int} and returns it. Leading and trailing whitespaces will be trimmed.
+     * @param tutorial String value of week
      * @return int value of week if valid
      * @throws ParseException if the given {@code week} is invalid
      */
-    public static int parseWeek(String week) throws ParseException {
-        requireNonNull(week);
-        String trimmedWeek = week.trim();
-        if (!Attendance.isValidTutorial(trimmedWeek)) {
-            throw new ParseException(Attendance.WEEK_ERROR_MSG);
+    public static int parseTutorial(String tutorial) throws ParseException {
+        requireNonNull(tutorial);
+        String trimmedTutorial = tutorial.trim();
+        if (!Attendance.isValidTutorial(trimmedTutorial)) {
+            throw new ParseException(Attendance.TUTORIAL_ERROR_MSG);
         }
-        return Attendance.convertToIntegerWeek(trimmedWeek);
+        return Attendance.convertToIntegerWeek(trimmedTutorial);
     }
 
     /**
