@@ -136,7 +136,7 @@ For attendance, you can enter the following commands:
 
 Marks the attendance of a student for that tutorial.
 
-Format: `markATD INDEX [t/TUTORIAL]`
+Format: `markAtd INDEX [t/TUTORIAL]`
 
 Examples:
 * `markAtd 1 t/1`
