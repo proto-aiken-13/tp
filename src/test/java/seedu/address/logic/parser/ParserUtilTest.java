@@ -24,6 +24,7 @@ public class ParserUtilTest {
     private static final String INVALID_NAME = "R@chel";
     private static final String INVALID_PHONE = "+651234";
     private static final String INVALID_ADDRESS = " ";
+    private static final String INVALID_TUTORIAL = "invalid";
     private static final String INVALID_EMAIL = "example.com";
     private static final String INVALID_TAG = "#friend";
 
@@ -54,6 +55,28 @@ public class ParserUtilTest {
 
         // Leading and trailing whitespaces
         assertEquals(INDEX_FIRST_PERSON, ParserUtil.parseIndex("  1  "));
+    }
+
+    @Test
+    public void parseTutorial_validTutorial_returnsInteger() throws ParseException {
+        // Valid tutorial input
+        String validTutorial = "3";
+        int expectedTutorial = 3;
+        assertEquals(expectedTutorial, ParserUtil.parseTutorial(validTutorial));
+    }
+
+    @Test
+    public void parseTutorial_validTutorialWithWhitespace_returnsInteger() throws ParseException {
+        // Valid tutorial input with leading/trailing whitespace
+        String validTutorial = "  8  ";
+        int expectedTutorial = 8;
+        assertEquals(expectedTutorial, ParserUtil.parseTutorial(validTutorial));
+    }
+
+    @Test
+    public void parseTutorial_invalidTutorial_throwsParseException() {
+        // Invalid tutorial input (non-numeric)
+        assertThrows(ParseException.class, () -> ParserUtil.parseTutorial(INVALID_TUTORIAL));
     }
 
     @Test
