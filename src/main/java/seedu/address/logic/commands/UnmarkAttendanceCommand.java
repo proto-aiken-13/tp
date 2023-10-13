@@ -66,7 +66,7 @@ public class UnmarkAttendanceCommand extends Command {
         if (!studentAtd.isMarkedWeek(this.tut.getZeroBased())) {
             return new CommandResult(Messages.MESSAGE_DUPLICATE_MARKINGS);
         }
-        studentAtd.markAttendance(this.tut.getZeroBased());
+        studentAtd.unmarkAttendance(this.tut.getZeroBased());
 
         model.setPerson(studentToEdit, editedStudent);
         model.updateFilteredPersonList(Model.PREDICATE_SHOW_ALL_PERSONS);
