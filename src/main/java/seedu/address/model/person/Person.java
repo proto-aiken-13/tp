@@ -23,7 +23,7 @@ public class Person {
     private final Email email;
 
     // Data fields
-    private final Address address;
+    private final TelegramHandle telegramHandle;
     private final Attendance attendance;
     private final Set<Tag> tags = new HashSet<>();
     private final Set<Comment> comments = new HashSet<>();
@@ -31,14 +31,14 @@ public class Person {
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Address address, Attendance attendance,
+    public Person(Name name, Phone phone, Email email, TelegramHandle telegramHandle, Attendance attendance,
                   Set<Tag> tags, Set<Comment> comments) {
-        requireAllNonNull(name, phone, email, address, tags);
+        requireAllNonNull(name, phone, email, telegramHandle, tags);
         this.name = name;
         this.phone = phone;
         this.email = email;
-        this.address = address;
         this.attendance = attendance;
+        this.telegramHandle = telegramHandle;
         this.tags.addAll(tags);
         this.comments.addAll(comments);
     }
@@ -55,8 +55,8 @@ public class Person {
         return email;
     }
 
-    public Address getAddress() {
-        return address;
+    public TelegramHandle getTelegramHandle() {
+        return telegramHandle;
     }
 
     /**
@@ -68,6 +68,7 @@ public class Person {
     }
 
     /**
+     * Returns true if both persons have the same name and same telegram handle.
      * Returns an immutable comment set, which throws {@code UnsupportedOperationException}
      * if modification is attempted.
      */
@@ -112,7 +113,8 @@ public class Person {
         }
 
         return otherPerson != null
-                && otherPerson.getName().equals(getName());
+                && otherPerson.getName().equals(getName())
+                && otherPerson.getTelegramHandle().equals(getTelegramHandle());
     }
 
     /**
@@ -134,7 +136,7 @@ public class Person {
         return name.equals(otherPerson.name)
                 && phone.equals(otherPerson.phone)
                 && email.equals(otherPerson.email)
-                && address.equals(otherPerson.address)
+                && telegramHandle.equals(otherPerson.telegramHandle)
                 && attendance.equals(otherPerson.attendance)
                 && tags.equals(otherPerson.tags)
                 && comments.equals(otherPerson.comments);
@@ -143,7 +145,7 @@ public class Person {
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, address, attendance, tags, comments);
+        return Objects.hash(name, phone, email, telegramHandle, attendance, tags, comments);
     }
 
     @Override
@@ -152,7 +154,7 @@ public class Person {
                 .add("name", name)
                 .add("phone", phone)
                 .add("email", email)
-                .add("address", address)
+                .add("telegram", telegramHandle)
                 .add("attendance", attendance)
                 .add("tags", tags)
                 .add("comments", comments)

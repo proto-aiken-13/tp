@@ -60,7 +60,7 @@ public class MarkAttendanceCommand extends Command {
         Person studentToEdit = lastShownList.get(index.getZeroBased());
         Person editedStudent = new Person(
                 studentToEdit.getName(), studentToEdit.getPhone(), studentToEdit.getEmail(),
-                studentToEdit.getAddress(), studentToEdit.getAttendance(), studentToEdit.getTags(),
+                studentToEdit.getTelegramHandle(), studentToEdit.getAttendance(), studentToEdit.getTags(),
                 studentToEdit.getComments());
         Attendance studentAtd = studentToEdit.getAttendance();
         if (studentAtd.isMarkedWeek(this.tut.getZeroBased())) {
