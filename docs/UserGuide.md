@@ -136,7 +136,7 @@ For attendance, you can enter the following commands:
 
 Marks the attendance of a student for that tutorial.
 
-Format: `markAtd INDEX [t/TUTORIAL]`
+Format: `markAtd INDEX t/TUTORIAL`
 
 Examples:
 * `markAtd 1 t/1`
@@ -147,11 +147,11 @@ Examples:
 
 Unmark the attendance of a student for that tutorial.
 
-Format: `unmarkAtd INDEX [t/TUTORIAL]`
+Format: `unmarkAtd INDEX t/TUTORIAL`
 
 Examples:
 * `unmarkAtd 1 t/1`
-* `unmarkAtd 2 t12`
+* `unmarkAtd 2 t/12`
 
 
 ### Deleting a student : `delete`
@@ -213,6 +213,6 @@ Action | Format, Examples
 **Find** | `find KEYWORD [MORE_KEYWORDS]​` e.g., `find James Jake`
 **Help** | `help​`
 **List** | `list​`
-**Mark Attendance** | `markAtd INDEX [t/TUTORIAL]`
-**Unmark Attendance** | `unnmarkAtd INDEX [t/TUTORIAL]`
+**Mark Attendance** | `markAtd INDEX t/TUTORIAL`
+**Unmark Attendance** | `unnmarkAtd INDEX t/TUTORIAL`
 
