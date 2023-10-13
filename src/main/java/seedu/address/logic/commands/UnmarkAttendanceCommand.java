@@ -64,7 +64,7 @@ public class UnmarkAttendanceCommand extends Command {
                 studentToEdit.getComments());
         Attendance studentAtd = studentToEdit.getAttendance();
         if (!studentAtd.isMarkedWeek(this.tut.getZeroBased())) {
-            return new CommandResult(Messages.MESSAGE_DUPLICATE_MARKINGS);
+            return new CommandResult(Messages.MESSAGE_DUPLICATE_UNMARK);
         }
         studentAtd.unmarkAttendance(this.tut.getZeroBased());
 
