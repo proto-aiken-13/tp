@@ -80,8 +80,8 @@ public class UnmarkAttendanceCommand extends Command {
      */
     private String generateSuccessMessage(Person personToEdit) {
         String message = personToEdit.getAttendance().isMarkedWeek(this.tut.getZeroBased())
-                ? ATTENDANCE_UNMARK_SUCCESS
-                : ATTENDANCE_UNMARK_FAIL;
+                ? ATTENDANCE_UNMARK_FAIL
+                : ATTENDANCE_UNMARK_SUCCESS;
         return String.format(message, personToEdit);
     }
 
