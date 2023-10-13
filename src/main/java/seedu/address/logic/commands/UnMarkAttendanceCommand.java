@@ -1,7 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_WEEK;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 
 import java.util.List;
 
@@ -23,20 +23,20 @@ public class UnMarkAttendanceCommand extends Command {
             + ": Unmarks the attendance of the student identified\n"
             + "by the index number used in the displayed student list.\n"
             + "Parameters: INDEX (must be a positive integer), "
-            + "[" + PREFIX_WEEK + "WeekToUnmark] \n"
-            + "Example: " + COMMAND_WORD + " 1 w/1 ";
+            + "[" + PREFIX_TUTORIAL + "TutorialToUnmark] \n"
+            + "Example: " + COMMAND_WORD + " 1 t/1 ";
     private final Index index;
-    private final Index week;
+    private final Index tut;
 
     /**
      * Constructs a new UnMarkAttendanceCommand to mark attendance for a student on a specific week.
      *
      * @param index The index of the student to unmark attendance for.
-     * @param week The index of the week to unmark attendance on.
+     * @param tut The index of the week to unmark attendance on.
      */
-    public UnMarkAttendanceCommand(Index index, Index week) {
+    public UnMarkAttendanceCommand(Index index, Index tut) {
         this.index = index;
-        this.week = week;
+        this.tut = tut;
     }
 
     /**
@@ -61,10 +61,10 @@ public class UnMarkAttendanceCommand extends Command {
                 studentToEdit.getAddress(), studentToEdit.getAttendance(), studentToEdit.getTags(),
                 studentToEdit.getComments());
         Attendance studentAtd = studentToEdit.getAttendance();
-        if (!studentAtd.isMarkedWeek(this.week.getZeroBased())) {
+        if (!studentAtd.isMarkedWeek(this.tut.getZeroBased())) {
             return new CommandResult(Messages.MESSAGE_DUPLICATE_MARKINGS);
         }
-        studentAtd.markAttendance(this.week.getZeroBased());
+        studentAtd.markAttendance(this.tut.getZeroBased());
 
         model.setPerson(studentToEdit, editedStudent);
         model.updateFilteredPersonList(Model.PREDICATE_SHOW_ALL_PERSONS);
@@ -77,7 +77,7 @@ public class UnMarkAttendanceCommand extends Command {
      * {@code personToEdit}.
      */
     private String generateSuccessMessage(Person personToEdit) {
-        String message = personToEdit.getAttendance().isMarkedWeek(this.week.getZeroBased())
+        String message = personToEdit.getAttendance().isMarkedWeek(this.tut.getZeroBased())
                 ? ATTENDANCE_UNMARK_SUCCESS
                 : ATTENDANCE_UNMARK_FAIL;
         return String.format(message, personToEdit);

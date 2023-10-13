@@ -7,7 +7,7 @@ package seedu.address.model.person;
 public class Attendance {
     public static final String WEEK_ERROR_MSG = "Week number is out of range, should be integer between 1-12";
     public static final String ORIGINAL_ATD = "0,0,0,0,0,0,0,0,0,0,0,0";
-    private int totalWeek;
+    private int totalTut;
     private final boolean[] attendanceList = new boolean[12];
 
 
@@ -18,27 +18,27 @@ public class Attendance {
      */
     public Attendance(String atd) {
         String[] atdArr = atd.split(",");
-        this.totalWeek = atdArr.length;
-        for (int i = 0; i < totalWeek; i++) {
-            if (atdArr[i] == "1") {
+        this.totalTut = atdArr.length;
+        for (int i = 0; i < totalTut; i++) {
+            if (atdArr[i].equals("1")) {
                 this.attendanceList[i] = true;
             }
         }
     }
 
     /**
-     * Checks if a given week is a valid week number (between 1 and 12).
+     * Checks if a given week is a valid tutorial number (between 1 and 12).
      *
-     * @param week A string representing a week number.
+     * @param tutorial A string representing a tutorial number.
      * @return `true` if the week is valid; otherwise, `false`.
      */
-    public static boolean isValidWeek(String week) {
-        if (!week.matches("[0-9]+")) {
+    public static boolean isValidTutorial(String tutorial) {
+        if (!tutorial.matches("[0-9]+")) {
             return false;
         }
-        int intWeek = Integer.parseInt(week);
-        if (intWeek <= 0 || intWeek > 12) {
-            System.out.println(week);
+        int intTutorial = Integer.parseInt(tutorial);
+        if (intTutorial <= 0 || intTutorial > 12) {
+            System.out.println(tutorial);
             return false;
         }
         return true;
@@ -65,45 +65,45 @@ public class Attendance {
      * @return the total number of tutorial weeks.
      */
     public int getTotalWeeks() {
-        return this.totalWeek;
+        return this.totalTut;
     }
 
     /**
-     * Marks a specific week as attended.
+     * Marks a specific tutorial as attended.
      *
-     * @param week The week to mark as attended (1-12).
+     * @param tutorial The week to mark as attended (1-12).
      */
-    public void markAttendance(int week) {
-        this.attendanceList[week] = true;
+    public void markAttendance(int tutorial) {
+        this.attendanceList[tutorial - 1] = true;
     }
 
     /**
-     * Unmarks a specific week as attended.
+     * Unmarks a specific tutorial as attended.
      *
-     * @param week The week to unmark (1-12).
+     * @param tutorial The week to unmark (1-12).
      */
-    public void unmarkAttendance(int week) {
-        this.attendanceList[week] = false;
+    public void unmarkAttendance(int tutorial) {
+        this.attendanceList[tutorial - 1] = false;
     }
 
     /**
-     * Checks if a specific week is marked as attended.
+     * Checks if a specific tutorial is marked as attended.
      *
-     * @param week The week to check (1-12).
+     * @param tutorial The week to check (1-12).
      * @return `true` if the week is marked as attended; otherwise, `false`.
      */
-    public boolean isMarkedWeek(int week) {
-        return this.attendanceList[week];
+    public boolean isMarkedWeek(int tutorial) {
+        return this.attendanceList[tutorial - 1];
     }
 
     /**
-     * Converts a week represented as a string to an integer.
+     * Converts a tutorial represented as a string to an integer.
      *
-     * @param week A string representing a week number.
+     * @param tutorial A string representing a week number.
      * @return The week number as an integer.
      */
-    public static int convertToIntegerWeek(String week) {
-        return Integer.parseInt(week);
+    public static int convertToIntegerWeek(String tutorial) {
+        return Integer.parseInt(tutorial);
     }
 
     @Override

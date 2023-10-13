@@ -46,7 +46,7 @@ public class ParserUtil {
     public static int parseWeek(String week) throws ParseException {
         requireNonNull(week);
         String trimmedWeek = week.trim();
-        if (!Attendance.isValidWeek(trimmedWeek)) {
+        if (!Attendance.isValidTutorial(trimmedWeek)) {
             throw new ParseException(Attendance.WEEK_ERROR_MSG);
         }
         return Attendance.convertToIntegerWeek(trimmedWeek);
