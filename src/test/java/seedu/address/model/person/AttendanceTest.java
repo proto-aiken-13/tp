@@ -45,7 +45,7 @@ public class AttendanceTest {
     @Test
     public void isMarkedWeek_markedWeek_returnsTrue() {
         Attendance attendance = new Attendance("1,0,0,0,0,0,0,0,0,0,0,0");
-        assertTrue(attendance.isMarkedWeek(1));
+        assertTrue(attendance.isMarkedWeek(0));
     }
 
     @Test
