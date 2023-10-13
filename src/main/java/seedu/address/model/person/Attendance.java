@@ -106,6 +106,21 @@ public class Attendance {
         return Integer.parseInt(week);
     }
 
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+
+        // instanceof handles nulls
+        if (!(other instanceof Attendance)) {
+            return false;
+        }
+
+        Attendance otherAttendance = (Attendance) other;
+        return toString().equals(otherAttendance.toString());
+    }
+
     /**
      * Converts attendanceList to a string.
      *
