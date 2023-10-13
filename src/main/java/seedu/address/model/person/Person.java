@@ -24,18 +24,20 @@ public class Person {
 
     // Data fields
     private final TelegramHandle telegramHandle;
+    private final Attendance attendance;
     private final Set<Tag> tags = new HashSet<>();
     private final Set<Comment> comments = new HashSet<>();
 
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, TelegramHandle telegramHandle,
+    public Person(Name name, Phone phone, Email email, TelegramHandle telegramHandle, Attendance attendance,
                   Set<Tag> tags, Set<Comment> comments) {
         requireAllNonNull(name, phone, email, telegramHandle, tags);
         this.name = name;
         this.phone = phone;
         this.email = email;
+        this.attendance = attendance;
         this.telegramHandle = telegramHandle;
         this.tags.addAll(tags);
         this.comments.addAll(comments);
@@ -75,6 +77,33 @@ public class Person {
     }
 
     /**
+     * Gets the student's attendance record.
+     *
+     * @return The `Attendance` object representing the student's attendance for a specific period.
+     */
+    public Attendance getAttendance() {
+        return this.attendance;
+    }
+
+    /**
+     * Retrieves the number of weeks the student was present based on their attendance record.
+     *
+     * @return The count of weeks for which the student was marked as present.
+     */
+    public int getWeeksPresent() {
+        return this.attendance.getWeeksPresent();
+    }
+
+    /**
+     * Retrieves the total number of weeks in the attendance record period.
+     *
+     * @return The total number of weeks in the period, typically 12 weeks.
+     */
+    public int getTotalWeeks() {
+        return this.attendance.getTotalWeeks();
+    }
+
+    /**
      * Returns true if both persons have the same name.
      * This defines a weaker notion of equality between two persons.
      */
@@ -108,6 +137,7 @@ public class Person {
                 && phone.equals(otherPerson.phone)
                 && email.equals(otherPerson.email)
                 && telegramHandle.equals(otherPerson.telegramHandle)
+                && attendance.equals(otherPerson.attendance)
                 && tags.equals(otherPerson.tags)
                 && comments.equals(otherPerson.comments);
     }
@@ -115,7 +145,7 @@ public class Person {
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, telegramHandle, tags, comments);
+        return Objects.hash(name, phone, email, telegramHandle, attendance, tags, comments);
     }
 
     @Override
@@ -125,6 +155,7 @@ public class Person {
                 .add("phone", phone)
                 .add("email", email)
                 .add("telegram", telegramHandle)
+                .add("attendance", attendance)
                 .add("tags", tags)
                 .add("comments", comments)
                 .toString();

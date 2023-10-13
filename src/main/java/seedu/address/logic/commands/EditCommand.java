@@ -23,6 +23,7 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.fields.Comment;
 import seedu.address.model.fields.Tag;
+import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
@@ -103,9 +104,12 @@ public class EditCommand extends Command {
         Email updatedEmail = editPersonDescriptor.getEmail().orElse(personToEdit.getEmail());
         TelegramHandle updatedTelegramHandle = editPersonDescriptor.getTelegramHandle()
                 .orElse(personToEdit.getTelegramHandle());
+        Attendance updatedAttendance = editPersonDescriptor.getAttendance().orElse(personToEdit.getAttendance());
         Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
         Set<Comment> updatedComments = editPersonDescriptor.getComments().orElse(personToEdit.getComments());
-        return new Person(updatedName, updatedPhone, updatedEmail, updatedTelegramHandle, updatedTags, updatedComments);
+
+        return new Person(updatedName, updatedPhone, updatedEmail, updatedTelegramHandle,
+                updatedAttendance, updatedTags, updatedComments);
     }
 
     @Override
@@ -141,8 +145,10 @@ public class EditCommand extends Command {
         private Phone phone;
         private Email email;
         private TelegramHandle telegramHandle;
+        private Attendance attendance;
         private Set<Tag> tags;
         private Set<Comment> comments;
+
 
         public EditPersonDescriptor() {}
 
@@ -155,6 +161,7 @@ public class EditCommand extends Command {
             setPhone(toCopy.phone);
             setEmail(toCopy.email);
             setTelegramHandle(toCopy.telegramHandle);
+            setAttendance(toCopy.attendance);
             setTags(toCopy.tags);
             setComments(toCopy.comments);
         }
@@ -196,6 +203,14 @@ public class EditCommand extends Command {
 
         public Optional<TelegramHandle> getTelegramHandle() {
             return Optional.ofNullable(telegramHandle);
+        }
+
+        public void setAttendance(Attendance attendance) {
+            this.attendance = attendance;
+        }
+
+        public Optional<Attendance> getAttendance() {
+            return Optional.ofNullable(attendance);
         }
 
         /**
@@ -248,6 +263,7 @@ public class EditCommand extends Command {
                     && Objects.equals(phone, otherEditPersonDescriptor.phone)
                     && Objects.equals(email, otherEditPersonDescriptor.email)
                     && Objects.equals(telegramHandle, otherEditPersonDescriptor.telegramHandle)
+                    && Objects.equals(attendance, otherEditPersonDescriptor.attendance)
                     && Objects.equals(tags, otherEditPersonDescriptor.tags)
                     && Objects.equals(comments, otherEditPersonDescriptor.comments);
         }
@@ -259,6 +275,7 @@ public class EditCommand extends Command {
                     .add("phone", phone)
                     .add("email", email)
                     .add("telegram", telegramHandle)
+                    .add("attendance", attendance)
                     .add("tags", tags)
                     .add("comments", comments)
                     .toString();

@@ -5,6 +5,7 @@ import java.util.Set;
 
 import seedu.address.model.fields.Comment;
 import seedu.address.model.fields.Tag;
+import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
@@ -21,11 +22,13 @@ public class PersonBuilder {
     public static final String DEFAULT_PHONE = "85355255";
     public static final String DEFAULT_EMAIL = "amy@gmail.com";
     public static final String DEFAULT_TELEGRAM = "amyTelegram";
+    public static final String DEFAULT_ATTENDANCE = "0,0,0,0,0,0,0,0,0,0,0,0";
 
     private Name name;
     private Phone phone;
     private Email email;
     private TelegramHandle telegramHandle;
+    private Attendance attendance;
     private Set<Tag> tags;
     private Set<Comment> comments;
 
@@ -37,6 +40,7 @@ public class PersonBuilder {
         phone = new Phone(DEFAULT_PHONE);
         email = new Email(DEFAULT_EMAIL);
         telegramHandle = new TelegramHandle(DEFAULT_TELEGRAM);
+        attendance = new Attendance(DEFAULT_ATTENDANCE);
         tags = new HashSet<>();
         comments = new HashSet<>();
     }
@@ -49,6 +53,7 @@ public class PersonBuilder {
         phone = personToCopy.getPhone();
         email = personToCopy.getEmail();
         telegramHandle = personToCopy.getTelegramHandle();
+        attendance = personToCopy.getAttendance();
         tags = new HashSet<>(personToCopy.getTags());
         comments = new HashSet<>(personToCopy.getComments());
     }
@@ -86,6 +91,14 @@ public class PersonBuilder {
     }
 
     /**
+     * Sets the {@code Attendance} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withAttendance(String attendance) {
+        this.attendance = new Attendance(attendance);
+        return this;
+    }
+
+    /**
      * Sets the {@code Phone} of the {@code Person} that we are building.
      */
     public PersonBuilder withPhone(String phone) {
@@ -102,7 +115,7 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        return new Person(name, phone, email, telegramHandle, tags, comments);
+        return new Person(name, phone, email, telegramHandle, attendance, tags, comments);
     }
 
 }

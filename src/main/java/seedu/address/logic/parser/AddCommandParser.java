@@ -15,6 +15,7 @@ import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.fields.Comment;
 import seedu.address.model.fields.Tag;
+import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
@@ -46,12 +47,12 @@ public class AddCommandParser implements Parser<AddCommand> {
         Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
         Phone phone = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE).get());
         Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
-        TelegramHandle telegramHandle = ParserUtil.parseTelegramHandle(
-                argMultimap.getValue(PREFIX_TELEGRAM_HANDLE).get());
+        TelegramHandle telegram = ParserUtil.parseTelegramHandle(argMultimap.getValue(PREFIX_TELEGRAM_HANDLE).get());
+        Attendance attendance = new Attendance(Attendance.ORIGINAL_ATD);
         Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
         Set<Comment> commentList = ParserUtil.parseComments(argMultimap.getAllValues(PREFIX_COMMENT));
 
-        Person person = new Person(name, phone, email, telegramHandle, tagList, commentList);
+        Person person = new Person(name, phone, email, telegram, attendance, tagList, commentList);
 
         return new AddCommand(person);
     }
