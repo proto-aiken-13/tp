@@ -23,7 +23,7 @@ import seedu.address.logic.commands.FindCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.ListCommand;
 import seedu.address.logic.commands.MarkAttendanceCommand;
-import seedu.address.logic.commands.UnMarkAttendanceCommand;
+import seedu.address.logic.commands.UnmarkAttendanceCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.Person;
@@ -64,11 +64,11 @@ public class AddressBookParserTest {
     }
 
     @Test
-    public void parseCommand_unMarkAttendance() throws Exception {
-        UnMarkAttendanceCommand command = (UnMarkAttendanceCommand) parser
-                .parseCommand(UnMarkAttendanceCommand.COMMAND_WORD
+    public void parseCommand_unmarkAttendance() throws Exception {
+        UnmarkAttendanceCommand command = (UnmarkAttendanceCommand) parser
+                .parseCommand(UnmarkAttendanceCommand.COMMAND_WORD
                 + " " + INDEX_FIRST_PERSON.getOneBased() + " t/1");
-        assertEquals(new UnMarkAttendanceCommand(INDEX_FIRST_PERSON, INDEX_FIRST_PERSON), command);
+        assertEquals(new UnmarkAttendanceCommand(INDEX_FIRST_PERSON, INDEX_FIRST_PERSON), command);
     }
 
     @Test

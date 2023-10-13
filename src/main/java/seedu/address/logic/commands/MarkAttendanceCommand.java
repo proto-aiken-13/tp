@@ -35,6 +35,8 @@ public class MarkAttendanceCommand extends Command {
      * @param tut The index of the week to mark attendance on.
      */
     public MarkAttendanceCommand(Index index, Index tut) {
+        requireNonNull(index);
+        requireNonNull(tut);
         this.index = index;
         this.tut = tut;
     }

@@ -13,14 +13,14 @@ import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Person;
 
 /**
- * UnMarks the attendance of an existing student in the taa.
+ * Unmark the attendance of an existing student in the taa.
  */
-public class UnMarkAttendanceCommand extends Command {
+public class UnmarkAttendanceCommand extends Command {
     public static final String COMMAND_WORD = "unmarkAtd";
     public static final String ATTENDANCE_UNMARK_SUCCESS = "Attendance unmarked successfully!";
     public static final String ATTENDANCE_UNMARK_FAIL = "Attendance failed to unmark!";
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Unmarks the attendance of the student identified\n"
+            + ": Unmark the attendance of the student identified\n"
             + "by the index number used in the displayed student list.\n"
             + "Parameters: INDEX (must be a positive integer), "
             + "[" + PREFIX_TUTORIAL + "TutorialToUnmark] \n"
@@ -34,7 +34,9 @@ public class UnMarkAttendanceCommand extends Command {
      * @param index The index of the student to unmark attendance for.
      * @param tut The index of the week to unmark attendance on.
      */
-    public UnMarkAttendanceCommand(Index index, Index tut) {
+    public UnmarkAttendanceCommand(Index index, Index tut) {
+        requireNonNull(index);
+        requireNonNull(tut);
         this.index = index;
         this.tut = tut;
     }
@@ -90,11 +92,12 @@ public class UnMarkAttendanceCommand extends Command {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof UnMarkAttendanceCommand)) {
+        if (!(other instanceof UnmarkAttendanceCommand)) {
             return false;
         }
 
-        UnMarkAttendanceCommand otherUnMarkAttendanceCommand = (UnMarkAttendanceCommand) other;
+        UnmarkAttendanceCommand otherUnMarkAttendanceCommand = (UnmarkAttendanceCommand) other;
         return index.equals(otherUnMarkAttendanceCommand.index) && tut.equals(otherUnMarkAttendanceCommand.tut);
     }
 }
+
