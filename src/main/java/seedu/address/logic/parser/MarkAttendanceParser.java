@@ -24,7 +24,7 @@ public class MarkAttendanceParser implements Parser<MarkAttendanceCommand> {
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_TUTORIAL);
 
         Index index;
-        int week = 0;
+        int tutorial = 0;
         try {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (IllegalValueException ive) {
@@ -33,13 +33,13 @@ public class MarkAttendanceParser implements Parser<MarkAttendanceCommand> {
         }
 
         if (argMultimap.getValue(PREFIX_TUTORIAL).isPresent()) {
-            week = ParserUtil.parseTutorial(argMultimap.getValue(PREFIX_TUTORIAL).get());
+            tutorial = ParserUtil.parseTutorial(argMultimap.getValue(PREFIX_TUTORIAL).get());
         }
 
-        if (week == 0) {
+        if (!(tutorial >= 1 && tutorial <= 12)) {
             throw new ParseException(Attendance.TUTORIAL_ERROR_MSG);
         }
 
-        return new MarkAttendanceCommand(index, Index.fromOneBased(week));
+        return new MarkAttendanceCommand(index, Index.fromOneBased(tutorial));
     }
 }
