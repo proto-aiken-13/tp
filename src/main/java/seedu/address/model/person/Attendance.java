@@ -74,7 +74,7 @@ public class Attendance {
      * @param tutorial The week to mark as attended (1-12).
      */
     public void markAttendance(int tutorial) {
-        this.attendanceList[tutorial - 1] = true;
+        this.attendanceList[tutorial] = true;
     }
 
     /**
@@ -83,7 +83,7 @@ public class Attendance {
      * @param tutorial The week to unmark (1-12).
      */
     public void unmarkAttendance(int tutorial) {
-        this.attendanceList[tutorial - 1] = false;
+        this.attendanceList[tutorial] = false;
     }
 
     /**
@@ -93,7 +93,7 @@ public class Attendance {
      * @return `true` if the week is marked as attended; otherwise, `false`.
      */
     public boolean isMarkedWeek(int tutorial) {
-        return this.attendanceList[tutorial - 1];
+        return this.attendanceList[tutorial];
     }
 
     /**

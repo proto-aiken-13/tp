@@ -82,4 +82,19 @@ public class MarkAttendanceCommand extends Command {
                 : ATTENDANCE_MARK_FAIL;
         return String.format(message, personToEdit);
     }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+
+        // instanceof handles nulls
+        if (!(other instanceof MarkAttendanceCommand)) {
+            return false;
+        }
+
+        MarkAttendanceCommand otherMarkAttendanceCommand = (MarkAttendanceCommand) other;
+        return index.equals(otherMarkAttendanceCommand.index) && tut.equals(otherMarkAttendanceCommand.tut);
+    }
 }

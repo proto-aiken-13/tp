@@ -82,4 +82,19 @@ public class UnMarkAttendanceCommand extends Command {
                 : ATTENDANCE_UNMARK_FAIL;
         return String.format(message, personToEdit);
     }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+
+        // instanceof handles nulls
+        if (!(other instanceof UnMarkAttendanceCommand)) {
+            return false;
+        }
+
+        UnMarkAttendanceCommand otherUnMarkAttendanceCommand = (UnMarkAttendanceCommand) other;
+        return index.equals(otherUnMarkAttendanceCommand.index) && tut.equals(otherUnMarkAttendanceCommand.tut);
+    }
 }
