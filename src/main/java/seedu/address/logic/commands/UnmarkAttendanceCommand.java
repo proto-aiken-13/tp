@@ -64,9 +64,9 @@ public class UnmarkAttendanceCommand extends Command {
                 studentToEdit.getComments());
         Attendance studentAtd = studentToEdit.getAttendance();
         if (!studentAtd.isMarkedWeek(this.tut.getZeroBased())) {
-            return new CommandResult(Messages.MESSAGE_DUPLICATE_MARKINGS);
+            return new CommandResult(Messages.MESSAGE_DUPLICATE_UNMARK);
         }
-        studentAtd.markAttendance(this.tut.getZeroBased());
+        studentAtd.unmarkAttendance(this.tut.getZeroBased());
 
         model.setPerson(studentToEdit, editedStudent);
         model.updateFilteredPersonList(Model.PREDICATE_SHOW_ALL_PERSONS);
@@ -80,8 +80,8 @@ public class UnmarkAttendanceCommand extends Command {
      */
     private String generateSuccessMessage(Person personToEdit) {
         String message = personToEdit.getAttendance().isMarkedWeek(this.tut.getZeroBased())
-                ? ATTENDANCE_UNMARK_SUCCESS
-                : ATTENDANCE_UNMARK_FAIL;
+                ? ATTENDANCE_UNMARK_FAIL
+                : ATTENDANCE_UNMARK_SUCCESS;
         return String.format(message, personToEdit);
     }
 
