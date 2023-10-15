@@ -1,9 +1,5 @@
 package seedu.address;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.HashMap;
@@ -13,6 +9,8 @@ import java.util.Map;
 import org.junit.jupiter.api.Test;
 
 import javafx.application.Application;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AppParametersTest {
 
@@ -85,5 +83,13 @@ public class AppParametersTest {
         public Map<String, String> getNamed() {
             return Collections.unmodifiableMap(namedParameters);
         }
+    }
+
+    @Test
+    public void hashCodeMethod() {
+        parametersStub.namedParameters.put("config", "config.json");
+        expected.setConfigPath(Paths.get("config.json"));
+        AppParameters current = AppParameters.parse(parametersStub);
+        assertEquals(expected.hashCode(), current.hashCode());
     }
 }
