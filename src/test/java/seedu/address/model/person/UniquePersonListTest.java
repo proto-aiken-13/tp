@@ -169,16 +169,16 @@ public class UniquePersonListTest {
     }
 
     @Test
-    public void toStringMethod() {
+    public void toString_Method() {
         assertEquals(uniquePersonList.asUnmodifiableObservableList().toString(), uniquePersonList.toString());
     }
     @Test
-    public void equalsMethodSameObject() {
+    public void equals_Method_Same_Object() {
         assertEquals(uniquePersonList, uniquePersonList);
     }
 
     @Test
-    public void equalsMethodDifferentObject() {
+    public void equals_MethodDifferentObject() {
         assertFalse(uniquePersonList.equals(null));
     }
 
