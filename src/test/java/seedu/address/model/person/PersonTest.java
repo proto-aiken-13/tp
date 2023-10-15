@@ -99,4 +99,63 @@ public class PersonTest {
                 + ", comments=" + ALICE.getComments() + "}";
         assertEquals(expected, ALICE.toString());
     }
+
+    @Test
+    public void hashCodeTest() {
+        Person person = new PersonBuilder(ALICE).build();
+        assertEquals(person.hashCode(), person.hashCode());
+    }
+
+    @Test
+    public void getAttendance() {
+        Person person = new PersonBuilder(ALICE).build();
+        assertEquals(person.getAttendance(), ALICE.getAttendance());
+    }
+
+    @Test
+    public void getComments() {
+        Person person = new PersonBuilder(ALICE).build();
+        assertEquals(person.getComments(), ALICE.getComments());
+    }
+
+    @Test
+    public void getTags() {
+        Person person = new PersonBuilder(ALICE).build();
+        assertEquals(person.getTags(), ALICE.getTags());
+    }
+
+    @Test
+    public void getName() {
+        Person person = new PersonBuilder(ALICE).build();
+        assertEquals(person.getName(), ALICE.getName());
+    }
+
+    @Test
+    public void getPhone() {
+        Person person = new PersonBuilder(ALICE).build();
+        assertEquals(person.getPhone(), ALICE.getPhone());
+    }
+
+    @Test
+    public void getEmail() {
+        Person person = new PersonBuilder(ALICE).build();
+        assertEquals(person.getEmail(), ALICE.getEmail());
+    }
+
+    @Test
+    public void getTelegramHandle() {
+        Person person = new PersonBuilder(ALICE).build();
+        assertEquals(person.getTelegramHandle(), ALICE.getTelegramHandle());
+    }
+
+    @Test
+    public void getWeeksPresent() {
+        Person person = new PersonBuilder(ALICE).build();
+        assertEquals(person.getWeeksPresent(), ALICE.getWeeksPresent());
+    }
+    @Test
+    public void getTotalWeeks() {
+        Person person = new PersonBuilder(ALICE).build();
+        assertEquals(person.getTotalWeeks(), ALICE.getTotalWeeks());
+    }
 }
