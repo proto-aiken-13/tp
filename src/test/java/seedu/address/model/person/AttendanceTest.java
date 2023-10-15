@@ -91,7 +91,7 @@ public class AttendanceTest {
         assertFalse(attendance.equals(1));
     }
     @Test
-    public void hashCodeTest() {
+    public void hashCode_Test() {
         Attendance attendance = new Attendance(Attendance.ORIGINAL_ATD);
         assertEquals(attendance.hashCode(), attendance.hashCode());
     }
