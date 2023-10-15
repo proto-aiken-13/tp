@@ -101,60 +101,60 @@ public class PersonTest {
     }
 
     @Test
-    public void hashCodeTest() {
+    public void hashCode_Test() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.hashCode(), person.hashCode());
     }
 
     @Test
-    public void getAttendance() {
+    public void getAttendance_Test() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getAttendance(), ALICE.getAttendance());
     }
 
     @Test
-    public void getComments() {
+    public void getComments_Test() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getComments(), ALICE.getComments());
     }
 
     @Test
-    public void getTags() {
+    public void getTags_Test() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getTags(), ALICE.getTags());
     }
 
     @Test
-    public void getName() {
+    public void getName_Test() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getName(), ALICE.getName());
     }
 
     @Test
-    public void getPhone() {
+    public void getPhone_Test() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getPhone(), ALICE.getPhone());
     }
 
     @Test
-    public void getEmail() {
+    public void getEmail_Test() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getEmail(), ALICE.getEmail());
     }
 
     @Test
-    public void getTelegramHandle() {
+    public void getTelegramHandle_Test() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getTelegramHandle(), ALICE.getTelegramHandle());
     }
 
     @Test
-    public void getWeeksPresent() {
+    public void getWeeksPresent_Test() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getWeeksPresent(), ALICE.getWeeksPresent());
     }
     @Test
-    public void getTotalWeeks() {
+    public void getTotalWeeks_Test() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getTotalWeeks(), ALICE.getTotalWeeks());
     }
