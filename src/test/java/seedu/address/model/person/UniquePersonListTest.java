@@ -172,4 +172,24 @@ public class UniquePersonListTest {
     public void toStringMethod() {
         assertEquals(uniquePersonList.asUnmodifiableObservableList().toString(), uniquePersonList.toString());
     }
+    @Test
+    public void equalsMethodSameObject() {
+        assertEquals(uniquePersonList, uniquePersonList);
+    }
+
+    @Test
+    public void equalsMethodDifferentObject() {
+        assertFalse(uniquePersonList.equals(null));
+    }
+
+    @Test
+    public void hashCodeMethod() {
+        assertEquals(uniquePersonList.hashCode(), uniquePersonList.hashCode());
+    }
+
+    @Test
+    public void iteratorMethod() {
+        uniquePersonList.add(ALICE);
+        assertEquals(uniquePersonList.iterator().next(), ALICE);
+    }
 }
