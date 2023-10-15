@@ -87,7 +87,7 @@ public class EmailTest {
     }
 
     @Test
-    public void hashCodeTest() {
+    public void hashCode_Test() {
         Email email = new Email("valid@email");
         assertTrue(email.hashCode() == email.hashCode());
     }
