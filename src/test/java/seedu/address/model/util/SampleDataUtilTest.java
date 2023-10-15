@@ -1,15 +1,16 @@
 package seedu.address.model.util;
 
-import org.junit.jupiter.api.Test;
-import seedu.address.model.AddressBook;
-import seedu.address.model.person.Person;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
+import org.junit.jupiter.api.Test;
+
+import seedu.address.model.AddressBook;
+import seedu.address.model.person.Person;
+
 public class SampleDataUtilTest {
 
-    Person[] testerSample = SampleDataUtil.getSamplePersons();
+    private Person[] testerSample = SampleDataUtil.getSamplePersons();
 
     @Test
     public void getSamplePersons() {
