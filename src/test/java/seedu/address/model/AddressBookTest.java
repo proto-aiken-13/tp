@@ -105,4 +105,29 @@ public class AddressBookTest {
         }
     }
 
+    @Test
+    public void equalsMethod() {
+        AddressBook addressBook = new AddressBook();
+        AddressBook addressBook1 = new AddressBook();
+        assertTrue(addressBook.equals(addressBook1));
+    }
+
+    @Test
+    public void equalsMethodSameObject() {
+        AddressBook addressBook = new AddressBook();
+        assertTrue(addressBook.equals(addressBook));
+    }
+
+    @Test
+    public void equalsMethodDifferentObject() {
+        AddressBook addressBook = new AddressBook();
+        assertFalse(addressBook.equals(new Object()));
+    }
+
+    @Test
+    public void hashCodeMethod() {
+        AddressBook addressBook = new AddressBook();
+        AddressBook addressBook1 = new AddressBook();
+        assertEquals(addressBook.hashCode(), addressBook1.hashCode());
+    }
 }
