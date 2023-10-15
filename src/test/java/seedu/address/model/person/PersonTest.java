@@ -107,54 +107,54 @@ public class PersonTest {
     }
 
     @Test
-    public void getAttendance() {
+    public void getAttendanceTest() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getAttendance(), ALICE.getAttendance());
     }
 
     @Test
-    public void getComments() {
+    public void getCommentsTest() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getComments(), ALICE.getComments());
     }
 
     @Test
-    public void getTags() {
+    public void getTagsTest() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getTags(), ALICE.getTags());
     }
 
     @Test
-    public void getName() {
+    public void getNameTest() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getName(), ALICE.getName());
     }
 
     @Test
-    public void getPhone() {
+    public void getPhoneTest() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getPhone(), ALICE.getPhone());
     }
 
     @Test
-    public void getEmail() {
+    public void getEmailTest() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getEmail(), ALICE.getEmail());
     }
 
     @Test
-    public void getTelegramHandle() {
+    public void getTelegramHandleTest() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getTelegramHandle(), ALICE.getTelegramHandle());
     }
 
     @Test
-    public void getWeeksPresent() {
+    public void getWeeksPresentTest() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getWeeksPresent(), ALICE.getWeeksPresent());
     }
     @Test
-    public void getTotalWeeks() {
+    public void getTotalWeeksTest() {
         Person person = new PersonBuilder(ALICE).build();
         assertEquals(person.getTotalWeeks(), ALICE.getTotalWeeks());
     }
