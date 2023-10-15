@@ -84,4 +84,15 @@ public class AttendanceTest {
         Attendance attendance2 = new Attendance("1,0,0,0,0,0,0,0,0,0,0,0");
         assertFalse(attendance1.equals(attendance2));
     }
+
+    @Test
+    public void equals_differentTypes_returnsFalse() {
+        Attendance attendance = new Attendance(Attendance.ORIGINAL_ATD);
+        assertFalse(attendance.equals(1));
+    }
+    @Test
+    public void hashCodeTest() {
+        Attendance attendance = new Attendance(Attendance.ORIGINAL_ATD);
+        assertEquals(attendance.hashCode(), attendance.hashCode());
+    }
 }
