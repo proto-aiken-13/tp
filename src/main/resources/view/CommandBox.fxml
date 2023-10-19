@@ -5,8 +5,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox styleClass = "console-prompt" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
-  <Label text="C o n s o l e" styleClass="console-title"/>
+<VBox styleClass = "console-prompt" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      style="-fx-background-color: #4d4e4f; -fx-border-color: #4d4e4f;">
+  <Label text="C o n s o l e" styleClass="console-title" style="-fx-background-color: #4d4e4f; 
+      -fx-text-fill: yellow"/>
   <StackPane styleClass="stack-pane">
     <TextField fx:id="commandTextField" onAction="#handleCommandEntered" promptText="Enter command here..."/>
   </StackPane>
