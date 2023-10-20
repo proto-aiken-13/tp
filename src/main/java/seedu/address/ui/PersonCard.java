@@ -40,6 +40,9 @@ public class PersonCard extends UiPart<Region> {
     private Label telegramHandle;
     @FXML
     private Label email;
+    
+    @FXML
+    private Label comments;
     @FXML
     private FlowPane tags;
 
@@ -59,5 +62,8 @@ public class PersonCard extends UiPart<Region> {
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+        person.getComments().stream()
+                .sorted(Comparator.comparing(comment -> comment.commentName))
+                .forEach(comment -> tags.getChildren().add(new Label(comment.commentName)));
     }
 }
