@@ -40,7 +40,6 @@ public class PersonCard extends UiPart<Region> {
     private Label telegramHandle;
     @FXML
     private Label email;
-    
     @FXML
     private Label comments;
     @FXML
