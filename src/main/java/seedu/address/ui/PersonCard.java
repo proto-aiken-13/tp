@@ -1,6 +1,6 @@
 package seedu.address.ui;
 
-import java.awt.*;
+import java.awt.Desktop;
 import java.net.URI;
 import java.util.Comparator;
 
@@ -47,7 +47,7 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label comments;
     @FXML
-    private Label telegramLink;
+    private Hyperlink telegramLink;
     @FXML
     private FlowPane tags;
 
@@ -58,6 +58,12 @@ public class PersonCard extends UiPart<Region> {
         super(FXML);
         this.person = person;
         id.setText(displayedIndex + ". ");
+        // Initialize the button visibility based on the presence of the Telegram handle
+        if (person.getTelegramHandle() != null) {
+            telegramLink.setVisible(true);
+        } else {
+            telegramLink.setVisible(false);
+        }
         name.setText(person.getName().fullName);
         attendance.setText(String.format("Attendance: %d/%d",
                 this.person.getWeeksPresent(), this.person.getTotalWeeks()));
@@ -72,14 +78,26 @@ public class PersonCard extends UiPart<Region> {
                 .forEach(comment -> tags.getChildren().add(new Label(comment.commentName)));
     }
 
+    /**
+     * Opens a link to the telegram handle of {@code Person}.
+     */
     public void openLink(ActionEvent event) {
         Hyperlink source = (Hyperlink) event.getSource();
-        String url = "https://t.me/" + person.getTelegramHandle().value;
-        try {
-            Desktop.getDesktop().browse(new URI(url));
-        } catch (Exception e) {
-            e.printStackTrace();
+        String telegramHandle = person.getTelegramHandle().value;
+
+        if (telegramHandle != null && !telegramHandle.isEmpty()) {
+            String url = "https://t.me/" + telegramHandle;
+            try {
+                Desktop.getDesktop().browse(new URI(url));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            // Handle the case where there is no telegram handle
+            // You can show an error message or take any other action as needed
+            System.out.println("No Telegram handle available.");
         }
     }
+
 
 }

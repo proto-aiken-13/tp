@@ -39,7 +39,7 @@
         <Region HBox.hgrow="ALWAYS" />
         <Label fx:id="attendance" styleClass="cell_small_label" text="\$attendance" />
         <Region HBox.hgrow="ALWAYS" />
-        <Hyperlink text="Contact" onAction="#openLink" userData="\$telegramLink" />
+        <Hyperlink fx:id="telegramLink" text="Contact" onAction="#openLink" userData="\$telegramLink" />
         <Region HBox.hgrow="ALWAYS" />
       </HBox>
     </VBox>
