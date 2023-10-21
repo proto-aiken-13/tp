@@ -1,8 +1,12 @@
 package seedu.address.ui;
 
+import java.awt.*;
+import java.net.URI;
 import java.util.Comparator;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
@@ -43,6 +47,8 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label comments;
     @FXML
+    private Label telegramLink;
+    @FXML
     private FlowPane tags;
 
     /**
@@ -55,9 +61,9 @@ public class PersonCard extends UiPart<Region> {
         name.setText(person.getName().fullName);
         attendance.setText(String.format("Attendance: %d/%d",
                 this.person.getWeeksPresent(), this.person.getTotalWeeks()));
-        phone.setText(person.getPhone().value);
-        telegramHandle.setText(person.getTelegramHandle().value);
-        email.setText(person.getEmail().value);
+        phone.setText("Phone: " + person.getPhone().value);
+        telegramHandle.setText("Telegram Handle: " + person.getTelegramHandle().value);
+        email.setText("Email: " + person.getEmail().value);
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
@@ -65,4 +71,15 @@ public class PersonCard extends UiPart<Region> {
                 .sorted(Comparator.comparing(comment -> comment.commentName))
                 .forEach(comment -> tags.getChildren().add(new Label(comment.commentName)));
     }
+
+    public void openLink(ActionEvent event) {
+        Hyperlink source = (Hyperlink) event.getSource();
+        String url = "https://t.me/" + person.getTelegramHandle().value;
+        try {
+            Desktop.getDesktop().browse(new URI(url));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
