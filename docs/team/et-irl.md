@@ -17,24 +17,27 @@ Given below are my contributions to the project.
 
 ### Enhancements Implemented
 
-- to be added
+- Added a Comment Field associated with every person.
+- Renamed the package associated with tags and comments to `fields`, for better code readability and maintainability.
 
 ### Contributions to the User Guide (UG)
 
-- to be added
+- Updated the `add` command to reflect the new command accepting a comment.
+- Updated the `edit` command to reflect the new command accepting a comment.
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 
-- to be added
+- Highlighted the MSS and use cases of command commands such as `add` and `list`.
 
 ### Contributions to Team-Based Tasks
 
-- to be added
+- Brainstormed and came up with user stories and steered the project in a clear direction.
 
 ### Review and Mentoring Contributions
 
-- to be added
+- Reviewed and spotted PRs with issues such as misnamed commit messages.
+- Ensured that the documentation associated with a PR is updated correctly.
 
 ### Contributions Beyond the Project Team
 
-- to be added
+- Brought morale to the team.
