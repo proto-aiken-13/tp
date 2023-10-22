@@ -38,6 +38,10 @@ public class Assignment {
         this.maxScore = maxScore;
     }
 
+    public Assignment(String name) {
+        this(name, 100);
+    }
+
     /**
      * Returns true if a given string is a valid email.
      */

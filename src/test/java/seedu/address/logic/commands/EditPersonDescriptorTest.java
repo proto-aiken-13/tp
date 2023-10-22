@@ -67,7 +67,9 @@ public class EditPersonDescriptorTest {
                 + editPersonDescriptor.getTelegramHandle().orElse(null) + ", attendance="
                 + editPersonDescriptor.getAttendance().orElse(null) + ", tags="
                 + editPersonDescriptor.getTags().orElse(null) + ", comments="
-                + editPersonDescriptor.getComments().orElse(null) + "}";
+                + editPersonDescriptor.getComments().orElse(null) + ", assignments="
+                + editPersonDescriptor.getAssignments().orElse(null)
+                + "}";
         assertEquals(expected, editPersonDescriptor.toString());
     }
 }

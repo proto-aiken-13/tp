@@ -27,12 +27,13 @@ public class Person {
     private final Attendance attendance;
     private final Set<Tag> tags = new HashSet<>();
     private final Set<Comment> comments = new HashSet<>();
+    private final Set<Assignment> assignments = new HashSet<>();
 
     /**
      * Every field must be present and not null.
      */
     public Person(Name name, Phone phone, Email email, TelegramHandle telegramHandle, Attendance attendance,
-                  Set<Tag> tags, Set<Comment> comments) {
+                  Set<Tag> tags, Set<Comment> comments, Set<Assignment> assignments) {
         requireAllNonNull(name, phone, email, telegramHandle, tags);
         this.name = name;
         this.phone = phone;
@@ -41,6 +42,7 @@ public class Person {
         this.telegramHandle = telegramHandle;
         this.tags.addAll(tags);
         this.comments.addAll(comments);
+        this.assignments.addAll(assignments);
     }
 
     public Name getName() {
@@ -68,12 +70,19 @@ public class Person {
     }
 
     /**
-     * Returns true if both persons have the same name and same telegram handle.
      * Returns an immutable comment set, which throws {@code UnsupportedOperationException}
      * if modification is attempted.
      */
     public Set<Comment> getComments() {
         return Collections.unmodifiableSet(comments);
+    }
+
+    /**
+     * Returns an immutable assignment set, which throws {@code UnsupportedOperationException}
+     * if modification is attempted.
+     */
+    public Set<Assignment> getAssignments() {
+        return Collections.unmodifiableSet(assignments);
     }
 
     /**
@@ -139,13 +148,14 @@ public class Person {
                 && telegramHandle.equals(otherPerson.telegramHandle)
                 && attendance.equals(otherPerson.attendance)
                 && tags.equals(otherPerson.tags)
-                && comments.equals(otherPerson.comments);
+                && comments.equals(otherPerson.comments)
+                && assignments.equals(otherPerson.assignments);
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, telegramHandle, attendance, tags, comments);
+        return Objects.hash(name, phone, email, telegramHandle, attendance, tags, comments, assignments);
     }
 
     @Override
@@ -158,6 +168,7 @@ public class Person {
                 .add("attendance", attendance)
                 .add("tags", tags)
                 .add("comments", comments)
+                .add("assignments", assignments)
                 .toString();
     }
 

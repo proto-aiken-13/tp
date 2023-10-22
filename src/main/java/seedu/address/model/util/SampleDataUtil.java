@@ -8,6 +8,7 @@ import seedu.address.model.AddressBook;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.fields.Comment;
 import seedu.address.model.fields.Tag;
+import seedu.address.model.person.Assignment;
 import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
@@ -26,32 +27,38 @@ public class SampleDataUtil {
                 new TelegramHandle("alexTelegram"),
                 new Attendance("0,0,0,0,0,0,0,0,0,0,0,0"),
                 getTagSet("friends"),
-                getCommentSet("Is always cheerful")),
+                getCommentSet("Is always cheerful"),
+                getAssignmentSet("lab1")),
             new Person(new Name("Bernice Yu"), new Phone("99272758"), new Email("berniceyu@example.com"),
                     new TelegramHandle("berniceTelegram"),
                 new Attendance("0,0,0,0,0,0,0,0,0,0,0,0"),
                 getTagSet("colleagues", "friends"),
-                getCommentSet("Loves candy")),
+                getCommentSet("Loves candy"),
+                getAssignmentSet("lab1")),
             new Person(new Name("Charlotte Oliveiro"), new Phone("93210283"), new Email("charlotte@example.com"),
                     new TelegramHandle("charlotteTelegram"),
                 new Attendance("0,0,0,0,0,0,0,0,0,0,0,0"),
                 getTagSet("neighbours"),
-                getCommentSet("Never comes on time")),
+                getCommentSet("Never comes on time"),
+                getAssignmentSet("lab1")),
             new Person(new Name("David Li"), new Phone("91031282"), new Email("lidavid@example.com"),
                     new TelegramHandle("davidTelegram"),
                 new Attendance("0,0,0,0,0,0,0,0,0,0,0,0"),
                 getTagSet("family"),
-                getCommentSet("Needs constant attention")),
+                getCommentSet("Needs constant attention"),
+                getAssignmentSet("lab1")),
             new Person(new Name("Irfan Ibrahim"), new Phone("92492021"), new Email("irfan@example.com"),
                     new TelegramHandle("irfanTelegram"),
                 new Attendance("0,0,0,0,0,0,0,0,0,0,0,0"),
                 getTagSet("classmates"),
-                getCommentSet("Pretty average")),
+                getCommentSet("Pretty average"),
+                getAssignmentSet("lab1")),
             new Person(new Name("Roy Balakrishnan"), new Phone("92624417"), new Email("royb@example.com"),
                     new TelegramHandle("royTelegram"),
                 new Attendance("0,0,0,0,0,0,0,0,0,0,0,0"),
                 getTagSet("colleagues"),
-                getCommentSet("Happy-go-lucky attitude"))
+                getCommentSet("Happy-go-lucky attitude"),
+                getAssignmentSet("lab1")),
         };
     }
 
@@ -73,11 +80,20 @@ public class SampleDataUtil {
     }
 
     /**
-     * Returns a tag set containing the list of strings given.
+     * Returns a comment set containing the list of strings given.
      */
     public static Set<Comment> getCommentSet(String... strings) {
         return Arrays.stream(strings)
                 .map(Comment::new)
+                .collect(Collectors.toSet());
+    }
+
+    /**
+     * Returns a assignment set containing the list of strings given.
+     */
+    public static Set<Assignment> getAssignmentSet(String... strings) {
+        return Arrays.stream(strings)
+                .map(Assignment::new)
                 .collect(Collectors.toSet());
     }
 }

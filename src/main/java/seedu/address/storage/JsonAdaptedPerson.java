@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.fields.Comment;
 import seedu.address.model.fields.Tag;
+import seedu.address.model.person.Assignment;
 import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
@@ -34,6 +35,7 @@ class JsonAdaptedPerson {
     private final String attendance;
     private final List<JsonAdaptedTag> tags = new ArrayList<>();
     private final List<JsonAdaptedComment> comments = new ArrayList<>();
+    private final List<JsonAdaptedAssignment> assignments = new ArrayList<>();
 
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
@@ -83,6 +85,11 @@ class JsonAdaptedPerson {
             personComments.add(comment.toModelType());
         }
 
+        final List<Assignment> personAssignments = new ArrayList<>();
+        for (JsonAdaptedAssignment assignment : assignments) {
+            personAssignments.add(assignment.toModelType());
+        }
+
         if (name == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Name.class.getSimpleName()));
         }
@@ -124,8 +131,10 @@ class JsonAdaptedPerson {
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
         final Set<Comment> modelComments = new HashSet<>(personComments);
+        final Set<Assignment> modelAssignments = new HashSet<>(personAssignments);
+
         return new Person(modelName, modelPhone, modelEmail, modelTelegramHandle, modelAttendance,
-                modelTags, modelComments);
+                modelTags, modelComments, modelAssignments);
     }
 
 }
