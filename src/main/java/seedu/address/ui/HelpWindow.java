@@ -40,8 +40,7 @@ public class HelpWindow extends UiPart<Stage> {
                     + "i. MARK ATTENDANCE COMMAND\n\n" + MarkAttendanceCommand.MESSAGE_USAGE + "\n\n"
                     + "j. UNMARK ATTENDANCE COMMAND\n\n" + UnmarkAttendanceCommand.MESSAGE_USAGE + "\n\n"
                     + "k. ASSIGN COMMAND\n\n" + AssignmentCommand.MESSAGE_USAGE + "\n\n";
-    public static final String HELP_MESSAGE = "Refer to the user guide: " + USERGUIDE_URL + "\n\n"
-            + SHOWING_HELP_MESSAGE;
+    public static final String HELP_MESSAGE = "Refer to our website: " + USERGUIDE_URL;
     private static final Logger logger = LogsCenter.getLogger(HelpWindow.class);
     private static final String FXML = "HelpWindow.fxml";
 
@@ -122,5 +121,13 @@ public class HelpWindow extends UiPart<Stage> {
         final ClipboardContent url = new ClipboardContent();
         url.putString(USERGUIDE_URL);
         clipboard.setContent(url);
+    }
+
+    /**
+     * Opens the link to the user guide in the default browser.
+     */
+    @FXML
+    private void openUrl() {
+        UiUtil.open(USERGUIDE_URL);
     }
 }
