@@ -1,10 +1,13 @@
 package seedu.address.ui;
 
-import java.awt.*;
+import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+/**
+ * Utility class for UI components.
+ */
 public class UiUtil {
     /**
      * Opens a link using the default web browser on the user's system.
