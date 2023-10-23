@@ -67,6 +67,7 @@ public class AssignmentCommand extends Command {
             Assignment newAssignment = new Assignment(name, maxScore);
 
             updatedAssignments.addAll(studentToEdit.getAssignments());
+            updatedAssignments.remove(newAssignment);
             updatedAssignments.add(newAssignment);
 
             // Create a new student with the updated assignments
