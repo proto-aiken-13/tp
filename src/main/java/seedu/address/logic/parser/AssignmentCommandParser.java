@@ -17,10 +17,11 @@ import seedu.address.model.person.Name;
 public class AssignmentCommandParser implements Parser<AssignmentCommand> {
 
     /**
-     * TODO
-     * Parses the given {@code String} of arguments in the context of the AssignmentCommand
-     * and returns an AssignmentCommand object for execution.
-     * @throws ParseException if the user input does not conform the expected format
+     * Parses the given arguments and constructs an AssignmentCommand object for execution.
+     *
+     * @param args A string of arguments representing the assignment command.
+     * @return An AssignmentCommand for execution.
+     * @throws ParseException If the user input does not conform to the expected format or if maxScore is not a positive integer.
      */
     public AssignmentCommand parse(String args) throws ParseException {
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_MAX_SCORE);
@@ -34,6 +35,10 @@ public class AssignmentCommandParser implements Parser<AssignmentCommand> {
 
         Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
         int maxScore = ParserUtil.parseInt(argMultimap.getValue(PREFIX_MAX_SCORE).get());
+
+        if (maxScore <= 0) {
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AssignmentCommand.MESSAGE_USAGE));
+        }
 
         return new AssignmentCommand(name, maxScore);
     }

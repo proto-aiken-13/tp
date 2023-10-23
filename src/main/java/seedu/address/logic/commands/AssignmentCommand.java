@@ -1,7 +1,8 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_MAX_SCORE;
 
 import java.util.HashSet;
 import java.util.List;
@@ -20,12 +21,13 @@ public class AssignmentCommand extends Command {
     public static final String COMMAND_WORD = "assign";
     public static final String MESSAGE_SUCCESS = "Assignment created successfully!";
     public static final String MESSAGE_FAIL = "Assignment not created.";
-    // TODO
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Creates an assignment for all students.\n"
-            + "Parameters: INDEX (must be a positive integer), "
-            + "[" + PREFIX_TUTORIAL + "TutorialToMark] \n"
-            + "Example: " + COMMAND_WORD + " 1 t/1 ";
+        + ": Creates an assignment for all students.\n"
+        + "Parameters: "
+        + "[" + PREFIX_NAME + "ASSIGNMENT_NAME] "
+        + "[" + PREFIX_MAX_SCORE + "MAX_SCORE] "
+        + "\nExample: " + COMMAND_WORD + " "
+        + PREFIX_NAME + "Tutorial1 " + PREFIX_MAX_SCORE + "100";
     private final Name name;
     private final int maxScore;
 
@@ -47,7 +49,13 @@ public class AssignmentCommand extends Command {
         this.maxScore = maxScore;
     }
 
-    // TODO
+    /**
+     * Executes the command to create a new assignment for all students in the last shown list.
+     *
+     * @param model Model representing the current state of the address book.
+     * @return CommandResult representing the result of the execution.
+     * @throws CommandException If there is an error during command execution.
+     */
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
