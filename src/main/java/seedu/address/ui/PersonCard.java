@@ -45,11 +45,13 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label email;
     @FXML
-    private Label comments;
-    @FXML
     private Hyperlink telegramLink;
     @FXML
     private FlowPane tags;
+    @FXML
+    private FlowPane comments;
+    @FXML
+    private FlowPane assignments;
 
     /**
      * Creates a {@code PersonCode} with the given {@code Person} and index to display.
@@ -75,10 +77,10 @@ public class PersonCard extends UiPart<Region> {
                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
         person.getComments().stream()
                 .sorted(Comparator.comparing(comment -> comment.commentName))
-                .forEach(comment -> tags.getChildren().add(new Label(comment.commentName)));
+                .forEach(comment -> comments.getChildren().add(new Label(comment.commentName)));
         person.getAssignments().stream()
                 .sorted(Comparator.comparing(assignment -> assignment.toString()))
-                .forEach(assignment -> tags.getChildren().add(new Label(assignment.toString())));
+                .forEach(assignment -> assignments.getChildren().add(new Label(assignment.toString())));
     }
 
     /**
