@@ -224,5 +224,5 @@ Action | Format, Examples
 **Help** | `help​`
 **List** | `list​`
 **Mark Attendance** | `markAtd INDEX t/TUTORIAL`
-**Unmark Attendance** | `unnmarkAtd INDEX t/TUTORIAL`
+**Unmark Attendance** | `unmarkAtd INDEX t/TUTORIAL`
 **Distribute Assignments** | `assign n/ASSIGNMENT_NAME m/MAX_SCORE`
