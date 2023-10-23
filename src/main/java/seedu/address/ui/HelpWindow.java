@@ -9,6 +9,7 @@ import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.stage.Stage;
 import seedu.address.commons.core.LogsCenter;
+import seedu.address.logic.commands.*;
 
 /**
  * Controller for a help page
@@ -16,8 +17,21 @@ import seedu.address.commons.core.LogsCenter;
 public class HelpWindow extends UiPart<Stage> {
 
     public static final String USERGUIDE_URL = "https://ay2324s1-cs2103t-t12-1.github.io/tp/";
-    public static final String HELP_MESSAGE = "Refer to the user guide: " + USERGUIDE_URL;
-
+    public static final String SHOWING_HELP_MESSAGE =
+            "Here are the list of commands:\n\n"
+                    + "a. ADD COMMAND\n\n" + AddCommand.MESSAGE_USAGE + "\n\n"
+                    + "b. CLEAR COMMAND\n\n" + ClearCommand.MESSAGE_USAGE + "\n\n"
+                    + "c. DELETE COMMAND\n\n" + DeleteCommand.MESSAGE_USAGE + "\n\n"
+                    + "d. EDIT COMMAND\n\n" + EditCommand.MESSAGE_USAGE + "\n\n"
+                    + "e. EXIT COMMAND\n\n" + ExitCommand.MESSAGE_USAGE + "\n\n"
+                    + "f. FIND COMMAND\n\n" + FindCommand.MESSAGE_USAGE + "\n\n"
+                    + "g. HELP COMMAND\n\n" + HelpCommand.MESSAGE_USAGE + "\n\n"
+                    + "h. LIST COMMAND\n\n" + ListCommand.MESSAGE_USAGE + "\n\n"
+                    + "i. MARK ATTENDANCE COMMAND\n\n" + MarkAttendanceCommand.MESSAGE_USAGE + "\n\n"
+                    + "j. UNMARK ATTENDANCE COMMAND\n\n" + UnmarkAttendanceCommand.MESSAGE_USAGE + "\n\n"
+                    + "k. ASSIGN COMMAND\n\n" + AssignmentCommand.MESSAGE_USAGE + "\n\n";
+    public static final String HELP_MESSAGE = "Refer to the user guide: " + USERGUIDE_URL + "\n\n"
+            + SHOWING_HELP_MESSAGE;
     private static final Logger logger = LogsCenter.getLogger(HelpWindow.class);
     private static final String FXML = "HelpWindow.fxml";
 
