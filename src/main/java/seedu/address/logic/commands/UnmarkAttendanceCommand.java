@@ -4,6 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 
 import java.util.List;
+import java.util.Optional;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
@@ -59,9 +60,11 @@ public class UnmarkAttendanceCommand extends Command {
 
         Person studentToEdit = lastShownList.get(index.getZeroBased());
         Person editedStudent = new Person(
-                studentToEdit.getName(), studentToEdit.getPhone(), studentToEdit.getEmail(),
-                studentToEdit.getTelegramHandle(), studentToEdit.getAttendance(), studentToEdit.getTags(),
+                studentToEdit.getName(), Optional.of(studentToEdit.getPhone()), Optional.of(studentToEdit.getEmail()),
+                Optional.of(studentToEdit.getTelegramHandle()), Optional.of(studentToEdit.getAttendance()),
+                studentToEdit.getTags(),
                 studentToEdit.getComments(), studentToEdit.getAssignments());
+
         Attendance studentAtd = studentToEdit.getAttendance();
         if (!studentAtd.isMarkedWeek(this.tut.getZeroBased())) {
             return new CommandResult(Messages.MESSAGE_DUPLICATE_UNMARK);

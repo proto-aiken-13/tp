@@ -111,8 +111,11 @@ public class EditCommand extends Command {
         Set<Assignment> updatedAssignments =
             editPersonDescriptor.getAssignments().orElse(personToEdit.getAssignments());
 
-        return new Person(updatedName, updatedPhone, updatedEmail, updatedTelegramHandle,
-                updatedAttendance, updatedTags, updatedComments, updatedAssignments);
+
+        return new Person(updatedName, Optional.of(updatedPhone), Optional.of(updatedEmail),
+                Optional.of(updatedTelegramHandle), Optional.of(updatedAttendance),
+                updatedTags, updatedComments, updatedAssignments);
+
     }
 
     @Override
