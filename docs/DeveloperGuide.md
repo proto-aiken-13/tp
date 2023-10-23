@@ -298,14 +298,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to add a person.
-2.  User provides the required person details.
-3.  AddressBook creates a new person entry with the provided details.
+2.  User provides the name and optional details.
+3.  AddressBook creates a new person entry with the provided optional details.
 
     Use case ends.
 
 **Extensions**
 
-* 3a. User does not provide all required details.
+* 3a. User does not provide the name.
 
     * 3a1. AddressBook displays an error message and prompts the user to provide missing details.
 
@@ -333,6 +333,15 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 3a1. AddressBook shows an error message.
 
       Use case resumes at step 2.
+
+**Use case : Edit a person**
+
+**MSS**
+
+1. User requests to Edit persons
+2. AddressBook shows the edited person
+
+    Use case ends.
 
 **Use case: Find a person**
 
