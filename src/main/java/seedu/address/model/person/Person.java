@@ -131,7 +131,7 @@ public class Person {
         if (stdatd != null) {
             return stdatd.getTotalWeeks();
         }
-        return -1;
+        return 0;
     }
 
     /**
