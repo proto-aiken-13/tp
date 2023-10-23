@@ -73,20 +73,21 @@ public class GradeCommand extends Command {
         Set<Assignment> studentAssignments = studentToGrade.getAssignments();
 
         // Throw error if assignment is not found
-        if(!studentAssignments.contains(studentAssignment)) {
+        if (!studentAssignments.contains(studentAssignment)) {
             throw new CommandException(Messages.MESSAGE_INVALID_ASSIGNMENT_NAME);
         }
 
-        for(Assignment assignment : studentAssignments) {
-            if(assignment.equals(studentAssignment)) {
-                if(score > assignment.getMaxScore() || score < 0) {
+        for (Assignment assignment : studentAssignments) {
+            if (assignment.equals(studentAssignment)) {
+                if (score > assignment.getMaxScore() || score < 0) {
                     throw new CommandException(Messages.MESSAGE_INVALID_ASSIGNMENT_SCORE);
                 }
                 assignment.setScore(score);
             }
         }
         Person editedStudent = new Person(
-                studentToGrade.getName(), Optional.of(studentToGrade.getPhone()), Optional.of(studentToGrade.getEmail()),
+                studentToGrade.getName(),
+                Optional.of(studentToGrade.getPhone()), Optional.of(studentToGrade.getEmail()),
                 Optional.of(studentToGrade.getTelegramHandle()), Optional.of(studentToGrade.getAttendance()),
                 studentToGrade.getTags(),
                 studentToGrade.getComments(), studentToGrade.getAssignments());

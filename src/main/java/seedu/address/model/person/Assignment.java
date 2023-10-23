@@ -59,7 +59,7 @@ public class Assignment {
      * @return `true` if score is valid; otherwise, `false`.
      */
     public static boolean isValidScore(int testScore, int maxScore) {
-        if(testScore > maxScore || testScore < 0) {
+        if (testScore > maxScore || testScore < 0) {
             return false;
         }
         return true;
