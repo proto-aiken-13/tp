@@ -13,31 +13,16 @@ contact management tasks done faster than traditional GUI apps.
 Given below are my contributions to the project:
 
 ### Code contribution
-- Create CommentTest.java
-- Update AttendanceTest.java
-- Update EmailTest.java
-- Update NameTest.java
-- Update PersonTest.java
-- Update PhoneTest.java
-- Update UniquePersonListTest.java
-- Update TagTest.java
-- Update AddressBookTest.java
-- Update UserPrefsTest.java
-- Create SampleDataUtilTest.java
-- Create JsonAdaptedCommentTest.java
-- Update AppParametersTest.java
-- Create MainAppTest.java
-- Create MainTest.java
-- Update DarkTheme.css
+- [Link to my contribution on tp dashboard](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=lsyurea&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code&since=2023-09-22)
 
 ### Enhancements Implemented
-- Modified color scheme of UI.
 - Updated test coverage of all the classes, including attendance taking, add command, delete command, edit command,
 find command, list command, mark command such that it goes to 78%.
 - Making the commands optional, so that the user can choose
         to use the commands or not.
 - Group students by classes.
 - Make commands optional.
+- Modify help command to show the relevant commands.
 
 ### Contributions to the User Guide (UG)
 
