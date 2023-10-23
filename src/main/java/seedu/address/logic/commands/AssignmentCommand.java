@@ -6,6 +6,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import seedu.address.logic.commands.exceptions.CommandException;
@@ -72,8 +73,10 @@ public class AssignmentCommand extends Command {
 
             // Create a new student with the updated assignments
             Person editedStudent = new Person(
-                    studentToEdit.getName(), studentToEdit.getPhone(), studentToEdit.getEmail(),
-                    studentToEdit.getTelegramHandle(), studentToEdit.getAttendance(), studentToEdit.getTags(),
+                    studentToEdit.getName(), Optional.of(studentToEdit.getPhone()),
+                    Optional.of(studentToEdit.getEmail()),
+                    Optional.of(studentToEdit.getTelegramHandle()), Optional.of(studentToEdit.getAttendance()),
+                    studentToEdit.getTags(),
                     studentToEdit.getComments(), updatedAssignments);
 
             // Set the updated student in the model
