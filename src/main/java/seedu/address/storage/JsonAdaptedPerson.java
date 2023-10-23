@@ -63,10 +63,15 @@ class JsonAdaptedPerson {
         phone = source.getPhone().value;
         email = source.getEmail().value;
         telegram = source.getTelegramHandle().value;
-        tags.addAll(source.getTags().stream().map(JsonAdaptedTag::new).collect(Collectors.toList()));
         attendance = source.getAttendance().toString();
         tags.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
+                .collect(Collectors.toList()));
+        comments.addAll(source.getComments().stream()
+                .map(JsonAdaptedComment::new)
+                .collect(Collectors.toList()));
+        assignments.addAll(source.getAssignments().stream()
+                .map(JsonAdaptedAssignment::new)
                 .collect(Collectors.toList()));
     }
 
