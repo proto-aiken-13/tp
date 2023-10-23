@@ -29,7 +29,8 @@ public class TypicalPersons {
             .withTelegram("aliceTelegram").withEmail("alice@example.com")
             .withPhone("94351253")
             .withTags("friends")
-            .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0").build();
+            .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0")
+            .build();
     public static final Person BENSON = new PersonBuilder().withName("Benson Meier")
             .withTelegram("bensonTelegram")
             .withEmail("johnd@example.com").withPhone("98765432")

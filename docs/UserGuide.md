@@ -81,7 +81,7 @@ A seasoned user (but you still need help on memorizing commands)? Drop by in [Co
 ### Viewing help : `help`
 <a name="help"></a>
 
-Shows a message explaning how to access the help page.
+Shows a message explaining how to access the help page.
 
 Format: `help`
 
@@ -154,6 +154,15 @@ Examples:
 * `unmarkAtd 1 t/1`
 * `unmarkAtd 2 t/12`
 
+### Distribute assignments: `assign`
+<a name="assign"></a>
+
+Create an assignment and assign it to all students.
+
+Format: `assign n/ASSIGNMENT_NAME m/MAX_SCORE`
+
+Examples:
+- `assign n/Tutorial1 m/100`
 
 ### Deleting a student : `delete`
 <a name="delete"></a>
@@ -215,5 +224,5 @@ Action | Format, Examples
 **Help** | `help​`
 **List** | `list​`
 **Mark Attendance** | `markAtd INDEX t/TUTORIAL`
-**Unmark Attendance** | `unnmarkAtd INDEX t/TUTORIAL`
-
+**Unmark Attendance** | `unmarkAtd INDEX t/TUTORIAL`
+**Distribute Assignments** | `assign n/ASSIGNMENT_NAME m/MAX_SCORE`

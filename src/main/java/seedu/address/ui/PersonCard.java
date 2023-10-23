@@ -76,6 +76,9 @@ public class PersonCard extends UiPart<Region> {
         person.getComments().stream()
                 .sorted(Comparator.comparing(comment -> comment.commentName))
                 .forEach(comment -> tags.getChildren().add(new Label(comment.commentName)));
+        person.getAssignments().stream()
+                .sorted(Comparator.comparing(assignment -> assignment.toString()))
+                .forEach(assignment -> tags.getChildren().add(new Label(assignment.toString())));
     }
 
     /**

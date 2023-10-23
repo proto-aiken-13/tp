@@ -8,6 +8,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TELEGRAM_HANDLE;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -15,6 +16,7 @@ import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.fields.Comment;
 import seedu.address.model.fields.Tag;
+import seedu.address.model.person.Assignment;
 import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
@@ -51,8 +53,9 @@ public class AddCommandParser implements Parser<AddCommand> {
         Attendance attendance = new Attendance(Attendance.ORIGINAL_ATD);
         Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
         Set<Comment> commentList = ParserUtil.parseComments(argMultimap.getAllValues(PREFIX_COMMENT));
+        Set<Assignment> assignmentList = new HashSet<>();
 
-        Person person = new Person(name, phone, email, telegram, attendance, tagList, commentList);
+        Person person = new Person(name, phone, email, telegram, attendance, tagList, commentList, assignmentList);
 
         return new AddCommand(person);
     }

@@ -23,6 +23,7 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.fields.Comment;
 import seedu.address.model.fields.Tag;
+import seedu.address.model.person.Assignment;
 import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
@@ -107,9 +108,11 @@ public class EditCommand extends Command {
         Attendance updatedAttendance = editPersonDescriptor.getAttendance().orElse(personToEdit.getAttendance());
         Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
         Set<Comment> updatedComments = editPersonDescriptor.getComments().orElse(personToEdit.getComments());
+        Set<Assignment> updatedAssignments =
+            editPersonDescriptor.getAssignments().orElse(personToEdit.getAssignments());
 
         return new Person(updatedName, updatedPhone, updatedEmail, updatedTelegramHandle,
-                updatedAttendance, updatedTags, updatedComments);
+                updatedAttendance, updatedTags, updatedComments, updatedAssignments);
     }
 
     @Override
@@ -148,6 +151,7 @@ public class EditCommand extends Command {
         private Attendance attendance;
         private Set<Tag> tags;
         private Set<Comment> comments;
+        private Set<Assignment> assignments;
 
 
         public EditPersonDescriptor() {}
@@ -164,6 +168,7 @@ public class EditCommand extends Command {
             setAttendance(toCopy.attendance);
             setTags(toCopy.tags);
             setComments(toCopy.comments);
+            setAssignments(toCopy.assignments);
         }
 
         /**
@@ -243,6 +248,23 @@ public class EditCommand extends Command {
          * if modification is attempted.
          * Returns {@code Optional#empty()} if {@code comments} is null.
          */
+        public Optional<Set<Assignment>> getAssignments() {
+            return (assignments != null) ? Optional.of(Collections.unmodifiableSet(assignments)) : Optional.empty();
+        }
+
+        /**
+         * Sets {@code assignments} to this object's {@code assignments}.
+         * A defensive copy of {@code assignments} is used internally.
+         */
+        public void setAssignments(Set<Assignment> assignments) {
+            this.assignments = (assignments != null) ? new HashSet<>(assignments) : null;
+        }
+
+        /**
+         * Returns an unmodifiable comment set, which throws {@code UnsupportedOperationException}
+         * if modification is attempted.
+         * Returns {@code Optional#empty()} if {@code comments} is null.
+         */
         public Optional<Set<Comment>> getComments() {
             return (comments != null) ? Optional.of(Collections.unmodifiableSet(comments)) : Optional.empty();
         }
@@ -265,7 +287,8 @@ public class EditCommand extends Command {
                     && Objects.equals(telegramHandle, otherEditPersonDescriptor.telegramHandle)
                     && Objects.equals(attendance, otherEditPersonDescriptor.attendance)
                     && Objects.equals(tags, otherEditPersonDescriptor.tags)
-                    && Objects.equals(comments, otherEditPersonDescriptor.comments);
+                    && Objects.equals(comments, otherEditPersonDescriptor.comments)
+                    && Objects.equals(assignments, otherEditPersonDescriptor.assignments);
         }
 
         @Override
@@ -278,6 +301,7 @@ public class EditCommand extends Command {
                     .add("attendance", attendance)
                     .add("tags", tags)
                     .add("comments", comments)
+                    .add("assignments", assignments)
                     .toString();
         }
     }
