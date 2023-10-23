@@ -5,20 +5,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.person.Assignment;
+import seedu.address.model.person.Name;
 
 /**
  * Jackson-friendly version of {@link Assignment}.
  */
 class JsonAdaptedAssignment {
 
-    private final String assignmentName;
+    private final Name assignmentName;
 
     /**
      * Constructs a {@code JsonAdaptedAssignment} with the given {@code assignmentName}.
      */
     @JsonCreator
     public JsonAdaptedAssignment(String assignmentName) {
-        this.assignmentName = assignmentName;
+        this.assignmentName = new Name(assignmentName);
     }
 
     /**
@@ -30,7 +31,7 @@ class JsonAdaptedAssignment {
 
     @JsonValue
     public String getAssignmentName() {
-        return assignmentName;
+        return assignmentName.toString();
     }
 
     /**

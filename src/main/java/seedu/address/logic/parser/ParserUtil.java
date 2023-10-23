@@ -53,6 +53,23 @@ public class ParserUtil {
     }
 
     /**
+     * Parses the specified string into an integer value, removing leading and trailing whitespaces.
+     *
+     * @param number A string representing an integer. Must not be null.
+     * @return The parsed integer value.
+     * @throws ParseException If the given {@code number} is not a valid integer format.
+     */
+    public static int parseInt(String number) throws ParseException {
+        requireNonNull(number);
+        String trimmedNumber = number.trim();
+        try {
+            return Integer.parseInt(trimmedNumber);
+        } catch (NumberFormatException e) {
+            throw new ParseException("Invalid number format.");
+        }
+    }
+
+    /**
      * Parses a {@code String name} into a {@code Name}.
      * Leading and trailing whitespaces will be trimmed.
      *

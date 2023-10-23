@@ -1,0 +1,94 @@
+package seedu.address.logic.commands;
+
+import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import seedu.address.logic.commands.exceptions.CommandException;
+import seedu.address.model.Model;
+import seedu.address.model.person.Assignment;
+import seedu.address.model.person.Name;
+import seedu.address.model.person.Person;
+
+/**
+ * Marks the attendance of an existing student in the taa.
+ */
+public class AssignmentCommand extends Command {
+    public static final String COMMAND_WORD = "assign";
+    public static final String MESSAGE_SUCCESS = "Assignment created successfully!";
+    public static final String MESSAGE_FAIL = "Assignment not created.";
+    // TODO
+    public static final String MESSAGE_USAGE = COMMAND_WORD
+            + ": Creates an assignment for all students.\n"
+            + "Parameters: INDEX (must be a positive integer), "
+            + "[" + PREFIX_TUTORIAL + "TutorialToMark] \n"
+            + "Example: " + COMMAND_WORD + " 1 t/1 ";
+    private final Name name;
+    private final int maxScore;
+
+    /**
+     * Constructs an AssignmentCommand with the specified name and maximum score.
+     *
+     * @param name The name of the assignment. Must not be null.
+     * @param maxScore The maximum possible score for the assignment. Must be greater than 0.
+     * @throws NullPointerException If the provided name is null.
+     * @throws IllegalArgumentException If the provided maxScore is not greater than 0.
+     */
+    public AssignmentCommand(Name name, int maxScore) {
+        requireNonNull(name);
+        if (maxScore <= 0) {
+            throw new IllegalArgumentException("maxScore must be greater than 0");
+        }
+
+        this.name = name;
+        this.maxScore = maxScore;
+    }
+
+    // TODO
+    @Override
+    public CommandResult execute(Model model) throws CommandException {
+        requireNonNull(model);
+        List<Person> lastShownList = model.getFilteredPersonList();
+
+        // Loop through the list and update each person's assignments
+        for (Person studentToEdit : lastShownList) {
+            Set<Assignment> updatedAssignments = new HashSet<>();
+            Assignment newAssignment = new Assignment(name, maxScore);
+
+            updatedAssignments.addAll(studentToEdit.getAssignments());
+            updatedAssignments.add(newAssignment);
+
+            // Create a new student with the updated assignments
+            Person editedStudent = new Person(
+                    studentToEdit.getName(), studentToEdit.getPhone(), studentToEdit.getEmail(),
+                    studentToEdit.getTelegramHandle(), studentToEdit.getAttendance(), studentToEdit.getTags(),
+                    studentToEdit.getComments(), updatedAssignments);
+
+            // Set the updated student in the model
+            model.setPerson(studentToEdit, editedStudent);
+        }
+
+        model.updateFilteredPersonList(Model.PREDICATE_SHOW_ALL_PERSONS);
+        return new CommandResult(String.format(MESSAGE_SUCCESS));
+    }
+
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+
+        // instanceof handles nulls
+        if (!(other instanceof AssignmentCommand)) {
+            return false;
+        }
+
+        AssignmentCommand otherAssignmentCommand = (AssignmentCommand) other;
+        return this.name.equals(otherAssignmentCommand.name)
+            && this.maxScore == otherAssignmentCommand.maxScore;
+    }
+}

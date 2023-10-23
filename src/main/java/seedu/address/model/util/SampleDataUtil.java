@@ -93,6 +93,7 @@ public class SampleDataUtil {
      */
     public static Set<Assignment> getAssignmentSet(String... strings) {
         return Arrays.stream(strings)
+                .map(Name::new)
                 .map(Assignment::new)
                 .collect(Collectors.toSet());
     }

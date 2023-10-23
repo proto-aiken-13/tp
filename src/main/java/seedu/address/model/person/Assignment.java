@@ -19,7 +19,7 @@ public class Assignment {
      */
     public static final String VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
 
-    public final String name;
+    public final Name name;
     private int score;
     private int maxScore;
 
@@ -31,22 +31,22 @@ public class Assignment {
      * @throws NullPointerException If the provided name is null.
      * @throws IllegalArgumentException If the provided name does not satisfy the constraints.
      */
-    public Assignment(String name, int maxScore) {
+    public Assignment(Name name, int maxScore) {
         requireNonNull(name);
         checkArgument(isValidAssignment(name), MESSAGE_CONSTRAINTS);
         this.name = name;
         this.maxScore = maxScore;
     }
 
-    public Assignment(String name) {
+    public Assignment(Name name) {
         this(name, 100);
     }
 
     /**
      * Returns true if a given string is a valid email.
      */
-    public static boolean isValidAssignment(String test) {
-        return test.matches(VALIDATION_REGEX);
+    public static boolean isValidAssignment(Name test) {
+        return test.toString().matches(VALIDATION_REGEX);
     }
 
     public int getScore() {
