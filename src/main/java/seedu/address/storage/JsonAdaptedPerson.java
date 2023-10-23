@@ -3,6 +3,7 @@ package seedu.address.storage;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -132,9 +133,10 @@ class JsonAdaptedPerson {
         final Set<Tag> modelTags = new HashSet<>(personTags);
         final Set<Comment> modelComments = new HashSet<>(personComments);
         final Set<Assignment> modelAssignments = new HashSet<>(personAssignments);
-
-        return new Person(modelName, modelPhone, modelEmail, modelTelegramHandle, modelAttendance,
+        return new Person(modelName, Optional.of(modelPhone), Optional.of(modelEmail),
+                Optional.of(modelTelegramHandle), Optional.of(modelAttendance),
                 modelTags, modelComments, modelAssignments);
+
     }
 
 }
