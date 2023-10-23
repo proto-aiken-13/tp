@@ -22,7 +22,7 @@ find command, list command, mark command such that it goes to 78%.
         to use the commands or not.
 - Group students by classes.
 - Make commands optional.
-- Modify help command to show the relevant commands.
+- Modify help command to show the relevant link.
 
 ### Contributions to the User Guide (UG)
 
