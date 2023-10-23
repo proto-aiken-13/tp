@@ -6,6 +6,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import seedu.address.commons.core.index.Index;
@@ -85,8 +86,9 @@ public class GradeCommand extends Command {
             }
         }
         Person editedStudent = new Person(
-                studentToGrade.getName(), studentToGrade.getPhone(), studentToGrade.getEmail(),
-                studentToGrade.getTelegramHandle(), studentToGrade.getAttendance(), studentToGrade.getTags(),
+                studentToGrade.getName(), Optional.of(studentToGrade.getPhone()), Optional.of(studentToGrade.getEmail()),
+                Optional.of(studentToGrade.getTelegramHandle()), Optional.of(studentToGrade.getAttendance()),
+                studentToGrade.getTags(),
                 studentToGrade.getComments(), studentToGrade.getAssignments());
         model.setPerson(studentToGrade, editedStudent);
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
