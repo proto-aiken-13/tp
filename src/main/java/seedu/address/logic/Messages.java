@@ -13,6 +13,8 @@ import seedu.address.model.person.Person;
 public class Messages {
 
     public static final String MESSAGE_UNKNOWN_COMMAND = "Unknown command";
+    public static final String MESSAGE_INVALID_ASSIGNMENT_NAME = "Assignment not found!";
+    public static final String MESSAGE_INVALID_ASSIGNMENT_SCORE = "Assignment score should be between 0 to max score ";
     public static final String MESSAGE_INVALID_COMMAND_FORMAT = "Invalid command format! \n%1$s";
     public static final String MESSAGE_INVALID_PERSON_DISPLAYED_INDEX = "The person index provided is invalid";
     public static final String MESSAGE_PERSONS_LISTED_OVERVIEW = "%1$d persons listed!";
@@ -20,6 +22,7 @@ public class Messages {
                 "Multiple values specified for the following single-valued field(s): ";
     public static final String MESSAGE_DUPLICATE_MARKINGS = "This week's attendance has already been marked!";
     public static final String MESSAGE_DUPLICATE_UNMARK = "This week's attendance has already been unmarked!";
+
 
     /**
      * Returns an error message indicating the duplicate prefixes.
