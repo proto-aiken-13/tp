@@ -6,8 +6,8 @@ title: Siyuan's Project Portfolio Page
 
 ### Project: npc_track
 
-npc_track is a desktop app for managing student contacts, optimized for use via a Command Line Interface (CLI) 
-while still having the benefits of a Graphical User Interface (GUI). If you can type fast, Npc_Track can get your 
+npc_track is a desktop app for managing student contacts, optimized for use via a Command Line Interface (CLI)
+while still having the benefits of a Graphical User Interface (GUI). If you can type fast, Npc_Track can get your
 contact management tasks done faster than traditional GUI apps.
 
 Given below are my contributions to the project:
@@ -32,7 +32,7 @@ Given below are my contributions to the project:
 
 ### Enhancements Implemented
 - Modified color scheme of UI.
-- Updated test coverage of all the classes, including attendance taking, add command, delete command, edit command, 
+- Updated test coverage of all the classes, including attendance taking, add command, delete command, edit command,
 find command, list command, mark command such that it goes to 78%.
 - Making the commands optional, so that the user can choose
         to use the commands or not.
