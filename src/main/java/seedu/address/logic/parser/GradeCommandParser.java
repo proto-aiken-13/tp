@@ -4,16 +4,11 @@ import static seedu.address.logic.Messages.MESSAGE_INVALID_ASSIGNMENT_NAME;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_ASSIGNMENT_SCORE;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_GRADE;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_MAX_SCORE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
-
-import java.util.stream.Stream;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.logic.commands.GradeCommand;
-import seedu.address.logic.commands.MarkAttendanceCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Name;
 
@@ -48,7 +43,7 @@ public class GradeCommandParser implements Parser<GradeCommand> {
         if (argMultimap.getValue(PREFIX_NAME).isPresent()) {
             try {
                 name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
-            } catch(ParseException e) {
+            } catch (ParseException e) {
                 throw new ParseException(MESSAGE_INVALID_ASSIGNMENT_NAME);
             }
 
@@ -57,7 +52,7 @@ public class GradeCommandParser implements Parser<GradeCommand> {
         if (argMultimap.getValue(PREFIX_GRADE).isPresent()) {
             try {
                 score = ParserUtil.parseInt(argMultimap.getValue(PREFIX_GRADE).get());
-            } catch(ParseException e) {
+            } catch (ParseException e) {
                 throw new ParseException(MESSAGE_INVALID_ASSIGNMENT_SCORE);
             }
 
