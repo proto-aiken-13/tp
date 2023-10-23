@@ -103,6 +103,14 @@ public class PersonBuilder {
     }
 
     /**
+     * Sets the {@code Assignment} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withAssignments(String... assignmentNames) {
+        this.assignments = SampleDataUtil.getAssignmentSet(assignmentNames);
+        return this;
+    }
+
+    /**
      * Sets the {@code Phone} of the {@code Person} that we are building.
      */
     public PersonBuilder withPhone(String phone) {

@@ -17,11 +17,16 @@ Given below are my contributions to the project.
 
 ### Enhancements Implemented
 
-- to be added
+- Changed the address fields to now support telegram instead. 
+- Changed the UI such that TAs can link to their 
+  students' telegram directly
+- Changed the corresponding test cases after changing from address to telegram
+- Added the `grade` command and all the other test cases
 
 ### Contributions to the User Guide (UG)
 
-- to be added
+- Updated the necessary parts from `address` to `telegram` 
+- Changed the UG to remove all linkage from AB3
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 
@@ -29,12 +34,15 @@ Given below are my contributions to the project.
 
 ### Contributions to Team-Based Tasks
 
-- to be added
+- Contributed some ideas.
+- Added some features to the system and changed the UI.
+- Helped with other admin TP requirements.
 
 ### Review and Mentoring Contributions
 
-- to be added
+- Reviewed and gave comments to peers' pull requests
+- Merged peers' code into the tp
 
 ### Contributions Beyond the Project Team
 
-- to be added
+- Gave my never ending support =)
