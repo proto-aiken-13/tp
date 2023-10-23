@@ -24,6 +24,7 @@ Given below are my contributions to the project.
 
 - Updated the `add` command to reflect the new command accepting a comment.
 - Updated the `edit` command to reflect the new command accepting a comment.
+- Added the `assign` command to give all students an assignment.
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 
