@@ -1,6 +1,7 @@
 package seedu.address.testutil;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 import seedu.address.model.fields.Comment;
@@ -118,8 +119,12 @@ public class PersonBuilder {
         return this;
     }
 
+    /**
+     * Builds a person with the given parameters.
+     */
     public Person build() {
-        return new Person(name, phone, email, telegramHandle, attendance, tags, comments, assignments);
+        return new Person(name, Optional.of(phone), Optional.of(email), Optional.of(telegramHandle),
+                Optional.of(attendance), tags, comments, assignments);
     }
 
 }

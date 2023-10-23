@@ -5,6 +5,7 @@ import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
@@ -19,20 +20,33 @@ public class Person {
 
     // Identity fields
     private final Name name;
-    private final Phone phone;
-    private final Email email;
+    private final Optional<Phone> phone;
+    private final Optional<Email> email;
 
     // Data fields
-    private final TelegramHandle telegramHandle;
-    private final Attendance attendance;
+    private final Optional<TelegramHandle> telegramHandle;
+    private final Optional<Attendance> attendance;
     private final Set<Tag> tags = new HashSet<>();
     private final Set<Comment> comments = new HashSet<>();
     private final Set<Assignment> assignments = new HashSet<>();
 
     /**
+     * Only name field must be present and not null.
+     */
+    public Person(Name name) {
+        requireAllNonNull(name);
+        this.name = name;
+        this.phone = Optional.empty();
+        this.email = Optional.empty();
+        this.telegramHandle = Optional.empty();
+        this.attendance = Optional.empty();
+    }
+
+    /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, TelegramHandle telegramHandle, Attendance attendance,
+    public Person(Name name, Optional<Phone> phone, Optional<Email> email, Optional<TelegramHandle> telegramHandle,
+                  Optional<Attendance> attendance,
                   Set<Tag> tags, Set<Comment> comments, Set<Assignment> assignments) {
         requireAllNonNull(name, phone, email, telegramHandle, tags);
         this.name = name;
@@ -50,15 +64,15 @@ public class Person {
     }
 
     public Phone getPhone() {
-        return phone;
+        return phone.orElse(null);
     }
 
     public Email getEmail() {
-        return email;
+        return email.orElse(null);
     }
 
     public TelegramHandle getTelegramHandle() {
-        return telegramHandle;
+        return telegramHandle.orElse(null);
     }
 
     /**
@@ -91,7 +105,7 @@ public class Person {
      * @return The `Attendance` object representing the student's attendance for a specific period.
      */
     public Attendance getAttendance() {
-        return this.attendance;
+        return this.attendance.orElse(null);
     }
 
     /**
@@ -100,7 +114,11 @@ public class Person {
      * @return The count of weeks for which the student was marked as present.
      */
     public int getWeeksPresent() {
-        return this.attendance.getWeeksPresent();
+        Attendance stdatd = this.attendance.orElse(null);
+        if (stdatd != null) {
+            return stdatd.getWeeksPresent();
+        }
+        return 0;
     }
 
     /**
@@ -109,7 +127,11 @@ public class Person {
      * @return The total number of weeks in the period, typically 12 weeks.
      */
     public int getTotalWeeks() {
-        return this.attendance.getTotalWeeks();
+        Attendance stdatd = this.attendance.orElse(null);
+        if (stdatd != null) {
+            return stdatd.getTotalWeeks();
+        }
+        return 0;
     }
 
     /**
@@ -162,10 +184,10 @@ public class Person {
     public String toString() {
         return new ToStringBuilder(this)
                 .add("name", name)
-                .add("phone", phone)
-                .add("email", email)
-                .add("telegram", telegramHandle)
-                .add("attendance", attendance)
+                .add("phone", phone.orElse(null))
+                .add("email", email.orElse(null))
+                .add("telegram", telegramHandle.orElse(null))
+                .add("attendance", attendance.orElse(null))
                 .add("tags", tags)
                 .add("comments", comments)
                 .add("assignments", assignments)
