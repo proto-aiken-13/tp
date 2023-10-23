@@ -291,15 +291,15 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is the `npc_track` and the **Actor** is the `user`, unless specified otherwise)
 
-**Use case: Add a person**
+**Use case: Add a student**
 
 **MSS**
 
-1.  User requests to add a person.
+1.  User requests to add a student.
 2.  User provides the name and optional details.
-3.  AddressBook creates a new person entry with the provided optional details.
+3.  `npc_track` creates a new person entry with the provided optional details.
 
     Use case ends.
 
@@ -310,6 +310,31 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 3a1. AddressBook displays an error message and prompts the user to provide missing details.
 
       Use case resumes at step 2.
+
+**Use case: Grade a student's assignment**
+
+**MSS**
+
+1.  User requests to grade the assignment of a particular student.
+2.  User provides the student index, assignment name and score.
+3.  `npc_track` updates the current assignment of that student according to the mark given.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. User does not provide the correct index / assignment name / score.
+
+    * 2a1. `npc_track` displays an error message and prompts the user to provide missing details.
+  
+* 2b. User provides a score that is outside the valid boundary.
+    * 2b1. `npc_track` displays an error message and prompts the user to provide the correct score.
+* 2c. User provides an assignment that has not been created.
+
+    * 2c1. `npc_track` displays an error message and prompts the user to provide a valid assignment.
+
+      Use case resumes at step 2.
+
 
 **Use case: Delete a person**
 
