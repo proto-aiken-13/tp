@@ -19,12 +19,14 @@ Given below are my contributions to the project.
 
 - Added a Comment Field associated with every person.
 - Renamed the package associated with tags and comments to `fields`, for better code readability and maintainability.
+- Colour-coded and differentiated tags, comments and assignments in the UI.
 
 ### Contributions to the User Guide (UG)
 
 - Updated the `add` command to reflect the new command accepting a comment.
 - Updated the `edit` command to reflect the new command accepting a comment.
 - Added the `assign` command to give all students an assignment.
+- Spotted documentation bugs and ensured the reliability of the table of contents.
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 
@@ -38,6 +40,7 @@ Given below are my contributions to the project.
 
 - Reviewed and spotted PRs with issues such as misnamed commit messages.
 - Ensured that the documentation associated with a PR is updated correctly.
+- Added a pull request template to ensure less regressions are introduced.
 
 ### Contributions Beyond the Project Team
 
