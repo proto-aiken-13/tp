@@ -6,6 +6,9 @@ header_pages:
   - DeveloperGuide.md
   - AboutUs.md
 
+sidebar:
+  - Getting Started
+
 markdown: kramdown
 
 repository: "AY2324S1-CS2103T-T12-1/tp"
