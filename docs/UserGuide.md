@@ -27,6 +27,7 @@ On top of these functionalities, we believe that student management should be ex
     - [Listing All Students](#list) `list`
     - [Adding a Student](#add) `add`
     - [Deleting a Student](#delete) `delete`
+    - [Grading a Student](#grade) `grade`
     - [Exiting the Program](#exit)
 
 - [FAQ](#FAQ)
@@ -163,6 +164,16 @@ Format: `assign n/ASSIGNMENT_NAME m/MAX_SCORE`
 
 Examples:
 - `assign n/Tutorial1 m/100`
+
+### Grade assignments: `grade`
+<a name="grade"></a>
+
+Grade a student's assignment.
+
+Format: `grade INDEX n/ASSIGNMENT_NAME g/SCORE`
+
+Examples:
+- `assign 1 n/Tutorial1 g/90`
 
 ### Deleting a student : `delete`
 <a name="delete"></a>

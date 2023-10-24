@@ -13,6 +13,8 @@ public class Assignment {
         "Assignments should only contain alphanumeric characters "
         + "and spaces, and it should not be blank";
 
+    public static final String MESSAGE_INVALID_SCORE = "Assignment score should be between 0 and the maximum score";
+
     /*
      * The first character of the address must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
@@ -49,6 +51,20 @@ public class Assignment {
         return test.toString().matches(VALIDATION_REGEX);
     }
 
+    /**
+     * Checks if a score is greater than equal to 0 and less than equal to maximum score.
+     *
+     * @param testScore A integer representing the score to be given.
+     * @param maxScore A integer representing the maximum score for the specific assignment.
+     * @return `true` if score is valid; otherwise, `false`.
+     */
+    public static boolean isValidScore(int testScore, int maxScore) {
+        if (testScore > maxScore || testScore < 0) {
+            return false;
+        }
+        return true;
+    }
+
     public int getScore() {
         return score;
     }
@@ -58,6 +74,7 @@ public class Assignment {
     }
 
     public void setScore(int score) {
+        checkArgument(isValidScore(score, this.maxScore), MESSAGE_INVALID_SCORE);
         this.score = score;
     }
 
