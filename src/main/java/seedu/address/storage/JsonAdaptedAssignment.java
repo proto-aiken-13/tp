@@ -2,7 +2,6 @@ package seedu.address.storage;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.person.Assignment;
@@ -38,10 +37,6 @@ class JsonAdaptedAssignment {
         maxScore = String.valueOf(source.getMaxScore());
     }
 
-//    @JsonValue
-//    public String getAssignmentName() {
-//        return assignmentName.toString();
-//    }
 
     /**
      * Converts this Jackson-friendly adapted tag object into the model's {@code Assignment} object.
@@ -55,9 +50,8 @@ class JsonAdaptedAssignment {
         if (!Assignment.isValidScore(Integer.valueOf(score), Integer.valueOf(maxScore))) {
             throw new IllegalValueException(Assignment.MESSAGE_INVALID_SCORE);
         }
-        Assignment newAssignment =  new Assignment(new Name(assignmentName),  Integer.valueOf(maxScore));
-        newAssignment.setScore( Integer.valueOf(score));
+        Assignment newAssignment = new Assignment(new Name(assignmentName), Integer.valueOf(maxScore));
+        newAssignment.setScore(Integer.valueOf(score));
         return newAssignment;
     }
-
 }
