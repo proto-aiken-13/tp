@@ -24,15 +24,16 @@ On top of these functionalities, we believe that student management should be ex
 {:toc}
 - [Features](#features)
     - [Viewing Help](#help) `help`
-    - [Listing All Students](#list) `list`
     - [Adding a Student](#add) `add`
+    - [Editing a Student](#edit) `edit`
     - [Deleting a Student](#delete) `delete`
+    - [Listing All Students](#list) `list`
+    - [Finding a Student](#find) `find`
+    - [Distributing Assignments](#assign) `assign`
     - [Grading a Student](#grade) `grade`
+    - [Marking Attendance](#markAtd) `markAtd`
+    - [Unmarking Attendance](#unmarkAtd) `unmarkAtd`
     - [Exiting the Program](#exit)
-
-- [FAQ](#FAQ)
-- [Known Issues](#issues)
-- [Command Summary](#summary)
 
 ---
 
@@ -88,6 +89,7 @@ Format: `help`
 
 
 ### Adding a student: `add`
+<a name="add"></a>
 
 Adds a student to the student book.
 
@@ -112,13 +114,22 @@ Shows a list of all students.
 
 Format: `list`
 
+### Finding students : `find`
+<a name="find"></a>
+
+Finds students associated with the keyword.
+
+Format: `find KEYWORD [MORE_KEYWORDS]…`
+
+Examples:
+*  `find James Jake`
+
 ### Editing a person : `edit`
 <a name="edit"></a>
 
 Edits an existing student.
 
 Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…`
-
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be
@@ -229,12 +240,12 @@ Action | Format, Examples
 **Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL a/TELEGRAM_HANDLE [t/TAG]… [c/COMMENT]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/jamesTele t/friend t/colleague c/Owes a cookie`
 **Clear** | `clear​`
 **Delete** | `delete INDEX​` <br> e.g., `delete 3`
+**Distribute Assignments** | `assign n/ASSIGNMENT_NAME m/MAX_SCORE`
 **Edit** | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…​` <br> e.g., `n/New Name t/`
 **Exit** | `exit​`
 **Find** | `find KEYWORD [MORE_KEYWORDS]​` e.g., `find James Jake`
+**Grade Assignments** | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`
 **Help** | `help​`
 **List** | `list​`
 **Mark Attendance** | `markAtd INDEX t/TUTORIAL`
 **Unmark Attendance** | `unmarkAtd INDEX t/TUTORIAL`
-**Distribute Assignments** | `assign n/ASSIGNMENT_NAME m/MAX_SCORE`
-**Grade Assignments** | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`
