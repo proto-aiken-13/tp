@@ -35,6 +35,10 @@ On top of these functionalities, we believe that student management should be ex
     - [Unmarking Attendance](#unmarkAtd) `unmarkAtd`
     - [Exiting the Program](#exit)
 
+- [FAQ](#FAQ)
+- [Known Issues](#issues)
+- [Command Summary](#summary)
+
 ---
 
 ## How can this guide help me?
