@@ -10,11 +10,11 @@ import java.util.logging.Logger;
  * Utility class for UI components.
  */
 public class UiUtil {
+    private static final Logger logger = Logger.getLogger(UiUtil.class.getName());
     /**
      * Opens a link using the default web browser on the user's system.
      * @param url The URL to be opened in the web browser.
      */
-    private static final Logger logger = Logger.getLogger(UiUtil.class.getName());
     public static void open(String url) {
         String os = System.getProperty("os.name").toLowerCase();
         assert !os.equals("");

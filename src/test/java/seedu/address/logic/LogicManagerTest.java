@@ -179,12 +179,12 @@ public class LogicManagerTest {
     }
 
     @Test
-    public void getGUISettingTest() {
+    public void getGuiSettingTest() {
         assertEquals(model.getGuiSettings(), logic.getGuiSettings());
     }
 
     @Test
-    public void setGUISettingTest() {
+    public void setGuiSettingTest() {
         logic.setGuiSettings(model.getGuiSettings());
         assertEquals(model.getGuiSettings(), logic.getGuiSettings());
     }
