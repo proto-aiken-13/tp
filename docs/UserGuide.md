@@ -173,7 +173,7 @@ Grade a student's assignment.
 Format: `grade INDEX n/ASSIGNMENT_NAME g/SCORE`
 
 Examples:
-- `assign 1 n/Tutorial1 g/90`
+- `grade 1 n/Tutorial1 g/90`
 
 ### Deleting a student : `delete`
 <a name="delete"></a>
@@ -237,3 +237,4 @@ Action | Format, Examples
 **Mark Attendance** | `markAtd INDEX t/TUTORIAL`
 **Unmark Attendance** | `unmarkAtd INDEX t/TUTORIAL`
 **Distribute Assignments** | `assign n/ASSIGNMENT_NAME m/MAX_SCORE`
+**Grade Assignments** | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`

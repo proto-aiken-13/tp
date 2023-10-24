@@ -37,6 +37,7 @@ public class Assignment {
         requireNonNull(name);
         checkArgument(isValidAssignment(name), MESSAGE_CONSTRAINTS);
         this.name = name;
+        this.score = 0; // default score will be zero
         this.maxScore = maxScore;
     }
 

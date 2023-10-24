@@ -44,7 +44,9 @@ class JsonAdaptedPerson {
     @JsonCreator
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
             @JsonProperty("email") String email, @JsonProperty("telegram") String telegram,
-            @JsonProperty("attendance") String attendance, @JsonProperty("tags") List<JsonAdaptedTag> tags) {
+            @JsonProperty("attendance") String attendance, @JsonProperty("tags") List<JsonAdaptedTag> tags,
+                             @JsonProperty("comments") List<JsonAdaptedComment> comments,
+                             @JsonProperty("assignments") List<JsonAdaptedAssignment> assignments) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -52,6 +54,12 @@ class JsonAdaptedPerson {
         this.attendance = attendance;
         if (tags != null) {
             this.tags.addAll(tags);
+        }
+        if (comments != null) {
+            this.comments.addAll(comments);
+        }
+        if (assignments != null) {
+            this.assignments.addAll(assignments);
         }
     }
 

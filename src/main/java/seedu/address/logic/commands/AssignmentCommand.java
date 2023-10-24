@@ -24,9 +24,8 @@ public class AssignmentCommand extends Command {
     public static final String MESSAGE_FAIL = "Assignment not created.";
     public static final String MESSAGE_USAGE = COMMAND_WORD
         + ": Creates an assignment for all students.\n"
-        + "Parameters: "
-        + "[" + PREFIX_NAME + "ASSIGNMENT_NAME] "
-        + "[" + PREFIX_MAX_SCORE + "MAX_SCORE] "
+        + "Compulsory Parameters: "
+        + PREFIX_NAME + "ASSIGNMENT_NAME " + PREFIX_MAX_SCORE + "MAX_SCORE "
         + "\nExample: " + COMMAND_WORD + " "
         + PREFIX_NAME + "Tutorial1 " + PREFIX_MAX_SCORE + "100";
     private final Name name;

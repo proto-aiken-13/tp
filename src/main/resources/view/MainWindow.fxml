@@ -15,6 +15,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
 <fx:root type="javafx.stage.Stage" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
          title="npc_track" minWidth="450" minHeight="600" onCloseRequest="#handleExit">
   <icons>
@@ -27,8 +28,10 @@
         <URL value="@Extensions.css" />
       </stylesheets>
       <VBox>
-        <HBox VBox.vgrow="ALWAYS" style="-fx-background-color: #1194f0;">
-          <Label text="npc_track" styleClass="title-header" HBox.hgrow="ALWAYS"/>
+        <HBox style="-fx-background-color: #1194f0;">
+          <ImageView fitHeight="150" preserveRatio="true">
+            <Image url="@/images/npctrack.png" />
+          </ImageView>
         </HBox>
         <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
           <Menu mnemonicParsing="false" text="File">
