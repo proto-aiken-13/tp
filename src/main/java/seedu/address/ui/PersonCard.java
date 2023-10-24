@@ -1,9 +1,5 @@
 package seedu.address.ui;
 
-import java.awt.Desktop;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.Comparator;
 
 import javafx.event.ActionEvent;
@@ -88,35 +84,15 @@ public class PersonCard extends UiPart<Region> {
     /**
      * Opens a link to the telegram handle of {@code Person}.
      */
+    @FXML
     public void openLink(ActionEvent event) {
         String telegramHandle = person.getTelegramHandle().value;
-
         if (telegramHandle != null && !telegramHandle.isEmpty()) {
-            open("https://t.me/" + telegramHandle);
+            UiUtil.open("https://t.me/" + telegramHandle);
         } else {
             // Handle the case where there is no telegram handle
             // You can show an error message or take any other action as needed
             System.out.println("No Telegram handle available.");
-        }
-    }
-
-    /**
-     * Opens a link using the default web browser on the user's system.
-     *
-     * @param url The URL to be opened in the web browser.
-     */
-    private void open(String url) {
-        String os = System.getProperty("os.name").toLowerCase();
-        try {
-            if (os.contains("win") || os.contains("mac")) {
-                Desktop.getDesktop().browse(new URI(url));
-            } else if (os.contains("nix") || os.contains("nux") || os.contains("linux")) {
-                Runtime.getRuntime().exec("xdg-open " + url);
-            } else {
-                // We do not support other operating systems.
-            }
-        } catch (IOException | URISyntaxException e) {
-            e.printStackTrace();
         }
     }
 }
