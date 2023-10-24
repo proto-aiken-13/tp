@@ -24,11 +24,10 @@ public class GradeCommand extends Command {
     public static final String COMMAND_WORD = "grade";
     public static final String ASSIGNMENT_GRADE_SUCCESS = "Assignment graded successfully!";
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Marks the specific assignment of the student identified\n"
+            + ": Marks the specific assignment of the student identified "
             + "by the index number used in the displayed student list.\n"
-            + "Parameters: INDEX (must be a positive integer), "
-            + "[" + PREFIX_NAME + "ASSIGNMENT_NAME] "
-            + "[" + PREFIX_GRADE + "SCORE]\n"
+            + "Compulsory Parameters: INDEX (must be a positive integer) "
+            + PREFIX_NAME + "ASSIGNMENT_NAME " + PREFIX_GRADE + "SCORE\n "
             + "Example: " + COMMAND_WORD + " 1 n/Tutorial1 g/96 ";
     private final Index index;
     private final Name name;

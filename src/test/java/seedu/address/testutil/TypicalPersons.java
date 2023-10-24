@@ -42,22 +42,27 @@ public class TypicalPersons {
             .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0").build();;
     public static final Person DANIEL = new PersonBuilder().withName("Daniel Meier").withPhone("87652533")
             .withEmail("cornelia@example.com").withTelegram("danielTelegram")
-            .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0").withTags("friends").build();
+            .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0")
+            .withTags("friends").build();
     public static final Person ELLE = new PersonBuilder().withName("Elle Meyer").withPhone("9482224")
             .withEmail("werner@example.com").withTelegram("micheganTelegram")
-            .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0").build();
+            .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0")
+            .build();
     public static final Person FIONA = new PersonBuilder().withName("Fiona Kunz").withPhone("9482427")
             .withEmail("lydia@example.com").withTelegram("littletokyo")
-            .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0").build();
+            .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0")
+            .build();
     public static final Person GEORGE = new PersonBuilder().withName("George Best").withPhone("9482442")
-            .withEmail("anna@example.com").withTelegram("4thstreet").withAttendance("0,0,0,0,0,0,0,0,0,0,0,0").build();
+            .withEmail("anna@example.com").withTelegram("4thstreet").withAttendance("0,0,0,0,0,0,0,0,0,0,0,0")
+            .build();
 
     // Manually added
     public static final Person HOON = new PersonBuilder().withName("Hoon Meier").withPhone("8482424")
             .withEmail("stefan@example.com").withTelegram("littleindia").withAttendance("0,0,0,0,0,0,0,0,0,0,0,0")
             .build();
     public static final Person IDA = new PersonBuilder().withName("Ida Mueller").withPhone("8482131")
-            .withEmail("hans@example.com").withTelegram("chicagoave").withAttendance("0,0,0,0,0,0,0,0,0,0,0,0").build();
+            .withEmail("hans@example.com").withTelegram("chicagoave").withAttendance("0,0,0,0,0,0,0,0,0,0,0,0")
+            .build();
 
     // Manually added - Person's details found in {@code CommandTestUtil}
     public static final Person AMY = new PersonBuilder().withName(VALID_NAME_AMY).withPhone(VALID_PHONE_AMY)

@@ -23,7 +23,7 @@ public class UnmarkAttendanceCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Unmark the attendance of the student identified\n"
             + "by the index number used in the displayed student list.\n"
-            + "Parameters: INDEX (must be a positive integer), "
+            + "Parameters: INDEX (must be a positive integer) "
             + "[" + PREFIX_TUTORIAL + "TutorialToUnmark] \n"
             + "Example: " + COMMAND_WORD + " 1 t/1 ";
     private final Index index;
