@@ -17,15 +17,15 @@ Given below are my contributions to the project.
 
 ### Enhancements Implemented
 
-- Changed the address fields to now support telegram instead. 
-- Changed the UI such that TAs can link to their 
+- Changed the address fields to now support telegram instead.
+- Changed the UI such that TAs can link to their
   students' telegram directly
 - Changed the corresponding test cases after changing from address to telegram
 - Added the `grade` command and all the other test cases
 
 ### Contributions to the User Guide (UG)
 
-- Updated the necessary parts from `address` to `telegram` 
+- Updated the necessary parts from `address` to `telegram`
 - Changed the UG to remove all linkage from AB3
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams

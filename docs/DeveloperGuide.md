@@ -326,7 +326,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 2a. User does not provide the correct index / assignment name / score.
 
     * 2a1. `npc_track` displays an error message and prompts the user to provide missing details.
-  
+
 * 2b. User provides a score that is outside the valid boundary.
     * 2b1. `npc_track` displays an error message and prompts the user to provide the correct score.
 * 2c. User provides an assignment that has not been created.
