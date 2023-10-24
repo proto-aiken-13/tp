@@ -172,4 +172,20 @@ public class LogicManagerTest {
         expectedModel.addPerson(expectedPerson);
         assertCommandFailure(addCommand, CommandException.class, expectedMessage, expectedModel);
     }
+
+    @Test
+    public void getAddressBookTest() {
+        assertEquals(model.getAddressBook(), logic.getAddressBook());
+    }
+
+    @Test
+    public void getGUISettingTest() {
+        assertEquals(model.getGuiSettings(), logic.getGuiSettings());
+    }
+
+    @Test
+    public void setGUISettingTest() {
+        logic.setGuiSettings(model.getGuiSettings());
+        assertEquals(model.getGuiSettings(), logic.getGuiSettings());
+    }
 }
