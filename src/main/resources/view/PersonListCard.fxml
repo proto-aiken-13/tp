@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.layout.TilePane?>
 <HBox id="cardPane" fx:id="cardPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
   <GridPane HBox.hgrow="ALWAYS">
     <columnConstraints>
@@ -32,19 +33,19 @@
       <FlowPane fx:id="tags" />
       <FlowPane fx:id="assignments" />
       <FlowPane fx:id="comments" />
-      <HBox spacing="5" alignment="CENTER_LEFT">
-        <Label fx:id="phone" styleClass="cell_small_label" text="\$phone" />
-        <Region HBox.hgrow="ALWAYS" />
-        <Label fx:id="telegramHandle" styleClass="cell_small_label" text="\$telegramHandle" />
-        <Region HBox.hgrow="ALWAYS" />
-        <Label fx:id="email" styleClass="cell_small_label" text="\$email" />
-        <Region HBox.hgrow="ALWAYS" />
-        <Label fx:id="attendance" styleClass="cell_small_label" text="\$attendance" />
-        <Region HBox.hgrow="ALWAYS" />
+      <FlowPane  alignment="BOTTOM_LEFT" hgap="10" vgap="10">
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="phone" styleClass="cell_small_label" text="\$phone" prefWidth="150" />
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="telegramHandle" styleClass="cell_small_label" text="\$telegramHandle" prefWidth="250"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="email" styleClass="cell_small_label" text="\$email" prefWidth="250" />
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="attendance" styleClass="cell_small_label" text="\$attendance" prefWidth="250"/>
+        <Region HBox.hgrow="ALWAYS"/>
         <Hyperlink fx:id="telegramLink" text="Contact" styleClass="cell_small_label" onAction="#openLink"
-                   userData="\$telegramLink" />
-        <Region HBox.hgrow="ALWAYS" />
-      </HBox>
+                   userData="\$telegramLink" prefWidth="150" />
+      </FlowPane>
     </VBox>
   </GridPane>
 </HBox>
