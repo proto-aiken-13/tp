@@ -22,6 +22,7 @@ public class Messages {
                 "Multiple values specified for the following single-valued field(s): ";
     public static final String MESSAGE_DUPLICATE_MARKINGS = "This week's attendance has already been marked!";
     public static final String MESSAGE_DUPLICATE_UNMARK = "This week's attendance has already been unmarked!";
+    public static final String INVALID_GROUP = "Group does not exist!";
 
 
     /**

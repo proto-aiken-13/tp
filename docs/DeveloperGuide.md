@@ -9,7 +9,7 @@ title: Developer Guide
 
 ## **Acknowledgements**
 
-* {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+* [AddressBook Level-3](https://se-education.org/addressbook-level3/)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -155,6 +155,47 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 ## **Implementation**
 
 This section describes some noteworthy details on how certain features are implemented.
+
+### Assignment Distribution Feature
+
+#### Implementation
+An instance of an `Assignment` is handled by `Assignment.java`. It holds a `name`, `score` and `maxScore`.
+
+Each `Person` will contain `assignments` in the form of a `Set<Assignment>`. We can modify the `Person`'s `Assignment`s by using the following implemented operations by `Assignment`.
+
+* `Assignment#setScore()` - sets the `score` of the assignment, which should be less than `maxScore`.
+* `Assignment#setMaxScore()` - sets the `maxScore` of the assignment, which should be more than `0`.
+
+We can give an `Assignment` to everybody in the address book, through the `AssignmentCommand`.
+The `AssignmentCommand` looks through all the `Person`s, and attempts to add the `Assignment` to each `Person`.
+
+#### Design considerations:
+
+**Aspect: Who to give assignment to by default**
+
+* **Alternative 1 (current choice):** Give it to everybody in the address book.
+  * Pros: Easy to implement.
+  * Cons: If a new person is added, they will not have an assignment.
+
+* **Alternative 2:** Give it to one person, specified by an index.
+  itself.
+  * Pros: More control and more tailorable to each person.
+  * Cons: Troublesome and infeasible at worst for a large address book.
+
+**Aspect: What grade to store in the assignment**
+
+* **Alternative 1 (current choice):** A score, out of a maximum score.
+  * Pros: Easy to implement and universally understood.
+  * Cons: Grades, or work without scores are unsupported.
+
+* **Alternative 2:** A complete or incomplete basis.
+  * Pros: Easy to implement.
+  * Cons: Inflexible, and may not apply to assignments which require scores.
+
+* **Alternative 3:** A grade to represent the performance.
+  * Pros: Easy to implement.
+  * Cons: Not universally understood, certain letters may mean different things to people.
+  For example, S in Japan could be amazing, but not as ideal in Singapore.
 
 ### \[Proposed\] Undo/redo feature
 
@@ -404,6 +445,16 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 2a1. AddressBook displays a message indicating that the address book is empty.
 
       Use case ends.
+
+**Use case: Change the current groupings**
+
+**MSS**
+
+1. User requests to change the current groupings.
+2. User provides the new groupings.
+3. AddressBook changes the current groupings.
+
+    Use case ends.
 
 ### Non-Functional Requirements
 

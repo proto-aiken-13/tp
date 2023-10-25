@@ -13,7 +13,7 @@ contact management tasks done faster than traditional GUI apps.
 Given below are my contributions to the project:
 
 ### Code contribution
-- [Link to my contribution on tp dashboard](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=lsyurea&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code&since=2023-09-22)
+- [Link to my contribution to tp dashboard](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=lsyurea&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code&since=2023-09-22)
 
 ### Enhancements Implemented
 - Updated test coverage of all the classes, including attendance taking, add command, delete command, edit command,
@@ -21,24 +21,36 @@ find command, list command, mark command such that it goes to 78%.
 - Making the commands optional, so that the user can choose
         to use the commands or not.
 - Group students by classes.
+- Add a new group attribute that allows the user to add group and edit group 
+students are in.
 - Make commands optional.
-- Modify help command to show the relevant link.
+- Modify help command to show the link to the User Guide.
 
 ### Contributions to the User Guide (UG)
 
-- to be added
+- Added Group Command to User Guide
+- Redefined Edit Command in User Guide to include group command
+- Redefined Add Command in User Guide to include group command
+- Redefined Add Command to show that all other fields that are not names
+- Added markGroupAtd Command to allow marking of attendance in groups
+are optional by giving the relevant examples
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 
-- to be added
+- Added Use Case to change grouping of students
+- Modified the Use Case for add such that it only shows error if name is not provided.
+- Helped generate Non-Functional Requirements
 
 ### Contributions to Team-Based Tasks
 
-- to be added
+- Helped to merge PRs.
+- Helped to enable assertions in gradle file to allow for defensive programming.
+- Helped to increase test coverage of pre-existing commands.
+- Helped to write the postmortem.
 
 ### Review and Mentoring Contributions
 
-- to be added
+- Reviewed and gave comments to peers' pull requests.
 
 ### Contributions Beyond the Project Team
 

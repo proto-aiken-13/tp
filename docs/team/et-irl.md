@@ -20,6 +20,7 @@ Given below are my contributions to the project.
 - Added a Comment Field associated with every person.
 - Renamed the package associated with tags and comments to `fields`, for better code readability and maintainability.
 - Colour-coded and differentiated tags, comments and assignments in the UI.
+- Made the font-size, colours and design of the UI more harmonious.
 
 ### Contributions to the User Guide (UG)
 
@@ -31,6 +32,7 @@ Given below are my contributions to the project.
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 
 - Highlighted the MSS and use cases of command commands such as `add` and `list`.
+- Wrote about the implementation of `Assignment`s, and alternatives considered when assigning `Assignment`s to people.
 
 ### Contributions to Team-Based Tasks
 
