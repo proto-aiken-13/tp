@@ -333,6 +333,7 @@ Action | Format, Examples
 **Unmark Attendance** | `unmarkAtd INDEX t/TUTORIAL`
 **group** | `group PREV_GROUP UPDATED_GROUP`
 
+
 --------------------------------------------------------------------------------------------------------------------
 <a name="glossary"></a>
 ## Glossary
