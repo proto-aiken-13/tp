@@ -9,6 +9,7 @@ import seedu.address.model.fields.Tag;
 import seedu.address.model.person.Assignment;
 import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.Group;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
@@ -25,6 +26,8 @@ public class PersonBuilder {
     public static final String DEFAULT_EMAIL = "amy@gmail.com";
     public static final String DEFAULT_TELEGRAM = "amyTelegram";
     public static final String DEFAULT_ATTENDANCE = "0,0,0,0,0,0,0,0,0,0,0,0";
+    public static final String DEFAULT_PARTICIPATION = "0,0,0,0,0,0,0,0,0,0,0,0";
+    public static final String DEFAULT_GROUP = "tut33";
 
     private Name name;
     private Phone phone;
@@ -34,6 +37,7 @@ public class PersonBuilder {
     private Set<Tag> tags;
     private Set<Comment> comments;
     private Set<Assignment> assignments;
+    private Group group;
 
     /**
      * Creates a {@code PersonBuilder} with the default details.
@@ -43,10 +47,11 @@ public class PersonBuilder {
         phone = new Phone(DEFAULT_PHONE);
         email = new Email(DEFAULT_EMAIL);
         telegramHandle = new TelegramHandle(DEFAULT_TELEGRAM);
-        attendance = new Attendance(DEFAULT_ATTENDANCE);
+        attendance = new Attendance(DEFAULT_ATTENDANCE, DEFAULT_PARTICIPATION);
         tags = new HashSet<>();
         comments = new HashSet<>();
         assignments = new HashSet<>();
+        group = new Group(DEFAULT_GROUP);
     }
 
     /**
@@ -61,6 +66,7 @@ public class PersonBuilder {
         tags = new HashSet<>(personToCopy.getTags());
         comments = new HashSet<>(personToCopy.getComments());
         assignments = new HashSet<>(personToCopy.getAssignments());
+        group = personToCopy.getGroup();
     }
 
     /**
@@ -98,8 +104,8 @@ public class PersonBuilder {
     /**
      * Sets the {@code Attendance} of the {@code Person} that we are building.
      */
-    public PersonBuilder withAttendance(String attendance) {
-        this.attendance = new Attendance(attendance);
+    public PersonBuilder withAttendance(String attendance, String pp) {
+        this.attendance = new Attendance(attendance, pp);
         return this;
     }
 
@@ -128,11 +134,19 @@ public class PersonBuilder {
     }
 
     /**
+     * Sets the {@code Group} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withGroup(String group) {
+        this.group = new Group(group);
+        return this;
+    }
+
+    /**
      * Builds a person with the given parameters.
      */
     public Person build() {
         return new Person(name, Optional.of(phone), Optional.of(email), Optional.of(telegramHandle),
-                Optional.of(attendance), tags, comments, assignments);
+                Optional.of(attendance), tags, comments, assignments, Optional.of(group));
     }
 
 }

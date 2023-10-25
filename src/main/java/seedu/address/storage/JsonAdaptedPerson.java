@@ -16,11 +16,11 @@ import seedu.address.model.fields.Tag;
 import seedu.address.model.person.Assignment;
 import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.Group;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.person.TelegramHandle;
-
 
 /**
  * Jackson-friendly version of {@link Person}.
@@ -34,9 +34,11 @@ class JsonAdaptedPerson {
     private final String email;
     private final String telegram;
     private final String attendance;
+    private final String participation;
     private final List<JsonAdaptedTag> tags = new ArrayList<>();
     private final List<JsonAdaptedComment> comments = new ArrayList<>();
     private final List<JsonAdaptedAssignment> assignments = new ArrayList<>();
+    private final String group;
 
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
@@ -44,14 +46,18 @@ class JsonAdaptedPerson {
     @JsonCreator
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
             @JsonProperty("email") String email, @JsonProperty("telegram") String telegram,
-            @JsonProperty("attendance") String attendance, @JsonProperty("tags") List<JsonAdaptedTag> tags,
+            @JsonProperty("attendance") String attendance,
+                             @JsonProperty("participation") String participation,
+                             @JsonProperty("tags") List<JsonAdaptedTag> tags,
                              @JsonProperty("comments") List<JsonAdaptedComment> comments,
-                             @JsonProperty("assignments") List<JsonAdaptedAssignment> assignments) {
+                             @JsonProperty("assignments") List<JsonAdaptedAssignment> assignments,
+                             @JsonProperty("group") String group) {
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.telegram = telegram;
         this.attendance = attendance;
+        this.participation = participation;
         if (tags != null) {
             this.tags.addAll(tags);
         }
@@ -61,6 +67,7 @@ class JsonAdaptedPerson {
         if (assignments != null) {
             this.assignments.addAll(assignments);
         }
+        this.group = group;
     }
 
     /**
@@ -71,7 +78,8 @@ class JsonAdaptedPerson {
         phone = source.getPhone().value;
         email = source.getEmail().value;
         telegram = source.getTelegramHandle().value;
-        attendance = source.getAttendance().toString();
+        attendance = source.getAttendance().atdToString();
+        participation = source.getAttendance().ppToString();
         tags.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
@@ -81,6 +89,7 @@ class JsonAdaptedPerson {
         assignments.addAll(source.getAssignments().stream()
                 .map(JsonAdaptedAssignment::new)
                 .collect(Collectors.toList()));
+        group = source.getGroup().value;
     }
 
     /**
@@ -141,14 +150,28 @@ class JsonAdaptedPerson {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
                     Attendance.class.getSimpleName()));
         }
-        final Attendance modelAttendance = new Attendance(attendance);
 
+        if (participation == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    Attendance.class.getSimpleName()));
+        }
+
+        if (group == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    Group.class.getSimpleName()));
+        }
+        if (!Group.isValidGroup(group)) {
+            throw new IllegalValueException(Group.MESSAGE_CONSTRAINTS);
+        }
+
+        final Attendance modelAttendance = new Attendance(attendance, participation);
         final Set<Tag> modelTags = new HashSet<>(personTags);
         final Set<Comment> modelComments = new HashSet<>(personComments);
         final Set<Assignment> modelAssignments = new HashSet<>(personAssignments);
+        final Group modelGroup = new Group(group);
         return new Person(modelName, Optional.of(modelPhone), Optional.of(modelEmail),
                 Optional.of(modelTelegramHandle), Optional.of(modelAttendance),
-                modelTags, modelComments, modelAssignments);
+                modelTags, modelComments, modelAssignments, Optional.of(modelGroup));
 
     }
 

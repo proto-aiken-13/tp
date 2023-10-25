@@ -50,6 +50,8 @@ public class PersonCard extends UiPart<Region> {
     private FlowPane comments;
     @FXML
     private FlowPane assignments;
+    @FXML
+    private Label group;
 
     /**
      * Creates a {@code PersonCode} with the given {@code Person} and index to display.
@@ -65,11 +67,12 @@ public class PersonCard extends UiPart<Region> {
             telegramLink.setVisible(false);
         }
         name.setText(person.getName().fullName);
-        attendance.setText(String.format("Attendance: %d/%d",
-                this.person.getWeeksPresent(), this.person.getTotalWeeks()));
+        attendance.setText(String.format("Attendance: %d/%d, Participation Points: %d",
+                this.person.getWeeksPresent(), this.person.getTotalWeeks(), this.person.getTotalPart()));
         phone.setText("Phone: " + person.getPhone().value);
         telegramHandle.setText("Telegram Handle: " + person.getTelegramHandle().value);
         email.setText("Email: " + person.getEmail().value);
+        group.setText("Tutorial Group: " + person.getGroup().value);
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
