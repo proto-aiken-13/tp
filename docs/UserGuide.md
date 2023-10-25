@@ -326,6 +326,16 @@ Format: `assign n/ASSIGNMENT_NAME m/MAX_SCORE`
 Examples:
 - `assign n/Tutorial1 m/100`
 
+### Distribute assignments to a group of students: `assignGroup`
+<a name="assignGroup"></a>
+
+Create an assignment and assign it to a group of students.
+
+Format: `assignGroup GROUP n/ASSIGNMENT_NAME m/MAX_SCORE`
+
+Examples:
+- `assignGroup 1 n/Tutorial1 m/100`
+
 ### Grade assignments: `grade`
 <a name="grade"></a>
 
