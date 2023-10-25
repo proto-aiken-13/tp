@@ -1,47 +1,48 @@
 ---
 layout: page
-title: User Guide
+toc: true
+title: npc_track User Guide
 ---
 
-# Welcome to `Npc_track`
+![Ui](images/ug-image.png)
 
-## Tracking the details of your students is on the cusp of your fingertips!
+### Tracking the details of your students is on the cusp of your fingertips!
 
 `npc_track` is a desktop application curtailed for the humble teaching assistants of SoC via a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, `npc_track` can get your contact management tasks done faster than traditional GUI apps.
 
 Here’s an overview of how `npc_track` can help you streamline your student management process:
 - Store, delete and edit information about your students!
-- Track the progress of your students
-- ...
+- Track the attendance of your students
+- Streamline the grading process of your students
+- Manage student groupings in an organized way
 
 On top of these functionalities, we believe that student management should be extremely efficient. `npc_track` is optimized for use via the familiar command line interface (CLI) for linux / fans of terminal applications as well as the benefits of an appealing user interface for TA’s more inclined to them!
 
-`npc_track` is for all TA’s, and is adaptable for their management and organisational styles!
+### How can `npc_track` help you in your teaching journey?
 
----
+***`npc_track` is for all TA’s, and is adaptable for their management and organisational styles!***
 
-## Table of Contents
-{:toc}
-- [Features](#features)
-    - [Viewing Help](#help) `help`
-    - [Adding a Student](#add) `add`
-    - [Editing a Student](#edit) `edit`
-    - [Deleting a Student](#delete) `delete`
-    - [Listing All Students](#list) `list`
-    - [Finding a Student](#find) `find`
-    - [Distributing Assignments](#assign) `assign`
-    - [Grading a Student](#grade) `grade`
-    - [Marking Attendance](#markAtd) `markAtd`
-    - [Unmarking Attendance](#unmarkAtd) `unmarkAtd`
-    - [Exiting the Program](#exit)
+From a survey that we did on teaching assistants, we found that a majority of them found it difficult and tedious to 
+find and organise their student's information. Hence, `npc_track` is specially developed to help these fast typists 
+students to be able to streamline the process using ***simple commands*** to do different tasks.
 
-- [FAQ](#FAQ)
-- [Known Issues](#issues)
-- [Command Summary](#summary)
+We help teaching assistants to be able to bring together their teaching needs in a hassle-free manner. For instance, 
+adding extra information for a student named Ted can easily be done using the various keyword features as listed in 
+our [Features Section](#features)
 
----
+`npc_track` saves teaching assistant from having to spend so much precious time by reducing the complexity and the 
+need to 
+navigate different platforms just to search their students. Now, it can be done in a one-stop manner using `npc_track`
 
-## How can this guide help me?
+Not ready to use `npc_track`? Fret Not, you can jump to the [Quick Start](#quick-start) section to begin your 
+`npc-track` 
+journey
+
+If you have used `npc_track` before, you can proceed to the relevant sections via our [Table of Contents](#toc) on 
+the sidebar
+
+
+### How can this guide help me?
 
 **First time user?** Welcome and thank you for using our app! Check out the installation guide here!
 
@@ -53,15 +54,66 @@ Encountered some bugs or unexpected events when using the app? Maybe [Known Issu
 
 A seasoned user (but you still need help on memorizing commands)? Drop by in [Command summary](#summary)!
 
+
 ---
 
+[//]: # (<a name="toc"></a>)
+
+[//]: # (## Table of Contents)
+
+[//]: # ({:toc})
+
+[//]: # (- [Features]&#40;#features&#41;)
+
+[//]: # (    - [Viewing Help]&#40;#help&#41; `help`)
+
+[//]: # (    - [Adding a Student]&#40;#add&#41; `add`)
+
+[//]: # (    - [Editing a Student]&#40;#edit&#41; `edit`)
+
+[//]: # (    - [Deleting a Student]&#40;#delete&#41; `delete`)
+
+[//]: # (    - [Listing All Students]&#40;#list&#41; `list`)
+
+[//]: # (    - [Finding a Student]&#40;#find&#41; `find`)
+
+[//]: # (    - [Distributing Assignments]&#40;#assign&#41; `assign`)
+
+[//]: # (    - [Grading a Student]&#40;#grade&#41; `grade`)
+
+[//]: # (    - [Marking Attendance]&#40;#markAtd&#41; `markAtd`)
+
+[//]: # (    - [Unmarking Attendance]&#40;#unmarkAtd&#41; `unmarkAtd`)
+
+[//]: # (    - [Exiting the Program]&#40;#exit&#41;)
+
+[//]: # ()
+[//]: # (- [FAQ]&#40;#FAQ&#41;)
+
+[//]: # (- [Known Issues]&#40;#issues&#41;)
+
+[//]: # (- [Command Summary]&#40;#summary&#41;)
+
+<a name="quick-start"></a>
 ## Quick start
 
+Step 1 : Ensure you have have downloaded Java version 11 or above in your computer. Steps on how to download [Java](https://www.oracle.com/java/technologies/downloads/#java11)
+
+Step 2 : Navigate to our ... and download the latest JAR file
+
+Step 3 : Save the JAR file to a folder where you want to locate the file
+- For Windows Users
+- For Mac Users
+- For Linux Users
+
+Step 4 : Run the `npc_track`
+
+Step 5 : Start using the app
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Features
 <a name="features"></a>
+## Features
 <div markdown="block" class="alert alert-info">
 
 **:information_source: Notes about the command format:**<br>
@@ -222,22 +274,35 @@ _Details coming soon ..._
 
 --------------------------------------------------------------------------------------------------------------------
 
-## FAQ
-<a name="FAQ"></a>
-**Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous StudentBook home folder.
-
---------------------------------------------------------------------------------------------------------------------
-
 ## Known issues
 <a name="issues"></a>
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
 --------------------------------------------------------------------------------------------------------------------
+<a name="gui"></a>
+## Navigating `npc_track`
 
-## Command summary
+### GUI Interface
+Our user-friendly interface allows quick navigation for teaching assistants. Below is an overview of the interface 
+followed by a quick summary guide of the Graphical User Interface (GUI)
+
+![Ui](images/npctrack-guide.png)
+
+Component | Function
+--------|------------------
+**Menu** | Contains a dropdown section to exit `npc_track`
+**Help** | A link that leads to the user guide
+**Command Result** | The result of the commands that user types in the command box
+**Command Box** | A placeholder for users to type the various command as listed in the [Features](#features) section
+**Student Information** | A display of the different information regarding the student
+**Student Index** | The `INDEX` of the student that users want to change / view
+
+
+
+--------------------------
 <a name="summary"></a>
+## Command summary
 
 Action | Format, Examples
 --------|------------------
@@ -253,3 +318,20 @@ Action | Format, Examples
 **List** | `list​`
 **Mark Attendance** | `markAtd INDEX t/TUTORIAL`
 **Unmark Attendance** | `unmarkAtd INDEX t/TUTORIAL`
+
+--------------------------------------------------------------------------------------------------------------------
+<a name="glossary"></a>
+## Glossary
+
+Keyword | Definition
+--------|------------------
+**Parameter** | Details about the student that will be included in the command
+**Command** | Instructions that `npc_track` will execute
+**Command** | Instructions that `npc_track` will execute
+
+--------------------------------------------------------------------------------------------------------------------
+
+## FAQ
+<a name="FAQ"></a>
+**Q**: How do I transfer my data to another Computer?<br>
+**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous StudentBook home folder.
