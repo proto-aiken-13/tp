@@ -40,9 +40,9 @@ public class ParserUtil {
 
     /**
      * Parses a {@code tutorial} into an {@code int} and returns it. Leading and trailing whitespaces will be trimmed.
-     * @param tutorial String value of week
-     * @return int value of week if valid
-     * @throws ParseException if the given {@code week} is invalid
+     * @param tutorial String value of tut
+     * @return int value of tut if valid
+     * @throws ParseException if the given {@code tutorial} is invalid
      */
     public static int parseTutorial(String tutorial) throws ParseException {
         requireNonNull(tutorial);
@@ -51,6 +51,21 @@ public class ParserUtil {
             throw new ParseException(Attendance.TUTORIAL_ERROR_MSG);
         }
         return Attendance.convertToIntegerWeek(trimmedTutorial);
+    }
+
+    /**
+     * Parses a {@code pp} into an {@code int} and returns it. Leading and trailing whitespaces will be trimmed.
+     * @param pp String value of participation points
+     * @return int value of pp if valid
+     * @throws ParseException if the given {@code pp} is invalid
+     */
+    public static int parseParticipationPoints(String pp) throws ParseException {
+        requireNonNull(pp);
+        String trimmedPP = pp.trim();
+        if (!Attendance.isValidParticipation(trimmedPP)) {
+            throw new ParseException(Attendance.PARTICIPATION_ERROR_MSG);
+        }
+        return Integer.parseInt(trimmedPP);
     }
 
     /**

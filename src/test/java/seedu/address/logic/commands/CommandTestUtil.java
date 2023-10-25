@@ -38,6 +38,8 @@ public class CommandTestUtil {
     public static final String VALID_TELEGRAM_ALICE = "aliceTelegram";
     public static final String VALID_ATTENDANCE_AMY = "0,0,0,0,0,0,0,0,0,0,0,0";
     public static final String VALID_ATTENDANCE_BOB = "0,0,0,0,0,0,0,0,0,0,0,0";
+    public static final String VALID_PART_AMY = "0,0,0,0,0,0,0,0,0,0,0,0";
+    public static final String VALID_PART_BOB = "0,0,0,0,0,0,0,0,0,0,0,0";
     public static final String VALID_GROUP_AMY = "tut33";
     public static final String VALID_GROUP_BOB = "tut33";
 

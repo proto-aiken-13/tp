@@ -5,6 +5,7 @@
     "email": "alice@example.com",
     "telegram": "aliceTelegram",
     "attendance": "0,0,0,0,0,0,0,0,0,0,0,0",
+    "participation" : "0,0,0,0,0,0,0,0,0,0,0,0",
     "tags": [ "friends" ],
     "group": "friends"
   }, {
@@ -13,6 +14,7 @@
     "email": "pauline@example.com",
     "telegram": "aliceTelegram",
     "attendance": "0,0,0,0,0,0,0,0,0,0,0,0",
+    "participation" : "0,0,0,0,0,0,0,0,0,0,0,0",
     "group": "friends"
   } ]
 }
