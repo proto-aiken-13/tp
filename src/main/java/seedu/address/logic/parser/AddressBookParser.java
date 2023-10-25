@@ -25,6 +25,7 @@ import seedu.address.logic.commands.ListParticipationCommand;
 import seedu.address.logic.commands.MarkAttendanceCommand;
 import seedu.address.logic.commands.MarkGroupAttendanceCommand;
 import seedu.address.logic.commands.UnmarkAttendanceCommand;
+import seedu.address.logic.commands.UnmarkGroupAttendanceCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
 /**
@@ -108,6 +109,9 @@ public class AddressBookParser {
 
         case MarkGroupAttendanceCommand.COMMAND_WORD:
             return new MarkGroupAttendanceParser().parse(arguments);
+
+        case UnmarkGroupAttendanceCommand.COMMAND_WORD:
+            return new UnmarkGroupAttendanceParser().parse(arguments);
 
         default:
             logger.finer("This user input caused a ParseException: " + userInput);
