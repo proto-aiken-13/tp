@@ -132,7 +132,7 @@
 
 .cell_big_label {
     -fx-font-family: "Segoe UI Semibold";
-    -fx-font-size: 40px;
+    -fx-font-size: 30px;
     -fx-text-fill: #1194f0;
 }
 
@@ -140,6 +140,18 @@
     -fx-font-family: "Segoe UI";
     -fx-font-size: 16px;
     -fx-text-fill: #1194f0;
+}
+
+.cell_small_label_tags {
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-size: 16px;
+    -fx-text-fill: #1194f0;
+}
+
+.cell_small_label_tags:selected {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 16px;
+    -fx-text-fill: #ffffff;
 }
 
 .cell_small_label:selected {
@@ -420,4 +432,3 @@
     -fx-pref-rows: 10;
     -fx-pref-width: 100%; /* Set the width for horizontal orientation */
 }
-
