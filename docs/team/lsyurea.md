@@ -27,6 +27,7 @@ navigates to the link.
 - Add Mark attendance for the same group of students at the same time.
 - Add Unmark attendance for the same groups of students at the same time.
 - Add a new command to assign the same group of students.
+- Add a new command to grade the same group of students with the same marks.
 
 ### Contributions to the User Guide (UG)
 
@@ -37,6 +38,7 @@ navigates to the link.
 - Added markGroupAtd Command in User Guide.
 - Added unmarkGroupAtd Command in User Guide.
 - Added assignGroup Command in User Guide.
+- Added gradeGroup Command in User Guide.
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 

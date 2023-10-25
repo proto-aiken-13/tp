@@ -346,6 +346,16 @@ Format: `grade INDEX n/ASSIGNMENT_NAME g/SCORE`
 Examples:
 - `grade 1 n/Tutorial1 g/90`
 
+### Grade assignments for a group of students: `gradeGroup`
+<a name="gradeGroup"></a>
+
+Grade a group of students' assignment.
+
+Format: `gradeGroup GROUP n/ASSIGNMENT_NAME g/SCORE`
+
+Examples:
+- `gradeGroup Class33 n/Tutorial1 g/90`
+
 ### Grouping students: `group`
 <a name="group"></a>
 
@@ -426,6 +436,7 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 | **Exit**                       | `exit​`                                                                                                                                                                                                                  |
 | **Find**                       | `find KEYWORD [MORE_KEYWORDS]​` e.g., `find James Jake`                                                                                                                                                                  |
 | **Grade Assignments**          | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                                  |
+| **Grade Group Assignments**    | `gradeGroup GROUP n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                             |
 | **Help**                       | `help​`                                                                                                                                                                                                                  |
 | **List**                       | `list​`                                                                                                                                                                                                                  |
 | **List Participation Record**  | `listParticipation INDEX`                                                                                                                                                                                                |
