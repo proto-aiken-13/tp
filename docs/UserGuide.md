@@ -210,9 +210,16 @@ Marks the attendance of a student for that tutorial.
 
 Format: `markAtd INDEX t/TUTORIAL`
 
+`INDEX`: A positive integer representing the index of the student as shown in the list.
+
+`TUTORIAL`: An integer between 1 and 12 (inclusive)
+
+Marking the attendance for a week that is already marked will result in the message
+`This week's attendance has already been marked!`
+
 Examples:
-* `markAtd 1 t/1`
-* `markAtd 2 t/12`
+* `markAtd 1 t/1` (marks attendance of student with index 1 for tutorial 1)
+* `markAtd 2 t/12` (marks attendance of student with index 2 for tutorial 12)
 
 ### Unmark Attendance : `unmarkAtd`
 <a name="unmarkAtd"></a>
@@ -221,9 +228,46 @@ Unmark the attendance of a student for that tutorial.
 
 Format: `unmarkAtd INDEX t/TUTORIAL`
 
+`INDEX`: A positive integer representing the index of the student as shown in the list.
+
+`TUTORIAL`: An integer between 1 and 12 (inclusive)
+
+Unmarking the attendance for a week that is already unmarked will result in the message
+`This week's attendance has already been unmarked!`
+
 Examples:
-* `unmarkAtd 1 t/1`
-* `unmarkAtd 2 t/12`
+* `unmarkAtd 1 t/1` (unmark attendance of student with index 1 for tutorial 1)
+* `unmarkAtd 2 t/12` (unmark attendance of student with index 2 for tutorial 12)
+
+### Participation
+
+For participation, you can make the following commands:
+* inputPP
+
+### insert participation points: inputPP
+<a name="inputPP"></a>
+
+input participation points for a student for that tutorial
+
+Format: `inputPP INDEX t/TUTORIAL pp/POINTS`
+
+`INDEX`: A positive integer representing the index of the student as shown in the list.
+
+`TUTORIAL`: An integer between 1 and 12 (inclusive)
+
+`POINTS`: An integer more than or equals to 0
+
+Participation points can only be inputted for a tutorial that is already marked as attended.
+
+Else, it will result in the message `Before inputting participation points, 
+mark the attendance of the student first!`
+
+Examples
+
+* inputPP 1 t/1 pp/350 (For student with index 1, input 350 participation points to tutorial 1)
+* inputPP 2 t/12 pp/500 (For student with index 2, input 500 participation points to tutorial 12)
+
+
 
 ### Distribute assignments: `assign`
 <a name="assign"></a>
@@ -302,47 +346,45 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 
 ![Ui](images/npctrack-guide.png)
 
-Component | Function
---------|------------------
-**Menu** | Contains a dropdown section to exit `npc_track`
-**Help** | A link that leads to the user guide
-**Command Result** | The result of the commands that user types in the command box
-**Command Box** | A placeholder for users to type the various command as listed in the [Features](#features) section
-**Student Information** | A display of the different information regarding the student
-**Student Index** | The `INDEX` of the student that users want to change / view
-
-
+| Component               | Function                                                                                           |
+|-------------------------|----------------------------------------------------------------------------------------------------|
+| **Menu**                | Contains a dropdown section to exit `npc_track`                                                    |
+| **Help**                | A link that leads to the user guide                                                                |
+| **Command Result**      | The result of the commands that user types in the command box                                      |
+| **Command Box**         | A placeholder for users to type the various command as listed in the [Features](#features) section |
+| **Student Information** | A display of the different information regarding the student                                       |
+| **Student Index**       | The `INDEX` of the student that users want to change / view                                        |
 
 --------------------------
 <a name="summary"></a>
 ## Command summary
 
-Action | Format, Examples
---------|------------------
-**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL a/TELEGRAM_HANDLE [t/TAG]… [c/COMMENT]…​` <br> e.g., `add n/James Hop/22224444 e/jamesho@example.com a/jamesTele t/friend t/colleague c/Owes a cookie`
-**Clear** | `clear​`
-**Delete** | `delete INDEX​` <br> e.g., `delete 3`
-**Distribute Assignments** | `assign n/ASSIGNMENT_NAME m/MAX_SCORE`
-**Edit** | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…​` <br> e.g., `n/New Name t/`
-**Exit** | `exit​`
-**Find** | `find KEYWORD [MORE_KEYWORDS]​` e.g., `find James Jake`
-**Grade Assignments** | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`
-**Help** | `help​`
-**List** | `list​`
-**Mark Attendance** | `markAtd INDEX t/TUTORIAL`
-**Unmark Attendance** | `unmarkAtd INDEX t/TUTORIAL`
-**group** | `group PREV_GROUP UPDATED_GROUP`
-
+| Action                         | Format, Examples                                                                                                                                                                          |
+|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add**                        | `add n/NAME p/PHONE_NUMBER e/EMAIL a/TELEGRAM_HANDLE [t/TAG]… [c/COMMENT]…​` <br> e.g., `add n/James Hop/22224444 e/jamesho@example.com a/jamesTele t/friend t/colleague c/Owes a cookie` |
+| **Clear**                      | `clear​`                                                                                                                                                                                  |
+| **Delete**                     | `delete INDEX​` <br> e.g., `delete 3`                                                                                                                                                     |
+| **Distribute Assignments**     | `assign n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                    |
+| **Edit**                       | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…​` <br> e.g., `n/New Name t/`                                                                                               |
+| **Exit**                       | `exit​`                                                                                                                                                                                   |
+| **Find**                       | `find KEYWORD [MORE_KEYWORDS]​` e.g., `find James Jake`                                                                                                                                   |
+| **Grade Assignments**          | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                   |
+| **Help**                       | `help​`                                                                                                                                                                                   |
+| **List**                       | `list​`                                                                                                                                                                                   |
+| **Mark Attendance**            | `markAtd INDEX t/TUTORIAL`                                                                                                                                                                |
+| **Unmark Attendance**          | `unmarkAtd INDEX t/TUTORIAL`                                                                                                                                                              |
+| **Input Participation Points** | `inputPP INDEX t/TUTORIAL p/POINTS`                                                                                                                                                       |
+| **group**                      | `group PREV_GROUP UPDATED_GROUP`                                                                                                                                                          |
 
 --------------------------------------------------------------------------------------------------------------------
 <a name="glossary"></a>
 ## Glossary
 
-Keyword | Definition
---------|------------------
-**Parameter** | Details about the student that will be included in the command
-**Command** | Instructions that `npc_track` will execute
-**Command** | Instructions that `npc_track` will execute
+| Keyword       | Definition                                                     |
+|---------------|----------------------------------------------------------------|
+| **Parameter** | Details about the student that will be included in the command |
+| **Command**   | Instructions that `npc_track` will execute                     |
+| **Command**   | Instructions that `npc_track` will execute                     |
 
 --------------------------------------------------------------------------------------------------------------------
 

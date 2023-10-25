@@ -21,6 +21,12 @@ Given below are my contributions to the project.
     - What it does:
       - Allows TA to mark or unmark a students attendance for a particular tutorial session.
       - This feature helps the TA to manage their students attendance record.
+  - Participation
+    - What it does:
+      - Allows TA to input a students participation points for a particular tutorial session.
+      - This feature addresses the need for a more detailed and granular view of students' participation and
+      engagement in tutorials. It complements the existing attendance management system, 
+      making it a more comprehensive tool for educators and administrators.
 
 ### Enhancements Implemented
 
@@ -32,6 +38,8 @@ Given below are my contributions to the project.
   - Attendance
     - markAtd
     - unmarkAtd
+  - Participation
+    - inputPP
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 
@@ -44,6 +52,7 @@ Given below are my contributions to the project.
 ### Review and Mentoring Contributions
 
 - [Review 1: Comment feature](https://github.com/AY2324S1-CS2103T-T12-1/tp/pull/55)
+- [Review 2: Tutorial Group feature](https://github.com/AY2324S1-CS2103T-T12-1/tp/pull/98)
 
 ### Contributions Beyond the Project Team
 
