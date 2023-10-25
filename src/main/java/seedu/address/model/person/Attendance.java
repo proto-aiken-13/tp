@@ -190,7 +190,7 @@ public class Attendance {
                 s += "0,";
             }
         }
-        return s.substring(0, 22);
+        return s.substring(0, 23);
     }
 
     /**
@@ -199,11 +199,14 @@ public class Attendance {
      * @return string version of participationlist
      */
     public String ppToString() {
-        String s = "";
-        for (int pp : this.participationList) {
-            s += pp + ",";
+        StringBuilder s = new StringBuilder();
+        for (int i = 0; i < this.participationList.length - 1; i++) {
+            s.append(this.participationList[i]).append(",");
         }
-        return s.substring(0, 22);
+        if (this.participationList.length > 0) {
+            s.append(this.participationList[this.participationList.length - 1]);
+        }
+        return s.toString();
     }
 
     /**
