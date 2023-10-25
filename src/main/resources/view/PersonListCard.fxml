@@ -29,9 +29,18 @@
         </Label>
         <Label fx:id="name" text="\$first" styleClass="cell_big_label" />
       </HBox>
-      <FlowPane fx:id="tags" />
-      <FlowPane fx:id="comments" />
-      <FlowPane fx:id="assignments" />
+      <HBox spacing="5" alignment="CENTER_LEFT">
+        <Label text="🏷️ Tags:" />
+        <FlowPane fx:id="tags" />
+      </HBox>
+      <HBox spacing="5" alignment="CENTER_LEFT">
+        <Label text="🗒️ Comments:" />
+        <FlowPane fx:id="comments" />
+      </HBox>
+      <HBox spacing="5" alignment="CENTER_LEFT">
+        <Label text="📝 Assignments:" />
+        <FlowPane fx:id="assignments" />
+      </HBox>
       <HBox spacing="5" alignment="CENTER_LEFT">
         <Label fx:id="group" styleClass="cell_small_label" text="\$group" />
         <Region HBox.hgrow="ALWAYS" />
