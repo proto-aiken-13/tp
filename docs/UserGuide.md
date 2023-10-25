@@ -253,6 +253,26 @@ Format: `markGroupAtd GROUP t/TUTORIAL`
 Marking the attendance for a week that is already marked will result in the message
 `This week's attendance has already been marked!`
 
+Examples:
+* `markGroupAtd 1 t/1` (marks attendance of students in group 1 for tutorial 1)
+
+### Unmark Group Attendance: `unmarkGroupAtd`
+<a name="unmarkGroupAtd"></a>
+
+Unmark the attendance of a group of students for that tutorial.
+
+Format: `unmarkGroupAtd GROUP t/TUTORIAL`
+
+`GROUP`: A string representing the group of students as shown in the list.
+
+`TUTORIAL`: An integer between 1 and 12 (inclusive)
+
+Unmarking the attendance for a week that is already unmarked will result in the message
+`This week's attendance has already been unmarked!`
+
+Examples:
+* `unmarkGroupAtd 1 t/1` (unmark attendance of students in group 1 for tutorial 1)
+
 ### Participation
 
 For participation, you can make the following commands:
@@ -402,6 +422,7 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 | **Mark Attendance**            | `markAtd INDEX t/TUTORIAL`                                                                                                                                                                                               |
 | **Unmark Attendance**          | `unmarkAtd INDEX t/TUTORIAL`                                                                                                                                                                                             |
 | **Mark Group Attendance**      | `markGroupAtd GROUP t/TUTORIAL`                                                                                                                                                                                          |
+| **unmark Group Attendance**    | `unmarkGroupAtd GROUP t/TUTORIAL`                                                                                                                                                                                        |
 | **Input Participation Points** | `inputPP INDEX t/TUTORIAL p/POINTS`                                                                                                                                                                                      |
 | **group**                      | `group PREV_GROUP UPDATED_GROUP`                                                                                                                                                                                         |
 
