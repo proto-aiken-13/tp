@@ -139,7 +139,7 @@ Step 5 : Start using the app
 ### Viewing help : `help`
 <a name="help"></a>
 
-Shows a message explaining how to access the help page.
+Shows a message displaying the link and a button that navigates to the link directly.
 
 Format: `help`
 
@@ -149,7 +149,7 @@ Format: `help`
 
 Adds a student to the student book.
 
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/TELEGRAM_HANDLE [t/TAG]… [c/COMMENT]… [group/GROUP]`
+Format: `add n/NAME [p/PHONE_NUMBER] [e/EMAIL] [a/TELEGRAM_HANDLE] [t/TAG]… [c/COMMENT]… [group/GROUP]`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 A student can have any number of tags (including 0)
@@ -359,22 +359,22 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 <a name="summary"></a>
 ## Command summary
 
-| Action                         | Format, Examples                                                                                                                                                                          |
-|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**                        | `add n/NAME p/PHONE_NUMBER e/EMAIL a/TELEGRAM_HANDLE [t/TAG]… [c/COMMENT]…​` <br> e.g., `add n/James Hop/22224444 e/jamesho@example.com a/jamesTele t/friend t/colleague c/Owes a cookie` |
-| **Clear**                      | `clear​`                                                                                                                                                                                  |
-| **Delete**                     | `delete INDEX​` <br> e.g., `delete 3`                                                                                                                                                     |
-| **Distribute Assignments**     | `assign n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                    |
-| **Edit**                       | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…​` <br> e.g., `n/New Name t/`                                                                                               |
-| **Exit**                       | `exit​`                                                                                                                                                                                   |
-| **Find**                       | `find KEYWORD [MORE_KEYWORDS]​` e.g., `find James Jake`                                                                                                                                   |
-| **Grade Assignments**          | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                   |
-| **Help**                       | `help​`                                                                                                                                                                                   |
-| **List**                       | `list​`                                                                                                                                                                                   |
-| **Mark Attendance**            | `markAtd INDEX t/TUTORIAL`                                                                                                                                                                |
-| **Unmark Attendance**          | `unmarkAtd INDEX t/TUTORIAL`                                                                                                                                                              |
-| **Input Participation Points** | `inputPP INDEX t/TUTORIAL p/POINTS`                                                                                                                                                       |
-| **group**                      | `group PREV_GROUP UPDATED_GROUP`                                                                                                                                                          |
+| Action                         | Format, Examples                                                                                                                                                                                                         |
+|--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add**                        | `add n/NAME p/[PHONE_NUMBER] e/[EMAIL] a/[TELEGRAM_HANDLE] [t/TAG]… [c/COMMENT]… [group/GROUP]` <br> e.g., `add n/James Hop/22224444 e/jamesho@example.com a/jamesTele t/friend t/colleague c/Owes a cookie group/tut33` |
+| **Clear**                      | `clear​`                                                                                                                                                                                                                 |
+| **Delete**                     | `delete INDEX​` <br> e.g., `delete 3`                                                                                                                                                                                    |
+| **Distribute Assignments**     | `assign n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                                   |
+| **Edit**                       | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…​` <br> e.g., `n/New Name t/`                                                                                                                              |
+| **Exit**                       | `exit​`                                                                                                                                                                                                                  |
+| **Find**                       | `find KEYWORD [MORE_KEYWORDS]​` e.g., `find James Jake`                                                                                                                                                                  |
+| **Grade Assignments**          | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                                  |
+| **Help**                       | `help​`                                                                                                                                                                                                                  |
+| **List**                       | `list​`                                                                                                                                                                                                                  |
+| **Mark Attendance**            | `markAtd INDEX t/TUTORIAL`                                                                                                                                                                                               |
+| **Unmark Attendance**          | `unmarkAtd INDEX t/TUTORIAL`                                                                                                                                                                                             |
+| **Input Participation Points** | `inputPP INDEX t/TUTORIAL p/POINTS`                                                                                                                                                                                      |
+| **group**                      | `group PREV_GROUP UPDATED_GROUP`                                                                                                                                                                                         |
 
 --------------------------------------------------------------------------------------------------------------------
 <a name="glossary"></a>
