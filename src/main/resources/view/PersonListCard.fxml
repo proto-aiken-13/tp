@@ -29,22 +29,33 @@
         </Label>
         <Label fx:id="name" text="\$first" styleClass="cell_big_label" />
       </HBox>
-      <FlowPane fx:id="tags" />
-      <FlowPane fx:id="comments" />
-      <FlowPane fx:id="assignments" />
+      <HBox spacing="5" alignment="CENTER_LEFT">
+        <Label text="🏷️ Tags:" />
+        <FlowPane fx:id="tags" />
+      </HBox>
+      <HBox spacing="5" alignment="CENTER_LEFT">
+        <Label text="🗒️ Comments:" />
+        <FlowPane fx:id="comments" />
+      </HBox>
+      <HBox spacing="5" alignment="CENTER_LEFT">
+        <Label text="📝 Assignments:" />
+        <FlowPane fx:id="assignments" />
+      </HBox>
       <HBox spacing="5" alignment="CENTER_LEFT">
         <Label fx:id="group" styleClass="cell_small_label" text="\$group" />
-        <Region HBox.hgrow="ALWAYS" />
-        <Label fx:id="phone" styleClass="cell_small_label" text="\$phone" />
-        <Region HBox.hgrow="ALWAYS" />
-        <Label fx:id="telegramHandle" styleClass="cell_small_label" text="\$telegramHandle" />
-        <Region HBox.hgrow="ALWAYS" />
-        <Label fx:id="email" styleClass="cell_small_label" text="\$email" />
         <Region HBox.hgrow="ALWAYS" />
         <Label fx:id="attendance" styleClass="cell_small_label" text="\$attendance" />
         <Region HBox.hgrow="ALWAYS" />
         <Hyperlink fx:id="telegramLink" text="Contact" styleClass="cell_small_label" onAction="#openLink"
                    userData="\$telegramLink" />
+        <Region HBox.hgrow="ALWAYS" />
+      </HBox>
+      <HBox spacing="5" alignment="CENTER_LEFT">
+        <Label fx:id="phone" styleClass="cell_small_label" text="\$phone" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Label fx:id="telegramHandle" styleClass="cell_small_label" text="\$telegramHandle" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Label fx:id="email" styleClass="cell_small_label" text="\$email" />
         <Region HBox.hgrow="ALWAYS" />
       </HBox>
     </VBox>

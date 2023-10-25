@@ -132,7 +132,7 @@
 
 .cell_big_label {
     -fx-font-family: "Segoe UI Semibold";
-    -fx-font-size: 20px;
+    -fx-font-size: 40px;
     -fx-text-fill: #1194f0;
 }
 
@@ -380,7 +380,7 @@
     -fx-padding: 1 3 1 3;
     -fx-border-radius: 2;
     -fx-background-radius: 2;
-    -fx-font-size: 11;
+    -fx-font-size: 20;
 }
 
 #comments .label {
@@ -389,7 +389,7 @@
     -fx-padding: 1 3 1 3;
     -fx-border-radius: 2;
     -fx-background-radius: 2;
-    -fx-font-size: 11;
+    -fx-font-size: 20;
 }
 
 /* Styles for #assignments .label */
@@ -399,7 +399,7 @@
     -fx-padding: 1 3 1 3;
     -fx-border-radius: 2;
     -fx-background-radius: 2;
-    -fx-font-size: 11;
+    -fx-font-size: 20;
 }
 
 @font-face {
