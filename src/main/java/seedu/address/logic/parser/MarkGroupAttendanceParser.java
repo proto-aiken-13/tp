@@ -6,7 +6,6 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
-import seedu.address.logic.commands.MarkAttendanceCommand;
 import seedu.address.logic.commands.MarkGroupAttendanceCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Attendance;
@@ -15,7 +14,7 @@ import seedu.address.model.person.Group;
 /**
  * Parses input arguments and creates a new {@code MarkGroupAttendanceCommand} object
  */
-public class MarkGroupAttendanceParser {
+public class MarkGroupAttendanceParser implements Parser<MarkGroupAttendanceCommand> {
     /**
      * Parses the given {@code String} of arguments in the context of the {@code MarkGroupAttendanceCommand}
      * and returns a {@code MarkGroupAttendanceCommand} object for execution.
@@ -30,7 +29,7 @@ public class MarkGroupAttendanceParser {
             group = ParserUtil.parseGroup(argMultimap.getPreamble());
         } catch (IllegalValueException ive) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
-                    MarkAttendanceCommand.MESSAGE_USAGE), ive);
+                    MarkGroupAttendanceCommand.MESSAGE_USAGE), ive);
         }
         // parse tutorial
         int tutorial = 0;
