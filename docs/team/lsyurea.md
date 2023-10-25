@@ -32,6 +32,7 @@ students are in.
 - Redefined Edit Command in User Guide to include group command
 - Redefined Add Command in User Guide to include group command
 - Redefined Add Command to show that all other fields that are not names
+- Added markGroupAtd Command to allow marking of attendance in groups
 are optional by giving the relevant examples
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
@@ -45,6 +46,7 @@ are optional by giving the relevant examples
 - Helped to merge PRs.
 - Helped to enable assertions in gradle file to allow for defensive programming.
 - Helped to increase test coverage of pre-existing commands.
+- Helped to write the postmortem.
 
 ### Review and Mentoring Contributions
 
