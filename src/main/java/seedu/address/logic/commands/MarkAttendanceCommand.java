@@ -43,7 +43,7 @@ public class MarkAttendanceCommand extends Command {
     }
 
     /**
-     * Executes the MarkAttendanceCommand to mark attendance for a student on a specific week.
+     * Executes the MarkAttendanceCommand to mark attendance for a student on a specific tutorial.
      *
      * @param model The model that the command operates on.
      * @return A CommandResult indicating the outcome of the execution.

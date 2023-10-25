@@ -26,6 +26,7 @@ public class PersonBuilder {
     public static final String DEFAULT_EMAIL = "amy@gmail.com";
     public static final String DEFAULT_TELEGRAM = "amyTelegram";
     public static final String DEFAULT_ATTENDANCE = "0,0,0,0,0,0,0,0,0,0,0,0";
+    public static final String DEFAULT_PARTICIPATION = "0,0,0,0,0,0,0,0,0,0,0,0";
     public static final String DEFAULT_GROUP = "tut33";
 
     private Name name;
@@ -46,7 +47,7 @@ public class PersonBuilder {
         phone = new Phone(DEFAULT_PHONE);
         email = new Email(DEFAULT_EMAIL);
         telegramHandle = new TelegramHandle(DEFAULT_TELEGRAM);
-        attendance = new Attendance(DEFAULT_ATTENDANCE);
+        attendance = new Attendance(DEFAULT_ATTENDANCE, DEFAULT_PARTICIPATION);
         tags = new HashSet<>();
         comments = new HashSet<>();
         assignments = new HashSet<>();
@@ -103,8 +104,8 @@ public class PersonBuilder {
     /**
      * Sets the {@code Attendance} of the {@code Person} that we are building.
      */
-    public PersonBuilder withAttendance(String attendance) {
-        this.attendance = new Attendance(attendance);
+    public PersonBuilder withAttendance(String attendance, String pp) {
+        this.attendance = new Attendance(attendance, pp);
         return this;
     }
 

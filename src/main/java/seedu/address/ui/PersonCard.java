@@ -67,8 +67,8 @@ public class PersonCard extends UiPart<Region> {
             telegramLink.setVisible(false);
         }
         name.setText(person.getName().fullName);
-        attendance.setText(String.format("Attendance: %d/%d",
-                this.person.getWeeksPresent(), this.person.getTotalWeeks()));
+        attendance.setText(String.format("Attendance: %d/%d, Participation Points: %d",
+                this.person.getWeeksPresent(), this.person.getTotalWeeks(), this.person.getTotalPart()));
         phone.setText("Phone: " + person.getPhone().value);
         telegramHandle.setText("Telegram Handle: " + person.getTelegramHandle().value);
         email.setText("Email: " + person.getEmail().value);

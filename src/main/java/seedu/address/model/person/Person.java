@@ -137,6 +137,19 @@ public class Person {
         return 0;
     }
 
+    /**
+     * Retrieves the total number of participation points.
+     *
+     * @return The total number of participation points.
+     */
+    public int getTotalPart() {
+        Attendance stdatd = this.attendance.orElse(null);
+        if (stdatd != null) {
+            return stdatd.getTotalPart();
+        }
+        return 0;
+    }
+
     public Group getGroup() {
         return group.orElse(null);
     }

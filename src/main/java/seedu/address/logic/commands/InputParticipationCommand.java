@@ -1,6 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PARTICIPATION_POINTS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 
 import java.util.List;
@@ -14,36 +15,37 @@ import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Person;
 
 /**
- * Unmark the attendance of an existing student in the taa.
+ * Class to input participation points to an existing student in for a specified week
  */
-public class UnmarkAttendanceCommand extends Command {
-    public static final String COMMAND_WORD = "unmarkAtd";
-    public static final String ATTENDANCE_UNMARK_SUCCESS = "Attendance unmarked successfully!";
-    public static final String ATTENDANCE_UNMARK_FAIL = "Attendance failed to unmark!";
+public class InputParticipationCommand extends Command {
+    public static final String COMMAND_WORD = "inputPP";
+    public static final String SUCCESS_MSG = "Participation points input successfully!";
+    public static final String ATTENDANCE_NOT_MARKED = "Before inputting participation points, "
+            + "mark the attendance of the student first!";
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Unmark the attendance of the student identified\n"
+            + ": Inserts participation points to the student identified\n"
             + "by the index number used in the displayed student list.\n"
-            + "Parameters: INDEX (must be a positive integer) "
-            + "[" + PREFIX_TUTORIAL + "TutorialToUnmark] \n"
-            + "Example: " + COMMAND_WORD + " 1 t/1 ";
+            + "Parameters: INDEX (must be a positive integer), "
+            + "[" + PREFIX_TUTORIAL + "TutorialToMark] \n"
+            + "[" + PREFIX_PARTICIPATION_POINTS + "ParticipationPoints] \n"
+            + "Example: " + COMMAND_WORD + " 1 t/1 pp/200";
     private final Index index;
     private final Index tut;
+    private final int points;
 
     /**
-     * Constructs a new UnMarkAttendanceCommand to mark attendance for a student on a specific tutorial.
-     *
-     * @param index The index of the student to unmark attendance for.
-     * @param tut The index of the week to unmark attendance on.
+     * Constructor for inputParticipationCommand
+     * @param index index of student to update
+     * @param tut tutorial to update
      */
-    public UnmarkAttendanceCommand(Index index, Index tut) {
-        requireNonNull(index);
-        requireNonNull(tut);
+    public InputParticipationCommand(Index index, Index tut, int points) {
         this.index = index;
         this.tut = tut;
+        this.points = points;
     }
 
     /**
-     * Executes the UnMarkAttendanceCommand to unmark attendance for a student on a specific tutorial.
+     * Executes the InputParticipationCommand to input participation for a student on a specific tutorial.
      *
      * @param model The model that the command operates on.
      * @return A CommandResult indicating the outcome of the execution.
@@ -64,28 +66,15 @@ public class UnmarkAttendanceCommand extends Command {
                 Optional.of(studentToEdit.getTelegramHandle()), Optional.of(studentToEdit.getAttendance()),
                 studentToEdit.getTags(),
                 studentToEdit.getComments(), studentToEdit.getAssignments(), Optional.of(studentToEdit.getGroup()));
-
         Attendance studentAtd = studentToEdit.getAttendance();
         if (!studentAtd.isMarkedWeek(this.tut.getZeroBased())) {
-            return new CommandResult(Messages.MESSAGE_DUPLICATE_UNMARK);
+            return new CommandResult(ATTENDANCE_NOT_MARKED);
         }
-        studentAtd.unmarkAttendance(this.tut.getZeroBased());
 
+        studentAtd.inputParticipationPoints(this.tut.getZeroBased(), this.points);
         model.setPerson(studentToEdit, editedStudent);
         model.updateFilteredPersonList(Model.PREDICATE_SHOW_ALL_PERSONS);
-        return new CommandResult(generateSuccessMessage(editedStudent));
-    }
-
-    /**
-     * Generates a command execution success message based on whether
-     * the attendance is unmarked.
-     * {@code personToEdit}.
-     */
-    private String generateSuccessMessage(Person personToEdit) {
-        String message = personToEdit.getAttendance().isMarkedWeek(this.tut.getZeroBased())
-                ? ATTENDANCE_UNMARK_FAIL
-                : ATTENDANCE_UNMARK_SUCCESS;
-        return String.format(message, personToEdit);
+        return new CommandResult(SUCCESS_MSG);
     }
 
     @Override
@@ -95,12 +84,12 @@ public class UnmarkAttendanceCommand extends Command {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof UnmarkAttendanceCommand)) {
+        if (!(other instanceof InputParticipationCommand)) {
             return false;
         }
 
-        UnmarkAttendanceCommand otherUnMarkAttendanceCommand = (UnmarkAttendanceCommand) other;
-        return index.equals(otherUnMarkAttendanceCommand.index) && tut.equals(otherUnMarkAttendanceCommand.tut);
+        InputParticipationCommand otherInputParticipationCommand = (InputParticipationCommand) other;
+        return index.equals(otherInputParticipationCommand.index) && tut.equals(otherInputParticipationCommand.tut)
+                && points == otherInputParticipationCommand.points;
     }
 }
-
