@@ -46,6 +46,7 @@ are optional by giving the relevant examples
 - Helped to merge PRs.
 - Helped to enable assertions in gradle file to allow for defensive programming.
 - Helped to increase test coverage of pre-existing commands.
+- Helped to write the postmortem.
 
 ### Review and Mentoring Contributions
 
