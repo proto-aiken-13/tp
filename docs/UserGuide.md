@@ -257,11 +257,12 @@ Marking the attendance for a week that is already marked will result in the mess
 
 For participation, you can make the following commands:
 * inputPP
+* listParticipation
 
 ### insert participation points: inputPP
 <a name="inputPP"></a>
 
-input participation points for a student for that tutorial
+input participation points for a student for that tutorial.
 
 Format: `inputPP INDEX t/TUTORIAL pp/POINTS`
 
@@ -281,7 +282,19 @@ Examples
 * inputPP 1 t/1 pp/350 (For student with index 1, input 350 participation points to tutorial 1)
 * inputPP 2 t/12 pp/500 (For student with index 2, input 500 participation points to tutorial 12)
 
+### list participation records: `listParticipation`
+<a name="listParticipation"></a>
 
+list a student's participation record.
+
+Format: `listParticipation INDEX`
+
+`INDEX`: A positive integer representing the index of the student as shown in the list.
+
+Examples
+
+* listParticipation 1 (List the participation record for the student with index 1)
+* listParticipation 5 (List the participation record for the student with index 5)
 
 ### Distribute assignments: `assign`
 <a name="assign"></a>
@@ -385,6 +398,7 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 | **Grade Assignments**          | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                                  |
 | **Help**                       | `help​`                                                                                                                                                                                                                  |
 | **List**                       | `list​`                                                                                                                                                                                                                  |
+| **List Participation Record**  | `listParticipation INDEX`                                                                                                                                                                                                |
 | **Mark Attendance**            | `markAtd INDEX t/TUTORIAL`                                                                                                                                                                                               |
 | **Unmark Attendance**          | `unmarkAtd INDEX t/TUTORIAL`                                                                                                                                                                                             |
 | **Mark Group Attendance**      | `markGroupAtd GROUP t/TUTORIAL`                                                                                                                                                                                          |

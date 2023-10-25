@@ -24,6 +24,7 @@ Given below are my contributions to the project.
   - Participation
     - What it does:
       - Allows TA to input a students participation points for a particular tutorial session.
+      - Allows TA to check a students participation record.
       - This feature addresses the need for a more detailed and granular view of students' participation and
       engagement in tutorials. It complements the existing attendance management system, 
       making it a more comprehensive tool for educators and administrators.
@@ -40,6 +41,7 @@ Given below are my contributions to the project.
     - unmarkAtd
   - Participation
     - inputPP
+    - listParticipation
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 

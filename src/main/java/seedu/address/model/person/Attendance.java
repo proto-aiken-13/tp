@@ -205,6 +205,20 @@ public class Attendance {
     }
 
     /**
+     * Converts students participation record to a string.
+     *
+     * @return String version of Attendance message to be shown
+     */
+    public String listParticipation() {
+        StringBuilder s = new StringBuilder();
+        for (int i = 0; i < this.totalTut; i++) {
+            s.append(String.format("Tutorial %d: [%s], Participation: [%d]\n",
+                    i + 1, this.attendanceList[i] ? "X" : " ", this.participationList[i]));
+        }
+        return s.toString();
+    }
+
+    /**
      * Converts Attendance to a string.
      *
      * @return string version of Attendance
