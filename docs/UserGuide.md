@@ -239,6 +239,20 @@ Examples:
 * `unmarkAtd 1 t/1` (unmark attendance of student with index 1 for tutorial 1)
 * `unmarkAtd 2 t/12` (unmark attendance of student with index 2 for tutorial 12)
 
+### Mark Group Attendance: `markGroupAtd`
+<a name="markGroupAtd"></a>
+
+Marks the attendance of a group of students for that tutorial.
+
+Format: `markGroupAtd GROUP t/TUTORIAL`
+
+`GROUP`: A string representing the group of students as shown in the list.
+
+`TUTORIAL`: An integer between 1 and 12 (inclusive)
+
+Marking the attendance for a week that is already marked will result in the message
+`This week's attendance has already been marked!`
+
 ### Participation
 
 For participation, you can make the following commands:
@@ -373,6 +387,7 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 | **List**                       | `list​`                                                                                                                                                                                                                  |
 | **Mark Attendance**            | `markAtd INDEX t/TUTORIAL`                                                                                                                                                                                               |
 | **Unmark Attendance**          | `unmarkAtd INDEX t/TUTORIAL`                                                                                                                                                                                             |
+| **Mark Group Attendance**      | `markGroupAtd GROUP t/TUTORIAL`                                                                                                                                                                                          |
 | **Input Participation Points** | `inputPP INDEX t/TUTORIAL p/POINTS`                                                                                                                                                                                      |
 | **group**                      | `group PREV_GROUP UPDATED_GROUP`                                                                                                                                                                                         |
 
