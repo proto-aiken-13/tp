@@ -59,7 +59,7 @@ public class ListParticipationCommand extends Command {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof MarkAttendanceCommand)) {
+        if (!(other instanceof ListParticipationCommand)) {
             return false;
         }
 

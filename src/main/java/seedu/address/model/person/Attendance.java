@@ -26,8 +26,10 @@ public class Attendance {
         for (int i = 0; i < totalTut; i++) {
             if (atdArr[i].equals("1")) {
                 this.attendanceList[i] = true;
+                this.participationList[i] = Integer.parseInt(ppArr[i].trim());
+            } else {
+                this.participationList[i] = 0;
             }
-            this.participationList[i] = Integer.parseInt(ppArr[i].trim());
         }
     }
 
@@ -212,7 +214,7 @@ public class Attendance {
     public String listParticipation() {
         StringBuilder s = new StringBuilder();
         for (int i = 0; i < this.totalTut; i++) {
-            s.append(String.format("Tutorial %d: [%s], Participation: [%d]\n",
+            s.append(String.format("Tutorial %d: [%s], Participation Points: [%d]\n",
                     i + 1, this.attendanceList[i] ? "X" : " ", this.participationList[i]));
         }
         return s.toString();
