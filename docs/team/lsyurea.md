@@ -18,13 +18,14 @@ Given below are my contributions to the project:
 ### Enhancements Implemented
 - Updated test coverage of all the classes, including attendance taking, add command, delete command, edit command,
 find command, list command, mark command such that it goes to 78%.
-- Making the commands optional, so that the user can choose
-        to use the commands or not.
+- Making the fields in add and edit optional except for name.
 - Group students by classes.
 - Add a new group attribute that allows the user to add group and edit group 
 students are in.
-- Make commands optional.
-- Modify help command to show the link to the User Guide.
+- Modify help command to show the link to the User Guide and upon pressing,
+navigates to the link.
+- Mark attendance for groups of students at the same time.
+- Unmark attendance for groups of students at the same time.
 
 ### Contributions to the User Guide (UG)
 
@@ -32,8 +33,8 @@ students are in.
 - Redefined Edit Command in User Guide to include group command
 - Redefined Add Command in User Guide to include group command
 - Redefined Add Command to show that all other fields that are not names
-- Added markGroupAtd Command to allow marking of attendance in groups
-are optional by giving the relevant examples
+- Added markGroupAtd Command in User Guide
+- Added unmarkGroupAtd Command in User Guide
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 
@@ -51,6 +52,7 @@ are optional by giving the relevant examples
 ### Review and Mentoring Contributions
 
 - Reviewed and gave comments to peers' pull requests.
+- Merged peers' code into the tp.
 
 ### Contributions Beyond the Project Team
 
