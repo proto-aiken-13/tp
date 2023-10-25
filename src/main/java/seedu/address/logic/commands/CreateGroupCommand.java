@@ -43,6 +43,7 @@ public class CreateGroupCommand extends Command {
         }
         List<Person> lastShownList = model.getFilteredPersonList();
         // loop through the person in the list and updates everyone without a group to the new group
+        boolean hasUpdated = false;
         for (Person p : lastShownList) {
             Group grp = new Group(updatedGroupName);
             if (p.getGroup().equals(new Group(groupName))) {
@@ -51,7 +52,11 @@ public class CreateGroupCommand extends Command {
                         Optional.of(p.getAttendance()), p.getTags(), p.getComments(), p.getAssignments(),
                         Optional.of(grp));
                 model.setPerson(p, updatedPerson);
+                hasUpdated = true;
             }
+        }
+        if (!hasUpdated) {
+            throw new CommandException("No one in the group: " + groupName + " to update");
         }
         return new CommandResult(String.format(MESSAGE_SUCCESS, updatedGroupName));
     }
