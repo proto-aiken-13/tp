@@ -4,6 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 
 import java.util.List;
+import java.util.Optional;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
@@ -22,7 +23,7 @@ public class MarkAttendanceCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Marks the attendance of the student identified\n"
             + "by the index number used in the displayed student list.\n"
-            + "Parameters: INDEX (must be a positive integer), "
+            + "Parameters: INDEX (must be a positive integer) "
             + "[" + PREFIX_TUTORIAL + "TutorialToMark] \n"
             + "Example: " + COMMAND_WORD + " 1 t/1 ";
     private final Index index;
@@ -59,9 +60,10 @@ public class MarkAttendanceCommand extends Command {
 
         Person studentToEdit = lastShownList.get(index.getZeroBased());
         Person editedStudent = new Person(
-                studentToEdit.getName(), studentToEdit.getPhone(), studentToEdit.getEmail(),
-                studentToEdit.getTelegramHandle(), studentToEdit.getAttendance(), studentToEdit.getTags(),
-                studentToEdit.getComments());
+                studentToEdit.getName(), Optional.of(studentToEdit.getPhone()), Optional.of(studentToEdit.getEmail()),
+                Optional.of(studentToEdit.getTelegramHandle()), Optional.of(studentToEdit.getAttendance()),
+                studentToEdit.getTags(),
+                studentToEdit.getComments(), studentToEdit.getAssignments());
         Attendance studentAtd = studentToEdit.getAttendance();
         if (studentAtd.isMarkedWeek(this.tut.getZeroBased())) {
             return new CommandResult(Messages.MESSAGE_DUPLICATE_MARKINGS);

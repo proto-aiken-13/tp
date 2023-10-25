@@ -3,6 +3,7 @@ package seedu.address.storage;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -12,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.fields.Comment;
 import seedu.address.model.fields.Tag;
+import seedu.address.model.person.Assignment;
 import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
@@ -34,6 +36,7 @@ class JsonAdaptedPerson {
     private final String attendance;
     private final List<JsonAdaptedTag> tags = new ArrayList<>();
     private final List<JsonAdaptedComment> comments = new ArrayList<>();
+    private final List<JsonAdaptedAssignment> assignments = new ArrayList<>();
 
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
@@ -41,7 +44,9 @@ class JsonAdaptedPerson {
     @JsonCreator
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
             @JsonProperty("email") String email, @JsonProperty("telegram") String telegram,
-            @JsonProperty("attendance") String attendance, @JsonProperty("tags") List<JsonAdaptedTag> tags) {
+            @JsonProperty("attendance") String attendance, @JsonProperty("tags") List<JsonAdaptedTag> tags,
+                             @JsonProperty("comments") List<JsonAdaptedComment> comments,
+                             @JsonProperty("assignments") List<JsonAdaptedAssignment> assignments) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -49,6 +54,12 @@ class JsonAdaptedPerson {
         this.attendance = attendance;
         if (tags != null) {
             this.tags.addAll(tags);
+        }
+        if (comments != null) {
+            this.comments.addAll(comments);
+        }
+        if (assignments != null) {
+            this.assignments.addAll(assignments);
         }
     }
 
@@ -60,10 +71,15 @@ class JsonAdaptedPerson {
         phone = source.getPhone().value;
         email = source.getEmail().value;
         telegram = source.getTelegramHandle().value;
-        tags.addAll(source.getTags().stream().map(JsonAdaptedTag::new).collect(Collectors.toList()));
         attendance = source.getAttendance().toString();
         tags.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
+                .collect(Collectors.toList()));
+        comments.addAll(source.getComments().stream()
+                .map(JsonAdaptedComment::new)
+                .collect(Collectors.toList()));
+        assignments.addAll(source.getAssignments().stream()
+                .map(JsonAdaptedAssignment::new)
                 .collect(Collectors.toList()));
     }
 
@@ -81,6 +97,11 @@ class JsonAdaptedPerson {
         final List<Comment> personComments = new ArrayList<>();
         for (JsonAdaptedComment comment : comments) {
             personComments.add(comment.toModelType());
+        }
+
+        final List<Assignment> personAssignments = new ArrayList<>();
+        for (JsonAdaptedAssignment assignment : assignments) {
+            personAssignments.add(assignment.toModelType());
         }
 
         if (name == null) {
@@ -124,8 +145,11 @@ class JsonAdaptedPerson {
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
         final Set<Comment> modelComments = new HashSet<>(personComments);
-        return new Person(modelName, modelPhone, modelEmail, modelTelegramHandle, modelAttendance,
-                modelTags, modelComments);
+        final Set<Assignment> modelAssignments = new HashSet<>(personAssignments);
+        return new Person(modelName, Optional.of(modelPhone), Optional.of(modelEmail),
+                Optional.of(modelTelegramHandle), Optional.of(modelAttendance),
+                modelTags, modelComments, modelAssignments);
+
     }
 
 }

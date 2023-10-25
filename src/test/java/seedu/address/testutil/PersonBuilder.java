@@ -1,10 +1,12 @@
 package seedu.address.testutil;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 import seedu.address.model.fields.Comment;
 import seedu.address.model.fields.Tag;
+import seedu.address.model.person.Assignment;
 import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
@@ -31,6 +33,7 @@ public class PersonBuilder {
     private Attendance attendance;
     private Set<Tag> tags;
     private Set<Comment> comments;
+    private Set<Assignment> assignments;
 
     /**
      * Creates a {@code PersonBuilder} with the default details.
@@ -43,6 +46,7 @@ public class PersonBuilder {
         attendance = new Attendance(DEFAULT_ATTENDANCE);
         tags = new HashSet<>();
         comments = new HashSet<>();
+        assignments = new HashSet<>();
     }
 
     /**
@@ -56,6 +60,7 @@ public class PersonBuilder {
         attendance = personToCopy.getAttendance();
         tags = new HashSet<>(personToCopy.getTags());
         comments = new HashSet<>(personToCopy.getComments());
+        assignments = new HashSet<>(personToCopy.getAssignments());
     }
 
     /**
@@ -99,6 +104,14 @@ public class PersonBuilder {
     }
 
     /**
+     * Sets the {@code Assignment} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withAssignments(String... assignmentNames) {
+        this.assignments = SampleDataUtil.getAssignmentSet(assignmentNames);
+        return this;
+    }
+
+    /**
      * Sets the {@code Phone} of the {@code Person} that we are building.
      */
     public PersonBuilder withPhone(String phone) {
@@ -114,8 +127,12 @@ public class PersonBuilder {
         return this;
     }
 
+    /**
+     * Builds a person with the given parameters.
+     */
     public Person build() {
-        return new Person(name, phone, email, telegramHandle, attendance, tags, comments);
+        return new Person(name, Optional.of(phone), Optional.of(email), Optional.of(telegramHandle),
+                Optional.of(attendance), tags, comments, assignments);
     }
 
 }

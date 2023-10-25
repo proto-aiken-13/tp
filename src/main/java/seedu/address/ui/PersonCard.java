@@ -2,7 +2,9 @@ package seedu.address.ui;
 
 import java.util.Comparator;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
@@ -41,9 +43,13 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label email;
     @FXML
-    private Label comments;
+    private Hyperlink telegramLink;
     @FXML
     private FlowPane tags;
+    @FXML
+    private FlowPane comments;
+    @FXML
+    private FlowPane assignments;
 
     /**
      * Creates a {@code PersonCode} with the given {@code Person} and index to display.
@@ -52,17 +58,41 @@ public class PersonCard extends UiPart<Region> {
         super(FXML);
         this.person = person;
         id.setText(displayedIndex + ". ");
+        // Initialize the button visibility based on the presence of the Telegram handle
+        if (person.getTelegramHandle() != null) {
+            telegramLink.setVisible(true);
+        } else {
+            telegramLink.setVisible(false);
+        }
         name.setText(person.getName().fullName);
         attendance.setText(String.format("Attendance: %d/%d",
                 this.person.getWeeksPresent(), this.person.getTotalWeeks()));
-        phone.setText(person.getPhone().value);
-        telegramHandle.setText(person.getTelegramHandle().value);
-        email.setText(person.getEmail().value);
+        phone.setText("Phone: " + person.getPhone().value);
+        telegramHandle.setText("Telegram Handle: " + person.getTelegramHandle().value);
+        email.setText("Email: " + person.getEmail().value);
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
         person.getComments().stream()
                 .sorted(Comparator.comparing(comment -> comment.commentName))
-                .forEach(comment -> tags.getChildren().add(new Label(comment.commentName)));
+                .forEach(comment -> comments.getChildren().add(new Label(comment.commentName)));
+        person.getAssignments().stream()
+                .sorted(Comparator.comparing(assignment -> assignment.toString()))
+                .forEach(assignment -> assignments.getChildren().add(new Label(assignment.toString())));
+    }
+
+    /**
+     * Opens a link to the telegram handle of {@code Person}.
+     */
+    @FXML
+    public void openLink(ActionEvent event) {
+        String telegramHandle = person.getTelegramHandle().value;
+        if (telegramHandle != null && !telegramHandle.isEmpty()) {
+            UiUtil.open("https://t.me/" + telegramHandle);
+        } else {
+            // Handle the case where there is no telegram handle
+            // You can show an error message or take any other action as needed
+            System.out.println("No Telegram handle available.");
+        }
     }
 }
