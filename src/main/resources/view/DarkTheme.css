@@ -407,3 +407,17 @@
   src: url("./fonts/coolvetica rg.ttf");
 }
 
+@media screen and (max-width: 768px) {
+    .info-box {
+        -fx-orientation: vertical;
+        -fx-pref-tile-width: 50px;
+    }
+}
+
+/* For screens with a width greater than 768px */
+.info-box {
+    -fx-orientation: horizontal;
+    -fx-pref-rows: 10;
+    -fx-pref-width: 100%; /* Set the width for horizontal orientation */
+}
+
