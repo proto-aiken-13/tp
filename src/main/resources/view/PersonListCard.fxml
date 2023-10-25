@@ -35,16 +35,18 @@
       <HBox spacing="5" alignment="CENTER_LEFT">
         <Label fx:id="group" styleClass="cell_small_label" text="\$group" />
         <Region HBox.hgrow="ALWAYS" />
+        <Label fx:id="attendance" styleClass="cell_small_label" text="\$attendance" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Hyperlink fx:id="telegramLink" text="Contact" styleClass="cell_small_label" onAction="#openLink"
+                   userData="\$telegramLink" />
+        <Region HBox.hgrow="ALWAYS" />
+      </HBox>
+      <HBox spacing="5" alignment="CENTER_LEFT">
         <Label fx:id="phone" styleClass="cell_small_label" text="\$phone" />
         <Region HBox.hgrow="ALWAYS" />
         <Label fx:id="telegramHandle" styleClass="cell_small_label" text="\$telegramHandle" />
         <Region HBox.hgrow="ALWAYS" />
         <Label fx:id="email" styleClass="cell_small_label" text="\$email" />
-        <Region HBox.hgrow="ALWAYS" />
-        <Label fx:id="attendance" styleClass="cell_small_label" text="\$attendance" />
-        <Region HBox.hgrow="ALWAYS" />
-        <Hyperlink fx:id="telegramLink" text="Contact" styleClass="cell_small_label" onAction="#openLink"
-                   userData="\$telegramLink" />
         <Region HBox.hgrow="ALWAYS" />
       </HBox>
     </VBox>
