@@ -31,6 +31,7 @@ Given below are my contributions to the project.
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 
 - Highlighted the MSS and use cases of command commands such as `add` and `list`.
+- Wrote about the implementation of `Assignment`s, and alternatives considered when assigning `Assignment`s to people.
 
 ### Contributions to Team-Based Tasks
 

@@ -27,8 +27,10 @@ public class UiUtil {
                 Runtime.getRuntime().exec("xdg-open " + url);
             } else {
                 // We do not support other operating systems.
+                logger.severe("Unsupported operating system: " + os);
+                throw new UnsupportedOperationException("Unsupported operating system: " + os);
             }
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException | URISyntaxException | UnsupportedOperationException e) {
             e.printStackTrace();
         }
     }
