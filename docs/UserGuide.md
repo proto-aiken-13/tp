@@ -22,10 +22,6 @@ On top of these functionalities, we believe that student management should be ex
 
 ***`npc_track` is for all TA’s, and is adaptable for their management and organisational styles!***
 
-From a survey that we did on teaching assistants, we found that a majority of them found it difficult and tedious to 
-find and organise their student's information. Hence, `npc_track` is specially developed to help these fast typists 
-students to be able to streamline the process using ***simple commands*** to do different tasks.
-
 We help teaching assistants to be able to bring together their teaching needs in a hassle-free manner. For instance, 
 adding extra information for a student named Ted can easily be done using the various keyword features as listed in 
 our [Features Section](#features)
@@ -57,42 +53,42 @@ A seasoned user (but you still need help on memorizing commands)? Drop by in [Co
 
 ---
 
-[//]: # (<a name="toc"></a>)
+<a name="toc"></a>
 
-[//]: # (## Table of Contents)
+## Table of Contents
 
-[//]: # ({:toc})
+{:toc}
 
-[//]: # (- [Features]&#40;#features&#41;)
+- [Features](#features)
 
-[//]: # (    - [Viewing Help]&#40;#help&#41; `help`)
+    - [Viewing Help](#help) `help`
 
-[//]: # (    - [Adding a Student]&#40;#add&#41; `add`)
+    - [Adding a Student](#add) `add`
 
-[//]: # (    - [Editing a Student]&#40;#edit&#41; `edit`)
+    - [Editing a Student](#edit) `edit`
 
-[//]: # (    - [Deleting a Student]&#40;#delete&#41; `delete`)
+    - [Deleting a Student](#delete) `delete`
 
-[//]: # (    - [Listing All Students]&#40;#list&#41; `list`)
+    - [Listing All Students](#list) `list`
 
-[//]: # (    - [Finding a Student]&#40;#find&#41; `find`)
+    - [Finding a Student](#find) `find`
 
-[//]: # (    - [Distributing Assignments]&#40;#assign&#41; `assign`)
+    - [Distributing Assignments](#assign) `assign`
 
-[//]: # (    - [Grading a Student]&#40;#grade&#41; `grade`)
+    - [Grading a Student](#grade) `grade`
 
-[//]: # (    - [Marking Attendance]&#40;#markAtd&#41; `markAtd`)
+    - [Marking Attendance](#markAtd) `markAtd`
 
-[//]: # (    - [Unmarking Attendance]&#40;#unmarkAtd&#41; `unmarkAtd`)
+    - [Unmarking Attendance](#unmarkAtd) `unmarkAtd`
 
-[//]: # (    - [Exiting the Program]&#40;#exit&#41;)
+    - [Exiting the Program](#exit)
 
-[//]: # ()
-[//]: # (- [FAQ]&#40;#FAQ&#41;)
 
-[//]: # (- [Known Issues]&#40;#issues&#41;)
+- [FAQ](#FAQ)
 
-[//]: # (- [Command Summary]&#40;#summary&#41;)
+- [Known Issues](#issues)
+
+- [Command Summary](#summary)
 
 <a name="quick-start"></a>
 ## Quick start
@@ -143,27 +139,40 @@ Shows a message displaying the link and a button that navigates to the link dire
 
 Format: `help`
 
-
-### Adding a student: `add`
 <a name="add"></a>
+### ***Adding a student: `add`***
 
+Want to add another student into your student contacts? Give the `add` command a try!
+
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
 Adds a student to the student book.
-
-Format: `add n/NAME [p/PHONE_NUMBER] [e/EMAIL] [a/TELEGRAM_HANDLE] [t/TAG]… [c/COMMENT]… [group/GROUP]`
-
-<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-A student can have any number of tags (including 0)
+<br><br>
+***Format***: `add n/NAME [p/PHONE_NUMBER] [e/EMAIL] [a/TELEGRAM_HANDLE] [t/TAG]… [c/COMMENT]… [group/GROUP]`
 </div>
 
-<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-A student can have any number of comments (including 0)
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- A student can have any number of tags (including 0)
+<br>
+- A student can have any number of comments (including 0)
 </div>
 
-Examples:
-* `add n/John Doe p/98765432 e/johnd@example.com a/johnTelegram, block 123, #01-01`
-* `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/newTelegram p/1234567 t/criminal c/On the loose as we speak!`
-* `add n/James`
-* `add n/James group/tut4`
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+
+</div>
+
+
+| Examples                                                                                     | Purpose                                                                                      
+|----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------
+| `add n/John Doe p/98765432 e/johnd@example.com a/johnTelegram`                               | Adds John Doe (Telegram : @johnTelegram) with additional details like phone number and email 
+| `add n/Betsy Crowe e/betsycrowe@example.com a/newTelegram p/1234567 t/smart c/Quiet Student` | Adds Betsy Crowe <br/>(Telegram : @newTelegram) with extra comments and tags                 |
+| `add n/James group/tut4`                                                                     | Adds James while grouping him to `tut4`                                                      
+| `add n/Benson`                                                                                | Adds Benson only                                                                             
+
+
 
 ### Listing all students : `list`
 <a name="list"></a>
@@ -378,7 +387,7 @@ _Details coming soon ..._
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Known issues
+## Troubleshoot
 <a name="issues"></a>
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.

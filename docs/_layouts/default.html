@@ -8,46 +8,11 @@
     {%- include header.html -%}
 
     <main class="page-content" aria-label="Content">
-
-        {% if page.toc == true %}
-      <div class="wrapper wrapper-side">
-        <div class="container">
-          <div class="sidebar">
-            <!-- Sidebar content goes here -->
-            <h2>Table of Contents</h2>
-            <ul>
-              <li><a href="#features">Features</a>
-                <ul>
-                  <li><a href="#help">Viewing Help</a></li>
-                  <li><a href="#add">Adding a Student</a></li>
-                  <li><a href="#edit">Editing a Student</a></li>
-                  <li><a href="#delete">Deleting a Student</a></li>
-                  <li><a href="#list">Listing All Students</a></li>
-                  <li><a href="#find">Finding a Student</a></li>
-                  <li><a href="#assign">Distributing Assignments</a></li>
-                  <li><a href="#grade">Grading a Student</a></li>
-                  <li><a href="#markAtd">Marking Attendance</a></li>
-                  <li><a href="#unmarkAtd">Unmarking Attendance</a></li>
-                  <li><a href="#exit">Exiting the Program</a></li>
-                </ul>
-              </li>
-              <li><a href="#FAQ">FAQ</a></li>
-              <li><a href="#issues">Known Issues</a></li>
-              <li><a href="#summary">Command Summary</a></li>
-            </ul>
-          </div>
-          <div class="content main-content">
-            {{ content }}
-          </div>
-        </div>
-      </div>
-      {% else %}
       <div class="wrapper">
           <div class="content">
             {{ content }}
           </div>
       </div>
-      {% endif %}
     </main>
 
   </body>
