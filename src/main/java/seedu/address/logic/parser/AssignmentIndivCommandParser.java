@@ -32,11 +32,13 @@ public class AssignmentIndivCommandParser implements Parser<AssignmentIndivComma
         try {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (ParseException pe) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AssignmentIndivCommand.MESSAGE_USAGE), pe);
+            throw new ParseException(
+                String.format(MESSAGE_INVALID_COMMAND_FORMAT, AssignmentIndivCommand.MESSAGE_USAGE), pe);
         }
 
         if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_MAX_SCORE)) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AssignmentIndivCommand.MESSAGE_USAGE));
+            throw new ParseException(
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, AssignmentIndivCommand.MESSAGE_USAGE));
         }
 
         argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_MAX_SCORE);
@@ -45,7 +47,8 @@ public class AssignmentIndivCommandParser implements Parser<AssignmentIndivComma
         int maxScore = ParserUtil.parseInt(argMultimap.getValue(PREFIX_MAX_SCORE).get());
 
         if (maxScore <= 0) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AssignmentIndivCommand.MESSAGE_USAGE));
+            throw new ParseException(
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, AssignmentIndivCommand.MESSAGE_USAGE));
         }
 
         return new AssignmentIndivCommand(index, name, maxScore);
