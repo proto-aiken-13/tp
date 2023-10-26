@@ -28,6 +28,8 @@ navigates to the link.
 - Add Unmark attendance for the same groups of students at the same time.
 - Add a new command to assign the same group of students.
 - Add a new command to grade the same group of students with the same marks.
+- Added testing for assignGroup, unmarkGrouAtd, markGroupAtd, gradeGroup.
+- Added findGroup Command.
 
 ### Contributions to the User Guide (UG)
 
@@ -39,13 +41,15 @@ navigates to the link.
 - Added unmarkGroupAtd Command in User Guide.
 - Added assignGroup Command in User Guide.
 - Added gradeGroup Command in User Guide.
-- Added testing for assignGroup, unmarkGrouAtd, markGroupAtd, gradeGroup.
+- Added findGroup Command in User Guide.
+
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 
-- Added Use Case to change grouping of students
+- Added Use Case to change grouping of students.
 - Modified the Use Case for add such that it only shows error if name is not provided.
-- Helped generate Non-Functional Requirements
+- Helped generate Non-Functional Requirements.
+- Helped generate the Use Case for findGroup.
 
 ### Contributions to Team-Based Tasks
 

@@ -71,14 +71,21 @@ A seasoned user (but you still need help on memorizing commands)? Drop by in [Co
     - [Listing All Students](#list) `list`
 
     - [Finding a Student](#find) `find`
+  
+    - [Finding a Group of Students](#findGroup) `findGroup`
 
     - [Distributing Assignments](#assign) `assign`
+  
+    - [Distributing Assignments to a Group of Students](#assignGroup) `assignGroup`
 
     - [Grading a Student](#grade) `grade`
+    - [Grading a Group of Students](#gradeGroup) `gradeGroup`
 
     - [Marking Attendance](#markAtd) `markAtd`
 
     - [Unmarking Attendance](#unmarkAtd) `unmarkAtd`
+    - [Marking Attendance for a Group of Students](#markGroupAtd) `markGroupAtd`
+    - [Unmarking Attendance for a Group of Students](#unmarkGroupAtd) `unmarkGroupAtd`
 
     - [Exiting the Program](#exit)
 
@@ -224,6 +231,28 @@ This is not to worry. You can refer to our [troubleshoot](#issues) guide for com
 | Examples                                        | Purpose                            
 |-------------------------------------------------|------------------------------------
 | `find James Jake`                               | Finds a student called "James Jake"
+
+### ***Finding students by group : `findGroup`***
+
+Finding it difficult to scroll through the whole list of students? Don't worry just find the specific student using
+the `findGroup` command.
+
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
+Finds students associated with the group.
+<br><br>
+
+***Format***: `findGroup GROUP`
+</div>
+
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems.
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+</div>
+
+| Examples                                        | Purpose
+|-------------------------------------------------|------------------------------------
+| `findGroup 1`                               | Finds a student in group 1 and lists them out
 
 
 <a name="edit"></a>
@@ -518,6 +547,7 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 | **Edit**                         | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…​` <br> e.g., `n/New Name t/`                                                                                                                              |
 | **Exit**                         | `exit​`                                                                                                                                                                                                                  |
 | **Find**                         | `find KEYWORD [MORE_KEYWORDS]​` e.g., `find James Jake`                                                                                                                                                                  |
+| **Find Group**                   | `findGroup KEYWORD [MORE_KEYWORDS]​` e.g., `findGroup group1 group2`                                                                                                                                                     |
 | **Grade Assignments**            | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                                  |
 | **Grade Group Assignments**      | `gradeGroup GROUP n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                             |
 | **Help**                         | `help​`                                                                                                                                                                                                                  |
