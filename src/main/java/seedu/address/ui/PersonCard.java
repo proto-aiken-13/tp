@@ -57,8 +57,8 @@ public class PersonCard extends UiPart<Region> {
         this.person = person;
         id.setText(displayedIndex + ". ");
         name.setText(person.getName().fullName + " (@" + person.getTelegramHandle().value + ")");
-        attendance.setText(String.format("Attendance: %d/%d, Participation Points: %d",
-                this.person.getWeeksPresent(), this.person.getTotalWeeks(), this.person.getTotalPart()));
+        attendance.setText(String.format("Attendance: %s, Participation Points: %d",
+                this.person.getStyledAttendanceList("✓", "✕"), this.person.getTotalPart()));
         phone.setText("Phone: " + person.getPhone().value);
         email.setText("Email: " + person.getEmail().value);
         group.setText("Tutorial Group: " + person.getGroup().value);
