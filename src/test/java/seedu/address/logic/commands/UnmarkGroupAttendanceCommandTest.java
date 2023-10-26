@@ -6,6 +6,7 @@ import static seedu.address.testutil.Assert.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
@@ -15,7 +16,7 @@ import seedu.address.model.person.Group;
 public class UnmarkGroupAttendanceCommandTest {
 
     private Model model;
-    private UnmarkAttendanceCommand unmarkGroupAttendanceCommand;
+    private UnmarkGroupAttendanceCommand unmarkGroupAttendanceCommand;
 
     @BeforeEach
     public void setUp() {
@@ -36,10 +37,10 @@ public class UnmarkGroupAttendanceCommandTest {
         int week = 1;
 
         // Create a new MarkAttendanceCommand
-        UnmarkGroupAttendanceCommand command = new UnmarkGroupAttendanceCommand(group, Index.fromOneBased(week));
+        unmarkGroupAttendanceCommand = new UnmarkGroupAttendanceCommand(group, Index.fromOneBased(week));
 
         // Execute the command and expect a CommandException
-        assertThrows(CommandException.class, () -> command.execute(model));
+        assertThrows(CommandException.class, () -> unmarkGroupAttendanceCommand.execute(model));
     }
 
     @Test
@@ -49,10 +50,10 @@ public class UnmarkGroupAttendanceCommandTest {
         int week = 1;
 
         // Create a new MarkAttendanceCommand
-        UnmarkGroupAttendanceCommand cmd = new UnmarkGroupAttendanceCommand(group, Index.fromOneBased(week));
+        unmarkGroupAttendanceCommand = new UnmarkGroupAttendanceCommand(group, Index.fromOneBased(week));
 
         // Execute the command and expect a CommandException
-        assertThrows(CommandException.class, () -> cmd.execute(model));
+        assertThrows(CommandException.class, () -> unmarkGroupAttendanceCommand.execute(model));
     }
 
     @Test
