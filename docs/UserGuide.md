@@ -150,7 +150,7 @@ Helps user navigate through the app.
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 
 </div>
 
@@ -176,7 +176,7 @@ Adds a student to the student book.
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
 
@@ -202,7 +202,7 @@ Shows a list of all students.
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
 <a name="find"></a>
@@ -220,7 +220,7 @@ Finds students associated with the keyword.
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
 | Examples                                        | Purpose                            
@@ -242,7 +242,7 @@ Edits an existing student.
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
 | Examples                                        | Purpose                            
@@ -423,7 +423,7 @@ Grade a student's assignment.
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
 | Examples                   | Purpose                            
