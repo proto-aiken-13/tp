@@ -78,15 +78,20 @@ A seasoned user (but you still need help on memorizing commands)? Drop by in [Co
   
     - [Distributing Assignments to a Group of Students](#assignGroup) `assignGroup`
 
+    - [Distributing Assignments to an individual](#assignIndiv) `assignIndiv`
+
     - [Distributing Assignments](#deassign) `deassign`
 
     - [Grading a Student](#grade) `grade`
+
     - [Grading a Group of Students](#gradeGroup) `gradeGroup`
 
     - [Marking Attendance](#markAtd) `markAtd`
 
     - [Unmarking Attendance](#unmarkAtd) `unmarkAtd`
+
     - [Marking Attendance for a Group of Students](#markGroupAtd) `markGroupAtd`
+
     - [Unmarking Attendance for a Group of Students](#unmarkGroupAtd) `unmarkGroupAtd`
 
     - [Exiting the Program](#exit)
@@ -431,6 +436,16 @@ Format: `assignGroup GROUP n/ASSIGNMENT_NAME m/MAX_SCORE`
 Examples:
 - `assignGroup 1 n/Tutorial1 m/100`
 
+### Distribute assignments to a student: `assignIndiv`
+<a name="assignIndiv"></a>
+
+Create an assignment and assign it to a student.
+
+Format: `assignIndiv INDEX n/ASSIGNMENT_NAME m/MAX_SCORE`
+
+Examples:
+- `assignIndiv 1 n/Tutorial1 m/100`
+
 <a name="grade"></a>
 #### Grade assignments: `grade`
 
@@ -543,29 +558,30 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 <a name="summary"></a>
 ## Command summary
 
-| Action                           | Format, Examples                                                                                                                                                                                                         |
-|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**                          | `add n/NAME p/[PHONE_NUMBER] e/[EMAIL] a/[TELEGRAM_HANDLE] [t/TAG]… [c/COMMENT]… [group/GROUP]` <br> e.g., `add n/James Hop/22224444 e/jamesho@example.com a/jamesTele t/friend t/colleague c/Owes a cookie group/tut33` |
-| **Clear**                        | `clear​`                                                                                                                                                                                                            |
-| **Deassign Assignments**         | `deassign n/ASSIGNMENT_NAME`        `                                                                                                                                                                                    |
-| **Delete**                       | `delete INDEX​` <br> e.g., `delete 3`                                                                                                                                                                               |
-| **Distribute Assignments**       | `assign n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                                   |
-| **Distribute Group Assignments** | `assignGroup GROUP n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                        |
-| **Edit**                         | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…​` <br> e.g., `n/New Name t/`                                                                                                                         |
-| **Exit**                         | `exit​`                                                                                                                                                                                                             |
-| **Find**                         | `find KEYWORD [MORE_KEYWORDS]​` e.g., `find James Jake`                                                                                                                                                             |
-| **Find Group**                   | `findGroup KEYWORD [MORE_KEYWORDS]​` e.g., `findGroup group1 group2`                                                                                                                                                     |
-| **Grade Assignments**            | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                                  |
-| **Grade Group Assignments**      | `gradeGroup GROUP n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                             |
-| **Group**                        | `group PREV_GROUP UPDATED_GROUP`                                                                                                                                                                                         |
-| **Help**                         | `help​`                                                                                                                                                                                                             |
-| **Input Participation Points**   | `inputPP INDEX t/TUTORIAL p/POINTS`                                                                                                                                                                                      |
-| **List**                         | `list​`                                                                                                                                                                                                             |
-| **List Participation Record**    | `listParticipation INDEX`                                                                                                                                                                                                |
-| **Mark Attendance**              | `markAtd INDEX t/TUTORIAL`                                                                                                                                                                                               |
-| **Mark Group Attendance**        | `markGroupAtd GROUP t/TUTORIAL`                                                                                                                                                                                          |
-| **Unmark Attendance**            | `unmarkAtd INDEX t/TUTORIAL`                                                                                                                                                                                             |
-| **Unmark Group Attendance**      | `unmarkGroupAtd GROUP t/TUTORIAL`                                                                                                                                                                                        |
+| Action                                | Format, Examples                                                                                                                                                                                                         |
+|---------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add**                               | `add n/NAME p/[PHONE_NUMBER] e/[EMAIL] a/[TELEGRAM_HANDLE] [t/TAG]… [c/COMMENT]… [group/GROUP]` <br> e.g., `add n/James Hop/22224444 e/jamesho@example.com a/jamesTele t/friend t/colleague c/Owes a cookie group/tut33` |
+| **Clear**                             | `clear​`                                                                                                                                                                                                            |
+| **Deassign Assignments**              | `deassign n/ASSIGNMENT_NAME`        `                                                                                                                                                                                    |
+| **Delete**                            | `delete INDEX​` <br> e.g., `delete 3`                                                                                                                                                                               |
+| **Distribute Assignments**            | `assign n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                                   |
+| **Distribute Group Assignments**      | `assignGroup GROUP n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                        |
+| **Distribute Individual Assignments** | `assignIndiv INDEX n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                        |
+| **Edit**                              | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…​` <br> e.g., `n/New Name t/`                                                                                                                         |
+| **Exit**                              | `exit​`                                                                                                                                                                                                             |
+| **Find**                              | `find KEYWORD [MORE_KEYWORDS]​` e.g., `find James Jake`                                                                                                                                                             |
+| **Find Group**                        | `findGroup KEYWORD [MORE_KEYWORDS]​` e.g., `findGroup group1 group2`                                                                                                                                                |
+| **Grade Assignments**                 | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                                  |
+| **Grade Group Assignments**           | `gradeGroup GROUP n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                             |
+| **Group**                             | `group PREV_GROUP UPDATED_GROUP`                                                                                                                                                                                         |
+| **Help**                              | `help​`                                                                                                                                                                                                             |
+| **Input Participation Points**        | `inputPP INDEX t/TUTORIAL p/POINTS`                                                                                                                                                                                      |
+| **List**                              | `list​`                                                                                                                                                                                                             |
+| **List Participation Record**         | `listParticipation INDEX`                                                                                                                                                                                                |
+| **Mark Attendance**                   | `markAtd INDEX t/TUTORIAL`                                                                                                                                                                                               |
+| **Mark Group Attendance**             | `markGroupAtd GROUP t/TUTORIAL`                                                                                                                                                                                          |
+| **Unmark Attendance**                 | `unmarkAtd INDEX t/TUTORIAL`                                                                                                                                                                                             |
+| **Unmark Group Attendance**           | `unmarkGroupAtd GROUP t/TUTORIAL`                                                                                                                                                                                        |
 
 --------------------------------------------------------------------------------------------------------------------
 <a name="glossary"></a>
