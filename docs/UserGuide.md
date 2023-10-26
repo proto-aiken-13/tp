@@ -74,6 +74,8 @@ A seasoned user (but you still need help on memorizing commands)? Drop by in [Co
 
     - [Distributing Assignments](#assign) `assign`
 
+    - [Distributing Assignments](#deassign) `deassign`
+
     - [Grading a Student](#grade) `grade`
 
     - [Marking Attendance](#markAtd) `markAtd`
@@ -370,12 +372,6 @@ Examples
 * listParticipation 1 (List the participation record for the student with index 1)
 * listParticipation 5 (List the participation record for the student with index 5)
 
-### Assignment Grading
-
-For assignment grading, you can make the following commands:
-* assign
-* grade
-
 #### Distribute assignments: `assign`
 <a name="assign"></a>
 
@@ -385,6 +381,16 @@ Format: `assign n/ASSIGNMENT_NAME m/MAX_SCORE`
 
 Examples:
 - `assign n/Tutorial1 m/100`
+
+#### Deassign assignments: `deassign`
+<a name="deassign"></a>
+
+Delete an assignment for all students.
+
+Format: `deassign n/ASSIGNMENT_NAME`
+
+Examples:
+- `deassign n/Tutorial1`
 
 ### Distribute assignments to a group of students: `assignGroup`
 <a name="assignGroup"></a>
@@ -511,17 +517,18 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 | Action                           | Format, Examples                                                                                                                                                                                                         |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Add**                          | `add n/NAME p/[PHONE_NUMBER] e/[EMAIL] a/[TELEGRAM_HANDLE] [t/TAG]… [c/COMMENT]… [group/GROUP]` <br> e.g., `add n/James Hop/22224444 e/jamesho@example.com a/jamesTele t/friend t/colleague c/Owes a cookie group/tut33` |
-| **Clear**                        | `clear​`                                                                                                                                                                                                                 |
-| **Delete**                       | `delete INDEX​` <br> e.g., `delete 3`                                                                                                                                                                                    |
+| **Clear**                        | `clear​`                                                                                                                                                                                                            |
+| **Deassign Assignments**         | `deassign n/ASSIGNMENT_NAME`        `                                                                                                                                                                                    |
+| **Delete**                       | `delete INDEX​` <br> e.g., `delete 3`                                                                                                                                                                               |
 | **Distribute Assignments**       | `assign n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                                   |
 | **Distribute Group Assignments** | `assignGroup GROUP n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                        |
-| **Edit**                         | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…​` <br> e.g., `n/New Name t/`                                                                                                                              |
-| **Exit**                         | `exit​`                                                                                                                                                                                                                  |
-| **Find**                         | `find KEYWORD [MORE_KEYWORDS]​` e.g., `find James Jake`                                                                                                                                                                  |
+| **Edit**                         | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…​` <br> e.g., `n/New Name t/`                                                                                                                         |
+| **Exit**                         | `exit​`                                                                                                                                                                                                             |
+| **Find**                         | `find KEYWORD [MORE_KEYWORDS]​` e.g., `find James Jake`                                                                                                                                                             |
 | **Grade Assignments**            | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                                  |
 | **Grade Group Assignments**      | `gradeGroup GROUP n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                             |
-| **Help**                         | `help​`                                                                                                                                                                                                                  |
-| **List**                         | `list​`                                                                                                                                                                                                                  |
+| **Help**                         | `help​`                                                                                                                                                                                                             |
+| **List**                         | `list​`                                                                                                                                                                                                             |
 | **List Participation Record**    | `listParticipation INDEX`                                                                                                                                                                                                |
 | **Mark Attendance**              | `markAtd INDEX t/TUTORIAL`                                                                                                                                                                                               |
 | **Unmark Attendance**            | `unmarkAtd INDEX t/TUTORIAL`                                                                                                                                                                                             |
