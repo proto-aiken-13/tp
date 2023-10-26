@@ -41,8 +41,6 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label email;
     @FXML
-    private Hyperlink telegramLink;
-    @FXML
     private FlowPane tags;
     @FXML
     private FlowPane comments;
@@ -58,12 +56,6 @@ public class PersonCard extends UiPart<Region> {
         super(FXML);
         this.person = person;
         id.setText(displayedIndex + ". ");
-        // Initialize the button visibility based on the presence of the Telegram handle
-        if (person.getTelegramHandle() != null) {
-            telegramLink.setVisible(true);
-        } else {
-            telegramLink.setVisible(false);
-        }
         name.setText(person.getName().fullName + " (@" + person.getTelegramHandle().value + ")");
         attendance.setText(String.format("Attendance: %d/%d, Participation Points: %d",
                 this.person.getWeeksPresent(), this.person.getTotalWeeks(), this.person.getTotalPart()));
