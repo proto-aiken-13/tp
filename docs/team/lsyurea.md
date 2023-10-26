@@ -39,6 +39,7 @@ navigates to the link.
 - Added unmarkGroupAtd Command in User Guide.
 - Added assignGroup Command in User Guide.
 - Added gradeGroup Command in User Guide.
+- Added testing for assignGroup, unmarkGrouAtd, markGroupAtd, gradeGroup.
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 
