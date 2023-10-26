@@ -71,14 +71,21 @@ A seasoned user (but you still need help on memorizing commands)? Drop by in [Co
     - [Listing All Students](#list) `list`
 
     - [Finding a Student](#find) `find`
+  
+    - [Finding a Group of Students](#findGroup) `findGroup`
 
     - [Distributing Assignments](#assign) `assign`
+  
+    - [Distributing Assignments to a Group of Students](#assignGroup) `assignGroup`
 
     - [Grading a Student](#grade) `grade`
+    - [Grading a Group of Students](#gradeGroup) `gradeGroup`
 
     - [Marking Attendance](#markAtd) `markAtd`
 
     - [Unmarking Attendance](#unmarkAtd) `unmarkAtd`
+    - [Marking Attendance for a Group of Students](#markGroupAtd) `markGroupAtd`
+    - [Unmarking Attendance for a Group of Students](#unmarkGroupAtd) `unmarkGroupAtd`
 
     - [Exiting the Program](#exit)
 
