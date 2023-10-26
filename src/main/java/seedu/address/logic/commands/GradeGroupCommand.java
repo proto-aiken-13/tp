@@ -101,7 +101,7 @@ public class GradeGroupCommand extends Command {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof GradeCommand)) {
+        if (!(other instanceof GradeGroupCommand)) {
             return false;
         }
 
