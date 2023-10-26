@@ -28,6 +28,7 @@ Given below are my contributions to the project.
   * `assign`
   * `deassign`
   * `assignIndiv`
+- Removed the intrusive help window and made the website open immediately.
 
 ### Contributions to the User Guide (UG)
 
