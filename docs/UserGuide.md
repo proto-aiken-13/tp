@@ -247,7 +247,7 @@ Finds students associated with the group.
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems.
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
 | Examples                                        | Purpose
