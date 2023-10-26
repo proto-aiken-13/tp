@@ -18,7 +18,7 @@ public class DeassignmentCommandParser implements Parser<DeassignmentCommand> {
     /**
      * Parses the given arguments and constructs an DeassignmentCommand object for execution.
      *
-     * @param args A string of arguments representing the assignment command.
+     * @param args A string of arguments representing the deassignment command.
      * @return An DeassignmentCommand for execution.
      * @throws ParseException If the user input does not conform to the expected format
      *     or if maxScore is not a positive integer.
