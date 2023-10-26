@@ -30,7 +30,7 @@
       <VBox>
         <HBox style="-fx-background-color: #1194f0;">
           <ImageView fitHeight="150" preserveRatio="true">
-            <Image url="@/images/npctrack.png" />
+            <Image url="@/images/header.gif" />
           </ImageView>
         </HBox>
         <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">

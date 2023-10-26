@@ -43,6 +43,7 @@ navigates to the link.
 - Added gradeGroup Command in User Guide.
 - Added findGroup Command in User Guide.
 
+
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 
 - Added Use Case to change grouping of students
