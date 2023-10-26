@@ -1,19 +1,21 @@
 package seedu.address.logic.commands;
 
-import org.junit.jupiter.api.Test;
-import seedu.address.model.Model;
-import seedu.address.model.ModelManager;
-import seedu.address.model.UserPrefs;
-import seedu.address.model.person.GroupContainsKeywordsPredicate;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static seedu.address.logic.Messages.MESSAGE_PERSONS_LISTED_OVERVIEW;
+import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
+import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
 
 import java.util.Arrays;
 import java.util.Collections;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static seedu.address.logic.Messages.MESSAGE_PERSONS_LISTED_OVERVIEW;
-import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
+import org.junit.jupiter.api.Test;
+
+import seedu.address.model.Model;
+import seedu.address.model.ModelManager;
+import seedu.address.model.UserPrefs;
+import seedu.address.model.person.GroupContainsKeywordsPredicate;
 
 public class FindGroupCommandTest {
     private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
@@ -59,9 +61,9 @@ public class FindGroupCommandTest {
     @Test
     public void toStringMethod() {
         GroupContainsKeywordsPredicate predicate = new GroupContainsKeywordsPredicate(Arrays.asList("keyword"));
-        FindGroupCommand FindGroupCommand = new FindGroupCommand(predicate);
+        FindGroupCommand findGroupCommand = new FindGroupCommand(predicate);
         String expected = FindGroupCommand.class.getCanonicalName() + "{predicate=" + predicate + "}";
-        assertEquals(expected, FindGroupCommand.toString());
+        assertEquals(expected, findGroupCommand.toString());
     }
 
     /**
