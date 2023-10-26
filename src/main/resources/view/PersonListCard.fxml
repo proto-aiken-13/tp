@@ -28,7 +28,7 @@
             <Region fx:constant="USE_PREF_SIZE" />
           </minWidth>
         </Label>
-        <Label fx:id="name" text="\$first" styleClass="cell_big_label" />
+        <Hyperlink fx:id="name" text="\$first" styleClass="cell_big_label" onAction="#openLink"/>
       </HBox>
       <VBox spacing="3">
         <FlowPane hgap="5" alignment="CENTER_LEFT">
@@ -55,8 +55,6 @@
 
         <FlowPane  alignment="BOTTOM_LEFT" hgap="10" vgap="5">
           <Label fx:id="phone" styleClass="cell_small_label_less_info" text="\$phone" prefWidth="250" />
-          <Region HBox.hgrow="ALWAYS"/>
-          <Label fx:id="telegramHandle" styleClass="cell_small_label_less_info" text="\$telegramHandle" prefWidth="250"/>
           <Region HBox.hgrow="ALWAYS"/>
           <Label fx:id="email" styleClass="cell_small_label_less_info" text="\$email" prefWidth="250" />
           <Region HBox.hgrow="ALWAYS"/>
