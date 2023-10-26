@@ -46,9 +46,10 @@ navigates to the link.
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 
-- Added Use Case to change grouping of students
+- Added Use Case to change grouping of students.
 - Modified the Use Case for add such that it only shows error if name is not provided.
-- Helped generate Non-Functional Requirements
+- Helped generate Non-Functional Requirements.
+- Helped generate the Use Case for findGroup.
 
 ### Contributions to Team-Based Tasks
 
