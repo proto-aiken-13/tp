@@ -32,30 +32,30 @@
       </HBox>
       <VBox spacing="3">
         <FlowPane hgap="5" alignment="CENTER_LEFT">
-          <Label styleClass="cell_small_label_tags" text="🏷️ Tags:" />
+          <Label styleClass="cell_small_label_tags" text="🏷️ Tags:" prefWidth="175" />
           <FlowPane fx:id="tags" />
         </FlowPane>
         <FlowPane hgap="5" alignment="CENTER_LEFT">
-          <Label styleClass="cell_small_label_tags" text="🗒️ Comments:" />
+          <Label styleClass="cell_small_label_tags" text="🗒️ Comments:" prefWidth="175" />
           <FlowPane fx:id="comments" />
         </FlowPane>
         <FlowPane hgap="5" alignment="CENTER_LEFT">
-          <Label styleClass="cell_small_label_tags" text="📝 Assignments:" />
+          <Label styleClass="cell_small_label_tags" text="📝 Assignments:" prefWidth="175" />
           <FlowPane fx:id="assignments" />
         </FlowPane>
         <FlowPane  alignment="BOTTOM_LEFT" hgap="10" vgap="5">
           <Label fx:id="group" styleClass="cell_small_label" text="\$group" prefWidth="250" />
           <Region HBox.hgrow="ALWAYS" />
           <Label fx:id="attendance" styleClass="cell_small_label" text="\$attendance" prefWidth="500"/>
-
+          <Region HBox.hgrow="ALWAYS" />
+          <Label fx:id="participation" styleClass="cell_small_label" text="\$participation" prefWidth="500"/>
+          <Region HBox.hgrow="ALWAYS" />
         </FlowPane>
-
         <FlowPane  alignment="BOTTOM_LEFT" hgap="10" vgap="5">
           <Label fx:id="phone" styleClass="cell_small_label_less_info" text="\$phone" prefWidth="250" />
           <Region HBox.hgrow="ALWAYS"/>
           <Label fx:id="email" styleClass="cell_small_label_less_info" text="\$email" prefWidth="250" />
           <Region HBox.hgrow="ALWAYS"/>
-
         </FlowPane>
       </VBox>
     </VBox>

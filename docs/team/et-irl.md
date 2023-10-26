@@ -21,6 +21,8 @@ Given below are my contributions to the project.
 - Renamed the package associated with tags and comments to `fields`, for better code readability and maintainability.
 - Colour-coded and differentiated tags, comments and assignments in the UI.
 - Made the font-size, colours and design of the UI more harmonious.
+- Made the attendance look more intuitive on the UI.
+- Made the telegram weblink more integrated with the UI.
 
 ### Contributions to the User Guide (UG)
 

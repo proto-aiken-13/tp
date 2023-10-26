@@ -37,6 +37,8 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label attendance;
     @FXML
+    private Label participation;
+    @FXML
     private Label phone;
     @FXML
     private Label email;
@@ -57,8 +59,10 @@ public class PersonCard extends UiPart<Region> {
         this.person = person;
         id.setText(displayedIndex + ". ");
         name.setText(person.getName().fullName + " (@" + person.getTelegramHandle().value + ")");
-        attendance.setText(String.format("Attendance: %s, Participation Points: %d",
-                this.person.getStyledAttendanceList("✓", "✕"), this.person.getTotalPart()));
+        attendance.setText(String.format("Attendance: %s",
+                this.person.getStyledAttendanceList("✓", "✕")));
+        participation.setText(String.format("Participation Points: %d",
+                    this.person.getTotalPart()));
         phone.setText("Phone: " + person.getPhone().value);
         email.setText("Email: " + person.getEmail().value);
         group.setText("Tutorial Group: " + person.getGroup().value);
