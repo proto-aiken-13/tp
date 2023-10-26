@@ -25,6 +25,9 @@ Given below are my contributions to the project.
 - Made the telegram weblink more integrated with the UI.
 - Implemented assignments, so each student can have an arbitrary amount of assignments.
 - Implemented commands relating to assigning and deassigning assignments from students.
+  * `assign`
+  * `deassign`
+  * `assignIndiv`
 
 ### Contributions to the User Guide (UG)
 
@@ -32,6 +35,7 @@ Given below are my contributions to the project.
 - Updated the `edit` command to reflect the new command accepting a comment.
 - Added the `assign` command to give all students an assignment.
 - Added the `deassign` command usage.
+- Added the `assignIndiv` command usage.
 - Spotted documentation bugs and ensured the reliability of the table of contents.
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
