@@ -78,10 +78,10 @@ public class PersonCard extends UiPart<Region> {
     }
 
     /**
-     * Opens a link to the telegram handle of {@code Person}.
+     * Opens a link to the telegram handle of {@code Person} in their preferred browser.
      */
     @FXML
-    public void openLink(ActionEvent event) {
+    public void openTelegram(ActionEvent event) {
         String telegramHandle = person.getTelegramHandle().value;
         if (telegramHandle != null && !telegramHandle.isEmpty()) {
             UiUtil.open("https://t.me/" + telegramHandle);
