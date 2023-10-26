@@ -3,7 +3,6 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_GRADE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
-import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 import java.util.List;
 import java.util.Optional;
@@ -91,7 +90,6 @@ public class GradeCommand extends Command {
                 studentToGrade.getTags(),
                 studentToGrade.getComments(), studentToGrade.getAssignments(), Optional.of(studentToGrade.getGroup()));
         model.setPerson(studentToGrade, editedStudent);
-        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
         return new CommandResult(String.format(ASSIGNMENT_GRADE_SUCCESS));
     }
 

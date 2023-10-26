@@ -24,17 +24,21 @@ find command, list command, mark command such that it goes to 78%.
 students are in.
 - Modify help command to show the link to the User Guide and upon pressing,
 navigates to the link.
-- Mark attendance for groups of students at the same time.
-- Unmark attendance for groups of students at the same time.
+- Add Mark attendance for the same group of students at the same time.
+- Add Unmark attendance for the same groups of students at the same time.
+- Add a new command to assign the same group of students.
+- Add a new command to grade the same group of students with the same marks.
 
 ### Contributions to the User Guide (UG)
 
-- Added Group Command to User Guide
-- Redefined Edit Command in User Guide to include group command
-- Redefined Add Command in User Guide to include group command
-- Redefined Add Command to show that all other fields that are not names
-- Added markGroupAtd Command in User Guide
-- Added unmarkGroupAtd Command in User Guide
+- Added Group Command to User Guide.
+- Redefined Edit Command in User Guide to include group command.
+- Redefined Add Command in User Guide to include group command.
+- Redefined Add Command to show that all fields that are not names are optional.
+- Added markGroupAtd Command in User Guide.
+- Added unmarkGroupAtd Command in User Guide.
+- Added assignGroup Command in User Guide.
+- Added gradeGroup Command in User Guide.
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 
@@ -48,6 +52,7 @@ navigates to the link.
 - Helped to enable assertions in gradle file to allow for defensive programming.
 - Helped to increase test coverage of pre-existing commands.
 - Helped to write the postmortem.
+- Helped to create issues.
 
 ### Review and Mentoring Contributions
 
