@@ -494,6 +494,24 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case ends.
 
+**Use case: Find a group of persons**
+
+**MSS**
+1. User requests to find a group of persons.
+2. User provides the full or partial search keyword.
+3. AddressBook searches for persons matching the keyword.
+4. AddressBook displays a list of matching persons.
+
+   Use case ends.
+
+**Extensions**
+
+* 5a. No persons match the search keyword.
+
+    * 5a1. AddressBook displays a message indicating no matching persons were found. 
+    
+      Use case ends.
+
 **Use case: List all persons**
 
 **MSS**
