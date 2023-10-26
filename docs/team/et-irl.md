@@ -23,12 +23,15 @@ Given below are my contributions to the project.
 - Made the font-size, colours and design of the UI more harmonious.
 - Made the attendance look more intuitive on the UI.
 - Made the telegram weblink more integrated with the UI.
+- Implemented assignments, so each student can have an arbitrary amount of assignments.
+- Implemented commands relating to assigning and deassigning assignments from students.
 
 ### Contributions to the User Guide (UG)
 
 - Updated the `add` command to reflect the new command accepting a comment.
 - Updated the `edit` command to reflect the new command accepting a comment.
 - Added the `assign` command to give all students an assignment.
+- Added the `deassign` command usage.
 - Spotted documentation bugs and ensured the reliability of the table of contents.
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
