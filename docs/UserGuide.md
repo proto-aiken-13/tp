@@ -54,7 +54,6 @@ A seasoned user (but you still need help on memorizing commands)? Drop by in [Co
 ---
 
 <a name="toc"></a>
-
 ## Table of Contents
 
 {:toc}
@@ -132,12 +131,27 @@ Step 5 : Start using the app
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </div>
 
-### Viewing help : `help`
 <a name="help"></a>
+### Viewing help : `help`
+
+If you have some trouble when using `npc_track`, simply click on the help button on the top right menu bar or type 
+the `help` command.
 
 Shows a message displaying the link and a button that navigates to the link directly.
 
-Format: `help`
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
+Helps user navigate through the app.
+<br><br>
+***Format***: `help`
+</div>
+
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+
+</div>
+
 
 <a name="add"></a>
 ### ***Adding a student: `add`***
@@ -161,7 +175,6 @@ Adds a student to the student book.
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
-
 </div>
 
 
@@ -173,37 +186,69 @@ This is not to worry. You can refer to our [troubleshoot](#issues) guide for com
 | `add n/Benson`                                                                                | Adds Benson only                                                                             
 
 
-
-### Listing all students : `list`
 <a name="list"></a>
+### ***Listing all students : `list`***
 
+Want to see all your students' details? Simply type in the one-word `list` command.
+
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
 Shows a list of all students.
+<br><br>
+***Format***: `list`
+</div>
 
-Format: `list`
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+</div>
 
-### Finding students : `find`
 <a name="find"></a>
+### ***Finding students : `find`***
 
+Finding it difficult to scroll through the whole list of students? Don't worry just find the specific student using 
+the `find` command.
+
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
 Finds students associated with the keyword.
+<br><br>
+***Format***: `find KEYWORD [MORE_KEYWORDS]…`
+</div>
 
-Format: `find KEYWORD [MORE_KEYWORDS]…`
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+</div>
 
-Examples:
-*  `find James Jake`
+| Examples                                        | Purpose                            
+|-------------------------------------------------|------------------------------------
+| `find James Jake`                               | Finds a student called "James Jake"
 
-### Editing a person : `edit`
+
 <a name="edit"></a>
+### Editing a person : `edit`
 
+Have anything you want to change ? Not to worry, your student details is editable.
+
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
 Edits an existing student.
+<br><br>
+***Format***: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]… [a/TELEGRAM_HANDLE] [group/GROUP]`
+</div>
 
-Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]… [a/TELEGRAM_HANDLE] [group/GROUP]`
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+</div>
 
-Examples:
-*  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be
-   `91234567` and `johndoe@example.com` respectively.
-*  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
-*  `edit 3 t/ c/Loves cake` Clears all existing tags of the 3rd person and replaces their tags with "Loves cake".
-* `edit 4 group/2` Moves the 4th person to group 2.
+| Examples                                        | Purpose                            
+|-------------------------------------------------|------------------------------------
+| `edit 1 p/91234567 e/johndoe@example.com` | Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
+|  `edit 2 n/Betsy Crower t/` | Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
+|  `edit 3 t/ c/Loves cake` | Clears all existing tags of the 3rd person and replaces their tags with "Loves cake".
+|`edit 4 group/2` |  Moves the 4th person to group 2.
 
 
 ### Attendance
@@ -212,7 +257,7 @@ For attendance, you can enter the following commands:
 * markAtd
 * unmarkAtd
 
-### Mark Attendance : `markAtd`
+#### Mark Attendance : `markAtd`
 <a name="markAtd"></a>
 
 Marks the attendance of a student for that tutorial.
@@ -230,7 +275,7 @@ Examples:
 * `markAtd 1 t/1` (marks attendance of student with index 1 for tutorial 1)
 * `markAtd 2 t/12` (marks attendance of student with index 2 for tutorial 12)
 
-### Unmark Attendance : `unmarkAtd`
+#### Unmark Attendance : `unmarkAtd`
 <a name="unmarkAtd"></a>
 
 Unmark the attendance of a student for that tutorial.
@@ -248,7 +293,7 @@ Examples:
 * `unmarkAtd 1 t/1` (unmark attendance of student with index 1 for tutorial 1)
 * `unmarkAtd 2 t/12` (unmark attendance of student with index 2 for tutorial 12)
 
-### Mark Group Attendance: `markGroupAtd`
+#### Mark Group Attendance: `markGroupAtd`
 <a name="markGroupAtd"></a>
 
 Marks the attendance of a group of students for that tutorial.
@@ -265,7 +310,7 @@ Marking the attendance for a week that is already marked will result in the mess
 Examples:
 * `markGroupAtd 1 t/1` (marks attendance of students in group 1 for tutorial 1)
 
-### Unmark Group Attendance: `unmarkGroupAtd`
+#### Unmark Group Attendance: `unmarkGroupAtd`
 <a name="unmarkGroupAtd"></a>
 
 Unmark the attendance of a group of students for that tutorial.
@@ -288,7 +333,7 @@ For participation, you can make the following commands:
 * inputPP
 * listParticipation
 
-### insert participation points: inputPP
+#### Insert participation points: inputPP
 <a name="inputPP"></a>
 
 input participation points for a student for that tutorial.
@@ -311,7 +356,7 @@ Examples
 * inputPP 1 t/1 pp/350 (For student with index 1, input 350 participation points to tutorial 1)
 * inputPP 2 t/12 pp/500 (For student with index 2, input 500 participation points to tutorial 12)
 
-### list participation records: `listParticipation`
+#### List participation records: `listParticipation`
 <a name="listParticipation"></a>
 
 list a student's participation record.
@@ -325,7 +370,13 @@ Examples
 * listParticipation 1 (List the participation record for the student with index 1)
 * listParticipation 5 (List the participation record for the student with index 5)
 
-### Distribute assignments: `assign`
+### Assignment Grading
+
+For assignment grading, you can make the following commands:
+* assign
+* grade
+
+#### Distribute assignments: `assign`
 <a name="assign"></a>
 
 Create an assignment and assign it to all students.
@@ -335,15 +386,37 @@ Format: `assign n/ASSIGNMENT_NAME m/MAX_SCORE`
 Examples:
 - `assign n/Tutorial1 m/100`
 
-### Grade assignments: `grade`
 <a name="grade"></a>
+#### Grade assignments: `grade`
 
+![Grade](images/grade.png)
+
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
 Grade a student's assignment.
+<br><br>
+***Format***: `grade INDEX n/ASSIGNMENT_NAME g/SCORE`
+</div>
 
-Format: `grade INDEX n/ASSIGNMENT_NAME g/SCORE`
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- A student's marks need to be below the maximum marks for that particular assignment and above 0.
+<br>
+- Need to specify the index of the student after the command word
+</div>
 
-Examples:
-- `grade 1 n/Tutorial1 g/90`
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+</div>
+
+| Examples                   | Purpose                            
+|----------------------------|------------------------------------
+| `grade 1 n/tutorial2 g/80` | Grades student #1 a score of 80 for his tutorial2.
+| `grade 10 n/lab2 g/35`     | Grades student #10 a score of 35 for his lab2.
+
+:top: [Back to Table Of Contents](#toc)
+
 
 ### Grouping students: `group`
 <a name="group"></a>
