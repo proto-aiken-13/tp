@@ -277,15 +277,16 @@ various teaching activities seamlessly.
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​      | I want to …​                 | So that I can…​                                       |
-|----------|--------------|------------------------------|-------------------------------------------------------|
-| `* * *`  | new user     | see usage instructions       | refer to instructions when I forget how to use the App |
-| `* * *`  | TA           | add students to a class      |                                                       |
-| `* * *`  | TA           | delete students from a class | remove students who are not part of the class anymore |
-| `* * *`  | TA           | find students by keyword     | reduce time taken to locate student details           |
-| `* *`    | TA           | hide private contact details | minimize chance of someone else seeing them by accident |
-| `**`     | TA           | list all students in a class | have an overview of all the students in a class       |
-| `*`      | TA           | exit the app                 | close the program                                     |
+| Priority | As a …​  | I want to …​                        | So that I can…​                                         |
+|----------|----------|-------------------------------------|---------------------------------------------------------|
+| `* * *`  | new user | see usage instructions              | refer to instructions when I forget how to use the App  |
+| `* * *`  | TA       | add students to a class             |                                                         |
+| `* * *`  | TA       | delete students from a class        | remove students who are not part of the class anymore   |
+| `* * *`  | TA       | find students by keyword            | reduce time taken to locate student details             |
+| `* *`    | TA       | hide private contact details        | minimize chance of someone else seeing them by accident |
+| `* *`    | TA       | mark and unmark students attendance | track the class participation records                   |
+| `* *`    | TA       | list all students in a class        | have an overview of all the students in a class         |
+| `*`      | TA       | exit the app                        | close the program                                       |
 
 *{More to be added}*
 
@@ -310,6 +311,68 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 3a1. AddressBook displays an error message and prompts the user to provide missing details.
 
       Use case resumes at step 2.
+
+**Use case: Mark a student's attendance**
+
+**MSS**
+
+1. User requests to mark the attendance of a particular tutorial for a particular student.
+2. User provides the student index and tutorial number.
+3. `npc_track` updates the current tutorial attendance of that student as marked.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. User does not provide the correct index.
+  * 2a1. `npc_track` displays an error message and prompts the user to provide the missing details.
+* 2b. User provides a tutorial number that is outside the valid boundary.
+  * 2b1. `npc_track` displays an error message and prompts the user to provide the correct details.
+
+**Use case: Unmark a student's attendance**
+
+**MSS**
+
+1. User requests to unmark the attendance of a particular tutorial for a particular student.
+2. User provides the student index and tutorial number.
+3. `npc_track` updates the current tutorial attendance of that student as unmarked.
+
+   Use case ends.
+
+**Extensions**
+
+* 2a. User does not provide the correct index.
+    * 2a1. `npc_track` displays an error message and prompts the user to provide the missing details.
+* 2b. User provides a tutorial number that is outside the valid boundary.
+    * 2b1. `npc_track` displays an error message and prompts the user to provide the correct details.
+
+**Use case: Input participation points to a students tutorial participation**
+
+**MSS**
+
+1. User requests to input participation points to a students tutorial participation.
+2. User provides the student index, tutorial number, and participation points.
+3. `npc_track` updates the current tutorials participation point for the student.
+
+**Extensions**
+
+* 2a. User does not provide the correct index.
+    * 2a1. `npc_track` displays an error message and prompts the user to provide the missing details.
+* 2b. User provides a tutorial number or participation points that is outside the valid boundary.
+    * 2b1. `npc_track` displays an error message and prompts the user to provide the correct details.
+
+**Use case: List a students participation record**
+
+**MSS**
+
+1. User requests to list the participation record of a particular student.
+2. User provides the student index.
+3. `npc_track` returns a message containing the participation record of the student.
+
+**Extensions**
+
+* 2a. User does not provide the correct index.
+    * 2a1. `npc_track` displays an error message and prompts the user to provide the missing details. 
 
 **Use case: Grade a student's assignment**
 
