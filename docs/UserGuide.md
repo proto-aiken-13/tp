@@ -161,7 +161,7 @@ Helps user navigate through the app.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshoot](#issues) guide for common problems. 
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 
 </div>
@@ -187,7 +187,7 @@ Adds a student to the student book.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshoot](#issues) guide for common problems. 
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
@@ -213,7 +213,7 @@ Shows a list of all students.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshoot](#issues) guide for common problems. 
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
@@ -231,7 +231,7 @@ Finds students associated with the keyword.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshoot](#issues) guide for common problems. 
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
@@ -253,7 +253,7 @@ Finds students associated with the group.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshoot](#issues) guide for common problems.
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems.
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
@@ -275,7 +275,7 @@ Edits an existing student.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshoot](#issues) guide for common problems. 
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
@@ -466,7 +466,7 @@ Grade a student's assignment.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshoot](#issues) guide for common problems. 
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
@@ -530,7 +530,7 @@ _Details coming soon ..._
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Troubleshoot
+## Troubleshooting
 <a name="issues"></a>
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
