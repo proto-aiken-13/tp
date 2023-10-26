@@ -50,7 +50,7 @@ public class FindGroupCommand extends Command {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof FindCommand)) {
+        if (!(other instanceof FindGroupCommand)) {
             return false;
         }
 
