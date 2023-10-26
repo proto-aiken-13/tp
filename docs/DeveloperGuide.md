@@ -181,6 +181,9 @@ The `AssignmentCommand` looks through all the `Person`s, and attempts to add the
   itself.
   * Pros: More control and more tailorable to each person.
   * Cons: Troublesome and infeasible at worst for a large address book.
+*  **Alternative 3:** Give it to a group of people, specified by a group name.
+  * Pros: More control and more tailorable to each person.
+  * Cons: Troublesome and infeasible at worst for a large address book.
 
 **Aspect: What grade to store in the assignment**
 
