@@ -10,6 +10,7 @@ import java.util.Optional;
 import java.util.Set;
 
 import seedu.address.logic.commands.exceptions.CommandException;
+import seedu.address.logic.Messages;
 import seedu.address.model.Model;
 import seedu.address.model.person.Assignment;
 import seedu.address.model.person.Group;
@@ -26,8 +27,8 @@ public class AssignmentGroupCommand extends Command {
     public static final String MESSAGE_FAIL = "Assignment not created.";
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Creates an assignment for students in the same group.\n"
-            + "Compulsory Parameters: "
-            + PREFIX_NAME + "ASSIGNMENT_NAME " + "GROUP " + PREFIX_MAX_SCORE + "MAX_SCORE "
+            + "Compulsory Parameters: GROUP"
+            + PREFIX_NAME + "ASSIGNMENT_NAME " + PREFIX_MAX_SCORE + "MAX_SCORE "
             + "\nExample: " + COMMAND_WORD + " group1 "
             + PREFIX_NAME + "Tutorial1 " + PREFIX_MAX_SCORE + "100";
     private final Name name;
@@ -63,7 +64,9 @@ public class AssignmentGroupCommand extends Command {
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
         List<Person> lastShownList = model.getFilteredPersonList().filtered(person -> person.getGroup().equals(group));
-
+        if (lastShownList.isEmpty()) {
+            throw new CommandException(Messages.INVALID_GROUP);
+        }
         // Loop through the list and update each person's assignments
         for (Person studentToEdit : lastShownList) {
             Set<Assignment> updatedAssignments = new HashSet<>();
