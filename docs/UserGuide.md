@@ -78,6 +78,8 @@ A seasoned user (but you still need help on memorizing commands)? Drop by in [Co
   
     - [Distributing Assignments to a Group of Students](#assignGroup) `assignGroup`
 
+    - [Distributing Assignments](#deassign) `deassign`
+
     - [Grading a Student](#grade) `grade`
     - [Grading a Group of Students](#gradeGroup) `gradeGroup`
 
@@ -155,7 +157,7 @@ Helps user navigate through the app.
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 
 </div>
 
@@ -181,7 +183,7 @@ Adds a student to the student book.
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
 
@@ -207,7 +209,7 @@ Shows a list of all students.
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
 <a name="find"></a>
@@ -225,7 +227,7 @@ Finds students associated with the keyword.
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
 | Examples                                        | Purpose                            
@@ -269,7 +271,7 @@ Edits an existing student.
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
 | Examples                                        | Purpose                            
@@ -399,12 +401,6 @@ Examples
 * listParticipation 1 (List the participation record for the student with index 1)
 * listParticipation 5 (List the participation record for the student with index 5)
 
-### Assignment Grading
-
-For assignment grading, you can make the following commands:
-* assign
-* grade
-
 #### Distribute assignments: `assign`
 <a name="assign"></a>
 
@@ -414,6 +410,16 @@ Format: `assign n/ASSIGNMENT_NAME m/MAX_SCORE`
 
 Examples:
 - `assign n/Tutorial1 m/100`
+
+#### Deassign assignments: `deassign`
+<a name="deassign"></a>
+
+Delete an assignment for all students.
+
+Format: `deassign n/ASSIGNMENT_NAME`
+
+Examples:
+- `deassign n/Tutorial1`
 
 ### Distribute assignments to a group of students: `assignGroup`
 <a name="assignGroup"></a>
@@ -446,7 +452,7 @@ Grade a student's assignment.
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 This is not to worry. You can refer to our [troubleshoot](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
 | Examples                   | Purpose                            
@@ -540,25 +546,26 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 | Action                           | Format, Examples                                                                                                                                                                                                         |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Add**                          | `add n/NAME p/[PHONE_NUMBER] e/[EMAIL] a/[TELEGRAM_HANDLE] [t/TAG]… [c/COMMENT]… [group/GROUP]` <br> e.g., `add n/James Hop/22224444 e/jamesho@example.com a/jamesTele t/friend t/colleague c/Owes a cookie group/tut33` |
-| **Clear**                        | `clear​`                                                                                                                                                                                                                 |
-| **Delete**                       | `delete INDEX​` <br> e.g., `delete 3`                                                                                                                                                                                    |
+| **Clear**                        | `clear​`                                                                                                                                                                                                            |
+| **Deassign Assignments**         | `deassign n/ASSIGNMENT_NAME`        `                                                                                                                                                                                    |
+| **Delete**                       | `delete INDEX​` <br> e.g., `delete 3`                                                                                                                                                                               |
 | **Distribute Assignments**       | `assign n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                                   |
 | **Distribute Group Assignments** | `assignGroup GROUP n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                        |
-| **Edit**                         | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…​` <br> e.g., `n/New Name t/`                                                                                                                              |
-| **Exit**                         | `exit​`                                                                                                                                                                                                                  |
-| **Find**                         | `find KEYWORD [MORE_KEYWORDS]​` e.g., `find James Jake`                                                                                                                                                                  |
+| **Edit**                         | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…​` <br> e.g., `n/New Name t/`                                                                                                                         |
+| **Exit**                         | `exit​`                                                                                                                                                                                                             |
+| **Find**                         | `find KEYWORD [MORE_KEYWORDS]​` e.g., `find James Jake`                                                                                                                                                             |
 | **Find Group**                   | `findGroup KEYWORD [MORE_KEYWORDS]​` e.g., `findGroup group1 group2`                                                                                                                                                     |
 | **Grade Assignments**            | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                                  |
 | **Grade Group Assignments**      | `gradeGroup GROUP n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                             |
-| **Help**                         | `help​`                                                                                                                                                                                                                  |
-| **List**                         | `list​`                                                                                                                                                                                                                  |
+| **Group**                        | `group PREV_GROUP UPDATED_GROUP`                                                                                                                                                                                         |
+| **Help**                         | `help​`                                                                                                                                                                                                             |
+| **Input Participation Points**   | `inputPP INDEX t/TUTORIAL p/POINTS`                                                                                                                                                                                      |
+| **List**                         | `list​`                                                                                                                                                                                                             |
 | **List Participation Record**    | `listParticipation INDEX`                                                                                                                                                                                                |
 | **Mark Attendance**              | `markAtd INDEX t/TUTORIAL`                                                                                                                                                                                               |
-| **Unmark Attendance**            | `unmarkAtd INDEX t/TUTORIAL`                                                                                                                                                                                             |
 | **Mark Group Attendance**        | `markGroupAtd GROUP t/TUTORIAL`                                                                                                                                                                                          |
+| **Unmark Attendance**            | `unmarkAtd INDEX t/TUTORIAL`                                                                                                                                                                                             |
 | **Unmark Group Attendance**      | `unmarkGroupAtd GROUP t/TUTORIAL`                                                                                                                                                                                        |
-| **Input Participation Points**   | `inputPP INDEX t/TUTORIAL p/POINTS`                                                                                                                                                                                      |
-| **Group**                        | `group PREV_GROUP UPDATED_GROUP`                                                                                                                                                                                         |
 
 --------------------------------------------------------------------------------------------------------------------
 <a name="glossary"></a>
