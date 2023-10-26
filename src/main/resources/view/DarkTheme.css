@@ -149,14 +149,14 @@
 }
 
 .cell_small_label_tags {
-    -fx-font-family: "Segoe UI Semibold";
-    -fx-font-size: 16px;
+    -fx-font-family: "Segoe UI Emoji" !important;
+    -fx-font-size: 22px;
     -fx-text-fill: #1194f0;
 }
 
 .cell_small_label_tags:selected {
-    -fx-font-family: "Segoe UI";
-    -fx-font-size: 16px;
+    -fx-font-family: "Segoe UI Emoji" !important;
+    -fx-font-size: 22px;
     -fx-text-fill: #ffffff;
 }
 
