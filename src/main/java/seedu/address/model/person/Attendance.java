@@ -133,6 +133,27 @@ public class Attendance {
     }
 
     /**
+     * Returns a styled representation of an attendance list
+     * using the specified symbols for positive and negative attendance.
+     *
+     * @param positiveSymbol The symbol to represent positive attendance (e.g., "✔" for present).
+     * @param negativeSymbol The symbol to represent negative attendance (e.g., "❌" for absent).
+     * @return A styled representation of the attendance list with symbols indicating positive and negative attendance.
+     */
+    public String getStyledAttendanceList(String positiveSymbol, String negativeSymbol) {
+        StringBuilder styledList = new StringBuilder();
+        for (boolean isPresent : this.attendanceList) {
+            if (isPresent) {
+                styledList.append(positiveSymbol + " ");
+            } else {
+                styledList.append(negativeSymbol + " ");
+            }
+        }
+
+        return styledList.toString();
+    }
+
+    /**
      * Converts a tutorial represented as a string to an integer.
      *
      * @param tutorial A string representing a tutorial number.
