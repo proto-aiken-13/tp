@@ -55,7 +55,9 @@ public class GradeGroupCommand extends Command {
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
         List<Person> lastShownList = model.getFilteredPersonList().filtered(person -> person.getGroup().equals(group));
-
+        if (lastShownList.isEmpty()) {
+            throw new CommandException(Messages.INVALID_GROUP);
+        }
         // checks for validity
         for (Person studentToGrade : lastShownList) {
             // From the specific students' assignments, get that specific named assignment
