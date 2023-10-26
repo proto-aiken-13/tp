@@ -148,10 +148,10 @@ Step 5 : Start using the app
 <a name="help"></a>
 ### Viewing help : `help`
 
-If you have some trouble when using `npc_track`, simply click on the help button on the top right menu bar or type 
+If you have some trouble when using `npc_track`, simply click on the help button (or F1) on the menu bar or type 
 the `help` command.
 
-Shows a message displaying the link and a button that navigates to the link directly.
+Opens the user guide in your browser.
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
