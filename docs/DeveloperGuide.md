@@ -358,6 +358,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Use case: Mark a student's attendance**
 
+<img src="diagrams\MarkAttendanceActivityDiagram.puml" width="280" />
+
 **MSS**
 
 1. User requests to mark the attendance of a particular tutorial for a particular student.
