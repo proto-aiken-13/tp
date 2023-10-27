@@ -46,6 +46,8 @@ Given below are my contributions to the project.
 
 - Helped manage the user stories.
 - Helped with the use cases for the features I implemented.
+- Helped create the UML diagram for InputParticipationSequenceDiagram.
+- Helped with explaining the process for Input Participation implementation.
 
 ### Contributions to Team-Based Tasks
 

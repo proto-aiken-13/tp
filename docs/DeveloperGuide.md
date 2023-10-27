@@ -205,7 +205,7 @@ The `AssignmentCommand` looks through all the `Person`s, and attempts to add the
 #### Implementation
 
 Input participation command is handled by InputParticipationCommand, InputParticipationParser, and Model.
-* `InputParticipationParser`: 
+* `InputParticipationParser`: Parse user inputs.
 * `InputParticipationCommand`: Given the parsed user input, execute the command.
 * `Model`: Updates the student list accordingly.
 
