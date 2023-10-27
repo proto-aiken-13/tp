@@ -31,6 +31,8 @@ Given below are my contributions to the project.
         making it a more comprehensive tool for educators and administrators.
 - Test Coverage:
   - Testing has been done for all the features I implemented.
+- Code Refactoring:
+  - Did code refactoring so that command classes can be simpler.
 
 ### Contributions to the User Guide (UG)
 
@@ -52,6 +54,7 @@ Given below are my contributions to the project.
 ### Contributions to Team-Based Tasks
 
 - Brainstormed for features to be implemented.
+- Created milestone v1.2, v1.3, v1.4
 
 ### Review and Mentoring Contributions
 
