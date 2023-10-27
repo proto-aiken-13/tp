@@ -14,20 +14,32 @@ Given below are my contributions to the project:
 
 - **New Feature**
 	- Added a Ui.
+	- Feature to add: Update the Attendance system to include different types of attendances.
 - **Code contributed**
+
+- [Link to My Code Contributions on tP Code Dashboard](
+https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code&since=2023-09-22&tabOpen=true&tabType=authorship&tabAuthor=proto-aiken-13&tabRepo=AY2324S1-CS2103T-T12-1%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code&authorshipIsBinaryFileTypeChecked=false&authorshipIsIgnoredFilesChecked=false)
+
 	- Edited MainWindow.fxml
 	- Edited DarkMode.css
+	- Code contribution plans: Updated attendance system
+		- To be included: An attendance status system
+		- This would help to distinguish if a user 
+		- Improved tutorial participation system (to be arbitrarily set by users)
 - **Project management**
 	- Managed release `v1.1` as a practice on Github
 	- Helped to contribute and conduct v1.2
 	- Contributed to v1.2b
+	- Helped to plan v1.3, particularly the division of work.
 - **Enhancements to existing features:**
 	- Made the Ui mockup
-	- Generally completed the UI
+	- Generally completed the Ui
+	- To be added: npc_track Ui logo
 -**Documentation:**
-(to be added)
+	- To be added
 -**Community**
 (To be added)
 -**Tools**
 (to be added)
-
+-**Contributions to the Developer Guide (DG) and UML Diagrams**
+(To be added)
