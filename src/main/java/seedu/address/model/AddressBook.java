@@ -88,6 +88,15 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
+     * Updates the student list to propagate change to the rest of the model.
+     *
+     * @param person The student to be refreshed.
+     */
+    public void updatePerson(Person person) {
+        persons.updatePerson(person);
+    }
+
+    /**
      * Removes {@code key} from this {@code AddressBook}.
      * {@code key} must exist in the address book.
      */

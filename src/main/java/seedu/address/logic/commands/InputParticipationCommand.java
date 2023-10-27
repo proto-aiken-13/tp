@@ -5,7 +5,6 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_PARTICIPATION_POINTS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 
 import java.util.List;
-import java.util.Optional;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
@@ -61,19 +60,13 @@ public class InputParticipationCommand extends Command {
         }
 
         Person studentToEdit = lastShownList.get(index.getZeroBased());
-        Person editedStudent = new Person(
-                studentToEdit.getName(), Optional.of(studentToEdit.getPhone()), Optional.of(studentToEdit.getEmail()),
-                Optional.of(studentToEdit.getTelegramHandle()), Optional.of(studentToEdit.getAttendance()),
-                studentToEdit.getTags(),
-                studentToEdit.getComments(), studentToEdit.getAssignments(), Optional.of(studentToEdit.getGroup()));
         Attendance studentAtd = studentToEdit.getAttendance();
         if (!studentAtd.isMarkedWeek(this.tut.getZeroBased())) {
             return new CommandResult(ATTENDANCE_NOT_MARKED);
         }
 
         studentAtd.inputParticipationPoints(this.tut.getZeroBased(), this.points);
-        model.setPerson(studentToEdit, editedStudent);
-        model.updateFilteredPersonList(Model.PREDICATE_SHOW_ALL_PERSONS);
+        model.updatePerson(studentToEdit);
         return new CommandResult(SUCCESS_MSG);
     }
 

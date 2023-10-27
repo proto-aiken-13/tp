@@ -4,7 +4,6 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 
 import java.util.List;
-import java.util.Optional;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
@@ -59,20 +58,14 @@ public class MarkAttendanceCommand extends Command {
         }
 
         Person studentToEdit = lastShownList.get(index.getZeroBased());
-        Person editedStudent = new Person(
-                studentToEdit.getName(), Optional.of(studentToEdit.getPhone()), Optional.of(studentToEdit.getEmail()),
-                Optional.of(studentToEdit.getTelegramHandle()), Optional.of(studentToEdit.getAttendance()),
-                studentToEdit.getTags(),
-                studentToEdit.getComments(), studentToEdit.getAssignments(), Optional.of(studentToEdit.getGroup()));
         Attendance studentAtd = studentToEdit.getAttendance();
         if (studentAtd.isMarkedWeek(this.tut.getZeroBased())) {
             return new CommandResult(Messages.MESSAGE_DUPLICATE_MARKINGS);
         }
         studentAtd.markAttendance(this.tut.getZeroBased());
 
-        model.setPerson(studentToEdit, editedStudent);
-        model.updateFilteredPersonList(Model.PREDICATE_SHOW_ALL_PERSONS);
-        return new CommandResult(generateSuccessMessage(editedStudent));
+        model.updatePerson(studentToEdit);
+        return new CommandResult(generateSuccessMessage(studentToEdit));
     }
 
     /**

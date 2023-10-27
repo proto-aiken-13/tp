@@ -112,6 +112,11 @@ public class ModelManager implements Model {
         addressBook.setPerson(target, editedPerson);
     }
 
+    @Override
+    public void updatePerson(Person target) {
+        addressBook.updatePerson(target);
+    }
+
     //=========== Filtered Person List Accessors =============================================================
 
     /**

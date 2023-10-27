@@ -77,6 +77,13 @@ public interface Model {
      */
     void setPerson(Person target, Person editedPerson);
 
+    /**
+     * Updates the student list to propagate change to the rest of the model.
+     *
+     * @param person The student to be refreshed.
+     */
+    void updatePerson(Person person);
+
     /** Returns an unmodifiable view of the filtered person list */
     ObservableList<Person> getFilteredPersonList();
 
