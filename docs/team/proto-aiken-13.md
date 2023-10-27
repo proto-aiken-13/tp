@@ -24,8 +24,8 @@ https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=&sort=groupTitle&sort
 	- Edited DarkMode.css
 	- Code contribution plans: Updated attendance system
 		- To be included: An attendance status system
-		- This would help to distinguish if a user 
-		- Improved tutorial participation system (to be arbitrarily set by users)
+		- This would help to distinguish if a particular student has either attended a tutorial, was absent, or was absent with a valid reason. This would also show the number of tutorials unmarked thus far.
+		- Improve the tutorial participation system. Right now, it is set to just only have 0, 1 and 2. I propose to improve it to arbitrarily add a tutorial participation score based on the user input.
 - **Project management**
 	- Managed release `v1.1` as a practice on Github
 	- Helped to contribute and conduct v1.2
@@ -36,7 +36,8 @@ https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=&sort=groupTitle&sort
 	- Generally completed the Ui
 	- To be added: npc_track Ui logo
 -**Documentation:**
-	- To be added
+	- To be added (improved attendance and participation commands)
+	- To help improve: Glossary and setup page.
 -**Community**
 (To be added)
 -**Tools**
