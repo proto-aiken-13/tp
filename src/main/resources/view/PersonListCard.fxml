@@ -28,7 +28,7 @@
             <Region fx:constant="USE_PREF_SIZE" />
           </minWidth>
         </Label>
-        <Hyperlink fx:id="name" text="\$first" styleClass="cell_big_label" onAction="#openLink"/>
+        <Hyperlink fx:id="name" text="\$first" styleClass="cell_big_label" onAction="#openTelegram"/>
       </HBox>
       <VBox spacing="3">
         <FlowPane hgap="5" alignment="CENTER_LEFT">
