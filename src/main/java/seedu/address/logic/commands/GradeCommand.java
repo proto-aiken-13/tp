@@ -5,7 +5,6 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_GRADE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 import seedu.address.commons.core.index.Index;
@@ -83,13 +82,7 @@ public class GradeCommand extends Command {
                 assignment.setScore(score);
             }
         }
-        Person editedStudent = new Person(
-                studentToGrade.getName(),
-                Optional.of(studentToGrade.getPhone()), Optional.of(studentToGrade.getEmail()),
-                Optional.of(studentToGrade.getTelegramHandle()), Optional.of(studentToGrade.getAttendance()),
-                studentToGrade.getTags(),
-                studentToGrade.getComments(), studentToGrade.getAssignments(), Optional.of(studentToGrade.getGroup()));
-        model.setPerson(studentToGrade, editedStudent);
+        model.updatePerson(studentToGrade);
         return new CommandResult(String.format(ASSIGNMENT_GRADE_SUCCESS));
     }
 
