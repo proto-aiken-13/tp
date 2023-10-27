@@ -360,63 +360,62 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. User requests to mark the attendance of a particular tutorial for a particular student.
-2. User provides the student index and tutorial number.
-3. `npc_track` updates the current tutorial attendance of that student as marked.
+1. User requests to mark the attendance of a specified tutorial for a specified student.
+2. `npc_track` updates the current tutorial attendance of that student as marked.
 
     Use case ends.
 
 **Extensions**
 
-* 2a. User does not provide the correct index.
-  * 2a1. `npc_track` displays an error message and prompts the user to provide the missing details.
-* 2b. User provides a tutorial number that is outside the valid boundary.
-  * 2b1. `npc_track` displays an error message and prompts the user to provide the correct details.
+* 1a. User does not provide the correct index/tutorial.
+  * 1a1. `npc_track` displays an error message and prompts the user to provide the correct details.
 
+    Use case ends.
+  
+   
 **Use case: Unmark a student's attendance**
 
 **MSS**
 
 1. User requests to unmark the attendance of a particular tutorial for a particular student.
-2. User provides the student index and tutorial number.
-3. `npc_track` updates the current tutorial attendance of that student as unmarked.
+2. `npc_track` updates the current tutorial attendance of that student as unmarked.
 
    Use case ends.
 
 **Extensions**
 
-* 2a. User does not provide the correct index.
-    * 2a1. `npc_track` displays an error message and prompts the user to provide the missing details.
-* 2b. User provides a tutorial number that is outside the valid boundary.
-    * 2b1. `npc_track` displays an error message and prompts the user to provide the correct details.
+* 1a. User does not provide the correct index/tutorial.
+    * 1a1. `npc_track` displays an error message and prompts the user to provide the correct details.
+    
+    Use case ends.
 
 **Use case: Input participation points to a students tutorial participation**
 
 **MSS**
 
 1. User requests to input participation points to a students tutorial participation.
-2. User provides the student index, tutorial number, and participation points.
-3. `npc_track` updates the current tutorials participation point for the student.
+2. `npc_track` updates the current tutorials participation point for the student.
 
 **Extensions**
 
-* 2a. User does not provide the correct index.
-    * 2a1. `npc_track` displays an error message and prompts the user to provide the missing details.
-* 2b. User provides a tutorial number or participation points that is outside the valid boundary.
-    * 2b1. `npc_track` displays an error message and prompts the user to provide the correct details.
+* 1a. User does not provide the correct index/tutorial.
+    * 1a1. `npc_track` displays an error message and prompts the user to provide the correct details.
+
+    Use case ends.
 
 **Use case: List a students participation record**
 
 **MSS**
 
-1. User requests to list the participation record of a particular student.
-2. User provides the student index.
-3. `npc_track` returns a message containing the participation record of the student.
+1. User requests to list the participation record of a specified student.
+2. `npc_track` returns a message containing the participation record of the student.
 
 **Extensions**
 
-* 2a. User does not provide the correct index.
-    * 2a1. `npc_track` displays an error message and prompts the user to provide the missing details. 
+* 1a. User does not provide the correct index.
+    * 1a1. `npc_track` displays an error message and prompts the user to provide the missing details. 
+
+    Use case ends.
 
 **Use case: Grade a student's assignment**
 
