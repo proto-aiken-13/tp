@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:User inputs attendance;
+:npc_track parses attendance by index, tutorial and status;
+if (Attendance.isValidIndex(index)) then (true)
+    if(Attendance.isValidStatus(status)) then (false)
+        :Error thrown and user is asked to input correct diagram;
+        end
+    else (true)
+        :Attendance is marked accordingly;
+        :npc_track confirms marking of attendance;
+    endif
+else
+    :Error thrown and user is asked to input correct diagram;
+    end
+endif
+
+stop
+
+@enduml
