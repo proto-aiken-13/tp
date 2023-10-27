@@ -10,6 +10,8 @@ title: Developer Guide
 ## **Acknowledgements**
 
 * [AddressBook Level-3](https://se-education.org/addressbook-level3/)
+* [Past Year Teams' Reference](https://github.com/AY2223S1-CS2103T-W17-2/tp/blob/master/docs/DeveloperGuide.md)
+* [Past Year Teams' Reference](https://ay2223s1-cs2103t-t12-1.github.io/tp/DeveloperGuide.html)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -123,7 +125,7 @@ How the parsing works:
 
 The `Model` component,
 
-* stores the address book data i.e., all `Person` objects (which are contained in a `UniquePersonList` object).
+* stores the student's data i.e., all `Person` objects (which are contained in a `UniquePersonList` object).
 * stores the currently 'selected' `Person` objects (e.g., results of a search query) as a separate _filtered_ list which is exposed to outsiders as an unmodifiable `ObservableList<Person>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
@@ -228,6 +230,49 @@ Below is the sequence diagram for inputting participation points of a student.
   * Cons: Data Inconsistencies: Allowing participation points without ensuring attendance may lead to
   data inconsistencies. For example, TAs might accidentally skip marking attendance and input participation points,
   causing inaccuracies in student records.
+
+### Find Students
+
+#### Implementation
+
+Find Student command is handled by FindCommand, FindCommandParser, and Model.
+* `FindCommandParser`: Parse user inputs.
+* `FindCommand`: Given the parsed user input, execute the command.
+* `Model`: Updates the student list according to the keyword that the user keys in.
+
+Below is the sequence diagram for finding students.
+
+<img src="images/FindSequenceDiagram.png" width="650"/>
+
+#### Design considerations
+
+**Aspect: Allowing teaching assistants to find using what keyword**
+* **Alternative 1 (Chosen):** `npc_track` will output students based on what TA exactly input.
+    * Pros: Reduced Chance of Error: Gives uses the exact student they want and reduces chances of error since it needs 
+      to be exact match.
+    * Cons: Increased Complexity: Users need to know the exact name of their student, or else they will not be able 
+      to find the student.
+
+* **Alternative 2:** `npc_track` allows users to find just a part of the student's name.
+    * Pros: Better User Experience: Users can just input a partial part of their name to be able to find and get a 
+      list of students that contain a part of the keyword
+    * Cons: Increased Chance of Error: Since it is more complex, there is higher chance of error.
+
+### Grade Students
+
+#### Implementation
+
+Grade Student command is handled by GradeCommand, GradeCommandParser, Assignment, Person and Model.
+* `GradeCommandParser`: Parse user inputs.
+* `GradeCommand`: Given the parsed user input, execute the command.
+* `Model`: Updates the student list according to the keyword that the user keys in.
+* `Person`: Updates the particular Person model to change the grade to.
+* `Assignment`: Updates the student's assignment grade.
+
+Below is the sequence diagram for grading students.
+
+<img src="images/GradeSequenceDiagram.png" width="650"/>
+
 
 ### \[Proposed\] Undo/redo feature
 
