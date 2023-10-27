@@ -3,6 +3,7 @@ package seedu.address.logic.commands;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static seedu.address.logic.commands.InputParticipationCommand.ATTENDANCE_NOT_MARKED;
 import static seedu.address.testutil.Assert.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -58,6 +59,34 @@ public class InputParticipationCommandTest {
     }
 
     @Test
+    public void execute_unmarkedAttendance_inputParticipationUnsuccessful() {
+        // Create a sample person with attendance
+        Person person = new PersonBuilder().withAttendance("0,0,0,0,0,0,0,0,0,0,0,0",
+                "0,0,0,0,0,0,0,0,0,0,0,0").build();
+
+        // Add the sample person to the model
+        model.addPerson(person);
+        // Index 1 corresponds to the sample person
+        int index = 1;
+        // Index 1 corresponds to tut 1
+        int tut = 1;
+        // Points to add
+        int points = 50;
+
+        // Create a new InputParticipationCommand
+        inputParticipationCommand = new InputParticipationCommand(Index.fromOneBased(index),
+                Index.fromOneBased(tut), points);
+
+        // Execute the command
+        try {
+            String result = inputParticipationCommand.execute(model).getFeedbackToUser();
+            assertEquals(result, ATTENDANCE_NOT_MARKED);
+        } catch (CommandException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
     public void execute_invalidIndex_throwsCommandException() {
         // Index 1 is invalid in an empty model
         int index = 1;
@@ -86,6 +115,7 @@ public class InputParticipationCommandTest {
 
         // They should be equal
         assertTrue(command1.equals(command2));
+        assertTrue(command1.equals(command1));
     }
 
     @Test
@@ -98,6 +128,6 @@ public class InputParticipationCommandTest {
 
         // They should not be equal
         assertFalse(command1.equals(command2));
+        assertFalse(command1.equals(1));
     }
-
 }

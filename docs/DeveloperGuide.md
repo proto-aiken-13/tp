@@ -200,6 +200,35 @@ The `AssignmentCommand` looks through all the `Person`s, and attempts to add the
   * Cons: Not universally understood, certain letters may mean different things to people.
   For example, S in Japan could be amazing, but not as ideal in Singapore.
 
+### Input Participation Points
+
+#### Implementation
+
+Input participation command is handled by InputParticipationCommand, InputParticipationParser, and Model.
+* `InputParticipationParser`: Parse user inputs.
+* `InputParticipationCommand`: Given the parsed user input, execute the command.
+* `Model`: Updates the student list accordingly.
+
+Below is the sequence diagram for inputting participation points of a student.
+
+<img src="images/InputParticipationSequenceDiagram.png" width="650"/>
+
+#### Design considerations
+
+**Aspect: How to handle cases where TA attempts to add participation points for unmarked tutorial**
+* **Alternative 1 (Chosen):** `npc_track` will output message telling user to mark attendance first.
+  * Pros: Prevents Errors: It reduces the chances of errors and inconsistencies in the data,
+  as participation points should only be added after attendance is marked.
+  * Cons: Potential Delay: If marking attendance and adding participation points are time-sensitive actions,
+  requiring the user to mark attendance first may cause a slight delay in the participation point entry process.
+
+* **Alternative 2:** `npc_track` allows participation points to be input regardless of the attendance for that tutorial.
+  * Pros: Reduced User Friction: By avoiding strict dependencies, users may experience less friction when interacting
+  with the system, potentially leading to a smoother user experience.
+  * Cons: Data Inconsistencies: Allowing participation points without ensuring attendance may lead to
+  data inconsistencies. For example, TAs might accidentally skip marking attendance and input participation points,
+  causing inaccuracies in student records.
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation
@@ -371,8 +400,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
   * 1a1. `npc_track` displays an error message and prompts the user to provide the correct details.
 
     Use case ends.
-  
-   
+
+
 **Use case: Unmark a student's attendance**
 
 **MSS**
@@ -386,7 +415,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 1a. User does not provide the correct index/tutorial.
     * 1a1. `npc_track` displays an error message and prompts the user to provide the correct details.
-    
+
     Use case ends.
 
 **Use case: Input participation points to a students tutorial participation**
@@ -413,7 +442,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **Extensions**
 
 * 1a. User does not provide the correct index.
-    * 1a1. `npc_track` displays an error message and prompts the user to provide the missing details. 
+    * 1a1. `npc_track` displays an error message and prompts the user to provide the missing details.
 
     Use case ends.
 
@@ -507,8 +536,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 5a. No persons match the search keyword.
 
-    * 5a1. AddressBook displays a message indicating no matching persons were found. 
-    
+    * 5a1. AddressBook displays a message indicating no matching persons were found.
+
       Use case ends.
 
 **Use case: List all persons**

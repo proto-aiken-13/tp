@@ -1,5 +1,6 @@
 package seedu.address.logic.commands;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.Assert.assertThrows;
 
@@ -66,5 +67,27 @@ public class ListParticipationCommandTest {
 
         // Execute the command and expect a CommandException
         assertThrows(CommandException.class, () -> listParticipationCommand.execute(model));
+    }
+
+    @Test
+    public void equals_sameCommand_returnsTrue() {
+        // Create an InputParticipationCommand with the same index, week, and points
+        ListParticipationCommand command1 = new ListParticipationCommand(Index.fromOneBased(1));
+        ListParticipationCommand command2 = new ListParticipationCommand(Index.fromOneBased(1));
+
+        // They should be equal
+        assertTrue(command1.equals(command2));
+        assertTrue(command1.equals(command1));
+    }
+
+    @Test
+    public void equals_differentCommands_returnsFalse() {
+        // Create two different InputParticipationCommands
+        ListParticipationCommand command1 = new ListParticipationCommand(Index.fromOneBased(1));
+        ListParticipationCommand command2 = new ListParticipationCommand(Index.fromOneBased(2));
+
+        // They should not be equal
+        assertFalse(command1.equals(command2));
+        assertFalse(command1.equals(1));
     }
 }
