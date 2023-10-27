@@ -4,15 +4,15 @@
 start
 :User inputs attendance;
 :npc_track parses attendance by index, tutorial and status;
-if (Is the tutorial valid?) then (Tutorial is valid)
-    if(Tutorial status is valid?) then (Tutorial status is invalid)
+if () then (Tutorial is valid)
+    if() then (Tutorial status is invalid)
         :Error thrown and user is asked to input correct diagram;
         end
-    else (Tutorial status is valid)
+    else ()
         :Attendance is marked accordingly;
         :npc_track confirms marking of attendance;
     endif
-else (Tutorial is invalid)
+else ()
     :Error thrown and user is asked to input correct diagram;
     end
 endif
