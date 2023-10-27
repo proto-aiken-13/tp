@@ -225,7 +225,7 @@ Below is the sequence diagram for inputting participation points of a student.
 * **Alternative 2:** `npc_track` allows participation points to be input regardless of the attendance for that tutorial.
   * Pros: Reduced User Friction: By avoiding strict dependencies, users may experience less friction when interacting
   with the system, potentially leading to a smoother user experience.
-  * Cons: Data Inconsistencies: Allowing participation points without ensuring attendance may lead to 
+  * Cons: Data Inconsistencies: Allowing participation points without ensuring attendance may lead to
   data inconsistencies. For example, TAs might accidentally skip marking attendance and input participation points,
   causing inaccuracies in student records.
 
@@ -400,8 +400,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
   * 1a1. `npc_track` displays an error message and prompts the user to provide the correct details.
 
     Use case ends.
-  
-   
+
+
 **Use case: Unmark a student's attendance**
 
 **MSS**
@@ -415,7 +415,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 1a. User does not provide the correct index/tutorial.
     * 1a1. `npc_track` displays an error message and prompts the user to provide the correct details.
-    
+
     Use case ends.
 
 **Use case: Input participation points to a students tutorial participation**
@@ -442,7 +442,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **Extensions**
 
 * 1a. User does not provide the correct index.
-    * 1a1. `npc_track` displays an error message and prompts the user to provide the missing details. 
+    * 1a1. `npc_track` displays an error message and prompts the user to provide the missing details.
 
     Use case ends.
 
@@ -536,8 +536,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 5a. No persons match the search keyword.
 
-    * 5a1. AddressBook displays a message indicating no matching persons were found. 
-    
+    * 5a1. AddressBook displays a message indicating no matching persons were found.
+
       Use case ends.
 
 **Use case: List all persons**
