@@ -119,6 +119,16 @@ Step 4 : Run the `npc_track`
 
 Step 5 : Start using the app
 
+---
+
+<a name="parameter"></a>
+## Common Parameters
+
+| Parameters | Description        | Constraints                                                                                                                             | Valid Examples                  | Invalid Examples
+|------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------------------------| -------------- 
+| `n/`       | Specifies the name | Must be alphanumeric and can contain spaces                                                                                             | John Doe                        | $5money        
+| `a/`       | Telegram handle    | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop | $telegram, _tele, 56thperson
+
 --------------------------------------------------------------------------------------------------------------------
 
 <a name="features"></a>
@@ -197,7 +207,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 | Examples                                                                                     | Purpose                                                                                      
 |----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------
 | `add n/John Doe p/98765432 e/johnd@example.com a/johnTelegram`                               | Adds John Doe (Telegram : @johnTelegram) with additional details like phone number and email 
-| `add n/Betsy Crowe e/betsycrowe@example.com a/newTelegram p/1234567 t/smart c/Quiet Student` | Adds Betsy Crowe <br/>(Telegram : @newTelegram) with extra comments and tags                 |
+| `add n/Betsy Crowe e/betsycrowe@example.com a/newTelegram p/1234567 t/smart c/Quiet Student` | Adds Betsy Crowe <br/>(Telegram : @newTelegram) with extra comments and tags                 
 | `add n/James group/tut4`                                                                     | Adds James while grouping him to `tut4`                                                      
 | `add n/Benson`                                                                                | Adds Benson only                                                                             
 

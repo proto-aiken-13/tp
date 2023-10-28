@@ -11,13 +11,14 @@ public class TelegramHandle {
 
     public static final TelegramHandle NULL_TELEGRAM_HANDLE = null;
     public static final String MESSAGE_CONSTRAINTS = "Telegram Handle must "
-            + "use a-z, 0-9 and underscores. Minimum length is 5 characters";
+            + "use a-z, 0-9 and underscores. Minimum length is 5 characters. It must start with a letter and cannot "
+            + "end with an underscore";
 
     /*
      * The telegram handle uses a-z, 0-9 and underscores.
      * Minimum length is 5 characters.
      */
-    public static final String VALIDATION_REGEX = "^[a-zA-Z0-9_]{5,32}$";
+    public static final String VALIDATION_REGEX = "^[a-zA-Z][a-zA-Z0-9_]{3,28}[a-zA-Z0-9]$";
 
     public final String value;
 

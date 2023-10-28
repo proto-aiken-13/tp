@@ -21,18 +21,18 @@ public class TelegramHandleTest {
 
     @Test
     public void isValidTelegramHandle() {
-        // null address
+        // null telegrams
         assertThrows(NullPointerException.class, () -> TelegramHandle.isValidTelegramHandle(null));
 
-        // invalid addresses
+        // invalid telegrams
         assertFalse(TelegramHandle.isValidTelegramHandle("")); // empty string
         assertFalse(TelegramHandle.isValidTelegramHandle(" ")); // spaces only
         assertFalse(TelegramHandle.isValidTelegramHandle("1234")); // less than 5
         assertFalse(TelegramHandle.isValidTelegramHandle("%&@#&@")); // contains invalid symbols
 
-        // valid addresses
+        // valid telegrams
         assertTrue(TelegramHandle.isValidTelegramHandle("mamamia"));
-        assertTrue(TelegramHandle.isValidTelegramHandle("12345")); // 5 digits
+        assertTrue(TelegramHandle.isValidTelegramHandle("lol_lol")); // 5 digits
         assertTrue(TelegramHandle.isValidTelegramHandle("longtelegramhandle")); // long telegram handle
     }
 
