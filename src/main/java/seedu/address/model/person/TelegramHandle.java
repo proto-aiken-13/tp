@@ -9,7 +9,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class TelegramHandle {
 
-    public static final TelegramHandle NULL_TELEGRAM_HANDLE = new TelegramHandle("defaultHandle");
+    public static final TelegramHandle NULL_TELEGRAM_HANDLE = null;
     public static final String MESSAGE_CONSTRAINTS = "Telegram Handle must "
             + "use a-z, 0-9 and underscores. Minimum length is 5 characters";
 
