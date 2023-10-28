@@ -14,6 +14,7 @@ import seedu.address.logic.commands.AssignmentGroupCommand;
 import seedu.address.logic.commands.AssignmentIndivCommand;
 import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.Command;
+import seedu.address.logic.commands.ConfirmClearCommand;
 import seedu.address.logic.commands.CreateGroupCommand;
 import seedu.address.logic.commands.DeassignmentCommand;
 import seedu.address.logic.commands.DeleteCommand;
@@ -24,6 +25,7 @@ import seedu.address.logic.commands.FindGroupCommand;
 import seedu.address.logic.commands.GradeCommand;
 import seedu.address.logic.commands.GradeGroupCommand;
 import seedu.address.logic.commands.HelpCommand;
+import seedu.address.logic.commands.InputGroupParticipationCommand;
 import seedu.address.logic.commands.InputParticipationCommand;
 import seedu.address.logic.commands.ListCommand;
 import seedu.address.logic.commands.ListParticipationCommand;
@@ -43,6 +45,8 @@ public class AddressBookParser {
      */
     private static final Pattern BASIC_COMMAND_FORMAT = Pattern.compile("(?<commandWord>\\S+)(?<arguments>.*)");
     private static final Logger logger = LogsCenter.getLogger(AddressBookParser.class);
+    private Boolean hasConfirmedClearCommand = false;
+    private Boolean isClearCommand = false;
 
     /**
      * Parses user input into command for execution.
@@ -64,6 +68,9 @@ public class AddressBookParser {
         // log messages such as the one below.
         // Lower level log messages are used sparingly to minimize noise in the code.
         logger.fine("Command word: " + commandWord + "; Arguments: " + arguments);
+
+        isClearCommand = hasConfirmedClearCommand;
+        hasConfirmedClearCommand = false;
 
         switch (commandWord) {
 
@@ -92,7 +99,16 @@ public class AddressBookParser {
             return new DeleteCommandParser().parse(arguments);
 
         case ClearCommand.COMMAND_WORD:
+            hasConfirmedClearCommand = true;
             return new ClearCommand();
+
+        case ConfirmClearCommand.COMMAND_WORD:
+            if (isClearCommand) {
+                return new ConfirmClearCommand();
+            } else {
+                logger.finer("This user input caused a ParseException: " + userInput);
+                throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
+            }
 
         case FindCommand.COMMAND_WORD:
             return new FindCommandParser().parse(arguments);
@@ -117,6 +133,9 @@ public class AddressBookParser {
 
         case HelpCommand.COMMAND_WORD:
             return new HelpCommand();
+
+        case InputGroupParticipationCommand.COMMAND_WORD:
+            return new InputGroupParticipationParser().parse(arguments);
 
         case InputParticipationCommand.COMMAND_WORD:
             return new InputParticipationParser().parse(arguments);
