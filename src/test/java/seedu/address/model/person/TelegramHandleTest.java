@@ -29,11 +29,13 @@ public class TelegramHandleTest {
         assertFalse(TelegramHandle.isValidTelegramHandle(" ")); // spaces only
         assertFalse(TelegramHandle.isValidTelegramHandle("1234")); // less than 5
         assertFalse(TelegramHandle.isValidTelegramHandle("%&@#&@")); // contains invalid symbols
+        assertFalse(TelegramHandle.isValidTelegramHandle("ggggggggggggggggggggggggggggggggg")); // too long
+        assertFalse(TelegramHandle.isValidTelegramHandle("four")); // too short
 
         // valid telegrams
         assertTrue(TelegramHandle.isValidTelegramHandle("mamamia"));
         assertTrue(TelegramHandle.isValidTelegramHandle("lol_lol")); // underscore
-        assertTrue(TelegramHandle.isValidTelegramHandle("v32ggggggggggggggggggggggggggggg")); // long telegram handle
+        assertTrue(TelegramHandle.isValidTelegramHandle("v32ggggggggggggggggggggggggggggg")); // valid long
     }
 
     @Test
