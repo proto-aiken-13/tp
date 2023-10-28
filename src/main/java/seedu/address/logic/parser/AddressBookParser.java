@@ -44,7 +44,7 @@ public class AddressBookParser {
      */
     private static final Pattern BASIC_COMMAND_FORMAT = Pattern.compile("(?<commandWord>\\S+)(?<arguments>.*)");
     private static final Logger logger = LogsCenter.getLogger(AddressBookParser.class);
-    private Boolean confirmClearCommand = false;
+    private Boolean hasConfirmedClearCommand = false;
     private Boolean isClearCommand = false;
 
     /**
@@ -68,8 +68,8 @@ public class AddressBookParser {
         // Lower level log messages are used sparingly to minimize noise in the code.
         logger.fine("Command word: " + commandWord + "; Arguments: " + arguments);
 
-        isClearCommand = confirmClearCommand;
-        confirmClearCommand = false;
+        isClearCommand = hasConfirmedClearCommand;
+        hasConfirmedClearCommand = false;
 
         switch (commandWord) {
 
@@ -98,7 +98,7 @@ public class AddressBookParser {
             return new DeleteCommandParser().parse(arguments);
 
         case ClearCommand.COMMAND_WORD:
-            confirmClearCommand = true;
+            hasConfirmedClearCommand = true;
             return new ClearCommand();
 
         case ConfirmClearCommand.COMMAND_WORD:
