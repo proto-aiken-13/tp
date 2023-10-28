@@ -27,7 +27,8 @@ public class ListParticipationCommandTest {
     public void execute_validIndex_listParticipationSuccessful() throws CommandException {
         // Create a sample person with attendance and participation points
         Person person = new PersonBuilder()
-                .withAttendance("1,0,1,0,1,0,1,0,1,0,1,0", "100,0,150,0,300,0,50,0,70,0,90,0")
+                .withAttendance("1,0,1,0,1,0,1,0,1,0,1,0", "100,0,150,0,300,0,50,0,70,0,90,0",
+                        "P,A,P,A,P,A,P,A,P,A,P,A")
                 .build();
 
         // Add the sample person to the model

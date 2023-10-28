@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
-import seedu.address.model.AddressBook;
+import seedu.address.model.NpcTrack;
 import seedu.address.model.person.Person;
 
 public class SampleDataUtilTest {
@@ -19,7 +19,7 @@ public class SampleDataUtilTest {
 
     @Test
     public void getSampleAddressBook() {
-        AddressBook addr = new AddressBook();
+        NpcTrack addr = new NpcTrack();
         for (Person p : testerSample) {
             addr.addPerson(p);
         }

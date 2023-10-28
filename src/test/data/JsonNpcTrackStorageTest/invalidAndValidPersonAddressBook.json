@@ -1,0 +1,27 @@
+{
+  "persons": [ {
+    "name": "Valid Person",
+    "phone": "9482424",
+    "email": "hans@example.com",
+    "telegram": "4thstreet",
+    "attendance" : "0,0,0,0,0,0,0,0,0,0,0,0",
+    "attendanceStatus" : "U,U,U,U,U,U,U,U,U,U,U,U",
+    "participation" : "0,0,0,0,0,0,0,0,0,0,0,0",
+    "tags" : [ ],
+    "comments" : [ ],
+    "assignments" : [ ],
+    "group" : "Default"
+  }, {
+    "name": "Person With Invalid Phone Field",
+    "phone": "948asdf2424",
+    "email": "hans@example.com",
+    "telegram": "4thstreet",
+    "attendance" : "0,0,0,0,0,0,0,0,0,0,0,0",
+    "attendanceStatus" : "U,U,U,U,U,U,U,U,U,U,U,U",
+    "participation" : "0,0,0,0,0,0,0,0,0,0,0,0",
+    "tags" : [ ],
+    "comments" : [ ],
+    "assignments" : [ ],
+    "group" : "Default"
+  } ]
+}

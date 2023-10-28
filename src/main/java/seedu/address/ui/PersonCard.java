@@ -23,11 +23,10 @@ public class PersonCard extends UiPart<Region> {
      * As a consequence, UI elements' variable names cannot be set to such keywords
      * or an exception will be thrown by JavaFX during runtime.
      *
-     * @see <a href="https://github.com/se-edu/addressbook-level4/issues/336">The issue on AddressBook level 4</a>
+     * @see <a href="https://github.com/se-edu/addressbook-level4/issues/336">The issue on NpcTrack level 4</a>
      */
 
     public final Person person;
-
     @FXML
     private HBox cardPane;
     @FXML
@@ -37,11 +36,14 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label attendance;
     @FXML
-    private Label participation;
-    @FXML
     private Label phone;
     @FXML
     private Label email;
+
+    @FXML
+    private Label participation;
+    @FXML
+    private Hyperlink telegramLink;
     @FXML
     private FlowPane tags;
     @FXML
@@ -59,10 +61,12 @@ public class PersonCard extends UiPart<Region> {
         this.person = person;
         id.setText(displayedIndex + ". ");
         name.setText(person.getName().fullName + " (@" + person.getTelegramHandle().value + ")");
-        attendance.setText(String.format("Attendance: %s",
-                this.person.getStyledAttendanceList("✓", "✕")));
+        attendance.setText(String.format("Attendance: %d/%d  Attendance summary: %s",
+                this.person.getAttendance().getWeeksPresent(), this.person.getAttendance().getTotalMarkedTut(),
+                this.person.getAttendance().getStyledStatusList("❌", "\uD83D\uDE4B\u200D♂\uFE0F",
+                        "\uD83D\uDE47\u200D♂\uFE0F", "?")));
         participation.setText(String.format("Participation Points: %d",
-                    this.person.getTotalPart()));
+                this.person.getTotalPart()));
         phone.setText("Phone: " + person.getPhone().value);
         email.setText("Email: " + person.getEmail().value);
         group.setText("Tutorial Group: " + person.getGroup().value);
@@ -78,7 +82,7 @@ public class PersonCard extends UiPart<Region> {
     }
 
     /**
-     * Opens a link to the telegram handle of {@code Person} in their preferred browser.
+     * Opens a link to the telegram handle of {@code Person}.
      */
     @FXML
     public void openTelegram(ActionEvent event) {

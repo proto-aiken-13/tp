@@ -29,7 +29,7 @@ public class InputParticipationCommandTest {
     public void execute_validIndexAndTutorial_inputParticipationSuccessful() {
         // Create a sample person with attendance
         Person person = new PersonBuilder().withAttendance("1,0,0,0,0,0,0,0,0,0,0,0",
-                "0,0,0,0,0,0,0,0,0,0,0,0").build();
+                "0,0,0,0,0,0,0,0,0,0,0,0", "P,U,U,U,U,U,U,U,U,U,U,U").build();
 
         // Add the sample person to the model
         model.addPerson(person);
@@ -62,7 +62,7 @@ public class InputParticipationCommandTest {
     public void execute_unmarkedAttendance_inputParticipationUnsuccessful() {
         // Create a sample person with attendance
         Person person = new PersonBuilder().withAttendance("0,0,0,0,0,0,0,0,0,0,0,0",
-                "0,0,0,0,0,0,0,0,0,0,0,0").build();
+                "0,0,0,0,0,0,0,0,0,0,0,0", "U,U,U,U,U,U,U,U,U,U,U,U").build();
 
         // Add the sample person to the model
         model.addPerson(person);

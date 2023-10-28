@@ -26,7 +26,7 @@ public class MarkAttendanceCommandTest {
 
     @Test
     public void constructor_nullPerson_throwsNullPointerException() {
-        assertThrows(NullPointerException.class, () -> new MarkAttendanceCommand(null, null));
+        assertThrows(NullPointerException.class, () -> new MarkAttendanceCommand(null, null, null));
     }
 
     @Test
@@ -43,8 +43,10 @@ public class MarkAttendanceCommandTest {
         // Index 1 corresponds to week 1
         int week = 1;
 
+        String present = "P";
+
         // Create a new MarkAttendanceCommand
-        markAttendanceCommand = new MarkAttendanceCommand(Index.fromOneBased(index), Index.fromOneBased(week));
+        markAttendanceCommand = new MarkAttendanceCommand(Index.fromOneBased(index), Index.fromOneBased(week), present);
 
         // Execute the command
         try {
@@ -65,8 +67,10 @@ public class MarkAttendanceCommandTest {
         // Index 1 corresponds to week 1
         int week = 1;
 
+        String present = "P";
+
         // Create a new MarkAttendanceCommand
-        markAttendanceCommand = new MarkAttendanceCommand(Index.fromOneBased(index), Index.fromOneBased(week));
+        markAttendanceCommand = new MarkAttendanceCommand(Index.fromOneBased(index), Index.fromOneBased(week), present);
 
         // Execute the command and expect a CommandException
         assertThrows(CommandException.class, () -> markAttendanceCommand.execute(model));
@@ -75,8 +79,8 @@ public class MarkAttendanceCommandTest {
     @Test
     public void equals_sameCommand_returnsTrue() {
         // Create a MarkAttendanceCommand with the same index and tutorial
-        MarkAttendanceCommand command1 = new MarkAttendanceCommand(Index.fromOneBased(1), Index.fromOneBased(1));
-        MarkAttendanceCommand command2 = new MarkAttendanceCommand(Index.fromOneBased(1), Index.fromOneBased(1));
+        MarkAttendanceCommand command1 = new MarkAttendanceCommand(Index.fromOneBased(1), Index.fromOneBased(1), "P");
+        MarkAttendanceCommand command2 = new MarkAttendanceCommand(Index.fromOneBased(1), Index.fromOneBased(1), "P");
 
         // They should be equal
         assertTrue(command1.equals(command2));
@@ -85,8 +89,8 @@ public class MarkAttendanceCommandTest {
     @Test
     public void equals_differentCommands_returnsFalse() {
         // Create two different MarkAttendanceCommands
-        MarkAttendanceCommand command1 = new MarkAttendanceCommand(Index.fromOneBased(1), Index.fromOneBased(1));
-        MarkAttendanceCommand command2 = new MarkAttendanceCommand(Index.fromOneBased(2), Index.fromOneBased(2));
+        MarkAttendanceCommand command1 = new MarkAttendanceCommand(Index.fromOneBased(1), Index.fromOneBased(1), "P");
+        MarkAttendanceCommand command2 = new MarkAttendanceCommand(Index.fromOneBased(2), Index.fromOneBased(2), "P");
 
         // They should not be equal
         assertFalse(command1.equals(command2));

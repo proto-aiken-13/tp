@@ -6,6 +6,7 @@
     "email" : "alice@example.com",
     "telegram" : "aliceTelegram",
     "attendance" : "0,0,0,0,0,0,0,0,0,0,0,0",
+    "attendanceStatus" : "U,U,U,U,U,U,U,U,U,U,U,U",
     "participation" : "0,0,0,0,0,0,0,0,0,0,0,0",
     "tags" : [ "friends" ],
     "group" : "tut33"
@@ -15,6 +16,7 @@
     "email" : "johnd@example.com",
     "telegram" : "bensonTelegram",
     "attendance" : "0,0,0,0,0,0,0,0,0,0,0,0",
+    "attendanceStatus" : "U,U,U,U,U,U,U,U,U,U,U,U",
     "participation" : "0,0,0,0,0,0,0,0,0,0,0,0",
     "tags" : [ "owesMoney", "friends" ],
     "group" : "tut33"
@@ -24,6 +26,7 @@
     "email" : "heinz@example.com",
     "telegram" : "carlTelegram",
     "attendance" : "0,0,0,0,0,0,0,0,0,0,0,0",
+    "attendanceStatus" : "U,U,U,U,U,U,U,U,U,U,U,U",
     "participation" : "0,0,0,0,0,0,0,0,0,0,0,0",
     "tags" : [ ],
     "group" : "tut33"
@@ -33,6 +36,7 @@
     "email" : "cornelia@example.com",
     "telegram" : "danielTelegram",
     "attendance" : "0,0,0,0,0,0,0,0,0,0,0,0",
+    "attendanceStatus" : "U,U,U,U,U,U,U,U,U,U,U,U",
     "participation" : "0,0,0,0,0,0,0,0,0,0,0,0",
     "tags" : [ "friends" ],
     "group" : "tut33"
@@ -42,6 +46,7 @@
     "email" : "werner@example.com",
     "telegram" : "micheganTelegram",
     "attendance" : "0,0,0,0,0,0,0,0,0,0,0,0",
+    "attendanceStatus" : "U,U,U,U,U,U,U,U,U,U,U,U",
     "participation" : "0,0,0,0,0,0,0,0,0,0,0,0",
     "tags" : [ ],
     "group" : "tut33"
@@ -51,6 +56,7 @@
     "email" : "lydia@example.com",
     "telegram" : "littletokyo",
     "attendance" : "0,0,0,0,0,0,0,0,0,0,0,0",
+    "attendanceStatus" : "U,U,U,U,U,U,U,U,U,U,U,U",
     "participation" : "0,0,0,0,0,0,0,0,0,0,0,0",
     "tags" : [ ],
     "group" : "tut33"
@@ -60,6 +66,7 @@
     "email" : "anna@example.com",
     "telegram" : "4thstreet",
     "attendance" : "0,0,0,0,0,0,0,0,0,0,0,0",
+    "attendanceStatus" : "U,U,U,U,U,U,U,U,U,U,U,U",
     "participation" : "0,0,0,0,0,0,0,0,0,0,0,0",
     "tags" : [ ],
     "group" : "tut33"

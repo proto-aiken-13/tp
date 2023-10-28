@@ -2,6 +2,7 @@ package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PARTICIPATION_STATUS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 
 import seedu.address.commons.core.index.Index;
@@ -22,11 +23,13 @@ public class MarkGroupAttendanceParser implements Parser<MarkGroupAttendanceComm
      */
     public MarkGroupAttendanceCommand parse(String args) throws ParseException {
         requireNonNull(args);
-        ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_TUTORIAL);
+        ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_TUTORIAL, PREFIX_PARTICIPATION_STATUS);
         // parse group
         Group group;
+        String status;
         try {
             group = ParserUtil.parseGroup(argMultimap.getPreamble());
+            status = ParserUtil.parseParticipationStatus(argMultimap.getValue(PREFIX_PARTICIPATION_STATUS).get());
         } catch (IllegalValueException ive) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
                     MarkGroupAttendanceCommand.MESSAGE_USAGE), ive);
@@ -36,10 +39,16 @@ public class MarkGroupAttendanceParser implements Parser<MarkGroupAttendanceComm
         if (argMultimap.getValue(PREFIX_TUTORIAL).isPresent()) {
             tutorial = ParserUtil.parseTutorial(argMultimap.getValue(PREFIX_TUTORIAL).get());
         }
+        // parse status
 
         if (!(tutorial >= 1 && tutorial <= 12)) {
             throw new ParseException(Attendance.TUTORIAL_ERROR_MSG);
         }
-        return new MarkGroupAttendanceCommand(group, Index.fromOneBased(tutorial));
+
+        if (!Attendance.isValidStatus(status)) {
+            throw new ParseException(Attendance.STATUS_ERROR_MSG);
+        }
+
+        return new MarkGroupAttendanceCommand(group, Index.fromOneBased(tutorial), status);
     }
 }

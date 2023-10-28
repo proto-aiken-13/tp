@@ -1,59 +1,75 @@
 package seedu.address.model.person;
 
 /**
- * The `Attendance` class represents a student's attendance and participation record for a 12-week period.
+ * The `Attendance` class represents a student's attendance, attendance status
+ * and participation record for a 12-week period.
  * It provides methods for managing and querying attendance information.
  */
 public class Attendance {
     public static final String TUTORIAL_ERROR_MSG = "Tutorial number is out of range, should be integer between 1-12";
     public static final String PARTICIPATION_ERROR_MSG = "PP number is out of range, should be >= 0";
+
+    public static final String STATUS_ERROR_MSG = "Status is invalid! It should either be P, VR or A.";
     public static final String ORIGINAL_ATD = "0,0,0,0,0,0,0,0,0,0,0,0";
     public static final String ORIGINAL_PART = "0,0,0,0,0,0,0,0,0,0,0,0";
-    private int totalTut;
-    private final boolean[] attendanceList = new boolean[12];
-    private final int[] participationList = new int[12];
+    public static final String ORIGINAL_STATUS = "U,U,U,U,U,U,U,U,U,U,U,U";
+    private static int totalTut = 12;
+    private final boolean[] attendanceList = new boolean[totalTut];
+    private final int[] participationList = new int[totalTut];
+    private final AttendanceStatus[] statusList = new AttendanceStatus[totalTut];
 
 
     /**
      * Constructs an `Attendance` object from a comma-separated attendance string.
      *
-     * @param atd A comma-separated string representing attendance for 1-12 weeks (e.g., "0,1,0,1,0,1,0,1,0,1,0,1").
+     * @param atd A comma-separated string representing attendance for 12 weeks (e.g., "0,1,0,1,0,1,0,1,0,1,0,1").
+     * @param pp A comma-separated string representing participation for 12 weeks (e.g., "120,0,100,130,110,150,100,100,
+     *           0,150,150,120").
+     * @param statuses A comma-separated string representing attendance for 12 weeks (e.g., "P,P,P,P,P,VR,VR,U,U,U,U,
+     *                 U").
      */
-    public Attendance(String atd, String pp) {
+    public Attendance(String atd, String pp, String statuses) {
         String[] atdArr = atd.split(",");
         String[] ppArr = pp.split(",");
-        this.totalTut = atdArr.length;
+        String[] statusArr = statuses.split(",");
         for (int i = 0; i < totalTut; i++) {
             if (atdArr[i].equals("1")) {
                 this.attendanceList[i] = true;
                 this.participationList[i] = Integer.parseInt(ppArr[i].trim());
+                this.statusList[i] = new AttendanceStatus(i);
+                if (statusArr[i].equals("P")) {
+                    this.statusList[i].setPresent();
+                }
+                if (statusArr[i].equals("VR")) {
+                    this.statusList[i].setVR();
+                }
             } else {
-                this.participationList[i] = 0;
+                this.statusList[i] = new AttendanceStatus(i);
+                if (statusArr[i].equals("A")) {
+                    this.statusList[i].setAbsent();
+                }
             }
         }
     }
 
     /**
-     * Checks if a given week is a valid tutorial number (between 1 and 12).
-     *
+     * Checks if a given week is a valid tutorial number (between 1 and the maximum tutorial count).
      * @param tutorial A string representing a tutorial number.
-     * @return `true` if the week is valid; otherwise, `false`.
+     * @return `true` if the week is valid and an integer; otherwise, `false`.
      */
     public static boolean isValidTutorial(String tutorial) {
-        if (!tutorial.matches("[0-9]+")) {
+        int week = 0;
+        try {
+            week = Integer.parseInt(tutorial);
+        } catch (NumberFormatException e) {
             return false;
+        } finally {
+            return week > 0 && week <= totalTut;
         }
-        int intTutorial = Integer.parseInt(tutorial);
-        if (intTutorial <= 0 || intTutorial > 12) {
-            System.out.println(tutorial);
-            return false;
-        }
-        return true;
     }
 
     /**
-     * Checks if the participation points is a valid value.
-     *
+     * Checks if the participation points is a valid value (Non-negative integer).
      * @param pp String version of points to be checked
      * @return 'true' if points is valid, else 'false'.
      */
@@ -68,9 +84,17 @@ public class Attendance {
     }
 
     /**
-     * Returns the number of weeks present based on the attendance record.
-     *
-     * @return The count of weeks marked as present.
+     * Checks if the status string is a valid status.
+     * @param status The status string.
+     * @return 'true' if the status is valid, else 'false'.
+     */
+    public static boolean isValidStatus(String status) {
+        return status.equals("P") || status.equals("A") || status.equals("VR");
+    }
+
+    /**
+     * Returns the number of weeks for which attendance was marked.
+     * @return The count of weeks marked for attendance.
      */
     public int getWeeksPresent() {
         int count = 0;
@@ -84,7 +108,6 @@ public class Attendance {
 
     /**
      * Returns the total number of tutorial weeks.
-     *
      * @return the total number of tutorial weeks.
      */
     public int getTotalWeeks() {
@@ -93,38 +116,49 @@ public class Attendance {
 
     /**
      * Returns the total sum of participation points.
-     *
      * @return the total sum of participation points.
      */
     public int getTotalPart() {
         int sum = 0;
-        for (int pp : this.participationList) {
+        for (int pp : participationList) {
             sum += pp;
         }
         return sum;
     }
 
     /**
-     * Marks a specific tutorial as attended.
-     *
+     * Marks a specific tutorial with the given status.
      * @param tutorial The week to mark as attended (1-12).
+     * @param status The status to mark the week as.
      */
-    public void markAttendance(int tutorial) {
-        this.attendanceList[tutorial] = true;
+    public void markAttendance(int tutorial, String status) {
+        switch(status) {
+        case "A":
+            statusList[tutorial].setAbsent();
+            break;
+        case "VR":
+            statusList[tutorial].setVR();
+            this.attendanceList[tutorial] = true;
+            break;
+        case "P":
+            statusList[tutorial].setPresent();
+            this.attendanceList[tutorial] = true;
+            break;
+        default:
+        }
     }
 
     /**
      * Unmarks a specific tutorial as attended.
-     *
      * @param tutorial The week to unmark (1-12).
      */
     public void unmarkAttendance(int tutorial) {
         this.attendanceList[tutorial] = false;
+        this.statusList[tutorial].unMark();
     }
 
     /**
      * Checks if a specific tutorial is marked as attended.
-     *
      * @param tutorial The week to check (1-12).
      * @return `true` if the week is marked as attended; otherwise, `false`.
      */
@@ -135,20 +169,49 @@ public class Attendance {
     /**
      * Returns a styled representation of an attendance list
      * using the specified symbols for positive and negative attendance.
-     *
-     * @param positiveSymbol The symbol to represent positive attendance (e.g., "✔" for present).
-     * @param negativeSymbol The symbol to represent negative attendance (e.g., "❌" for absent).
-     * @return A styled representation of the attendance list with symbols indicating positive and negative attendance.
+     * @param absent The symbol to represent absent attendance status.
+     * @param present The symbol to represent present attendance status.
+     * @param vr The symbol to represent VR attendance status.
+     * @param unknown The symbol to represent unknown attendance status.
+     * @return A stylized representation of the attendance list with symbols indicating respective attendance status.
      */
-    public String getStyledAttendanceList(String positiveSymbol, String negativeSymbol) {
+    public String getStyledStatusList(String absent, String present, String vr, String unknown) {
         StringBuilder styledList = new StringBuilder();
-        for (boolean isPresent : this.attendanceList) {
-            if (isPresent) {
-                styledList.append(positiveSymbol + " ");
-            } else {
-                styledList.append(negativeSymbol + " ");
+        for (int i = 0; i < totalTut - 1; i++) {
+            String status;
+            switch(statusList[i].statusString()) {
+            case "A":
+                status = absent;
+                break;
+            case "P":
+                status = present;
+                break;
+            case "VR":
+                status = vr;
+                break;
+            default:
+                status = unknown;
             }
+
+            styledList.append(status + "|");
         }
+
+        String status;
+        switch(statusList[totalTut - 1].statusString()) {
+        case "A":
+            status = absent;
+            break;
+        case "P":
+            status = present;
+            break;
+        case "VR":
+            status = vr;
+            break;
+        default:
+            status = unknown;
+        }
+
+        styledList.append(status);
 
         return styledList.toString();
     }
@@ -182,6 +245,20 @@ public class Attendance {
         return this.participationList[tut];
     }
 
+    /**
+     * Gets the total number of marked tutorials.
+     * @return The total number of tutorials with marked attendances.
+     */
+    public int getTotalMarkedTut() {
+        int markedTut = 0;
+
+        for (AttendanceStatus status : statusList) {
+            markedTut += status.statusString().equals("U") ? 0 : 1;
+        }
+
+        return markedTut;
+    }
+
     @Override
     public boolean equals(Object other) {
         if (other == this) {
@@ -194,11 +271,12 @@ public class Attendance {
         }
 
         Attendance otherAttendance = (Attendance) other;
-        return atdToString().equals(otherAttendance.atdToString()) && ppToString().equals(otherAttendance.ppToString());
+        return atdToString().equals(otherAttendance.atdToString()) && ppToString().equals(otherAttendance.ppToString())
+                && statusToString().equals(otherAttendance.statusToString());
     }
 
     /**
-     * Converts attendanceList to a string.
+     * Converts attendanceList to a string, where each attendance is separated by a comma.
      *
      * @return string version of attendancelist
      */
@@ -215,7 +293,7 @@ public class Attendance {
     }
 
     /**
-     * Converts participationList to a string.
+     * Converts participationList to a string, where each participation is separated by a comma.
      *
      * @return string version of participationlist
      */
@@ -226,6 +304,22 @@ public class Attendance {
         }
         if (this.participationList.length > 0) {
             s.append(this.participationList[this.participationList.length - 1]);
+        }
+        return s.toString();
+    }
+
+    /**
+     * Converts students status record to a string, where each status is separated by a comma.
+     *
+     * @return String version of statusList.
+     */
+    public String statusToString() {
+        StringBuilder s = new StringBuilder();
+        for (int i = 0; i < this.participationList.length - 1; i++) {
+            s.append(this.statusList[i].statusString()).append(",");
+        }
+        if (this.participationList.length > 0) {
+            s.append(this.statusList[this.participationList.length - 1].statusString());
         }
         return s.toString();
     }
@@ -251,5 +345,82 @@ public class Attendance {
      */
     public String toString() {
         return String.format("Attendance: %s | Participation: %s", atdToString(), ppToString());
+    }
+
+    /**
+     * Internal class to represent a single attendance.
+     */
+    private class AttendanceStatus {
+        private int index;
+
+        private boolean isPresent = false;
+
+        private boolean isAbsent = false;
+
+        private boolean isVR = false;
+
+        private boolean isUnmarked = true;
+
+        /**
+         * Constructs a single instance of AttendanceStatus.
+         * @param index The index (week) of the single attendance.
+         */
+        public AttendanceStatus(int index) {
+            this.index = index;
+        }
+
+        /**
+         * Sets the current status of the AttendanceStatus as present.
+         */
+        public void setPresent() {
+            this.isUnmarked = false;
+            this.isAbsent = false;
+            this.isVR = false;
+            this.isPresent = true;
+        }
+
+        /**
+         * Sets the current status of the AttendanceStatus as absent.
+         */
+        public void setAbsent() {
+            this.isUnmarked = false;
+            this.isAbsent = true;
+            this.isVR = false;
+            this.isPresent = false;
+        }
+
+        /**
+         * Sets the current status of the AttendanceStatus as VR.
+         */
+        public void setVR() {
+            this.isUnmarked = false;
+            this.isAbsent = false;
+            this.isVR = true;
+            this.isPresent = false;
+        }
+
+        /**
+         * Unmarks the instance of AttendanceStatus
+         */
+        public void unMark() {
+            this.isUnmarked = true;
+            this.isAbsent = false;
+            this.isVR = false;
+            this.isPresent = false;
+        }
+
+        /**
+         * Returns the attendance status as a String.
+         * @return The status as a String.
+         */
+        public String statusString() {
+            return isUnmarked ? "U" : isAbsent ? "A" : isVR ? "VR" : "P";
+        }
+
+        @Override
+        public String toString() {
+            return index
+                    + statusString();
+        }
     }
 }
