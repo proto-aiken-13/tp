@@ -14,6 +14,7 @@ import seedu.address.logic.commands.AssignmentGroupCommand;
 import seedu.address.logic.commands.AssignmentIndivCommand;
 import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.Command;
+import seedu.address.logic.commands.ConfirmClearCommand;
 import seedu.address.logic.commands.CreateGroupCommand;
 import seedu.address.logic.commands.DeassignmentCommand;
 import seedu.address.logic.commands.DeleteCommand;
@@ -43,6 +44,8 @@ public class AddressBookParser {
      */
     private static final Pattern BASIC_COMMAND_FORMAT = Pattern.compile("(?<commandWord>\\S+)(?<arguments>.*)");
     private static final Logger logger = LogsCenter.getLogger(AddressBookParser.class);
+    private Boolean confirmClearCommand = false;
+    private Boolean isClearCommand = false;
 
     /**
      * Parses user input into command for execution.
@@ -64,6 +67,9 @@ public class AddressBookParser {
         // log messages such as the one below.
         // Lower level log messages are used sparingly to minimize noise in the code.
         logger.fine("Command word: " + commandWord + "; Arguments: " + arguments);
+
+        isClearCommand = confirmClearCommand;
+        confirmClearCommand = false;
 
         switch (commandWord) {
 
@@ -92,7 +98,16 @@ public class AddressBookParser {
             return new DeleteCommandParser().parse(arguments);
 
         case ClearCommand.COMMAND_WORD:
+            confirmClearCommand = true;
             return new ClearCommand();
+
+        case ConfirmClearCommand.COMMAND_WORD:
+            if (isClearCommand) {
+                return new ConfirmClearCommand();
+            } else {
+                logger.finer("This user input caused a ParseException: " + userInput);
+                throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
+            }
 
         case FindCommand.COMMAND_WORD:
             return new FindCommandParser().parse(arguments);
