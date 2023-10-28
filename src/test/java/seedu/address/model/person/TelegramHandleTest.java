@@ -33,7 +33,7 @@ public class TelegramHandleTest {
         // valid telegrams
         assertTrue(TelegramHandle.isValidTelegramHandle("mamamia"));
         assertTrue(TelegramHandle.isValidTelegramHandle("lol_lol")); // underscore
-        assertTrue(TelegramHandle.isValidTelegramHandle("longtelegramhandle")); // long telegram handle
+        assertTrue(TelegramHandle.isValidTelegramHandle("v32ggggggggggggggggggggggggggggg")); // long telegram handle
     }
 
     @Test

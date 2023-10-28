@@ -19,7 +19,7 @@ public class TelegramHandle {
      * Minimum length is 5 characters and maximum is 32 characters.
      * It must start with a letter and cannot end with an underscore.
      */
-    public static final String VALIDATION_REGEX = "^[a-zA-Z][a-zA-Z0-9_]{3,28}[a-zA-Z0-9]$";
+    public static final String VALIDATION_REGEX = "^[a-zA-Z][a-zA-Z0-9_]{3,30}[a-zA-Z0-9]$";
 
     public final String value;
 
