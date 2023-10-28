@@ -197,7 +197,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 | Examples                                                                                     | Purpose                                                                                      |
 |----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | `add n/John Doe p/98765432 e/johnd@example.com a/johnTelegram`                               | Adds John Doe (Telegram : @johnTelegram) with additional details like phone number and email |
-| `add n/Betsy Crowe e/betsycrowe@example.com a/newTelegram p/1234567 t/smart c/Quiet Student` | Adds Betsy Crowe <br/>(Telegram : @newTelegram) with extra comments and tags                 |
+| `add n/Betsy Crowe e/betsycrowe@example.com a/newTelegram p/91234567 t/CS2103T c/Quiet Student` | Adds Betsy Crowe <br/>(Telegram : @newTelegram) with extra comments and tags                 |
 | `add n/James group/tut4`                                                                     | Adds James while grouping him to `tut4`                                                      |
 | `add n/Benson`                                                                               | Adds Benson only                                                                             |
 
@@ -583,7 +583,7 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 
 | Action                                | Format, Examples                                                                                                                                                                                                         |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**                               | `add n/NAME p/[PHONE_NUMBER] e/[EMAIL] a/[TELEGRAM_HANDLE] [t/TAG]… [c/COMMENT]… [group/GROUP]` <br> e.g., `add n/James Ho p/92224444 e/jamesho@example.com a/jamesTele t/friend t/colleague c/Owes a cookie group/tut33` |
+| **Add**                               | `add n/NAME p/[PHONE_NUMBER] e/[EMAIL] a/[TELEGRAM_HANDLE] [t/TAG]… [c/COMMENT]… [group/GROUP]` <br> e.g., `add n/James Ho p/92224444 e/jamesho@example.com a/jamesTele t/CS2103T t/CS2103R c/Owes an assignment group/tut33` |
 | **Clear**                             | `clear​`                                                                                                                                                                                                                 |
 | **Confirm Clear**                     | `yes`                                                                                                                                                                                                                    |
 | **Deassign Assignments**              | `deassign n/ASSIGNMENT_NAME`        `                                                                                                                                                                                    |
