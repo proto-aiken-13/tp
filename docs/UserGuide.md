@@ -194,13 +194,12 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 </div>
 
 
-| Examples                                                                                     | Purpose                                                                                      
-|----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------
-| `add n/John Doe p/98765432 e/johnd@example.com a/johnTelegram`                               | Adds John Doe (Telegram : @johnTelegram) with additional details like phone number and email 
+| Examples                                                                                     | Purpose                                                                                      |
+|----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| `add n/John Doe p/98765432 e/johnd@example.com a/johnTelegram`                               | Adds John Doe (Telegram : @johnTelegram) with additional details like phone number and email |
 | `add n/Betsy Crowe e/betsycrowe@example.com a/newTelegram p/1234567 t/smart c/Quiet Student` | Adds Betsy Crowe <br/>(Telegram : @newTelegram) with extra comments and tags                 |
-| `add n/James group/tut4`                                                                     | Adds James while grouping him to `tut4`                                                      
-| `add n/Benson`                                                                                | Adds Benson only                                                                             
-
+| `add n/James group/tut4`                                                                     | Adds James while grouping him to `tut4`                                                      |
+| `add n/Benson`                                                                               | Adds Benson only                                                                             |
 
 <a name="list"></a>
 ### ***Listing all students : `list`***
@@ -237,9 +236,9 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
-| Examples                                        | Purpose                            
-|-------------------------------------------------|------------------------------------
-| `find James Jake`                               | Finds a student called "James Jake"
+| Examples          | Purpose                             |
+|-------------------|-------------------------------------|
+| `find James Jake` | Finds a student called "James Jake" |
 
 ### ***Finding students by group : `findGroup`***
 
@@ -259,10 +258,9 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
-| Examples                                        | Purpose
-|-------------------------------------------------|------------------------------------
-| `findGroup 1`                               | Finds a student in group 1 and lists them out
-
+| Examples      | Purpose                                       |
+|---------------|-----------------------------------------------|
+| `findGroup 1` | Finds a student in group 1 and lists them out |
 
 <a name="edit"></a>
 ### Editing a person : `edit`
@@ -281,13 +279,12 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
-| Examples                                        | Purpose                            
-|-------------------------------------------------|------------------------------------
-| `edit 1 p/91234567 e/johndoe@example.com` | Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
-|  `edit 2 n/Betsy Crower t/` | Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
-|  `edit 3 t/ c/Loves cake` | Clears all existing tags of the 3rd person and replaces their tags with "Loves cake".
-|`edit 4 group/2` |  Moves the 4th person to group 2.
-
+| Examples                                  | Purpose                                                                                                             |
+|-------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| `edit 1 p/91234567 e/johndoe@example.com` | Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively. |
+| `edit 2 n/Betsy Crower t/`                | Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.                                 |
+| `edit 3 t/ c/Loves cake`                  | Clears all existing tags of the 3rd person and replaces their tags with "Loves cake".                               |
+| `edit 4 group/2`                          | Moves the 4th person to group 2.                                                                                    |
 
 ### Attendance
 
@@ -369,6 +366,7 @@ Examples:
 
 For participation, you can make the following commands:
 * inputPP
+* inputGroupPP
 * listParticipation
 
 #### Insert participation points to a student: inputPP
