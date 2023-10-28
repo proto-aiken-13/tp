@@ -24,6 +24,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
 public class MainWindow extends UiPart<Stage> {
 
     private static final String FXML = "MainWindow.fxml";
+    private static final String USERGUIDE_URL = "https://ay2324s1-cs2103t-t12-1.github.io/tp/";
 
     private final Logger logger = LogsCenter.getLogger(getClass());
 
@@ -33,7 +34,6 @@ public class MainWindow extends UiPart<Stage> {
     // Independent Ui parts residing in this Ui container
     private PersonListPanel personListPanel;
     private ResultDisplay resultDisplay;
-    private HelpWindow helpWindow;
 
     @FXML
     private StackPane commandBoxPlaceholder;
@@ -64,8 +64,6 @@ public class MainWindow extends UiPart<Stage> {
         setWindowDefaultSize(logic.getGuiSettings());
 
         setAccelerators();
-
-        helpWindow = new HelpWindow();
     }
 
     public Stage getPrimaryStage() {
@@ -140,11 +138,7 @@ public class MainWindow extends UiPart<Stage> {
      */
     @FXML
     public void handleHelp() {
-        if (!helpWindow.isShowing()) {
-            helpWindow.show();
-        } else {
-            helpWindow.focus();
-        }
+        UiUtil.open(USERGUIDE_URL);
     }
 
     void show() {
@@ -159,7 +153,6 @@ public class MainWindow extends UiPart<Stage> {
         GuiSettings guiSettings = new GuiSettings(primaryStage.getWidth(), primaryStage.getHeight(),
                 (int) primaryStage.getX(), (int) primaryStage.getY());
         logic.setGuiSettings(guiSettings);
-        helpWindow.hide();
         primaryStage.hide();
     }
 
