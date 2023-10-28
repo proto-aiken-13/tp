@@ -14,7 +14,7 @@ import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Person;
 
 /**
- * Class to input participation points to an existing student in for a specified week
+ * Class to input participation points to an existing student for a specified week
  */
 public class InputParticipationCommand extends Command {
     public static final String COMMAND_WORD = "inputPP";
