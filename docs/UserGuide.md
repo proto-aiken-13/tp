@@ -148,8 +148,7 @@ Step 5 : Start using the app
 <a name="help"></a>
 ### Viewing help : `help`
 
-If you have some trouble when using `npc_track`, simply click on the help button (or F1) on the menu bar or type 
-the `help` command.
+If you have trouble using `npc_track`, simply type the `help` command.
 
 Opens the user guide in your browser.
 
