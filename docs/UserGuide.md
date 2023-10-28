@@ -387,10 +387,10 @@ Participation points can only be inputted for a tutorial that is already marked 
 Else, it will result in the message `Before inputting participation points, 
 mark the attendance of the student first!`
 
-Examples
+Examples:
 
-* inputPP 1 t/1 pp/350 (For student with index 1, input 350 participation points to tutorial 1)
-* inputPP 2 t/12 pp/500 (For student with index 2, input 500 participation points to tutorial 12)
+* `inputPP 1 t/1 pp/350` (For student with index 1, input 350 participation points to tutorial 1)
+* `inputPP 2 t/12 pp/500` (For student with index 2, input 500 participation points to tutorial 12)
 
 #### Insert participation points to a group of students: inputGroupPP
 <a name="inputGroupPP"></a>
@@ -410,10 +410,10 @@ Participation points can only be inputted for a tutorial that is already marked 
 Else, it will result in the message `Before inputting participation points,
 mark the attendance of the student first!`
 
-Examples
+Examples:
 
-* inputGroupPP lab33 t/1 pp/350 (For students of lab33, input 350 participation points to tutorial 1)
-* inputGroupPP tut39 t/12 pp/500 (For student of tut39, input 500 participation points to tutorial 12)
+* `inputGroupPP lab33 t/1 pp/350` (For students of lab33, input 350 participation points to tutorial 1)
+* `inputGroupPP tut39 t/12 pp/500` (For student of tut39, input 500 participation points to tutorial 12)
 
 #### List participation records: `listParticipation`
 <a name="listParticipation"></a>
@@ -424,10 +424,10 @@ Format: `listParticipation INDEX`
 
 `INDEX`: A positive integer representing the index of the student as shown in the list.
 
-Examples
+Examples:
 
-* listParticipation 1 (List the participation record for the student with index 1)
-* listParticipation 5 (List the participation record for the student with index 5)
+* `listParticipation 1` (List the participation record for the student with index 1)
+* `listParticipation 5` (List the participation record for the student with index 5)
 
 #### Distribute assignments: `assign`
 <a name="assign"></a>
@@ -583,7 +583,7 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 
 | Action                                | Format, Examples                                                                                                                                                                                                         |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**                               | `add n/NAME p/[PHONE_NUMBER] e/[EMAIL] a/[TELEGRAM_HANDLE] [t/TAG]… [c/COMMENT]… [group/GROUP]` <br> e.g., `add n/James Hop/22224444 e/jamesho@example.com a/jamesTele t/friend t/colleague c/Owes a cookie group/tut33` |
+| **Add**                               | `add n/NAME p/[PHONE_NUMBER] e/[EMAIL] a/[TELEGRAM_HANDLE] [t/TAG]… [c/COMMENT]… [group/GROUP]` <br> e.g., `add n/James Ho p/92224444 e/jamesho@example.com a/jamesTele t/friend t/colleague c/Owes a cookie group/tut33` |
 | **Clear**                             | `clear​`                                                                                                                                                                                                                 |
 | **Confirm Clear**                     | `yes`                                                                                                                                                                                                                    |
 | **Deassign Assignments**              | `deassign n/ASSIGNMENT_NAME`        `                                                                                                                                                                                    |
@@ -615,7 +615,6 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 | Keyword       | Definition                                                     |
 |---------------|----------------------------------------------------------------|
 | **Parameter** | Details about the student that will be included in the command |
-| **Command**   | Instructions that `npc_track` will execute                     |
 | **Command**   | Instructions that `npc_track` will execute                     |
 
 --------------------------------------------------------------------------------------------------------------------
