@@ -119,6 +119,16 @@ Step 4 : Run the `npc_track`
 
 Step 5 : Start using the app
 
+---
+
+<a name="parameter"></a>
+## Common Parameters
+
+| Parameters | Description        | Constraints                                                                                                                                                              | Valid Examples                  | Invalid Examples
+|------------|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------| -------------- 
+| `n/`       | Specifies the name | Must be alphanumeric and can contain spaces                                                                                                                              | John Doe                        | $5money        
+| `a/`       | Telegram handle    | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters and maximum 32 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop | $telegram, _tele, 56thperson
+
 --------------------------------------------------------------------------------------------------------------------
 
 <a name="features"></a>

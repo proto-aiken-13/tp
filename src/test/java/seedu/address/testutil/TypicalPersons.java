@@ -56,7 +56,7 @@ public class TypicalPersons {
             .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0")
             .build();
     public static final Person GEORGE = new PersonBuilder().withName("George Best").withPhone("9482442")
-            .withEmail("anna@example.com").withTelegram("4thstreet")
+            .withEmail("anna@example.com").withTelegram("thstreet")
             .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0").build();
 
     // Manually added
