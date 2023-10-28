@@ -29,8 +29,15 @@ Given below are my contributions to the project.
       - This feature addresses the need for a more detailed and granular view of students' participation and
         engagement in tutorials. It complements the existing attendance management system,
         making it a more comprehensive tool for educators and administrators.
+  - Confirm Clear Command
+    - What it does:
+      - When users want to clear the list, they will receive a warning message, asking them to enter 'yes' if they
+      really want to clear.
+      - This feature addresses the need for a secondary protection, in case the user doesn't want to clear.
 - Test Coverage:
   - Testing has been done for all the features I implemented.
+- Code Refactoring:
+  - Did code refactoring so that command classes can be simpler.
 
 ### Contributions to the User Guide (UG)
 
@@ -52,6 +59,7 @@ Given below are my contributions to the project.
 ### Contributions to Team-Based Tasks
 
 - Brainstormed for features to be implemented.
+- Created milestone v1.2, v1.3, v1.4
 
 ### Review and Mentoring Contributions
 
