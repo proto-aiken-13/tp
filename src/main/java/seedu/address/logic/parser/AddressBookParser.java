@@ -10,21 +10,15 @@ import java.util.regex.Pattern;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.commands.AssignmentCommand;
-import seedu.address.logic.commands.AssignmentGroupCommand;
-import seedu.address.logic.commands.AssignmentIndivCommand;
 import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.CreateGroupCommand;
-import seedu.address.logic.commands.DeassignmentCommand;
 import seedu.address.logic.commands.DeleteCommand;
 import seedu.address.logic.commands.EditCommand;
 import seedu.address.logic.commands.ExitCommand;
 import seedu.address.logic.commands.FindCommand;
-import seedu.address.logic.commands.FindGroupCommand;
 import seedu.address.logic.commands.GradeCommand;
-import seedu.address.logic.commands.GradeGroupCommand;
 import seedu.address.logic.commands.HelpCommand;
-import seedu.address.logic.commands.InputParticipationCommand;
 import seedu.address.logic.commands.ListCommand;
 import seedu.address.logic.commands.ListParticipationCommand;
 import seedu.address.logic.commands.MarkAttendanceCommand;
@@ -73,15 +67,6 @@ public class AddressBookParser {
         case AssignmentCommand.COMMAND_WORD:
             return new AssignmentCommandParser().parse(arguments);
 
-        case AssignmentIndivCommand.COMMAND_WORD:
-            return new AssignmentIndivCommandParser().parse(arguments);
-
-        case DeassignmentCommand.COMMAND_WORD:
-            return new DeassignmentCommandParser().parse(arguments);
-
-        case AssignmentGroupCommand.COMMAND_WORD:
-            return new AssignmentGroupCommandParser().parse(arguments);
-
         case CreateGroupCommand.COMMAND_WORD:
             return new CreateGroupCommandParser().parse(arguments);
 
@@ -97,14 +82,8 @@ public class AddressBookParser {
         case FindCommand.COMMAND_WORD:
             return new FindCommandParser().parse(arguments);
 
-        case FindGroupCommand.COMMAND_WORD:
-            return new FindGroupCommandParser().parse(arguments);
-
         case GradeCommand.COMMAND_WORD:
             return new GradeCommandParser().parse(arguments);
-
-        case GradeGroupCommand.COMMAND_WORD:
-            return new GradeGroupCommandParser().parse(arguments);
 
         case ListCommand.COMMAND_WORD:
             return new ListCommand();
@@ -117,9 +96,6 @@ public class AddressBookParser {
 
         case HelpCommand.COMMAND_WORD:
             return new HelpCommand();
-
-        case InputParticipationCommand.COMMAND_WORD:
-            return new InputParticipationParser().parse(arguments);
 
         case MarkAttendanceCommand.COMMAND_WORD:
             return new MarkAttendanceParser().parse(arguments);

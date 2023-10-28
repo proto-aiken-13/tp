@@ -42,7 +42,6 @@ public class AddCommandParser implements Parser<AddCommand> {
         ArgumentMultimap argMultimap =
                 ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_TELEGRAM_HANDLE,
                         PREFIX_TAG, PREFIX_COMMENT, PREFIX_GROUP);
-
         if (!arePrefixesPresent(argMultimap, PREFIX_NAME)
                 || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
@@ -63,7 +62,8 @@ public class AddCommandParser implements Parser<AddCommand> {
         if (argMultimap.getValue(PREFIX_TELEGRAM_HANDLE).isPresent()) {
             telegram = ParserUtil.parseTelegramHandle(argMultimap.getValue(PREFIX_TELEGRAM_HANDLE).get());
         }
-        Attendance attendance = new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART);
+        Attendance attendance = new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART,
+                Attendance.ORIGINAL_STATUS);
         Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
         Set<Comment> commentList = ParserUtil.parseComments(argMultimap.getAllValues(PREFIX_COMMENT));
         Set<Assignment> assignmentList = new HashSet<>();

@@ -28,6 +28,7 @@ public class MarkGroupAttendanceCommand extends Command {
             + "Example: " + COMMAND_WORD + " tut1 t/1 ";
     private final Index tut;
     private final Group group;
+    private final String status;
 
     /**
      * Constructs a new MarkAttendanceCommand to mark attendance for a student on a specific week.
@@ -35,11 +36,12 @@ public class MarkGroupAttendanceCommand extends Command {
      * @param group The group to mark group attendance for.
      * @param tut The index of the week to mark group attendance on.
      */
-    public MarkGroupAttendanceCommand(Group group, Index tut) {
+    public MarkGroupAttendanceCommand(Group group, Index tut, String status) {
         requireNonNull(group);
         requireNonNull(tut);
         this.group = group;
         this.tut = tut;
+        this.status = status;
     }
 
     /**
@@ -70,7 +72,7 @@ public class MarkGroupAttendanceCommand extends Command {
                     student.getTags(),
                     student.getComments(), student.getAssignments(), Optional.of(student.getGroup()));
             Attendance studentAtd = student.getAttendance();
-            studentAtd.markAttendance(this.tut.getZeroBased());
+            studentAtd.markAttendance(this.tut.getZeroBased(), this.status);
             model.setPerson(student, editedStudent);
         }
 

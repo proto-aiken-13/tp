@@ -54,8 +54,23 @@ public class ParserUtil {
     }
 
     /**
+     * Parses a {@code pp} into an {@code String} and returns it. Leading and trailing whitespaces will be trimmed.
+     * @param status String value of  status
+     * @return int value of status if valid
+     * @throws ParseException if the given {@code status} is invalid
+     */
+    public static String parseParticipationStatus(String status) throws ParseException {
+        requireNonNull(status);
+        String trimmedStatus = status.trim();
+        if (!Attendance.isValidStatus(trimmedStatus)) {
+            throw new ParseException(Attendance.PARTICIPATION_ERROR_MSG);
+        }
+        return trimmedStatus;
+    }
+
+    /**
      * Parses a {@code pp} into an {@code int} and returns it. Leading and trailing whitespaces will be trimmed.
-     * @param pp String value of participation points
+     * @param pp String value of participation score
      * @return int value of pp if valid
      * @throws ParseException if the given {@code pp} is invalid
      */

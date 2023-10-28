@@ -20,14 +20,14 @@ public class MarkAttendanceParserTest {
     @Test
     public void parse_missingParts_failure() {
         // Test case 1: Missing index (preamble)
-        String userInput1 = "t/1";
+        String userInput1 = "t/1 s/P";
         assertParseFailure(parser, userInput1, MESSAGE_INVALID_FORMAT);
 
         // Test case 2: Missing week (tutorial)
-        String userInput2 = "1";
+        String userInput2 = "1 s/P";
         assertParseFailure(parser, userInput2, Attendance.TUTORIAL_ERROR_MSG);
 
-        // Missing both index and tutorial
+        // Missing both index, tutorial and status
         assertParseFailure(parser, "", MESSAGE_INVALID_FORMAT);
     }
 
@@ -40,23 +40,23 @@ public class MarkAttendanceParserTest {
     @Test
     public void parse_invalidTutorial_failure() {
         // Invalid tutorial (not a positive integer)
-        assertParseFailure(parser, "1 t/a", Attendance.TUTORIAL_ERROR_MSG);
+        assertParseFailure(parser, "1 t/a s/P", Attendance.TUTORIAL_ERROR_MSG);
 
         // Invalid tutorial (0)
-        assertParseFailure(parser, "1 t/0", Attendance.TUTORIAL_ERROR_MSG);
+        assertParseFailure(parser, "1 t/0 s/P", Attendance.TUTORIAL_ERROR_MSG);
 
         // Invalid tutorial (greater than 12)
-        assertParseFailure(parser, "1 t/13", Attendance.TUTORIAL_ERROR_MSG);
+        assertParseFailure(parser, "1 t/13 s/P", Attendance.TUTORIAL_ERROR_MSG);
     }
 
     @Test
     public void parse_validInput_success() throws ParseException {
         // Valid input
-        assertParseSuccess(parser, "1 t/1", new MarkAttendanceCommand(Index.fromOneBased(1),
-                Index.fromOneBased(1)));
+        assertParseSuccess(parser, "1 t/1 s/P", new MarkAttendanceCommand(Index.fromOneBased(1),
+                Index.fromOneBased(1), "P"));
 
         // Valid input with different indices and tutorial
-        assertParseSuccess(parser, "2 t/5", new MarkAttendanceCommand(Index.fromOneBased(2),
-                Index.fromOneBased(5)));
+        assertParseSuccess(parser, "2 t/5 s/P", new MarkAttendanceCommand(Index.fromOneBased(2),
+                Index.fromOneBased(5), "P"));
     }
 }

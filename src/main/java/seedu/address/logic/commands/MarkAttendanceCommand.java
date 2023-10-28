@@ -25,21 +25,22 @@ public class MarkAttendanceCommand extends Command {
             + "by the index number used in the displayed student list.\n"
             + "Parameters: INDEX (must be a positive integer) "
             + "[" + PREFIX_TUTORIAL + "TutorialToMark] \n"
-            + "Example: " + COMMAND_WORD + " 1 t/1 ";
+            + "Example: " + COMMAND_WORD + " 1 t/1 s/P";
     private final Index index;
     private final Index tut;
-
+    private final String status;
     /**
      * Constructs a new MarkAttendanceCommand to mark attendance for a student on a specific week.
      *
      * @param index The index of the student to mark attendance for.
      * @param tut The index of the week to mark attendance on.
      */
-    public MarkAttendanceCommand(Index index, Index tut) {
+    public MarkAttendanceCommand(Index index, Index tut, String status) {
         requireNonNull(index);
         requireNonNull(tut);
         this.index = index;
         this.tut = tut;
+        this.status = status;
     }
 
     /**
@@ -68,7 +69,7 @@ public class MarkAttendanceCommand extends Command {
         if (studentAtd.isMarkedWeek(this.tut.getZeroBased())) {
             return new CommandResult(Messages.MESSAGE_DUPLICATE_MARKINGS);
         }
-        studentAtd.markAttendance(this.tut.getZeroBased());
+        studentAtd.markAttendance(this.tut.getZeroBased(), this.status);
 
         model.setPerson(studentToEdit, editedStudent);
         model.updateFilteredPersonList(Model.PREDICATE_SHOW_ALL_PERSONS);

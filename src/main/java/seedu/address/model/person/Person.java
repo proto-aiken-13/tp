@@ -150,21 +150,12 @@ public class Person {
         return 0;
     }
 
-    /**
-     * Gets a styled representation of the attendance list
-     * using the specified symbols for positive and negative attendance.
-     *
-     * @param positiveSymbol The symbol to represent positive attendance (e.g., "✔" for present).
-     * @param negativeSymbol The symbol to represent negative attendance (e.g., "❌" for absent).
-     * @return A styled representation of the attendance list with symbols indicating positive and negative attendance.
-     *         Returns null if attendance information is not available.
-     */
-    public String getStyledAttendanceList(String positiveSymbol, String negativeSymbol) {
-        Attendance attendance = this.attendance.orElse(null);
-        if (attendance == null) {
-            return null;
+    public String getAttendanceList() {
+        Attendance stdatd = this.attendance.orElse(null);
+        if (stdatd != null) {
+            return stdatd.atdToString();
         }
-        return attendance.getStyledAttendanceList(positiveSymbol, negativeSymbol);
+        return "";
     }
 
     public Group getGroup() {
