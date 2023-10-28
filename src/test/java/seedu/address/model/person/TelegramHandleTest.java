@@ -14,8 +14,8 @@ public class TelegramHandleTest {
     }
 
     @Test
-    public void constructor_invalidAddress_throwsIllegalArgumentException() {
-        String invalidTelegramHandle = "";
+    public void constructor_invalidTelegramHandle_throwsIllegalArgumentException() {
+        String invalidTelegramHandle = "jd910ue09m(@s92";
         assertThrows(IllegalArgumentException.class, () -> new TelegramHandle(invalidTelegramHandle));
     }
 

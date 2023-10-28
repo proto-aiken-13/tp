@@ -14,8 +14,10 @@ import org.junit.jupiter.api.Test;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.person.TelegramHandle;
+import seedu.address.testutil.PersonBuilder;
 
 public class JsonAdaptedPersonTest {
     private static final String INVALID_NAME = "R@chel";
@@ -43,6 +45,7 @@ public class JsonAdaptedPersonTest {
     private static final List<JsonAdaptedComment> VALID_COMMENTS = BENSON.getComments().stream()
             .map(JsonAdaptedComment::new)
             .collect(Collectors.toList());
+
     @Test
     public void toModelType_validPersonDetails_returnsPerson() throws Exception {
         JsonAdaptedPerson person = new JsonAdaptedPerson(BENSON);
@@ -80,12 +83,23 @@ public class JsonAdaptedPersonTest {
     }
 
     @Test
-    public void toModelType_nullPhone_throwsIllegalValueException() {
+    public void toModelType_nullPhone_throwsNullPointerException() {
         JsonAdaptedPerson person = new JsonAdaptedPerson(VALID_NAME, null, VALID_EMAIL,
                 VALID_TELEGRAM_HANDLE, VALID_ATTENDANCE, VALID_PARTICIPATION,
                 VALID_TAGS, VALID_COMMENTS, VALID_ASSIGNMENTS, VALID_GROUP);
-        String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Phone.class.getSimpleName());
-        assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
+        assertThrows(NullPointerException.class, person::toModelType);
+    }
+
+    @Test
+    public void toModelType_emptyPhone_success() throws Exception {
+        Person expectedPerson = new PersonBuilder().withName("Nick Jones")
+                .withTelegram("nickJones")
+                .withEmail("nickJones@gmail.com").withPhone("")
+                .withTags("owesMoney", "friends")
+                .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0")
+                .build();
+        JsonAdaptedPerson person = new JsonAdaptedPerson(expectedPerson);
+        assertEquals(expectedPerson, person.toModelType());
     }
 
     @Test
@@ -100,12 +114,24 @@ public class JsonAdaptedPersonTest {
     }
 
     @Test
-    public void toModelType_nullEmail_throwsIllegalValueException() {
+    public void toModelType_nullEmail_throwsNullPointerException() {
         JsonAdaptedPerson person = new JsonAdaptedPerson(VALID_NAME, VALID_PHONE, null,
                 VALID_TELEGRAM_HANDLE, VALID_ATTENDANCE, VALID_PARTICIPATION,
                 VALID_TAGS, VALID_COMMENTS, VALID_ASSIGNMENTS, VALID_GROUP);
-        String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Email.class.getSimpleName());
-        assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
+
+        assertThrows(NullPointerException.class, person::toModelType);
+    }
+
+    @Test
+    public void toModelType_emptyEmail_success() throws Exception {
+        Person expectedPerson = new PersonBuilder().withName("Nick Jones")
+                .withTelegram("nickJones")
+                .withEmail("").withPhone("98765432")
+                .withTags("owesMoney", "friends")
+                .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0")
+                .build();
+        JsonAdaptedPerson person = new JsonAdaptedPerson(expectedPerson);
+        assertEquals(expectedPerson, person.toModelType());
     }
 
     @Test
@@ -118,11 +144,22 @@ public class JsonAdaptedPersonTest {
     }
 
     @Test
-    public void toModelType_nullTelegramHandle_throwsIllegalValueException() {
+    public void toModelType_nullTelegramHandle_throwsNullPointerException() {
         JsonAdaptedPerson person = new JsonAdaptedPerson(VALID_NAME, VALID_PHONE, VALID_EMAIL, null,
                 VALID_ATTENDANCE, VALID_PARTICIPATION, VALID_TAGS, VALID_COMMENTS, VALID_ASSIGNMENTS, VALID_GROUP);
-        String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, TelegramHandle.class.getSimpleName());
-        assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
+        assertThrows(NullPointerException.class, person::toModelType);
+    }
+
+    @Test
+    public void toModelType_emptyTelegramHandle_success() throws Exception {
+        Person expectedPerson = new PersonBuilder().withName("Nick Jones")
+                .withTelegram("")
+                .withEmail("tele@gmail.com").withPhone("98765432")
+                .withTags("owesMoney", "friends")
+                .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0")
+                .build();
+        JsonAdaptedPerson person = new JsonAdaptedPerson(expectedPerson);
+        assertEquals(expectedPerson, person.toModelType());
     }
 
     @Test

@@ -184,6 +184,8 @@ Adds a student to the student book.
 - A student can have any number of tags (including 0)
 <br>
 - A student can have any number of comments (including 0)
+<br>
+- Cannot add a student with the same name in the list.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
