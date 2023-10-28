@@ -16,7 +16,7 @@ public class TelegramHandle {
 
     /*
      * The telegram handle uses a-z, 0-9 and underscores.
-     * Minimum length is 5 characters.
+     * Minimum length is 5 characters. It must start with a letter and cannot end with an underscore
      */
     public static final String VALIDATION_REGEX = "^[a-zA-Z][a-zA-Z0-9_]{3,28}[a-zA-Z0-9]$";
 
