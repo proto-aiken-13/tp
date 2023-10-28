@@ -92,8 +92,6 @@ public class PersonCard extends UiPart<Region> {
         }
 
         String telegramHandle = person.getTelegramHandle().value;
-        if (telegramHandle != null && !telegramHandle.isEmpty()) {
-            UiUtil.open("https://t.me/" + telegramHandle);
-        }
+        UiUtil.openTelegram(telegramHandle);
     }
 }

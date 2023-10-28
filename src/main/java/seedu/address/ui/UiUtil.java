@@ -34,4 +34,14 @@ public class UiUtil {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Opens a link to the telegram profile using the default web browser
+     * @param telegramHandle The telegram handle
+     */
+    public static void openTelegram(String telegramHandle) {
+        if (telegramHandle != null && !telegramHandle.isEmpty()) {
+            UiUtil.open("https://t.me/" + telegramHandle);
+        }
+    }
 }
