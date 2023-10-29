@@ -44,4 +44,13 @@ public class UiUtil {
             UiUtil.open("https://t.me/" + telegramHandle);
         }
     }
+
+    /**
+     * Opens a link to the user guide using the default web browser
+     */
+    public static void openUserGuide() {
+        final String userGuideUrl = "https://ay2324s1-cs2103t-t12-1.github.io/tp/";
+        UiUtil.open(userGuideUrl);
+    }
+
 }

@@ -50,14 +50,8 @@ public class Attendance {
      * @return `true` if the week is valid; otherwise, `false`.
      */
     public static boolean isValidTutorial(String tutorial) {
-        int week = 0;
-        try {
-            week = Integer.parseInt(tutorial);
-        } catch (NumberFormatException e) {
-            return false;
-        } finally {
-            return week > 0 && week <= totalTut;
-        }
+        int week = Integer.parseInt(tutorial);
+        return week > 0 && week <= totalTut;
     }
 
     /**
