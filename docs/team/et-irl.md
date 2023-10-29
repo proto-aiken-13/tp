@@ -40,6 +40,7 @@ Given below are my contributions to the project.
 - Added the `assignIndiv` command usage.
 - Spotted documentation bugs and ensured the reliability of the table of contents.
 - Scrutinised the grammar and English use in the guide.
+- Made examples saner, such as alphabetising the names.
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 

@@ -25,7 +25,7 @@ public class GradeGroupCommand extends Command {
             + ": Marks the specific assignment of the group identified.\n"
             + "Compulsory Parameters: GROUP "
             + PREFIX_NAME + "ASSIGNMENT_NAME " + PREFIX_GRADE + "SCORE\n "
-            + "Example: " + COMMAND_WORD + " tutGroup33 n/assignment1 g/96 ";
+            + "Example: " + COMMAND_WORD + " tut33 n/assignment1 g/96 ";
     private final Group group;
     private final Name name;
     private final int score;

@@ -35,36 +35,36 @@ public class TypicalPersons {
             .build();
     public static final Person BENSON = new PersonBuilder().withName("Benson Meier")
             .withTelegram("bensonTelegram")
-            .withEmail("johnd@example.com").withPhone("98765432")
+            .withEmail("benson@example.com").withPhone("98765432")
             .withTags("owesMoney", "friends")
             .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0")
             .build();
 
     public static final Person CARL = new PersonBuilder().withName("Carl Kurz").withPhone("95352563")
-            .withEmail("heinz@example.com").withTelegram("carlTelegram")
+            .withEmail("carl@example.com").withTelegram("carlTelegram")
             .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0").build();;
     public static final Person DANIEL = new PersonBuilder().withName("Daniel Meier").withPhone("87652533")
-            .withEmail("cornelia@example.com").withTelegram("danielTelegram")
+            .withEmail("daniel@example.com").withTelegram("danielTelegram")
             .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0")
             .withTags("friends").build();
-    public static final Person ELLE = new PersonBuilder().withName("Elle Meyer").withPhone("9482224")
-            .withEmail("werner@example.com").withTelegram("micheganTelegram")
+    public static final Person ELLE = new PersonBuilder().withName("Elle Meyer").withPhone("94822242")
+            .withEmail("elle@example.com").withTelegram("elleTelegram")
             .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0")
             .build();
-    public static final Person FIONA = new PersonBuilder().withName("Fiona Kunz").withPhone("9482427")
-            .withEmail("lydia@example.com").withTelegram("littletokyo")
+    public static final Person FIONA = new PersonBuilder().withName("Fiona Kunz").withPhone("94824271")
+            .withEmail("fiona@example.com").withTelegram("fionaTelegram")
             .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0")
             .build();
-    public static final Person GEORGE = new PersonBuilder().withName("George Best").withPhone("9482442")
-            .withEmail("anna@example.com").withTelegram("thstreet")
+    public static final Person GEORGE = new PersonBuilder().withName("George Best").withPhone("94824424")
+            .withEmail("george@example.com").withTelegram("georgeTelegram")
             .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0").build();
 
     // Manually added
-    public static final Person HOON = new PersonBuilder().withName("Hoon Meier").withPhone("8482424")
-            .withEmail("stefan@example.com").withTelegram("littleindia")
+    public static final Person HOON = new PersonBuilder().withName("Hoon Meier").withPhone("84824249")
+            .withEmail("hoon@example.com").withTelegram("hoonTelegram")
             .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0").build();
-    public static final Person IDA = new PersonBuilder().withName("Ida Mueller").withPhone("8482131")
-            .withEmail("hans@example.com").withTelegram("chicagoave")
+    public static final Person IDA = new PersonBuilder().withName("Ida Mueller").withPhone("84821318")
+            .withEmail("ida@example.com").withTelegram("idaTelegram")
             .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0").build();
 
     // Manually added - Person's details found in {@code CommandTestUtil}
@@ -76,10 +76,11 @@ public class TypicalPersons {
             .withAttendance(VALID_ATTENDANCE_BOB, VALID_PART_BOB).build();
 
 
-    public static final String KEYWORD_MATCHING_MEIER = "Meier"; // A keyword that matches MEIER
+    public static final String KEYWORD_MATCHING_MEIER = "Meier";
 
     private TypicalPersons() {
-    } // prevents instantiation
+        // prevents instantiation
+    }
 
     /**
      * Returns an {@code AddressBook} with all the typical persons.
