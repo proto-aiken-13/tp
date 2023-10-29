@@ -32,28 +32,28 @@ public class TypicalPersons {
             .build();
     public static final Person BENSON = new PersonBuilder().withName("Benson Meier")
             .withTelegram("bensonTelegram")
-            .withEmail("johnd@example.com").withPhone("98765432")
+            .withEmail("benson@example.com").withPhone("98765432")
             .withTags("owesMoney", "friends")
             .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)
             .build();
 
     public static final Person CARL = new PersonBuilder().withName("Carl Kurz").withPhone("95352563")
-            .withEmail("heinz@example.com").withTelegram("carlTelegram")
+            .withEmail("carl@example.com").withTelegram("carlTelegram")
             .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART).build();;
     public static final Person DANIEL = new PersonBuilder().withName("Daniel Meier").withPhone("87652533")
-            .withEmail("cornelia@example.com").withTelegram("danielTelegram")
+            .withEmail("daniel@example.com").withTelegram("danielTelegram")
             .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)
             .withTags("friends").build();
-    public static final Person ELLE = new PersonBuilder().withName("Elle Meyer").withPhone("9482224")
-            .withEmail("werner@example.com").withTelegram("micheganTelegram")
+    public static final Person ELLE = new PersonBuilder().withName("Elle Meyer").withPhone("94822242")
+            .withEmail("elle@example.com").withTelegram("elleTelegram")
             .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)
             .build();
-    public static final Person FIONA = new PersonBuilder().withName("Fiona Kunz").withPhone("9482427")
-            .withEmail("lydia@example.com").withTelegram("littletokyo")
+    public static final Person FIONA = new PersonBuilder().withName("Fiona Kunz").withPhone("94824271")
+            .withEmail("fiona@example.com").withTelegram("fionaTelegram")
             .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)
             .build();
-    public static final Person GEORGE = new PersonBuilder().withName("George Best").withPhone("9482442")
-            .withEmail("anna@example.com").withTelegram("thstreet")
+    public static final Person GEORGE = new PersonBuilder().withName("George Best").withPhone("94824424")
+            .withEmail("george@example.com").withTelegram("georgeTelegram")
             .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART).build();
 
     // Manually added
