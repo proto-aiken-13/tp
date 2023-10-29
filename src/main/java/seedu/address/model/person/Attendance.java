@@ -45,7 +45,6 @@ public class Attendance {
         }
         int intTutorial = Integer.parseInt(tutorial);
         if (intTutorial <= 0 || intTutorial > 12) {
-            System.out.println(tutorial);
             return false;
         }
         return true;
@@ -120,6 +119,7 @@ public class Attendance {
      */
     public void unmarkAttendance(int tutorial) {
         this.attendanceList[tutorial] = false;
+        this.participationList[tutorial] = 0;
     }
 
     /**
