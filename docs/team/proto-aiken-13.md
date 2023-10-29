@@ -14,6 +14,8 @@ Given below are my contributions to the project:
 
 - **New Feature**
 	- Added a Ui.
+	- Added tutorial attendance status support to the attendance class.
+	- Refurbished the attendance status and participation status in the attendance class.
 - **Code contributed**
 	- Edited MainWindow.fxml
 	- Edited DarkMode.css
@@ -24,6 +26,7 @@ Given below are my contributions to the project:
 	- Contributed to v1.2b
 	- Helped to manage v1.3
 	- Contributed to v1.3b
+	- PR reviewed 1.3 PR's
 - **Enhancements to existing features:**
 	- Made the Ui mockup
 	- Generally completed the UI
