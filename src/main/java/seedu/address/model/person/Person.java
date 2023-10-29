@@ -150,14 +150,6 @@ public class Person {
         return 0;
     }
 
-    public String getAttendanceList() {
-        Attendance stdatd = this.attendance.orElse(null);
-        if (stdatd != null) {
-            return stdatd.atdToString();
-        }
-        return "";
-    }
-
     public Group getGroup() {
         return group.orElse(null);
     }
@@ -172,8 +164,7 @@ public class Person {
         }
 
         return otherPerson != null
-                && otherPerson.getName().equals(getName())
-                && otherPerson.getTelegramHandle().equals(getTelegramHandle());
+                && otherPerson.getName().equals(getName());
     }
 
     /**

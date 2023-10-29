@@ -35,7 +35,6 @@ class JsonAdaptedPerson {
     private final String telegram;
     private final String attendance;
     private final String participation;
-    private final String attendanceStatus;
     private final List<JsonAdaptedTag> tags = new ArrayList<>();
     private final List<JsonAdaptedComment> comments = new ArrayList<>();
     private final List<JsonAdaptedAssignment> assignments = new ArrayList<>();
@@ -48,7 +47,6 @@ class JsonAdaptedPerson {
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
             @JsonProperty("email") String email, @JsonProperty("telegram") String telegram,
             @JsonProperty("attendance") String attendance,
-                             @JsonProperty("attendanceStatus") String attendanceStatus,
                              @JsonProperty("participation") String participation,
                              @JsonProperty("tags") List<JsonAdaptedTag> tags,
                              @JsonProperty("comments") List<JsonAdaptedComment> comments,
@@ -60,7 +58,6 @@ class JsonAdaptedPerson {
         this.telegram = telegram;
         this.attendance = attendance;
         this.participation = participation;
-        this.attendanceStatus = attendanceStatus;
         if (tags != null) {
             this.tags.addAll(tags);
         }
@@ -78,11 +75,10 @@ class JsonAdaptedPerson {
      */
     public JsonAdaptedPerson(Person source) {
         name = source.getName().fullName;
-        phone = source.getPhone().value;
-        email = source.getEmail().value;
-        telegram = source.getTelegramHandle().value;
+        phone = source.getPhone() != null ? source.getPhone().value : "";
+        email = source.getEmail() != null ? source.getEmail().value : "";
+        telegram = source.getTelegramHandle() != null ? source.getTelegramHandle().value : "";
         attendance = source.getAttendance().atdToString();
-        attendanceStatus = source.getAttendance().statusToString();
         participation = source.getAttendance().ppToString();
         tags.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
@@ -125,39 +121,24 @@ class JsonAdaptedPerson {
         }
         final Name modelName = new Name(name);
 
-        if (phone == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Phone.class.getSimpleName()));
-        }
-        if (!Phone.isValidPhone(phone)) {
+        if ((!phone.isEmpty() && !Phone.isValidPhone(phone))) {
             throw new IllegalValueException(Phone.MESSAGE_CONSTRAINTS);
         }
-        final Phone modelPhone = new Phone(phone);
+        final Phone modelPhone = (phone.isEmpty()) ? null : new Phone(phone);
 
-        if (email == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Email.class.getSimpleName()));
-        }
-
-        if (!Email.isValidEmail(email)) {
+        if (!email.isEmpty() && !Email.isValidEmail(email)) {
             throw new IllegalValueException(Email.MESSAGE_CONSTRAINTS);
         }
+        final Email modelEmail = (email.isEmpty()) ? null : new Email(email);
 
-        final Email modelEmail = new Email(email);
-
-        if (telegram == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
-                    TelegramHandle.class.getSimpleName()));
-        }
-        if (!TelegramHandle.isValidTelegramHandle(telegram)) {
+        if (!telegram.isEmpty() && !TelegramHandle.isValidTelegramHandle(telegram)) {
             throw new IllegalValueException(TelegramHandle.MESSAGE_CONSTRAINTS);
         }
-        final TelegramHandle modelTelegramHandle = new TelegramHandle(telegram);
+        final TelegramHandle modelTelegramHandle = (telegram.isEmpty())
+                ? null : new TelegramHandle(telegram);
 
         if (attendance == null) {
             throw new IllegalValueException(Attendance.TUTORIAL_ERROR_MSG);
-        }
-
-        if (attendanceStatus == null) {
-            throw new IllegalValueException(Attendance.STATUS_ERROR_MSG);
         }
 
         if (participation == null) {
@@ -173,13 +154,13 @@ class JsonAdaptedPerson {
             throw new IllegalValueException(Group.MESSAGE_CONSTRAINTS);
         }
 
-        final Attendance modelAttendance = new Attendance(attendance, participation, attendanceStatus);
+        final Attendance modelAttendance = new Attendance(attendance, participation);
         final Set<Tag> modelTags = new HashSet<>(personTags);
         final Set<Comment> modelComments = new HashSet<>(personComments);
         final Set<Assignment> modelAssignments = new HashSet<>(personAssignments);
         final Group modelGroup = new Group(group);
-        return new Person(modelName, Optional.of(modelPhone), Optional.of(modelEmail),
-                Optional.of(modelTelegramHandle), Optional.of(modelAttendance),
+        return new Person(modelName, Optional.ofNullable(modelPhone), Optional.ofNullable(modelEmail),
+                Optional.ofNullable(modelTelegramHandle), Optional.of(modelAttendance),
                 modelTags, modelComments, modelAssignments, Optional.of(modelGroup));
 
     }

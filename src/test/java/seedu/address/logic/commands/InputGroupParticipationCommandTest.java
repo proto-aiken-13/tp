@@ -3,7 +3,7 @@ package seedu.address.logic.commands;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.commands.InputParticipationCommand.ATTENDANCE_NOT_MARKED;
+import static seedu.address.logic.commands.InputGroupParticipationCommand.ATTENDANCE_NOT_MARKED;
 import static seedu.address.testutil.Assert.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -13,12 +13,13 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
+import seedu.address.model.person.Group;
 import seedu.address.model.person.Person;
 import seedu.address.testutil.PersonBuilder;
 
-public class InputParticipationCommandTest {
+public class InputGroupParticipationCommandTest {
     private Model model;
-    private InputParticipationCommand inputParticipationCommand;
+    private InputGroupParticipationCommand inputGroupParticipationCommand;
 
     @BeforeEach
     public void setUp() {
@@ -28,14 +29,13 @@ public class InputParticipationCommandTest {
     @Test
     public void execute_validIndexAndTutorial_inputParticipationSuccessful() {
         // Create a sample person with attendance
-        Person person = new PersonBuilder().withAttendance("P,U,U,U,U,U,U,U,U,U,U,U",
-                "0,0,0,0,0,0,0,0,0,0,0,0").build();
-
+        // Group 1 corresponds to the group name
+        Group group = new Group("Group 1");
+        // create a sample person with group
+        Person person = new PersonBuilder().withGroup("Group 1")
+                .withAttendance("P,U,U,U,U,U,U,U,U,U,U,U", "0,0,0,0,0,0,0,0,0,0,0,0").build();
         // Add the sample person to the model
         model.addPerson(person);
-
-        // Index 1 corresponds to the sample person
-        int index = 1;
 
         // Index 1 corresponds to tut 1
         int tut = 1;
@@ -44,12 +44,12 @@ public class InputParticipationCommandTest {
         int points = 50;
 
         // Create a new InputParticipationCommand
-        inputParticipationCommand = new InputParticipationCommand(Index.fromOneBased(index),
+        inputGroupParticipationCommand = new InputGroupParticipationCommand(group,
                 Index.fromOneBased(tut), points);
 
         // Execute the command
         try {
-            inputParticipationCommand.execute(model);
+            inputGroupParticipationCommand.execute(model);
         } catch (CommandException e) {
             e.printStackTrace();
         }
@@ -61,25 +61,27 @@ public class InputParticipationCommandTest {
     @Test
     public void execute_unmarkedAttendance_inputParticipationUnsuccessful() {
         // Create a sample person with attendance
-        Person person = new PersonBuilder().withAttendance("U,U,U,U,U,U,U,U,U,U,U,U",
-                "0,0,0,0,0,0,0,0,0,0,0,0").build();
-
+        // Group 1 corresponds to the group name
+        Group group = new Group("Group 1");
+        // create a sample person with group
+        Person person = new PersonBuilder().withGroup("Group 1")
+                .withAttendance("U,U,U,U,U,U,U,U,U,U,U,U", "0,0,0,0,0,0,0,0,0,0,0,0").build();
         // Add the sample person to the model
         model.addPerson(person);
-        // Index 1 corresponds to the sample person
-        int index = 1;
+
         // Index 1 corresponds to tut 1
         int tut = 1;
+
         // Points to add
         int points = 50;
 
         // Create a new InputParticipationCommand
-        inputParticipationCommand = new InputParticipationCommand(Index.fromOneBased(index),
+        inputGroupParticipationCommand = new InputGroupParticipationCommand(group,
                 Index.fromOneBased(tut), points);
 
         // Execute the command
         try {
-            String result = inputParticipationCommand.execute(model).getFeedbackToUser();
+            String result = inputGroupParticipationCommand.execute(model).getFeedbackToUser();
             assertEquals(result, ATTENDANCE_NOT_MARKED);
         } catch (CommandException e) {
             e.printStackTrace();
@@ -87,7 +89,7 @@ public class InputParticipationCommandTest {
     }
 
     @Test
-    public void execute_invalidIndex_throwsCommandException() {
+    public void execute_invalidGroup_throwsCommandException() {
         // Index 1 is invalid in an empty model
         int index = 1;
 
@@ -98,19 +100,19 @@ public class InputParticipationCommandTest {
         int points = 50;
 
         // Create a new InputParticipationCommand
-        inputParticipationCommand = new InputParticipationCommand(Index.fromOneBased(index),
+        inputGroupParticipationCommand = new InputGroupParticipationCommand(new Group("invalid"),
                 Index.fromOneBased(tut), points);
 
         // Execute the command and expect a CommandException
-        assertThrows(CommandException.class, () -> inputParticipationCommand.execute(model));
+        assertThrows(CommandException.class, () -> inputGroupParticipationCommand.execute(model));
     }
 
     @Test
     public void equals_sameCommand_returnsTrue() {
         // Create an InputParticipationCommand with the same index, week, and points
-        InputParticipationCommand command1 = new InputParticipationCommand(Index.fromOneBased(1),
+        InputGroupParticipationCommand command1 = new InputGroupParticipationCommand(new Group("same"),
                 Index.fromOneBased(1), 50);
-        InputParticipationCommand command2 = new InputParticipationCommand(Index.fromOneBased(1),
+        InputGroupParticipationCommand command2 = new InputGroupParticipationCommand(new Group("same"),
                 Index.fromOneBased(1), 50);
 
         // They should be equal
@@ -121,9 +123,9 @@ public class InputParticipationCommandTest {
     @Test
     public void equals_differentCommands_returnsFalse() {
         // Create two different InputParticipationCommands
-        InputParticipationCommand command1 = new InputParticipationCommand(Index.fromOneBased(1),
+        InputGroupParticipationCommand command1 = new InputGroupParticipationCommand(new Group("diff"),
                 Index.fromOneBased(1), 50);
-        InputParticipationCommand command2 = new InputParticipationCommand(Index.fromOneBased(2),
+        InputGroupParticipationCommand command2 = new InputGroupParticipationCommand(new Group("diff"),
                 Index.fromOneBased(2), 100);
 
         // They should not be equal

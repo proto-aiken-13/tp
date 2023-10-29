@@ -5,14 +5,14 @@ import static java.util.Objects.requireNonNull;
 import seedu.address.model.Model;
 import seedu.address.model.NpcTrack;
 
-/**
- * Send warning to clear the address book.
- */
-public class ClearCommand extends Command {
 
-    public static final String COMMAND_WORD = "clear";
-    public static final String MESSAGE_SUCCESS = "Are you sure you want to clear? Enter 'yes' if you want to clear.";
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Confirmation message to clear. "
+/**
+ * Clears the address book.
+ */
+public class ConfirmClearCommand extends Command {
+    public static final String COMMAND_WORD = "yes";
+    public static final String MESSAGE_SUCCESS = "Address book has been cleared!";
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Clears the address book. "
             + "Example: " + COMMAND_WORD;
 
     @Override

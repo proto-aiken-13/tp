@@ -28,48 +28,49 @@ public class TypicalPersons {
             .withTelegram("aliceTelegram").withEmail("alice@example.com")
             .withPhone("94351253")
             .withTags("friends")
-            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART, Attendance.ORIGINAL_STATUS)
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)
             .build();
     public static final Person BENSON = new PersonBuilder().withName("Benson Meier")
             .withTelegram("bensonTelegram")
             .withEmail("johnd@example.com").withPhone("98765432")
             .withTags("owesMoney", "friends")
-            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART, Attendance.ORIGINAL_STATUS)
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)
             .build();
+
     public static final Person CARL = new PersonBuilder().withName("Carl Kurz").withPhone("95352563")
             .withEmail("heinz@example.com").withTelegram("carlTelegram")
-            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART, Attendance.ORIGINAL_STATUS).build();;
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART).build();;
     public static final Person DANIEL = new PersonBuilder().withName("Daniel Meier").withPhone("87652533")
             .withEmail("cornelia@example.com").withTelegram("danielTelegram")
-            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART, Attendance.ORIGINAL_STATUS)
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)
             .withTags("friends").build();
     public static final Person ELLE = new PersonBuilder().withName("Elle Meyer").withPhone("9482224")
             .withEmail("werner@example.com").withTelegram("micheganTelegram")
-            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART, Attendance.ORIGINAL_STATUS)
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)
             .build();
     public static final Person FIONA = new PersonBuilder().withName("Fiona Kunz").withPhone("9482427")
             .withEmail("lydia@example.com").withTelegram("littletokyo")
-            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART, Attendance.ORIGINAL_STATUS)
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)
             .build();
     public static final Person GEORGE = new PersonBuilder().withName("George Best").withPhone("9482442")
-            .withEmail("anna@example.com").withTelegram("4thstreet")
-            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART, Attendance.ORIGINAL_STATUS).build();
+            .withEmail("anna@example.com").withTelegram("thstreet")
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART).build();
 
     // Manually added
     public static final Person HOON = new PersonBuilder().withName("Hoon Meier").withPhone("8482424")
             .withEmail("stefan@example.com").withTelegram("littleindia")
-            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART, Attendance.ORIGINAL_STATUS).build();
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART).build();
     public static final Person IDA = new PersonBuilder().withName("Ida Mueller").withPhone("8482131")
             .withEmail("hans@example.com").withTelegram("chicagoave")
-            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART, Attendance.ORIGINAL_STATUS).build();
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART).build();
 
     // Manually added - Person's details found in {@code CommandTestUtil}
     public static final Person AMY = new PersonBuilder().withName(VALID_NAME_AMY).withPhone(VALID_PHONE_AMY)
             .withEmail(VALID_EMAIL_AMY).withTelegram(VALID_TELEGRAM_AMY).withTags(VALID_TAG_FRIEND)
-            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART, Attendance.ORIGINAL_STATUS).build();
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART).build();
     public static final Person BOB = new PersonBuilder().withName(VALID_NAME_BOB).withPhone(VALID_PHONE_BOB)
             .withEmail(VALID_EMAIL_BOB).withTelegram(VALID_TELEGRAM_BOB).withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND)
-            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART, Attendance.ORIGINAL_STATUS).build();
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART).build();
 
 
     public static final String KEYWORD_MATCHING_MEIER = "Meier"; // A keyword that matches MEIER

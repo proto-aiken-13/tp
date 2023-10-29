@@ -47,7 +47,7 @@ public class PersonBuilder {
         phone = new Phone(DEFAULT_PHONE);
         email = new Email(DEFAULT_EMAIL);
         telegramHandle = new TelegramHandle(DEFAULT_TELEGRAM);
-        attendance = new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART, Attendance.ORIGINAL_STATUS);
+        attendance = new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART);
         tags = new HashSet<>();
         comments = new HashSet<>();
         assignments = new HashSet<>();
@@ -97,6 +97,10 @@ public class PersonBuilder {
      * Sets the {@code Address} of the {@code Person} that we are building.
      */
     public PersonBuilder withTelegram(String telegram) {
+        if (telegram.isEmpty()) {
+            this.telegramHandle = null;
+            return this;
+        }
         this.telegramHandle = new TelegramHandle(telegram);
         return this;
     }
@@ -104,8 +108,8 @@ public class PersonBuilder {
     /**
      * Sets the {@code Attendance} of the {@code Person} that we are building.
      */
-    public PersonBuilder withAttendance(String attendance, String pp, String status) {
-        this.attendance = new Attendance(attendance, pp, status);
+    public PersonBuilder withAttendance(String attendance, String pp) {
+        this.attendance = new Attendance(attendance, pp);
         return this;
     }
 
@@ -121,6 +125,10 @@ public class PersonBuilder {
      * Sets the {@code Phone} of the {@code Person} that we are building.
      */
     public PersonBuilder withPhone(String phone) {
+        if (phone.isEmpty()) {
+            this.phone = null;
+            return this;
+        }
         this.phone = new Phone(phone);
         return this;
     }
@@ -129,6 +137,10 @@ public class PersonBuilder {
      * Sets the {@code Email} of the {@code Person} that we are building.
      */
     public PersonBuilder withEmail(String email) {
+        if (email.isEmpty()) {
+            this.email = null;
+            return this;
+        }
         this.email = new Email(email);
         return this;
     }
@@ -145,7 +157,8 @@ public class PersonBuilder {
      * Builds a person with the given parameters.
      */
     public Person build() {
-        return new Person(name, Optional.of(phone), Optional.of(email), Optional.of(telegramHandle),
+        return new Person(name, Optional.ofNullable(phone), Optional.ofNullable(email),
+                Optional.ofNullable(telegramHandle),
                 Optional.of(attendance), tags, comments, assignments, Optional.of(group));
     }
 

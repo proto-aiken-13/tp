@@ -28,17 +28,20 @@ public class MarkGroupAttendanceCommand extends Command {
     private final Index tut;
     private final Group group;
 
+    private final String status;
+
     /**
      * Constructs a new MarkAttendanceCommand to mark attendance for a student on a specific week.
      *
      * @param group The group to mark group attendance for.
      * @param tut The index of the week to mark group attendance on.
      */
-    public MarkGroupAttendanceCommand(Group group, Index tut) {
+    public MarkGroupAttendanceCommand(Group group, Index tut, String status) {
         requireNonNull(group);
         requireNonNull(tut);
         this.group = group;
         this.tut = tut;
+        this.status = status;
     }
 
     /**
@@ -64,7 +67,7 @@ public class MarkGroupAttendanceCommand extends Command {
 
         for (Person student : lastShownList) {
             Attendance studentAtd = student.getAttendance();
-            studentAtd.markAttendance(this.tut.getZeroBased());
+            studentAtd.markAttendance(this.tut.getZeroBased(), status);
             model.updatePerson(student);
         }
 

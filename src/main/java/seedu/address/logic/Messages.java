@@ -44,11 +44,11 @@ public class Messages {
         final StringBuilder builder = new StringBuilder();
         builder.append(person.getName())
                 .append("; Phone: ")
-                .append(person.getPhone())
+                .append(person.getPhone() == null ? " -" : person.getPhone())
                 .append("; Email: ")
-                .append(person.getEmail())
+                .append(person.getEmail() == null ? " -" : person.getEmail())
                 .append("; Telegram Handle: ")
-                .append(person.getTelegramHandle())
+                .append(person.getTelegramHandle() == null ? " -" : person.getTelegramHandle())
                 .append("; Tags: ");
         person.getTags().forEach(builder::append);
         builder.append("; Comments: ");

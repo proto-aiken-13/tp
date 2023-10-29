@@ -60,15 +60,19 @@ public class PersonCard extends UiPart<Region> {
         super(FXML);
         this.person = person;
         id.setText(displayedIndex + ". ");
-        name.setText(person.getName().fullName + " (@" + person.getTelegramHandle().value + ")");
+        String telegramAddress = person.getTelegramHandle() != null ? " (@" + person.getTelegramHandle().value + ")"
+                : " -";
+        name.setText(person.getName().fullName + telegramAddress);
         attendance.setText(String.format("Attendance: %d/%d  Attendance summary: %s",
                 this.person.getAttendance().getWeeksPresent(), this.person.getAttendance().getTotalMarkedTut(),
                 this.person.getAttendance().getStyledStatusList("❌", "\uD83D\uDE4B\u200D♂\uFE0F",
                         "\uD83D\uDE47\u200D♂\uFE0F", "?")));
         participation.setText(String.format("Participation Points: %d",
-                this.person.getTotalPart()));
-        phone.setText("Phone: " + person.getPhone().value);
-        email.setText("Email: " + person.getEmail().value);
+                    this.person.getTotalPart()));
+        String phoneString = person.getPhone() != null ? person.getPhone().value : " -";
+        phone.setText("Phone: " + phoneString);
+        String emailString = person.getEmail() != null ? person.getEmail().value : " -";
+        email.setText("Email: " + emailString);
         group.setText("Tutorial Group: " + person.getGroup().value);
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
@@ -86,13 +90,12 @@ public class PersonCard extends UiPart<Region> {
      */
     @FXML
     public void openTelegram(ActionEvent event) {
-        String telegramHandle = person.getTelegramHandle().value;
-        if (telegramHandle != null && !telegramHandle.isEmpty()) {
-            UiUtil.open("https://t.me/" + telegramHandle);
-        } else {
-            // Handle the case where there is no telegram handle
-            // You can show an error message or take any other action as needed
+        if (person.getTelegramHandle() == null) {
             System.out.println("No Telegram handle available.");
+            return;
         }
+
+        String telegramHandle = person.getTelegramHandle().value;
+        UiUtil.openTelegram(telegramHandle);
     }
 }

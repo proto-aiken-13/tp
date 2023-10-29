@@ -40,7 +40,6 @@ public class MarkGroupAttendanceParser implements Parser<MarkGroupAttendanceComm
             tutorial = ParserUtil.parseTutorial(argMultimap.getValue(PREFIX_TUTORIAL).get());
         }
         // parse status
-
         if (!(tutorial >= 1 && tutorial <= 12)) {
             throw new ParseException(Attendance.TUTORIAL_ERROR_MSG);
         }
