@@ -28,6 +28,7 @@ Given below are my contributions to the project.
   * `assign`
   * `deassign`
   * `assignIndiv`
+- Removed the intrusive help window and made the website open immediately.
 
 ### Contributions to the User Guide (UG)
 
@@ -37,6 +38,7 @@ Given below are my contributions to the project.
 - Added the `deassign` command usage.
 - Added the `assignIndiv` command usage.
 - Spotted documentation bugs and ensured the reliability of the table of contents.
+- Scrutinised the grammar and English use in the guide.
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 

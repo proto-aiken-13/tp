@@ -181,8 +181,7 @@ public class Person {
         }
 
         return otherPerson != null
-                && otherPerson.getName().equals(getName())
-                && otherPerson.getTelegramHandle().equals(getTelegramHandle());
+                && otherPerson.getName().equals(getName());
     }
 
     /**

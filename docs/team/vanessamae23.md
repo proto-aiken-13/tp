@@ -27,10 +27,14 @@ Given below are my contributions to the project.
 
 - Updated the necessary parts from `address` to `telegram`
 - Changed the UG to remove all linkage from AB3
+- Added some of the features
+- Reformated the User Guide to be more user-friendly and user-oriented
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
 
-- to be added
+- Added the sequence diagram for the `Find` command
+- Added the sequence diagram for the `Grade` command
+- Edited the model diagram 
 
 ### Contributions to Team-Based Tasks
 

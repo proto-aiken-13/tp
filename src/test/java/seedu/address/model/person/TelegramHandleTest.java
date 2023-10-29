@@ -14,26 +14,28 @@ public class TelegramHandleTest {
     }
 
     @Test
-    public void constructor_invalidAddress_throwsIllegalArgumentException() {
-        String invalidTelegramHandle = "";
+    public void constructor_invalidTelegramHandle_throwsIllegalArgumentException() {
+        String invalidTelegramHandle = "jd910ue09m(@s92";
         assertThrows(IllegalArgumentException.class, () -> new TelegramHandle(invalidTelegramHandle));
     }
 
     @Test
     public void isValidTelegramHandle() {
-        // null address
+        // null telegrams
         assertThrows(NullPointerException.class, () -> TelegramHandle.isValidTelegramHandle(null));
 
-        // invalid addresses
+        // invalid telegrams
         assertFalse(TelegramHandle.isValidTelegramHandle("")); // empty string
         assertFalse(TelegramHandle.isValidTelegramHandle(" ")); // spaces only
         assertFalse(TelegramHandle.isValidTelegramHandle("1234")); // less than 5
         assertFalse(TelegramHandle.isValidTelegramHandle("%&@#&@")); // contains invalid symbols
+        assertFalse(TelegramHandle.isValidTelegramHandle("ggggggggggggggggggggggggggggggggg")); // too long
+        assertFalse(TelegramHandle.isValidTelegramHandle("four")); // too short
 
-        // valid addresses
+        // valid telegrams
         assertTrue(TelegramHandle.isValidTelegramHandle("mamamia"));
-        assertTrue(TelegramHandle.isValidTelegramHandle("12345")); // 5 digits
-        assertTrue(TelegramHandle.isValidTelegramHandle("longtelegramhandle")); // long telegram handle
+        assertTrue(TelegramHandle.isValidTelegramHandle("lol_lol")); // underscore
+        assertTrue(TelegramHandle.isValidTelegramHandle("v32ggggggggggggggggggggggggggggg")); // valid long
     }
 
     @Test

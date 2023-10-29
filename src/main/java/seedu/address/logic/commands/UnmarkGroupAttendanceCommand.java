@@ -4,7 +4,6 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 
 import java.util.List;
-import java.util.Optional;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
@@ -62,14 +61,9 @@ public class UnmarkGroupAttendanceCommand extends Command {
         }
 
         for (Person student : lastShownList) {
-            Person editedStudent = new Person(
-                    student.getName(), Optional.of(student.getPhone()), Optional.of(student.getEmail()),
-                    Optional.of(student.getTelegramHandle()), Optional.of(student.getAttendance()),
-                    student.getTags(),
-                    student.getComments(), student.getAssignments(), Optional.of(student.getGroup()));
             Attendance studentAtd = student.getAttendance();
             studentAtd.unmarkAttendance(this.tut.getZeroBased());
-            model.setPerson(student, editedStudent);
+            model.updatePerson(student);
         }
 
         return new CommandResult(generateSuccessMessage(lastShownList));

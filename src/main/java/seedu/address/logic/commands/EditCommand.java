@@ -117,8 +117,8 @@ public class EditCommand extends Command {
         Group updatedGroup = editPersonDescriptor.getGroup().orElse(personToEdit.getGroup());
 
 
-        return new Person(updatedName, Optional.of(updatedPhone), Optional.of(updatedEmail),
-                Optional.of(updatedTelegramHandle), Optional.of(updatedAttendance),
+        return new Person(updatedName, Optional.ofNullable(updatedPhone), Optional.ofNullable(updatedEmail),
+                Optional.ofNullable(updatedTelegramHandle), Optional.of(updatedAttendance),
                 updatedTags, updatedComments, updatedAssignments, Optional.of(updatedGroup));
 
     }

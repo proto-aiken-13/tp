@@ -98,6 +98,20 @@ public class UniquePersonList implements Iterable<Person> {
     }
 
     /**
+     * Updates the student list to propagate change to the rest of the model.
+     * @param person The student to be refreshed.
+     */
+    public void updatePerson(Person person) {
+        requireNonNull(person);
+        int index = internalList.indexOf(person);
+        if (index < 0) {
+            throw new PersonNotFoundException();
+        }
+        internalList.add(index, internalList.remove(index));
+    }
+
+
+    /**
      * Returns the backing list as an unmodifiable {@code ObservableList}.
      */
     public ObservableList<Person> asUnmodifiableObservableList() {

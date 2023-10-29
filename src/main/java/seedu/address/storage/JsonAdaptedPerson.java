@@ -75,9 +75,9 @@ class JsonAdaptedPerson {
      */
     public JsonAdaptedPerson(Person source) {
         name = source.getName().fullName;
-        phone = source.getPhone().value;
-        email = source.getEmail().value;
-        telegram = source.getTelegramHandle().value;
+        phone = source.getPhone() != null ? source.getPhone().value : "";
+        email = source.getEmail() != null ? source.getEmail().value : "";
+        telegram = source.getTelegramHandle() != null ? source.getTelegramHandle().value : "";
         attendance = source.getAttendance().atdToString();
         participation = source.getAttendance().ppToString();
         tags.addAll(source.getTags().stream()
@@ -121,30 +121,21 @@ class JsonAdaptedPerson {
         }
         final Name modelName = new Name(name);
 
-        if (phone == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Phone.class.getSimpleName()));
-        }
-        if (!Phone.isValidPhone(phone)) {
+        if ((!phone.isEmpty() && !Phone.isValidPhone(phone))) {
             throw new IllegalValueException(Phone.MESSAGE_CONSTRAINTS);
         }
-        final Phone modelPhone = new Phone(phone);
+        final Phone modelPhone = (phone.isEmpty()) ? null : new Phone(phone);
 
-        if (email == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Email.class.getSimpleName()));
-        }
-        if (!Email.isValidEmail(email)) {
+        if (!email.isEmpty() && !Email.isValidEmail(email)) {
             throw new IllegalValueException(Email.MESSAGE_CONSTRAINTS);
         }
-        final Email modelEmail = new Email(email);
+        final Email modelEmail = (email.isEmpty()) ? null : new Email(email);
 
-        if (telegram == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
-                    TelegramHandle.class.getSimpleName()));
-        }
-        if (!TelegramHandle.isValidTelegramHandle(telegram)) {
+        if (!telegram.isEmpty() && !TelegramHandle.isValidTelegramHandle(telegram)) {
             throw new IllegalValueException(TelegramHandle.MESSAGE_CONSTRAINTS);
         }
-        final TelegramHandle modelTelegramHandle = new TelegramHandle(telegram);
+        final TelegramHandle modelTelegramHandle = (telegram.isEmpty())
+                ? null : new TelegramHandle(telegram);
 
         if (attendance == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
@@ -169,8 +160,8 @@ class JsonAdaptedPerson {
         final Set<Comment> modelComments = new HashSet<>(personComments);
         final Set<Assignment> modelAssignments = new HashSet<>(personAssignments);
         final Group modelGroup = new Group(group);
-        return new Person(modelName, Optional.of(modelPhone), Optional.of(modelEmail),
-                Optional.of(modelTelegramHandle), Optional.of(modelAttendance),
+        return new Person(modelName, Optional.ofNullable(modelPhone), Optional.ofNullable(modelEmail),
+                Optional.ofNullable(modelTelegramHandle), Optional.of(modelAttendance),
                 modelTags, modelComments, modelAssignments, Optional.of(modelGroup));
 
     }

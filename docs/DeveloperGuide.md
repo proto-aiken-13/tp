@@ -10,6 +10,8 @@ title: Developer Guide
 ## **Acknowledgements**
 
 * [AddressBook Level-3](https://se-education.org/addressbook-level3/)
+* [Past Year Teams' Reference](https://github.com/AY2223S1-CS2103T-W17-2/tp/blob/master/docs/DeveloperGuide.md)
+* [Past Year Teams' Reference](https://ay2223s1-cs2103t-t12-1.github.io/tp/DeveloperGuide.html)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -123,7 +125,7 @@ How the parsing works:
 
 The `Model` component,
 
-* stores the address book data i.e., all `Person` objects (which are contained in a `UniquePersonList` object).
+* stores the student's data i.e., all `Person` objects (which are contained in a `UniquePersonList` object).
 * stores the currently 'selected' `Person` objects (e.g., results of a search query) as a separate _filtered_ list which is exposed to outsiders as an unmodifiable `ObservableList<Person>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
@@ -199,6 +201,78 @@ The `AssignmentCommand` looks through all the `Person`s, and attempts to add the
   * Pros: Easy to implement.
   * Cons: Not universally understood, certain letters may mean different things to people.
   For example, S in Japan could be amazing, but not as ideal in Singapore.
+
+### Input Participation Points
+
+#### Implementation
+
+Input participation command is handled by InputParticipationCommand, InputParticipationParser, and Model.
+* `InputParticipationParser`: Parse user inputs.
+* `InputParticipationCommand`: Given the parsed user input, execute the command.
+* `Model`: Updates the student list accordingly.
+
+Below is the sequence diagram for inputting participation points of a student.
+
+<img src="images/InputParticipationSequenceDiagram.png" width="650"/>
+
+#### Design considerations
+
+**Aspect: How to handle cases where TA attempts to add participation points for unmarked tutorial**
+* **Alternative 1 (Chosen):** `npc_track` will output message telling user to mark attendance first.
+  * Pros: Prevents Errors: It reduces the chances of errors and inconsistencies in the data,
+  as participation points should only be added after attendance is marked.
+  * Cons: Potential Delay: If marking attendance and adding participation points are time-sensitive actions,
+  requiring the user to mark attendance first may cause a slight delay in the participation point entry process.
+
+* **Alternative 2:** `npc_track` allows participation points to be input regardless of the attendance for that tutorial.
+  * Pros: Reduced User Friction: By avoiding strict dependencies, users may experience less friction when interacting
+  with the system, potentially leading to a smoother user experience.
+  * Cons: Data Inconsistencies: Allowing participation points without ensuring attendance may lead to
+  data inconsistencies. For example, TAs might accidentally skip marking attendance and input participation points,
+  causing inaccuracies in student records.
+
+### Find Students
+
+#### Implementation
+
+Find Student command is handled by FindCommand, FindCommandParser, and Model.
+* `FindCommandParser`: Parse user inputs.
+* `FindCommand`: Given the parsed user input, execute the command.
+* `Model`: Updates the student list according to the keyword that the user keys in.
+
+Below is the sequence diagram for finding students.
+
+<img src="images/FindSequenceDiagram.png" width="650"/>
+
+#### Design considerations
+
+**Aspect: Allowing teaching assistants to find using what keyword**
+* **Alternative 1 (Chosen):** `npc_track` will output students based on what TA exactly input.
+    * Pros: Reduced Chance of Error: Gives uses the exact student they want and reduces chances of error since it needs 
+      to be exact match.
+    * Cons: Increased Complexity: Users need to know the exact name of their student, or else they will not be able 
+      to find the student.
+
+* **Alternative 2:** `npc_track` allows users to find just a part of the student's name.
+    * Pros: Better User Experience: Users can just input a partial part of their name to be able to find and get a 
+      list of students that contain a part of the keyword
+    * Cons: Increased Chance of Error: Since it is more complex, there is higher chance of error.
+
+### Grade Students
+
+#### Implementation
+
+Grade Student command is handled by GradeCommand, GradeCommandParser, Assignment, Person and Model.
+* `GradeCommandParser`: Parse user inputs.
+* `GradeCommand`: Given the parsed user input, execute the command.
+* `Model`: Updates the student list according to the keyword that the user keys in.
+* `Person`: Updates the particular Person model to change the grade to.
+* `Assignment`: Updates the student's assignment grade.
+
+Below is the sequence diagram for grading students.
+
+<img src="images/GradeSequenceDiagram.png" width="650"/>
+
 
 ### \[Proposed\] Undo/redo feature
 
@@ -362,63 +436,62 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. User requests to mark the attendance of a particular tutorial for a particular student.
-2. User provides the student index and tutorial number.
-3. `npc_track` updates the current tutorial attendance of that student as marked.
+1. User requests to mark the attendance of a specified tutorial for a specified student.
+2. `npc_track` updates the current tutorial attendance of that student as marked.
 
     Use case ends.
 
 **Extensions**
 
-* 2a. User does not provide the correct index.
-  * 2a1. `npc_track` displays an error message and prompts the user to provide the missing details.
-* 2b. User provides a tutorial number that is outside the valid boundary.
-  * 2b1. `npc_track` displays an error message and prompts the user to provide the correct details.
+* 1a. User does not provide the correct index/tutorial.
+  * 1a1. `npc_track` displays an error message and prompts the user to provide the correct details.
+
+    Use case ends.
+
 
 **Use case: Unmark a student's attendance**
 
 **MSS**
 
 1. User requests to unmark the attendance of a particular tutorial for a particular student.
-2. User provides the student index and tutorial number.
-3. `npc_track` updates the current tutorial attendance of that student as unmarked.
+2. `npc_track` updates the current tutorial attendance of that student as unmarked.
 
    Use case ends.
 
 **Extensions**
 
-* 2a. User does not provide the correct index.
-    * 2a1. `npc_track` displays an error message and prompts the user to provide the missing details.
-* 2b. User provides a tutorial number that is outside the valid boundary.
-    * 2b1. `npc_track` displays an error message and prompts the user to provide the correct details.
+* 1a. User does not provide the correct index/tutorial.
+    * 1a1. `npc_track` displays an error message and prompts the user to provide the correct details.
+
+    Use case ends.
 
 **Use case: Input participation points to a students tutorial participation**
 
 **MSS**
 
 1. User requests to input participation points to a students tutorial participation.
-2. User provides the student index, tutorial number, and participation points.
-3. `npc_track` updates the current tutorials participation point for the student.
+2. `npc_track` updates the current tutorials participation point for the student.
 
 **Extensions**
 
-* 2a. User does not provide the correct index.
-    * 2a1. `npc_track` displays an error message and prompts the user to provide the missing details.
-* 2b. User provides a tutorial number or participation points that is outside the valid boundary.
-    * 2b1. `npc_track` displays an error message and prompts the user to provide the correct details.
+* 1a. User does not provide the correct index/tutorial.
+    * 1a1. `npc_track` displays an error message and prompts the user to provide the correct details.
+
+    Use case ends.
 
 **Use case: List a students participation record**
 
 **MSS**
 
-1. User requests to list the participation record of a particular student.
-2. User provides the student index.
-3. `npc_track` returns a message containing the participation record of the student.
+1. User requests to list the participation record of a specified student.
+2. `npc_track` returns a message containing the participation record of the student.
 
 **Extensions**
 
-* 2a. User does not provide the correct index.
-    * 2a1. `npc_track` displays an error message and prompts the user to provide the missing details. 
+* 1a. User does not provide the correct index.
+    * 1a1. `npc_track` displays an error message and prompts the user to provide the missing details.
+
+    Use case ends.
 
 **Use case: Grade a student's assignment**
 
@@ -510,8 +583,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 5a. No persons match the search keyword.
 
-    * 5a1. AddressBook displays a message indicating no matching persons were found. 
-    
+    * 5a1. AddressBook displays a message indicating no matching persons were found.
+
       Use case ends.
 
 **Use case: List all persons**

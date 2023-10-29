@@ -50,6 +50,7 @@ public class AddCommandParser implements Parser<AddCommand> {
 
         argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_TELEGRAM_HANDLE);
         Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
+
         // optional fields
         Phone phone = Phone.DEFAULT_PHONE;
         if (argMultimap.getValue(PREFIX_PHONE).isPresent()) {
@@ -72,8 +73,9 @@ public class AddCommandParser implements Parser<AddCommand> {
             group = ParserUtil.parseGroup(argMultimap.getValue(PREFIX_GROUP).get());
         }
 
-        Person person = new Person(name, Optional.of(phone), Optional.of(email), Optional.of(telegram),
-                Optional.of(attendance), tagList, commentList, assignmentList, Optional.of(group));
+        Person person = new Person(name, Optional.ofNullable(phone), Optional.ofNullable(email),
+                Optional.ofNullable(telegram), Optional.of(attendance), tagList, commentList, assignmentList,
+                Optional.of(group));
 
 
         return new AddCommand(person);
