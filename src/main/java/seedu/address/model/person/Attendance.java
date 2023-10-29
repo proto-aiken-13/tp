@@ -53,6 +53,7 @@ public class Attendance {
         if (!tutorial.matches("[0-9]+")) {
             return false;
         }
+
         int week = Integer.parseInt(tutorial);
         return week > 0 && week <= totalTut;
     }
@@ -143,6 +144,7 @@ public class Attendance {
      */
     public void unmarkAttendance(int tutorial) {
         this.attendanceList[tutorial].unMark();
+        this.participationList[tutorial] = 0;
     }
 
     /**

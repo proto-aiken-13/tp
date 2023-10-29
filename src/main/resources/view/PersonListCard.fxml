@@ -34,7 +34,7 @@
       </HBox>
       <VBox spacing="3">
         <FlowPane hgap="5" alignment="CENTER_LEFT">
-          <Label styleClass="cell_small_label_tags" text="🏷️ Tags:" prefWidth="175" />
+          <Label styleClass="cell_small_label_tags" text="🏷 Tags:" prefWidth="175" />
           <FlowPane fx:id="tags" />
         </FlowPane>
         <FlowPane hgap="5" alignment="CENTER_LEFT">
