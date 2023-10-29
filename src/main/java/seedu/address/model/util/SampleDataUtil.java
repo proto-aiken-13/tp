@@ -54,7 +54,7 @@ public class SampleDataUtil {
                     getAssignmentSet("lab1"), Optional.of(new Group("tut33"))),
             new Person(new Name("Evan Low"), Optional.of(new Phone("92492021")),
                     Optional.of(new Email("evan@example.com")),
-                    Optional.of(new TelegramHandle("erfanTelegram")),
+                    Optional.of(new TelegramHandle("evanTelegram")),
                 Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
                 getTagSet("CS2103T"),
                 getCommentSet("Pretty average"),
