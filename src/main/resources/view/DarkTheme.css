@@ -150,13 +150,13 @@
 
 .cell_small_label_tags {
     -fx-font-family: "Segoe UI Emoji" !important;
-    -fx-font-size: 22px;
+    -fx-font-size: 20px;
     -fx-text-fill: #1194f0;
 }
 
 .cell_small_label_tags:selected {
     -fx-font-family: "Segoe UI Emoji" !important;
-    -fx-font-size: 22px;
+    -fx-font-size: 20px;
     -fx-text-fill: #ffffff;
 }
 
