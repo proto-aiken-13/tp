@@ -44,4 +44,10 @@ public class UiUtil {
             UiUtil.open("https://t.me/" + telegramHandle);
         }
     }
+
+    public static void openUserGuide() {
+        final String USERGUIDE_URL = "https://ay2324s1-cs2103t-t12-1.github.io/tp/";
+        UiUtil.open(USERGUIDE_URL);
+    }
+
 }

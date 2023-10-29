@@ -24,7 +24,6 @@ import seedu.address.logic.parser.exceptions.ParseException;
 public class MainWindow extends UiPart<Stage> {
 
     private static final String FXML = "MainWindow.fxml";
-    private static final String USERGUIDE_URL = "https://ay2324s1-cs2103t-t12-1.github.io/tp/";
 
     private final Logger logger = LogsCenter.getLogger(getClass());
 
@@ -138,7 +137,7 @@ public class MainWindow extends UiPart<Stage> {
      */
     @FXML
     public void handleHelp() {
-        UiUtil.open(USERGUIDE_URL);
+        UiUtil.openUserGuide();
     }
 
     void show() {
