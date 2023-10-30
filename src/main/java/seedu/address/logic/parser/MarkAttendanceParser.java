@@ -11,6 +11,8 @@ import seedu.address.logic.commands.MarkAttendanceCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Attendance;
 
+import java.util.NoSuchElementException;
+
 /**
  * Parses input arguments and creates a new {@code MarkAttendanceCommand} object
  */
@@ -30,7 +32,7 @@ public class MarkAttendanceParser implements Parser<MarkAttendanceCommand> {
         try {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
             status = ParserUtil.parseParticipationStatus(argMultimap.getValue(PREFIX_PARTICIPATION_STATUS).get());
-        } catch (IllegalValueException ive) {
+        } catch (IllegalValueException | NoSuchElementException ive) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
                     MarkAttendanceCommand.MESSAGE_USAGE), ive);
         }
