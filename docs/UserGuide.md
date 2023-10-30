@@ -448,7 +448,7 @@ Format: `assign n/ASSIGNMENT_NAME m/MAX_SCORE`
 Examples:
 - `assign n/Tutorial1 m/100`
 
-#### Deassign assignments: `deassign`
+#### Deassign Assignments: `deassign`
 <a name="deassign"></a>
 
 Delete an assignment for all students.
@@ -457,6 +457,31 @@ Format: `deassign n/ASSIGNMENT_NAME`
 
 Examples:
 - `deassign n/Tutorial1`
+
+<a name="deassignIndiv"></a>
+#### Deassign Individual Assignments: `deassignIndiv`
+
+Did you accidentally assign a student with the wrong assignment or just want to change the assignment? You can now 
+do it using the `deassignIndiv` command
+
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
+Delete an assignment for a particular student.
+<br><br>
+
+***Format***: `deassignIndiv INDEX n/ASSIGNMENT_NAME`
+</div>
+
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems.
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+</div>
+
+| Examples      | Purpose                                                          |
+|---------------|------------------------------------------------------------------|
+| `deassign 1 n/Tutorial1` | Deletes the assignment called Tutorial1 for student with index 1 |
+
+
 
 ### Distribute assignments to a group of students: `assignGroup`
 <a name="assignGroup"></a>
