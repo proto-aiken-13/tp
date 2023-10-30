@@ -38,6 +38,11 @@ public class GradeCommandParser implements Parser<GradeCommand> {
                     GradeCommand.MESSAGE_USAGE), ive);
         }
 
+        if (!argMultimap.getValue(PREFIX_NAME).isPresent() || !argMultimap.getValue(PREFIX_GRADE).isPresent()
+                || argMultimap.getPreamble().isEmpty()) {
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, GradeCommand.MESSAGE_USAGE));
+        }
+
         argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_GRADE);
 
         if (argMultimap.getValue(PREFIX_NAME).isPresent()) {
@@ -64,4 +69,5 @@ public class GradeCommandParser implements Parser<GradeCommand> {
 
         return new GradeCommand(index, name, score);
     }
+
 }
