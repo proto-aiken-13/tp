@@ -6,17 +6,18 @@ title: npc_track User Guide
 
 ![Ui](images/ug-image.png)
 
-### Tracking the details of your students is on the cusp of your fingertips!
+### Making student tracking easy.
 
-`npc_track` is a desktop application curtailed for the humble teaching assistants of SoC via a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, `npc_track` can get your contact management tasks done faster than traditional GUI apps.
+`npc_track` is the application for all teaching assistants, streamlining student management processes to help combat the tediousness of keeping track of
+student particulars and performance.
 
 Here’s an overview of how `npc_track` can help you streamline your student management process:
-- Store, delete and edit information about your students!
-- Track the attendance of your students
-- Streamline the grading process of your students
-- Manage student groupings in an organized way
+- Manage your student contacts (with working Telegram links!)
+- Manage tutorial groups!
+- Keep track of their attendance and participation levels.
+- Keep track of their grades!
 
-On top of these functionalities, we believe that student management should be extremely efficient. `npc_track` is optimized for use via the familiar command line interface (CLI) for linux / fans of terminal applications as well as the benefits of an appealing user interface for TA’s more inclined to them!
+But more than that, the application is *simple to use* and efficient. The application has a command line interface (CLI) in which you can type in commands without having to scroll through contacts and lists to click on buttons. The application sports a simple and very readable look!
 
 ### How can `npc_track` help you in your teaching journey?
 
@@ -26,9 +27,7 @@ We help teaching assistants to be able to bring together their teaching needs in
 adding extra information for a student named Ted can easily be done using the various keyword features as listed in 
 our [Features Section](#features)
 
-`npc_track` saves teaching assistant from having to spend so much precious time by reducing the complexity and the 
-need to 
-navigate different platforms just to search their students. Now, it can be done in a one-stop manner using `npc_track`
+`npc_track` saves teaching assistant from having to spend so much precious time by reducing the complexity by doing it in a one-stop manner using `npc_track`.
 
 Not ready to use `npc_track`? Fret Not, you can jump to the [Quick Start](#quick-start) section to begin your 
 `npc-track` 
@@ -42,13 +41,13 @@ the sidebar
 
 **First time user?** Welcome and thank you for using our app! Check out the installation guide here!
 
-Once you’re done setting up, check out the [features](#features) of `npc_track` to manage the dossier of your students!
+Once you’re done setting up, check out the [features](#features) of `npc_track` to manage the your students' info!
 
 If you are an intermediary user and are confused or unclear of some of our features, check out the [FAQ](#FAQ) as well!
 
 Encountered some bugs or unexpected events when using the app? Maybe [Known Issues](#issues) will give you some guidance on what the known bugs (and their status) are!
 
-A seasoned user (but you still need help on memorizing commands)? Drop by in [Command summary](#summary)!
+Need help on memorizing commands? Drop by in [Command summary](#summary)!
 
 
 ---
@@ -135,18 +134,18 @@ Step 5 : Start using the app
 ## Features
 <div markdown="block" class="alert alert-info">
 
-**:information_source: Notes about the command format:**<br>
+**:information_source: How to read our commands:**<br>
 
-* Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
-  e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
+* Words in `UPPER_CASE` are the details to be given by the user.<br>
+  e.g. in `add n/NAME`, `NAME` is a detail which can be used as `add n/John Doe`.
 
-* Items in square brackets are optional.<br>
+* Details in square brackets are optional.<br>
   e.g `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
 
-* Items with `…`​ after them can be used multiple times including zero times.<br>
+* Items with `…`​ after them can be used multiple times or none at all.<br>
   e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
 
-* Parameters can be in any order.<br>
+* Details can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
@@ -158,9 +157,7 @@ Step 5 : Start using the app
 <a name="help"></a>
 ### Viewing help : `help`
 
-If you have trouble using `npc_track`, simply type the `help` command.
-
-Opens the user guide in your browser.
+If you have trouble using `npc_track`, simply type the `help` command. A link to this very user guide will be shown.
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
@@ -179,7 +176,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 <a name="add"></a>
 ### ***Adding a student: `add`***
 
-Want to add another student into your student contacts? Give the `add` command a try!
+Want to add a student into your student contacts? Give the `add` command a try!
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
@@ -190,9 +187,9 @@ Adds a student to the student book.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- A student can have any number of tags (including 0)
+- A student can have any number of optional tags
 <br>
-- A student can have any number of comments (including 0)
+- A student can have any number of optional comments
 <br>
 - Cannot add a student with the same name in the list.
 </div>
@@ -297,7 +294,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 ### Attendance
 
-For attendance, you can enter the following commands:
+For managing attendance, the following commands are available:
 * markAtd
 * unmarkAtd
 
@@ -306,18 +303,28 @@ For attendance, you can enter the following commands:
 
 Marks the attendance of a student for that tutorial.
 
-Format: `markAtd INDEX t/TUTORIAL`
+Format: `markAtd INDEX t/TUTORIAL s/STATUS`
 
 `INDEX`: A positive integer representing the index of the student as shown in the list.
 
 `TUTORIAL`: An integer between 1 and 12 (inclusive)
 
+`STATUS`: The student's attendance status. Valid attendance statuses are as follows:
+
+| Status        |                                                                |Logo |
+|---------------|----------------------------------------------------------------|     | 
+|     **P**     | Present - If the student shows up for the tutorial.            |     |
+|     **A**     | Absent - If the student is absent with no valid reason given.  |     |
+|     **VR**    | VR - If the student is absent with a valid reason (e.g. MC).   |     |
+
+
 Marking the attendance for a week that is already marked will result in the message
-`This week's attendance has already been marked!`
+`This week's attendance has already been marked!`. In addition, the attendance status
+list will be updated.
 
 Examples:
-* `markAtd 1 t/1` (marks attendance of student with index 1 for tutorial 1)
-* `markAtd 2 t/12` (marks attendance of student with index 2 for tutorial 12)
+* `markAtd 1 t/1 s/P` (marks attendance of student with index 1 and "PRESENT" status for tutorial 1)
+* `markAtd 2 t/12 s/VR` (marks attendance of student with index 2 and "VALID REASON" for tutorial 12)
 
 #### Unmark Attendance : `unmarkAtd`
 <a name="unmarkAtd"></a>
@@ -348,11 +355,13 @@ Format: `markGroupAtd GROUP t/TUTORIAL`
 
 `TUTORIAL`: An integer between 1 and 12 (inclusive)
 
+`STATUS`: The student's attendance status.
+
 Marking the attendance for a week that is already marked will result in the message
 `This week's attendance has already been marked!`
 
 Examples:
-* `markGroupAtd 1 t/1` (marks attendance of students in group 1 for tutorial 1)
+* `markGroupAtd 1 t/1 s/P` (marks attendance of students in group 1 for tutorial 1 as all present)
 
 #### Unmark Group Attendance: `unmarkGroupAtd`
 <a name="unmarkGroupAtd"></a>
@@ -625,6 +634,8 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 |---------------|----------------------------------------------------------------|
 | **Parameter** | Details about the student that will be included in the command |
 | **Command**   | Instructions that `npc_track` will execute                     |
+| **Attendance  | The student's attendance status. Attendance statuses can either|
+|   status**    | be "present", "absent", or "valid reason".                     |                                                               
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -632,3 +643,14 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 <a name="FAQ"></a>
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous StudentBook home folder.
+
+**Q**: There are 12 tutorials on the attendance list, but my module has less than 12 tutorials per sem.
+**A**: In a typical semester, there are 13 weeks. Tutorials can start earlier or later, so to accomodate the largest possible number of tutorials, npc_track
+has 12 weeks' worth of tutorials to grade.
+
+**Q**: I have two students that share the exact same name. How can npc_track support this?
+**A**: npc_track cannot handle students with the exact same name. However, you can consider adding something else to their names to distinguish between them.
+
+So for example, if you have 2 students called "Arnab Goav", you can name one student "Arnab Goav 1" and the other "Arnab Goav 2".
+
+
