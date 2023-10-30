@@ -34,6 +34,14 @@ public class GradeGroupCommandParserTest {
         String userInput3 = "1 n/Lab1 g/sads";
         assertParseFailure(parser, userInput3, MESSAGE_INVALID_ASSIGNMENT_SCORE);
 
+        // Test case 4: Missing name
+        String userInput4 = "group g/10";
+        assertParseFailure(parser, userInput4, MESSAGE_INVALID_FORMAT);
+
+        // Test case 5: Missing grade
+        String userInput5 = "group n/Lab1";
+        assertParseFailure(parser, userInput5, MESSAGE_INVALID_FORMAT);
+
         // Missing all index, assignment name and grade
         assertParseFailure(parser, "", MESSAGE_INVALID_FORMAT);
     }
@@ -52,6 +60,13 @@ public class GradeGroupCommandParserTest {
         // Invalid score (negative value less than zero)
         assertParseFailure(parser, "group n/Lab1 g/-10", MESSAGE_INVALID_ASSIGNMENT_SCORE);
 
+    }
+
+    @Test
+    public void parse_invalidAssignmentName_failure() {
+        // Test case 1: Invalid name
+        String userInput1 = "group tut1 n/L)(&% g/1";
+        assertParseFailure(parser, userInput1, MESSAGE_INVALID_ASSIGNMENT_NAME);
     }
 
     @Test
