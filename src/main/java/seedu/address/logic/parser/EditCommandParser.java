@@ -87,7 +87,7 @@ public class EditCommandParser implements Parser<EditCommand> {
             return Optional.empty();
         }
         Collection<String> tagSet = tags.size() == 1 && tags.contains("") ? Collections.emptySet() : tags;
-        return Optional.of(ParserUtil.parseTags(tagSet));
+        return Optional.ofNullable(ParserUtil.parseTags(tagSet));
     }
 
 
@@ -104,6 +104,6 @@ public class EditCommandParser implements Parser<EditCommand> {
         }
         Collection<String> commentSet =
             comments.size() == 1 && comments.contains("") ? Collections.emptySet() : comments;
-        return Optional.of(ParserUtil.parseComments(commentSet));
+        return Optional.ofNullable(ParserUtil.parseComments(commentSet));
     }
 }
