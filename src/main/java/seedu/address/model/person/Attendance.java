@@ -37,7 +37,7 @@ public class Attendance {
                 attendanceList[i].setPresent();
                 break;
             case "VR":
-                attendanceList[i].setVR();
+                attendanceList[i].setVr();
                 break;
             default:
             }
@@ -129,7 +129,7 @@ public class Attendance {
             attendanceList[tutorial].setAbsent();
             break;
         case "VR":
-            attendanceList[tutorial].setVR();
+            attendanceList[tutorial].setVr();
             break;
         case "P":
             attendanceList[tutorial].setPresent();
@@ -173,7 +173,7 @@ public class Attendance {
                 toAppend = absent;
             } else if (attendanceList[i].isPresent) {
                 toAppend = present;
-            } else if (attendanceList[i].isVR) {
+            } else if (attendanceList[i].isVr) {
                 toAppend = vr;
             } else {
                 toAppend = unknown;
@@ -313,7 +313,7 @@ public class Attendance {
 
         private boolean isAbsent = false;
 
-        private boolean isVR = false;
+        private boolean isVr = false;
 
         private boolean isUnmarked = true;
 
@@ -331,7 +331,7 @@ public class Attendance {
         public void setPresent() {
             this.isUnmarked = false;
             this.isAbsent = false;
-            this.isVR = false;
+            this.isVr = false;
             this.isPresent = true;
         }
 
@@ -341,17 +341,17 @@ public class Attendance {
         public void setAbsent() {
             this.isUnmarked = false;
             this.isAbsent = true;
-            this.isVR = false;
+            this.isVr = false;
             this.isPresent = false;
         }
 
         /**
          * Sets the current status of the AttendanceStatus as VR.
          */
-        public void setVR() {
+        public void setVr() {
             this.isUnmarked = false;
             this.isAbsent = false;
-            this.isVR = true;
+            this.isVr = true;
             this.isPresent = false;
         }
 
@@ -361,7 +361,7 @@ public class Attendance {
         public void unMark() {
             this.isUnmarked = true;
             this.isAbsent = false;
-            this.isVR = false;
+            this.isVr = false;
             this.isPresent = false;
         }
 
@@ -374,7 +374,7 @@ public class Attendance {
          * @return The status as a String.
          */
         public String statusString() {
-            return isUnmarked ? "U" : isAbsent ? "A" : isVR ? "VR" : "P";
+            return isUnmarked ? "U" : isAbsent ? "A" : isVr ? "VR" : "P";
         }
 
         @Override

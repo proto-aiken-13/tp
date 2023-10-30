@@ -1,6 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PARTICIPATION_STATUS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 
 import java.util.List;
@@ -24,6 +25,7 @@ public class MarkAttendanceCommand extends Command {
             + "by the index number used in the displayed student list.\n"
             + "Parameters: INDEX (must be a positive integer) "
             + "[" + PREFIX_TUTORIAL + "TutorialToMark] \n"
+            + "[" + PREFIX_PARTICIPATION_STATUS + "AttendanceStatus] \n"
             + "Example: " + COMMAND_WORD + " 1 t/1 s/P";
     private final Index index;
     private final Index tut;

@@ -311,11 +311,11 @@ Format: `markAtd INDEX t/TUTORIAL s/STATUS`
 
 `STATUS`: The student's attendance status. Valid attendance statuses are as follows:
 
-| Status        |                                                                |Logo |
-|---------------|----------------------------------------------------------------|     | 
-|     **P**     | Present - If the student shows up for the tutorial.            |     |
-|     **A**     | Absent - If the student is absent with no valid reason given.  |     |
-|     **VR**    | VR - If the student is absent with a valid reason (e.g. MC).   |     |
+| Status        |                                                                
+|---------------|----------------------------------------------------------------
+|     **P**     | Present - If the student shows up for the tutorial.            
+|     **A**     | Absent - If the student is absent with no valid reason given.  
+|     **VR**    | VR - If the student is absent with a valid reason (e.g. MC).   
 
 
 Marking the attendance for a week that is already marked will result in the message
