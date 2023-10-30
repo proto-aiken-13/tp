@@ -80,9 +80,9 @@ public class AssignmentIndivCommand extends Command {
         updatedAssignments.add(newAssignment);
 
         Person editedStudent = new Person(
-                studentToEdit.getName(), Optional.of(studentToEdit.getPhone()),
-                Optional.of(studentToEdit.getEmail()),
-                Optional.of(studentToEdit.getTelegramHandle()), Optional.of(studentToEdit.getAttendance()),
+                studentToEdit.getName(), Optional.ofNullable(studentToEdit.getPhone()),
+                Optional.ofNullable(studentToEdit.getEmail()),
+                Optional.ofNullable(studentToEdit.getTelegramHandle()), Optional.of(studentToEdit.getAttendance()),
                 studentToEdit.getTags(),
                 studentToEdit.getComments(), updatedAssignments, Optional.of(studentToEdit.getGroup()));
 
