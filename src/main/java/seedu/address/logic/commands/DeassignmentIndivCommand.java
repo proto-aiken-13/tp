@@ -74,6 +74,10 @@ public class DeassignmentIndivCommand extends Command {
         Set<Assignment> updatedAssignments = new HashSet<>();
 
         updatedAssignments.addAll(studentToEdit.getAssignments());
+        if (!updatedAssignments.contains(deletedAssignment)) {
+            throw new CommandException(MESSAGE_FAIL);
+        }
+
         updatedAssignments.remove(deletedAssignment);
 
         // Create a new student with the updated assignments

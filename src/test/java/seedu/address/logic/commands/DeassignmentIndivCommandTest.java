@@ -21,22 +21,22 @@ import seedu.address.testutil.PersonBuilder;
 public class DeassignmentIndivCommandTest {
 
     private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
-    private Name assignmentName = new Name("Lab 1");
+    private Name assignmentName = new Name("Lab1");
     private final Model emptyModel = new ModelManager();
 
     @Test
     public void execute_validIndexUnfilteredList_success() {
-        Person personWithAssignmentToDeassign = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
+        Person personWithAssignmentToDeassign = new PersonBuilder()
+                .withAssignments(assignmentName.toString())
+                .build();
+
+        emptyModel.addPerson(personWithAssignmentToDeassign);
         DeassignmentIndivCommand deassignmentIndivCommand = new DeassignmentIndivCommand(INDEX_FIRST_PERSON,
                 assignmentName);
 
-        String expectedMessage = String.format(DeassignmentIndivCommand.MESSAGE_SUCCESS,
-                Messages.format(personWithAssignmentToDeassign));
+        String expectedMessage = String.format(DeassignmentIndivCommand.MESSAGE_SUCCESS);
 
-        ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
-        expectedModel.updatePerson(personWithAssignmentToDeassign);
-
-        assertCommandSuccess(deassignmentIndivCommand, model, expectedMessage, expectedModel);
+        assertCommandSuccess(deassignmentIndivCommand, emptyModel, expectedMessage, emptyModel);
     }
 
     @Test
@@ -65,6 +65,19 @@ public class DeassignmentIndivCommandTest {
                 assignmentName);
 
         assertCommandFailure(deassignmentIndexCommand, model, Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+    }
+
+    @Test
+    public void execute_noSuchAssignmentName_failure() {
+        Name testName = new Name("NoSuchAssignment");
+        Person person = new PersonBuilder().withAssignments("Lab1").build();
+
+        // Add the sample person to the model
+        emptyModel.addPerson(person);
+        DeassignmentIndivCommand deassignmentIndivCommand = new DeassignmentIndivCommand(INDEX_FIRST_PERSON, testName);
+
+
+        assertCommandFailure(deassignmentIndivCommand, emptyModel, DeassignmentIndivCommand.MESSAGE_FAIL);
     }
 
     @Test
