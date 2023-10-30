@@ -412,7 +412,7 @@ Format: `inputGroupPP GROUP t/TUTORIAL pp/POINTS`
 
 `TUTORIAL`: An integer between 1 and 12 (inclusive)
 
-`POINTS`: An integer more than or equals to 0
+`POINTS`: An integer between 0 and 1000 (inclusive)
 
 Participation points can only be inputted for a tutorial that is already marked as attended.
 
