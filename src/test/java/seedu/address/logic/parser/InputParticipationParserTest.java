@@ -35,13 +35,13 @@ public class InputParticipationParserTest {
     @Test
     public void parse_missingTutorial_failure() {
         // Missing tutorial
-        assertParseFailure(parser, "1 pp/50", Attendance.TUTORIAL_ERROR_MSG);
+        assertParseFailure(parser, "1 pp/50", MESSAGE_INVALID_FORMAT);
     }
 
     @Test
     public void parse_missingPoints_failure() {
         // Missing points
-        assertParseFailure(parser, "1 t/1", Attendance.PARTICIPATION_ERROR_MSG);
+        assertParseFailure(parser, "1 t/1", MESSAGE_INVALID_FORMAT);
     }
 
     @Test

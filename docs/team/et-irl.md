@@ -30,6 +30,7 @@ Given below are my contributions to the project.
   * `assignIndiv`
 - Removed the intrusive help window and made the website open immediately.
 - Removed useless top bar, as it takes up precious vertical space. The app is optimised for CLI users, so it makes no sense for a clickable bar.
+- Added test cases and sanity check of participation points, making sure overflow errors do not occur.
 
 ### Contributions to the User Guide (UG)
 
