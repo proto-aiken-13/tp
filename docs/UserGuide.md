@@ -311,7 +311,7 @@ Format: `markAtd INDEX t/TUTORIAL s/STATUS`
 
 `STATUS`: The student's attendance status. Valid attendance statuses are as follows:
 
-| Status        |                                                                
+| Status        | Meaning                                                               
 |---------------|----------------------------------------------------------------
 |     **P**     | Present - If the student shows up for the tutorial.            
 |     **A**     | Absent - If the student is absent with no valid reason given.  
