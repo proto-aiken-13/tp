@@ -30,6 +30,7 @@ Given below are my contributions to the project.
   * `assignIndiv`
 - Removed the intrusive help window and made the website open immediately.
 - Removed useless top bar, as it takes up precious vertical space. The app is optimised for CLI users, so it makes no sense for a clickable bar.
+- Fix Optionals to accept nulls using `.ofNullable()` instead of `.of()` to ensure code robustness.
 
 ### Contributions to the User Guide (UG)
 
