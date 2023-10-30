@@ -30,6 +30,8 @@ Given below are my contributions to the project.
   * `assignIndiv`
 - Removed the intrusive help window and made the website open immediately.
 - Removed useless top bar, as it takes up precious vertical space. The app is optimised for CLI users, so it makes no sense for a clickable bar.
+- Fix assignment error throwing, wrongly placed in the constructor.
+- Fix integer parsing issue, when a failed parse is detected, we should throw the specific error.
 
 ### Contributions to the User Guide (UG)
 

@@ -45,9 +45,6 @@ public class AssignmentIndivCommand extends Command {
     public AssignmentIndivCommand(Index index, Name name, int maxScore) {
         requireNonNull(index);
         requireNonNull(name);
-        if (maxScore <= 0) {
-            throw new IllegalArgumentException("maxScore must be greater than 0");
-        }
 
         this.index = index;
         this.name = name;
@@ -69,6 +66,10 @@ public class AssignmentIndivCommand extends Command {
 
         if (index.getZeroBased() >= lastShownList.size()) {
             throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+        }
+
+        if (maxScore <= 0 || maxScore > Assignment.MAXIMUM_ALLOWED_MAX_SCORE) {
+            throw new CommandException(Assignment.MESSAGE_INVALID_MAX_SCORE);
         }
 
         Person studentToEdit = lastShownList.get(index.getZeroBased());

@@ -9,6 +9,7 @@ import java.util.stream.Stream;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.AssignmentIndivCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
+import seedu.address.model.person.Assignment;
 import seedu.address.model.person.Name;
 
 
@@ -44,11 +45,12 @@ public class AssignmentIndivCommandParser implements Parser<AssignmentIndivComma
         argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_MAX_SCORE);
 
         Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
-        int maxScore = ParserUtil.parseInt(argMultimap.getValue(PREFIX_MAX_SCORE).get());
 
-        if (maxScore <= 0) {
-            throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, AssignmentIndivCommand.MESSAGE_USAGE));
+        int maxScore;
+        try {
+            maxScore = ParserUtil.parseInt(argMultimap.getValue(PREFIX_MAX_SCORE).get());
+        } catch (ParseException e) {
+            throw new ParseException(Assignment.MESSAGE_INVALID_MAX_SCORE);
         }
 
         return new AssignmentIndivCommand(index, name, maxScore);
