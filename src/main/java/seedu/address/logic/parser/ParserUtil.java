@@ -63,7 +63,7 @@ public class ParserUtil {
         requireNonNull(status);
         String trimmedStatus = status.trim();
         if (!Attendance.isValidStatus(trimmedStatus)) {
-            throw new ParseException(Attendance.PARTICIPATION_ERROR_MSG);
+            throw new ParseException(Attendance.STATUS_ERROR_MSG);
         }
         return trimmedStatus;
     }

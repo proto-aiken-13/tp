@@ -22,6 +22,7 @@ public class InputGroupParticipationCommand extends Command {
     public static final String SUCCESS_MSG = "Participation points input successfully!";
     public static final String ATTENDANCE_NOT_MARKED = "Before inputting participation points, "
             + "mark the attendance of the student first!";
+    public static final String ATTENDANCE_ABSENT = "A student was absent for this tutorial!";
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Inserts participation points to the group of students identified\n"
             + "by the group name used in the displayed student list.\n"
@@ -63,6 +64,10 @@ public class InputGroupParticipationCommand extends Command {
         for (Person person : lastShownList) {
             if (!person.getAttendance().isMarkedWeek(this.tut.getZeroBased())) {
                 return new CommandResult(ATTENDANCE_NOT_MARKED);
+            }
+
+            if (!person.getAttendance().isPresent(this.tut.getZeroBased())) {
+                return new CommandResult(ATTENDANCE_ABSENT);
             }
         }
 

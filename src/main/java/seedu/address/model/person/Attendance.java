@@ -15,6 +15,18 @@ public class Attendance {
     private final int[] participationList = new int[totalTut];
     private final AttendanceStatus[] attendanceList = new AttendanceStatus[totalTut];
 
+    private enum AttendanceStatus {
+        UNMARKED,
+        PRESENT,
+        ABSENT,
+        VR;
+
+        @Override
+        public String toString() {
+            return this == PRESENT ? "P" : this == ABSENT ? "A" : this == VR ? "VR" : "U";
+        }
+    };
+
 
     /**
      * Constructs an `Attendance` object from a comma-separated attendance string.
@@ -27,19 +39,19 @@ public class Attendance {
         String[] atdArr = atd.split(",");
         String[] ppArr = pp.split(",");
         for (int i = 0; i < totalTut; i++) {
-            attendanceList[i] = new AttendanceStatus(i);
             participationList[i] = Integer.parseInt(ppArr[i]);
             switch (atdArr[i]) {
             case "A":
-                attendanceList[i].setAbsent();
+                attendanceList[i] = AttendanceStatus.ABSENT;
                 break;
             case "P":
-                attendanceList[i].setPresent();
+                attendanceList[i] = AttendanceStatus.PRESENT;
                 break;
             case "VR":
-                attendanceList[i].setVr();
+                attendanceList[i] = AttendanceStatus.VR;
                 break;
             default:
+                attendanceList[i] = AttendanceStatus.UNMARKED;
             }
         }
     }
@@ -89,8 +101,8 @@ public class Attendance {
     public int getWeeksPresent() {
         int count = 0;
         for (int i = 0; i < 12; i++) {
-            if (this.attendanceList[i].statusString().equals("U")
-                    || this.attendanceList[i].statusString().equals("A")) {
+            if (this.attendanceList[i] == AttendanceStatus.UNMARKED
+                    || this.attendanceList[i] == AttendanceStatus.ABSENT) {
                 continue;
             }
             count++;
@@ -126,13 +138,13 @@ public class Attendance {
     public void markAttendance(int tutorial, String status) {
         switch(status) {
         case "A":
-            attendanceList[tutorial].setAbsent();
+            attendanceList[tutorial] = AttendanceStatus.ABSENT;
             break;
         case "VR":
-            attendanceList[tutorial].setVr();
+            attendanceList[tutorial] = AttendanceStatus.VR;
             break;
         case "P":
-            attendanceList[tutorial].setPresent();
+            attendanceList[tutorial] = AttendanceStatus.PRESENT;
             break;
         default:
         }
@@ -143,7 +155,7 @@ public class Attendance {
      * @param tutorial The week to unmark (1-12).
      */
     public void unmarkAttendance(int tutorial) {
-        this.attendanceList[tutorial].unMark();
+        this.attendanceList[tutorial] = AttendanceStatus.UNMARKED;
         this.participationList[tutorial] = 0;
     }
 
@@ -153,7 +165,16 @@ public class Attendance {
      * @return `true` if the week is marked as attended; otherwise, `false`.
      */
     public boolean isMarkedWeek(int tutorial) {
-        return this.attendanceList[tutorial].isMarked();
+        return !(this.attendanceList[tutorial] == AttendanceStatus.UNMARKED);
+    }
+
+    /**
+     * Checks if a specific tutorial is marked as present
+     * @param tutorial The week to check (1-12).
+     * @return `true` if the week is marked as present; otherwise, `false`.
+     */
+    public boolean isPresent(int tutorial) {
+        return this.attendanceList[tutorial] == AttendanceStatus.PRESENT;
     }
 
     /**
@@ -169,11 +190,11 @@ public class Attendance {
         StringBuilder styledList = new StringBuilder();
         for (int i = 0; i < totalTut; i++) {
             String toAppend;
-            if (attendanceList[i].isAbsent) {
+            if (attendanceList[i] == AttendanceStatus.ABSENT) {
                 toAppend = absent;
-            } else if (attendanceList[i].isPresent) {
+            } else if (attendanceList[i] == AttendanceStatus.PRESENT) {
                 toAppend = present;
-            } else if (attendanceList[i].isVr) {
+            } else if (attendanceList[i] == AttendanceStatus.VR) {
                 toAppend = vr;
             } else {
                 toAppend = unknown;
@@ -227,7 +248,7 @@ public class Attendance {
         int markedTut = 0;
 
         for (AttendanceStatus status : attendanceList) {
-            markedTut += status.isMarked() ? 1 : 0;
+            markedTut += status != AttendanceStatus.UNMARKED ? 1 : 0;
         }
 
         return markedTut;
@@ -257,10 +278,10 @@ public class Attendance {
         StringBuilder s = new StringBuilder();
 
         for (int i = 0; i < totalTut - 1; i++) {
-            s.append(this.attendanceList[i].statusString()).append(",");
+            s.append(this.attendanceList[i].toString()).append(",");
         }
 
-        s.append(this.attendanceList[totalTut - 1].statusString());
+        s.append(this.attendanceList[totalTut - 1].toString());
         return s.toString();
     }
 
@@ -289,7 +310,7 @@ public class Attendance {
         StringBuilder s = new StringBuilder();
         for (int i = 0; i < this.totalTut; i++) {
             s.append(String.format("Tutorial %d: [%s], Participation Points: [%d]\n",
-                    i + 1, this.attendanceList[i].statusString(), this.participationList[i]));
+                    i + 1, this.attendanceList[i].toString(), this.participationList[i]));
         }
         return s.toString();
     }
@@ -301,86 +322,5 @@ public class Attendance {
      */
     public String toString() {
         return String.format("Attendance: %s | Participation: %s", atdToString(), ppToString());
-    }
-
-    /**
-     * Internal class to represent a single attendance.
-     */
-    private class AttendanceStatus {
-        private int index;
-
-        private boolean isPresent = false;
-
-        private boolean isAbsent = false;
-
-        private boolean isVr = false;
-
-        private boolean isUnmarked = true;
-
-        /**
-         * Constructs a single instance of AttendanceStatus.
-         * @param index The index (week) of the single attendance.
-         */
-        public AttendanceStatus(int index) {
-            this.index = index;
-        }
-
-        /**
-         * Sets the current status of the AttendanceStatus as present.
-         */
-        public void setPresent() {
-            this.isUnmarked = false;
-            this.isAbsent = false;
-            this.isVr = false;
-            this.isPresent = true;
-        }
-
-        /**
-         * Sets the current status of the AttendanceStatus as absent.
-         */
-        public void setAbsent() {
-            this.isUnmarked = false;
-            this.isAbsent = true;
-            this.isVr = false;
-            this.isPresent = false;
-        }
-
-        /**
-         * Sets the current status of the AttendanceStatus as VR.
-         */
-        public void setVr() {
-            this.isUnmarked = false;
-            this.isAbsent = false;
-            this.isVr = true;
-            this.isPresent = false;
-        }
-
-        /**
-         * Unmarks the instance of AttendanceStatus
-         */
-        public void unMark() {
-            this.isUnmarked = true;
-            this.isAbsent = false;
-            this.isVr = false;
-            this.isPresent = false;
-        }
-
-        public boolean isMarked() {
-            return !isUnmarked;
-        }
-
-        /**
-         * Returns the attendance status as a String.
-         * @return The status as a String.
-         */
-        public String statusString() {
-            return isUnmarked ? "U" : isAbsent ? "A" : isVr ? "VR" : "P";
-        }
-
-        @Override
-        public String toString() {
-            return index
-                    + statusString();
-        }
     }
 }
