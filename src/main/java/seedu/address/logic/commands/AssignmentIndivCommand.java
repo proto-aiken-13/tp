@@ -40,7 +40,6 @@ public class AssignmentIndivCommand extends Command {
      * @param name The name of the assignment. Must not be null.
      * @param maxScore The maximum possible score for the assignment. Must be greater than 0.
      * @throws NullPointerException If the provided name is null.
-     * @throws IllegalArgumentException If the provided maxScore is not greater than 0.
      */
     public AssignmentIndivCommand(Index index, Name name, int maxScore) {
         requireNonNull(index);
