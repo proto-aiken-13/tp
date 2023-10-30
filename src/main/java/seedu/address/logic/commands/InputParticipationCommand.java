@@ -21,6 +21,9 @@ public class InputParticipationCommand extends Command {
     public static final String SUCCESS_MSG = "Participation points input successfully!";
     public static final String ATTENDANCE_NOT_MARKED = "Before inputting participation points, "
             + "mark the attendance of the student first!";
+    public static final String PARTICIPATION_POINTS_OUT_OF_RANGE = "Participation points "
+            + "must be between 0 and 1000.";
+    public static final int MAXIMUM_PARTICIPATION_POINTS = 1000;
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Inserts participation points to the student identified\n"
             + "by the index number used in the displayed student list.\n"
@@ -63,6 +66,10 @@ public class InputParticipationCommand extends Command {
         Attendance studentAtd = studentToEdit.getAttendance();
         if (!studentAtd.isMarkedWeek(this.tut.getZeroBased())) {
             return new CommandResult(ATTENDANCE_NOT_MARKED);
+        }
+
+        if (this.points < 0 || this.points > MAXIMUM_PARTICIPATION_POINTS) {
+            return new CommandResult(PARTICIPATION_POINTS_OUT_OF_RANGE);
         }
 
         studentAtd.inputParticipationPoints(this.tut.getZeroBased(), this.points);
