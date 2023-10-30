@@ -69,7 +69,7 @@ public class InputParticipationCommand extends Command {
         }
 
         if (this.points < 0 || this.points > MAXIMUM_PARTICIPATION_POINTS) {
-            return new CommandResult(PARTICIPATION_POINTS_OUT_OF_RANGE);
+            throw new CommandException(PARTICIPATION_POINTS_OUT_OF_RANGE);
         }
 
         studentAtd.inputParticipationPoints(this.tut.getZeroBased(), this.points);
