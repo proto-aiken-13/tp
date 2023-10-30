@@ -117,6 +117,49 @@ public class AttendanceTest {
         Attendance attendance2 = new Attendance("VR,U,U,U,U,U,U,U,U,U,U,U", Attendance.ORIGINAL_PART);
         assertFalse(attendance1.equals(attendance2));
     }
+    
+    @Test 
+    public void getTotalMarked_hasOneMarkedPresent_returnsOne() {
+        Attendance attendance = new Attendance("P,U,U,U,U,U,U,U,U,U,U,U,U", Attendance.ORIGINAL_PART);
+        assertEquals(1, attendance.getTotalMarkedTut());
+    }
+
+    @Test
+    public void getTotalMarked_hasTwoMarked_returnsTwo() {
+        Attendance attendance = new Attendance("P,A,U,U,U,U,U,U,U,U,U,U,U", Attendance.ORIGINAL_PART);
+        assertEquals(2, attendance.getTotalMarkedTut());
+    }
+
+    @Test
+    public void getWeeksPresent_hasOnePresent_returnsOne() {
+        Attendance attendance = new Attendance("P,U,U,U,U,U,U,U,U,U,U,U,U", Attendance.ORIGINAL_PART);
+        assertEquals(1, attendance.getWeeksPresent());
+    }
+
+    @Test
+    public void getWeeksPresent_hasOnePresentandOneAbsent_returnsOne() {
+        Attendance attendance = new Attendance("P,A,U,U,U,U,U,U,U,U,U,U,U", Attendance.ORIGINAL_PART);
+        assertEquals(1, attendance.getWeeksPresent());
+    }
+
+    @Test
+    public void getWeeksPresent_hasOneAbsent_returnsZero() {
+        Attendance attendance = new Attendance("A,U,U,U,U,U,U,U,U,U,U,U,U", Attendance.ORIGINAL_PART);
+        assertEquals(0, attendance.getWeeksPresent());
+    }
+    
+    @Test
+    public void getTotalPart_hasNoParticipation_returnsZero() {
+        Attendance attendance = new Attendance("P,U,U,U,U,U,U,U,U,U,U,U,U", Attendance.ORIGINAL_PART);
+        assertEquals(0, attendance.getTotalPart());
+    }
+    
+    @Test
+    public void getTotalPart_hasNoneZeroParticipation_returnsNonZero() {
+        Attendance attendance = new Attendance("P,P,P,P,P,U,U,U,U,U,U,U,U", 
+                "300,300,300,300,300,0,0,0,0,0,0,0");
+        assertEquals(1500, attendance.getTotalPart());
+    }
 
     @Test
     public void equals_differentTypes_returnsFalse() {

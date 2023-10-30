@@ -227,7 +227,7 @@ public class Attendance {
         int markedTut = 0;
 
         for (AttendanceStatus status : attendanceList) {
-            markedTut += status.isMarked() ? 0 : 1;
+            markedTut += status.isMarked() ? 1 : 0;
         }
 
         return markedTut;
