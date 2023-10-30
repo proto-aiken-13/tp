@@ -29,17 +29,9 @@ public class GradeCommandParserTest {
         String userInput2 = "1 g/10";
         assertParseFailure(parser, userInput2, MESSAGE_INVALID_FORMAT);
 
-        // Test case 3: Invalid name
-        String userInput3 = "1 n/L)(&% g/sads";
-        assertParseFailure(parser, userInput3, MESSAGE_INVALID_ASSIGNMENT_NAME);
-
-        // Test case 4: Invalid score
-        String userInput4 = "1 n/Lab1 g/sads";
-        assertParseFailure(parser, userInput4, MESSAGE_INVALID_ASSIGNMENT_SCORE);
-
-        // Test case 5: Missing grade
-        String userInput5 = "1 n/Lab1";
-        assertParseFailure(parser, userInput5, MESSAGE_INVALID_FORMAT);
+        // Test case 3: Missing grade
+        String userInput3 = "1 n/Lab1";
+        assertParseFailure(parser, userInput3, MESSAGE_INVALID_FORMAT);
 
         // Missing all index, assignment name and grade
         assertParseFailure(parser, "", MESSAGE_INVALID_FORMAT);
@@ -59,6 +51,13 @@ public class GradeCommandParserTest {
         // Invalid score (negative value less than zero)
         assertParseFailure(parser, "1 n/Lab1 g/-10", MESSAGE_INVALID_ASSIGNMENT_SCORE);
 
+    }
+
+    @Test
+    public void parse_invalidAssignmentName_failure() {
+        // Test case 1: Invalid name
+        String userInput1 = "1 n/L)(&% g/1";
+        assertParseFailure(parser, userInput1, MESSAGE_INVALID_ASSIGNMENT_NAME);
     }
 
     @Test
