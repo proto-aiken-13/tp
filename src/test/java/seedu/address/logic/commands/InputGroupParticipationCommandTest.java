@@ -99,7 +99,7 @@ public class InputGroupParticipationCommandTest {
         Group group = new Group("Group 1");
         // create a sample person with group
         Person person = new PersonBuilder().withGroup("Group 1")
-                .withAttendance("1,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0").build();
+                .withAttendance("P,U,U,U,U,U,U,U,U,U,U,U", "0,0,0,0,0,0,0,0,0,0,0,0").build();
         // Add the sample person to the model
         model.addPerson(person);
 
