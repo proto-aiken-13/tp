@@ -74,7 +74,8 @@ public class AssignmentCommand extends Command {
             Person editedStudent = new Person(
                     studentToEdit.getName(), Optional.ofNullable(studentToEdit.getPhone()),
                     Optional.ofNullable(studentToEdit.getEmail()),
-                    Optional.ofNullable(studentToEdit.getTelegramHandle()), Optional.ofNullable(studentToEdit.getAttendance()),
+                    Optional.ofNullable(studentToEdit.getTelegramHandle()),
+                    Optional.ofNullable(studentToEdit.getAttendance()),
                     studentToEdit.getTags(),
                     studentToEdit.getComments(), updatedAssignments, Optional.ofNullable(studentToEdit.getGroup()));
 
