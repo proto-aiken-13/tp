@@ -40,7 +40,6 @@ public class DeassignmentIndivCommand extends Command {
      * @param index of the person in the filtered person list to edit
      * @param name The name of the assignment. Must not be null.
      * @throws NullPointerException If the provided name is null.
-     * @throws IllegalArgumentException If the provided maxScore is not greater than 0.
      */
     public DeassignmentIndivCommand(Index index, Name name) {
         requireNonNull(index);
