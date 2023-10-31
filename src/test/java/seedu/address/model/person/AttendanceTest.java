@@ -41,6 +41,22 @@ public class AttendanceTest {
     }
 
     @Test
+    public void isValidStatus_validStatus_true() {
+        assertTrue(Attendance.isValidStatus("A"));
+        assertTrue(Attendance.isValidStatus("P"));
+        assertTrue(Attendance.isValidStatus("VR"));
+    }
+
+    @Test
+    public void isValidStatus_invalidStatus_false() {
+        assertFalse(Attendance.isValidStatus("-"));
+        assertFalse(Attendance.isValidStatus(""));
+        assertFalse(Attendance.isValidStatus("1"));
+        assertFalse(Attendance.isValidStatus("G"));
+        assertFalse(Attendance.isValidStatus(" "));
+    }
+
+    @Test
     public void markAttendance_validWeek_success() {
         Attendance attendance = new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART);
         attendance.markAttendance(1, "P");
@@ -159,6 +175,13 @@ public class AttendanceTest {
         Attendance attendance = new Attendance("P,P,P,P,P,U,U,U,U,U,U,U,U",
                 "300,300,300,300,300,0,0,0,0,0,0,0");
         assertEquals(1500, attendance.getTotalPart());
+    }
+
+    @Test
+    public void attendanceConstructor_hasNonPresentStatus_returnsNoPart() {
+        Attendance attendance = new Attendance("U,U,U,U,U,U,U,U,U,U,U,U,U",
+                "300,300,300,300,300,0,0,0,0,0,0,0");
+        assertEquals(0, attendance.getTotalPart());
     }
 
     @Test

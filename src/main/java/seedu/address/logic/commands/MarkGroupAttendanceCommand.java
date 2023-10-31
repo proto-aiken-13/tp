@@ -1,6 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PARTICIPATION_STATUS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 
 import java.util.List;
@@ -23,8 +24,9 @@ public class MarkGroupAttendanceCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Marks the attendance of all students in the same group\n"
             + "Parameters: GROUP "
-            + "[" + PREFIX_TUTORIAL + "TutorialToMark] \n"
-            + "Example: " + COMMAND_WORD + " tut1 t/1 ";
+            + "[" + PREFIX_TUTORIAL + "TutorialToMark] "
+            + "[" + PREFIX_PARTICIPATION_STATUS + "AttendanceStatus] \n"
+            + "Example: " + COMMAND_WORD + " tut1 t/1 s/P";
     private final Index tut;
     private final Group group;
 

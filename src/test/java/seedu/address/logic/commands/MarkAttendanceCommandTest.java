@@ -78,9 +78,11 @@ public class MarkAttendanceCommandTest {
 
     @Test
     public void equals_sameCommand_returnsTrue() {
-        // Create a MarkAttendanceCommand with the same index and tutorial
-        MarkAttendanceCommand command1 = new MarkAttendanceCommand(Index.fromOneBased(1), Index.fromOneBased(1), "P");
-        MarkAttendanceCommand command2 = new MarkAttendanceCommand(Index.fromOneBased(1), Index.fromOneBased(1), "P");
+        // Create a MarkAttendanceCommand with the same index, tutorial and status.
+        MarkAttendanceCommand command1 = new MarkAttendanceCommand(Index.fromOneBased(1),
+                Index.fromOneBased(1), "P");
+        MarkAttendanceCommand command2 = new MarkAttendanceCommand(Index.fromOneBased(1),
+                Index.fromOneBased(1), "P");
 
         // They should be equal
         assertTrue(command1.equals(command2));
@@ -88,9 +90,23 @@ public class MarkAttendanceCommandTest {
 
     @Test
     public void equals_differentCommands_returnsFalse() {
-        // Create two different MarkAttendanceCommands
-        MarkAttendanceCommand command1 = new MarkAttendanceCommand(Index.fromOneBased(1), Index.fromOneBased(1), "P");
-        MarkAttendanceCommand command2 = new MarkAttendanceCommand(Index.fromOneBased(2), Index.fromOneBased(2), "P");
+        // Create two different MarkAttendanceCommands, with two different indexes.
+        MarkAttendanceCommand command1 = new MarkAttendanceCommand(Index.fromOneBased(1),
+                Index.fromOneBased(1), "P");
+        MarkAttendanceCommand command2 = new MarkAttendanceCommand(Index.fromOneBased(2),
+                Index.fromOneBased(2), "P");
+
+        // They should not be equal
+        assertFalse(command1.equals(command2));
+    }
+
+    @Test
+    public void equals_differentCommandStatuses_returnsFalse() {
+        // Create two different MarkAttendanceCommands, with two different statuses
+        MarkAttendanceCommand command1 = new MarkAttendanceCommand(Index.fromOneBased(1),
+                Index.fromOneBased(1), "P");
+        MarkAttendanceCommand command2 = new MarkAttendanceCommand(Index.fromOneBased(2),
+                Index.fromOneBased(2), "P");
 
         // They should not be equal
         assertFalse(command1.equals(command2));

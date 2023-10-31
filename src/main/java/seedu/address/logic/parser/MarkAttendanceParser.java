@@ -5,8 +5,6 @@ import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PARTICIPATION_STATUS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 
-import java.util.NoSuchElementException;
-
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.logic.commands.MarkAttendanceCommand;
@@ -28,11 +26,10 @@ public class MarkAttendanceParser implements Parser<MarkAttendanceCommand> {
 
         Index index;
         int tutorial = 0;
-        String status;
+        String status = null;
         try {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
-            status = ParserUtil.parseParticipationStatus(argMultimap.getValue(PREFIX_PARTICIPATION_STATUS).get());
-        } catch (IllegalValueException | NoSuchElementException ive) {
+        } catch (IllegalValueException ive) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
                     MarkAttendanceCommand.MESSAGE_USAGE), ive);
         }
@@ -41,11 +38,15 @@ public class MarkAttendanceParser implements Parser<MarkAttendanceCommand> {
             tutorial = ParserUtil.parseTutorial(argMultimap.getValue(PREFIX_TUTORIAL).get());
         }
 
+        if (argMultimap.getValue(PREFIX_PARTICIPATION_STATUS).isPresent()) {
+            status = ParserUtil.parseParticipationStatus(argMultimap.getValue(PREFIX_PARTICIPATION_STATUS).get());
+        }
+
         if (!(tutorial >= 1 && tutorial <= 12)) {
             throw new ParseException(Attendance.TUTORIAL_ERROR_MSG);
         }
 
-        if (!Attendance.isValidStatus(status)) {
+        if (status == null) {
             throw new ParseException(Attendance.STATUS_ERROR_MSG);
         }
 

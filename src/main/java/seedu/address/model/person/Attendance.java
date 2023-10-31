@@ -39,19 +39,22 @@ public class Attendance {
         String[] atdArr = atd.split(",");
         String[] ppArr = pp.split(",");
         for (int i = 0; i < totalTut; i++) {
-            participationList[i] = Integer.parseInt(ppArr[i]);
             switch (atdArr[i]) {
             case "A":
                 attendanceList[i] = AttendanceStatus.ABSENT;
+                participationList[i] = 0;
                 break;
             case "P":
                 attendanceList[i] = AttendanceStatus.PRESENT;
+                participationList[i] = Integer.parseInt(ppArr[i]);
                 break;
             case "VR":
                 attendanceList[i] = AttendanceStatus.VR;
+                participationList[i] = 0;
                 break;
             default:
                 attendanceList[i] = AttendanceStatus.UNMARKED;
+                participationList[i] = 0;
             }
         }
     }

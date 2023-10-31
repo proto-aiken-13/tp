@@ -49,6 +49,18 @@ public class MarkGroupAttendanceParserTest {
     }
 
     @Test
+    public void parse_invalidStatus_failure() {
+        // Invalid status (Not a letter)
+        assertParseFailure(parser, "Group1 t/1 s/1", Attendance.STATUS_ERROR_MSG);
+
+        // Invalid status (Not recognised as a valid status)
+        assertParseFailure(parser, "Group1 t/1 s/G", Attendance.STATUS_ERROR_MSG);
+
+        // Invalid status (Unknown - Unmarked status, not one used for marking)
+        assertParseFailure(parser, "Group1 t/1 s/U", Attendance.STATUS_ERROR_MSG);
+    }
+
+    @Test
     public void parse_validInput_success() throws ParseException {
         // Valid input
         assertParseSuccess(parser, "Group1 t/1 s/P", new MarkGroupAttendanceCommand(ParserUtil.parseGroup("Group1"),

@@ -24,7 +24,7 @@ public class MarkAttendanceCommand extends Command {
             + ": Marks the attendance of the student identified\n"
             + "by the index number used in the displayed student list.\n"
             + "Parameters: INDEX (must be a positive integer) "
-            + "[" + PREFIX_TUTORIAL + "TutorialToMark] \n"
+            + "[" + PREFIX_TUTORIAL + "TutorialToMark] "
             + "[" + PREFIX_PARTICIPATION_STATUS + "AttendanceStatus] \n"
             + "Example: " + COMMAND_WORD + " 1 t/1 s/P";
     private final Index index;
