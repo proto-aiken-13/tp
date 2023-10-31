@@ -22,6 +22,9 @@ public class InputGroupParticipationCommand extends Command {
     public static final String SUCCESS_MSG = "Participation points input successfully!";
     public static final String ATTENDANCE_NOT_MARKED = "Before inputting participation points, "
             + "mark the attendance of the student first!";
+    public static final String PARTICIPATION_POINTS_OUT_OF_RANGE = "Participation points "
+            + "must be between 0 and 1000.";
+    public static final int MAXIMUM_PARTICIPATION_POINTS = 1000;
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Inserts participation points to the group of students identified\n"
             + "by the group name used in the displayed student list.\n"
@@ -58,6 +61,10 @@ public class InputGroupParticipationCommand extends Command {
         List<Person> lastShownList = model.getFilteredPersonList().filtered(x -> x.getGroup().equals(this.group));
         if (lastShownList.isEmpty()) {
             throw new CommandException(Messages.INVALID_GROUP);
+        }
+
+        if (this.points < 0 || this.points > MAXIMUM_PARTICIPATION_POINTS) {
+            throw new CommandException(PARTICIPATION_POINTS_OUT_OF_RANGE);
         }
 
         for (Person person : lastShownList) {
