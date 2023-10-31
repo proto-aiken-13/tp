@@ -37,13 +37,9 @@ public class AssignmentCommand extends Command {
      * @param name The name of the assignment. Must not be null.
      * @param maxScore The maximum possible score for the assignment. Must be greater than 0.
      * @throws NullPointerException If the provided name is null.
-     * @throws IllegalArgumentException If the provided maxScore is not greater than 0.
      */
     public AssignmentCommand(Name name, int maxScore) {
         requireNonNull(name);
-        if (maxScore <= 0) {
-            throw new IllegalArgumentException("maxScore must be greater than 0");
-        }
 
         this.name = name;
         this.maxScore = maxScore;
@@ -60,6 +56,10 @@ public class AssignmentCommand extends Command {
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
         List<Person> lastShownList = model.getFilteredPersonList();
+
+        if (maxScore <= 0 || maxScore > Assignment.MAXIMUM_ALLOWED_MAX_SCORE) {
+            throw new CommandException(Assignment.MESSAGE_INVALID_MAX_SCORE);
+        }
 
         // Loop through the list and update each person's assignments
         for (Person studentToEdit : lastShownList) {
