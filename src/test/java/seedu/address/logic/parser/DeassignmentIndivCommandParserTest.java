@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import seedu.address.logic.commands.DeassignmentIndivCommand;
 import seedu.address.model.person.Name;
 
-public class DeassignmentIndexCommandParserTest {
+public class DeassignmentIndivCommandParserTest {
     private DeassignmentIndivCommandParser parser = new DeassignmentIndivCommandParser();
 
     @Test
