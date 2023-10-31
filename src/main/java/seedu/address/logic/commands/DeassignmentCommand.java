@@ -72,9 +72,9 @@ public class DeassignmentCommand extends Command {
             Person editedStudent = new Person(
                     studentToEdit.getName(), Optional.of(studentToEdit.getPhone()),
                     Optional.of(studentToEdit.getEmail()),
-                    Optional.of(studentToEdit.getTelegramHandle()), Optional.of(studentToEdit.getAttendance()),
+                    Optional.of(studentToEdit.getTelegramHandle()), Optional.ofNullable(studentToEdit.getAttendance()),
                     studentToEdit.getTags(),
-                    studentToEdit.getComments(), updatedAssignments, Optional.of(studentToEdit.getGroup()));
+                    studentToEdit.getComments(), updatedAssignments, Optional.ofNullable(studentToEdit.getGroup()));
 
             // Set the updated student in the model
             model.setPerson(studentToEdit, editedStudent);
