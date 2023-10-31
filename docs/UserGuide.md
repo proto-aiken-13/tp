@@ -444,6 +444,7 @@ Examples:
 Create an assignment and assign it to all students.
 
 Format: `assign n/ASSIGNMENT_NAME m/MAX_SCORE`
+`MAX_SCORE`: An integer between 1 and 1000.
 
 Examples:
 - `assign n/Tutorial1 m/100`
@@ -464,6 +465,7 @@ Examples:
 Create an assignment and assign it to a group of students.
 
 Format: `assignGroup GROUP n/ASSIGNMENT_NAME m/MAX_SCORE`
+`MAX_SCORE`: An integer between 1 and 1000.
 
 Examples:
 - `assignGroup 1 n/Tutorial1 m/100`
@@ -474,6 +476,7 @@ Examples:
 Create an assignment and assign it to a student.
 
 Format: `assignIndiv INDEX n/ASSIGNMENT_NAME m/MAX_SCORE`
+`MAX_SCORE`: An integer between 1 and 1000.
 
 Examples:
 - `assignIndiv 1 n/Tutorial1 m/100`
