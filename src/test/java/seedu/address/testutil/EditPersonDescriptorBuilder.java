@@ -6,6 +6,7 @@ import java.util.stream.Stream;
 
 import seedu.address.logic.commands.EditCommand.EditPersonDescriptor;
 import seedu.address.model.fields.Tag;
+import seedu.address.model.person.Assignment;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Group;
 import seedu.address.model.person.Name;
@@ -73,6 +74,16 @@ public class EditPersonDescriptorBuilder {
      */
     public EditPersonDescriptorBuilder withTelegram(String telegram) {
         descriptor.setTelegramHandle(new TelegramHandle(telegram));
+        return this;
+    }
+
+    /**
+     * Sets the {@code Address} of the {@code EditPersonDescriptor} that we are building.
+     */
+    public EditPersonDescriptorBuilder withAssignments(String... assignmentNames) {
+        Set<Assignment> newAssignments =
+                Stream.of(assignmentNames).map(Name::new).map(Assignment::new).collect(Collectors.toSet());
+        descriptor.setAssignments(newAssignments);
         return this;
     }
 

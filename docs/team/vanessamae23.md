@@ -22,6 +22,7 @@ Given below are my contributions to the project.
   students' telegram directly
 - Changed the corresponding test cases after changing from address to telegram
 - Added the `grade` command and all the other test cases
+- Added the `deassignIndiv` command and all the other test cases
 
 ### Contributions to the User Guide (UG)
 
