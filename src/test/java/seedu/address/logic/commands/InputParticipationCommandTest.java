@@ -96,7 +96,7 @@ public class InputParticipationCommandTest {
     @Test
     public void execute_validMaxPoints_inputParticipationSuccessful() {
         // Create a sample person with attendance
-        Person person = new PersonBuilder().withAttendance("1,0,0,0,0,0,0,0,0,0,0,0",
+        Person person = new PersonBuilder().withAttendance("P,U,U,U,U,U,U,U,U,U,U,U",
                 "0,0,0,0,0,0,0,0,0,0,0,0").build();
 
         // Add the sample person to the model
@@ -176,7 +176,7 @@ public class InputParticipationCommandTest {
     @Test
     public void execute_negativePoints_throwsCommandException() {
         // Create a sample person with attendance
-        Person person = new PersonBuilder().withAttendance("1,0,0,0,0,0,0,0,0,0,0,0",
+        Person person = new PersonBuilder().withAttendance("P,U,U,U,U,U,U,U,U,U,U,U",
                 "0,0,0,0,0,0,0,0,0,0,0,0").build();
 
         // Add the sample person to the model
@@ -202,7 +202,7 @@ public class InputParticipationCommandTest {
     @Test
     public void execute_largePoints_throwsCommandException() {
         // Create a sample person with attendance
-        Person person = new PersonBuilder().withAttendance("1,0,0,0,0,0,0,0,0,0,0,0",
+        Person person = new PersonBuilder().withAttendance("P,U,U,U,U,U,U,U,U,U,U,U",
                 "0,0,0,0,0,0,0,0,0,0,0,0").build();
 
         // Add the sample person to the model
