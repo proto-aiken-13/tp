@@ -40,14 +40,10 @@ public class AssignmentIndivCommand extends Command {
      * @param name The name of the assignment. Must not be null.
      * @param maxScore The maximum possible score for the assignment. Must be greater than 0.
      * @throws NullPointerException If the provided name is null.
-     * @throws IllegalArgumentException If the provided maxScore is not greater than 0.
      */
     public AssignmentIndivCommand(Index index, Name name, int maxScore) {
         requireNonNull(index);
         requireNonNull(name);
-        if (maxScore <= 0) {
-            throw new IllegalArgumentException("maxScore must be greater than 0");
-        }
 
         this.index = index;
         this.name = name;
@@ -71,6 +67,10 @@ public class AssignmentIndivCommand extends Command {
             throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
         }
 
+        if (maxScore <= 0 || maxScore > Assignment.MAXIMUM_ALLOWED_MAX_SCORE) {
+            throw new CommandException(Assignment.MESSAGE_INVALID_MAX_SCORE);
+        }
+
         Person studentToEdit = lastShownList.get(index.getZeroBased());
 
         Set<Assignment> updatedAssignments = new HashSet<>();
@@ -80,11 +80,12 @@ public class AssignmentIndivCommand extends Command {
         updatedAssignments.add(newAssignment);
 
         Person editedStudent = new Person(
-                studentToEdit.getName(), Optional.of(studentToEdit.getPhone()),
-                Optional.of(studentToEdit.getEmail()),
-                Optional.of(studentToEdit.getTelegramHandle()), Optional.of(studentToEdit.getAttendance()),
+                studentToEdit.getName(), Optional.ofNullable(studentToEdit.getPhone()),
+                Optional.ofNullable(studentToEdit.getEmail()),
+                Optional.ofNullable(studentToEdit.getTelegramHandle()),
+                Optional.ofNullable(studentToEdit.getAttendance()),
                 studentToEdit.getTags(),
-                studentToEdit.getComments(), updatedAssignments, Optional.of(studentToEdit.getGroup()));
+                studentToEdit.getComments(), updatedAssignments, Optional.ofNullable(studentToEdit.getGroup()));
 
         // Set the updated student in the model
         model.setPerson(studentToEdit, editedStudent);

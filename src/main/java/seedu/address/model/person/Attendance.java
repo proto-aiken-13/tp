@@ -10,6 +10,7 @@ public class Attendance {
     public static final String PARTICIPATION_ERROR_MSG = "PP number is out of range, should be >= 0";
     public static final String STATUS_ERROR_MSG = "Status is invalid! It should either be P, VR or A.";
     public static final String ORIGINAL_ATD = "U,U,U,U,U,U,U,U,U,U,U,U";
+    public static final String PARTICIPATION_ERROR_MSG = "Please input a small non-negative number.";
     public static final String ORIGINAL_PART = "0,0,0,0,0,0,0,0,0,0,0,0";
     private static int totalTut = 12;
     private final int[] participationList = new int[totalTut];

@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.InputGroupParticipationCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.person.Attendance;
 
 public class InputGroupParticipationParserTest {
     private static final String MESSAGE_INVALID_FORMAT =
@@ -24,7 +23,7 @@ public class InputGroupParticipationParserTest {
 
         // Test case 2: Missing week (tutorial)
         String userInput2 = "tut33";
-        assertParseFailure(parser, userInput2, Attendance.TUTORIAL_ERROR_MSG);
+        assertParseFailure(parser, userInput2, MESSAGE_INVALID_FORMAT);
 
         // Missing both group and tutorial
         assertParseFailure(parser, "", MESSAGE_INVALID_FORMAT);
@@ -39,13 +38,13 @@ public class InputGroupParticipationParserTest {
     @Test
     public void parse_invalidTutorial_failure() {
         // Invalid tutorial (not a positive integer)
-        assertParseFailure(parser, "Group1 t/a", Attendance.TUTORIAL_ERROR_MSG);
+        assertParseFailure(parser, "Group1 t/a", MESSAGE_INVALID_FORMAT);
 
         // Invalid tutorial (0)
-        assertParseFailure(parser, "Group1 t/0", Attendance.TUTORIAL_ERROR_MSG);
+        assertParseFailure(parser, "Group1 t/0", MESSAGE_INVALID_FORMAT);
 
         // Invalid tutorial (greater than 12)
-        assertParseFailure(parser, "Group1 t/13", Attendance.TUTORIAL_ERROR_MSG);
+        assertParseFailure(parser, "Group1 t/13", MESSAGE_INVALID_FORMAT);
     }
 
     @Test

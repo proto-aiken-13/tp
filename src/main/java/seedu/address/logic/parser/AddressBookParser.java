@@ -45,17 +45,38 @@ public class AddressBookParser {
      */
     private static final Pattern BASIC_COMMAND_FORMAT = Pattern.compile("(?<commandWord>\\S+)(?<arguments>.*)");
     private static final Logger logger = LogsCenter.getLogger(AddressBookParser.class);
-    private Boolean hasConfirmedClearCommand = false;
-    private Boolean isClearCommand = false;
+    private Command previousCommand = null;
 
     /**
-     * Parses user input into command for execution.
+     * Parses the user input to determine and retrieve the appropriate command for execution.
+     * It updates the previous command statefully.
      *
-     * @param userInput full user input string
-     * @return the command based on the user input
-     * @throws ParseException if the user input does not conform the expected format
+     * @param userInput The full user input string.
+     * @return The parsed command based on the user input.
+     * @throws ParseException If the user input does not conform to the expected format.
      */
     public Command parseCommand(String userInput) throws ParseException {
+        Command command;
+        try {
+            command = getCommand(userInput);
+        } catch (ParseException e) {
+            previousCommand = null;
+            throw e;
+        }
+
+        previousCommand = command;
+
+        return command;
+    }
+
+    /**
+     * Parses user input to extract the command for execution.
+     *
+     * @param userInput The full user input string.
+     * @return The appropriate command based on the user input.
+     * @throws ParseException If the user input does not conform to the expected format.
+     */
+    public Command getCommand(String userInput) throws ParseException {
         final Matcher matcher = BASIC_COMMAND_FORMAT.matcher(userInput.trim());
         if (!matcher.matches()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE));
@@ -68,9 +89,6 @@ public class AddressBookParser {
         // log messages such as the one below.
         // Lower level log messages are used sparingly to minimize noise in the code.
         logger.fine("Command word: " + commandWord + "; Arguments: " + arguments);
-
-        isClearCommand = hasConfirmedClearCommand;
-        hasConfirmedClearCommand = false;
 
         switch (commandWord) {
 
@@ -99,11 +117,10 @@ public class AddressBookParser {
             return new DeleteCommandParser().parse(arguments);
 
         case ClearCommand.COMMAND_WORD:
-            hasConfirmedClearCommand = true;
             return new ClearCommand();
 
         case ConfirmClearCommand.COMMAND_WORD:
-            if (isClearCommand) {
+            if (previousCommand instanceof ClearCommand) {
                 return new ConfirmClearCommand();
             } else {
                 logger.finer("This user input caused a ParseException: " + userInput);

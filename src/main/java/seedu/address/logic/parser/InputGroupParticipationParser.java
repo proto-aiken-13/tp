@@ -5,11 +5,12 @@ import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PARTICIPATION_POINTS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 
+import java.util.stream.Stream;
+
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.logic.commands.InputGroupParticipationCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Group;
 
 /**
@@ -26,8 +27,11 @@ public class InputGroupParticipationParser implements Parser<InputGroupParticipa
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_TUTORIAL,
                 PREFIX_PARTICIPATION_POINTS);
         Group group;
-        int tut = -1;
-        int points = -1;
+
+        if (!arePrefixesPresent(argMultimap, PREFIX_TUTORIAL, PREFIX_PARTICIPATION_POINTS)) {
+            throw new ParseException(
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, InputGroupParticipationCommand.MESSAGE_USAGE));
+        }
 
         try {
             group = ParserUtil.parseGroup(argMultimap.getPreamble());
@@ -36,22 +40,17 @@ public class InputGroupParticipationParser implements Parser<InputGroupParticipa
                     InputGroupParticipationCommand.MESSAGE_USAGE), ive);
         }
 
-        if (argMultimap.getValue(PREFIX_TUTORIAL).isPresent()) {
-            tut = ParserUtil.parseTutorial(argMultimap.getValue(PREFIX_TUTORIAL).get());
-        }
-
-        if (argMultimap.getValue(PREFIX_PARTICIPATION_POINTS).isPresent()) {
-            points = ParserUtil.parseParticipationPoints(argMultimap.getValue(PREFIX_PARTICIPATION_POINTS).get());
-        }
-
-        if (tut == -1) {
-            throw new ParseException(Attendance.TUTORIAL_ERROR_MSG);
-        }
-
-        if (points == -1) {
-            throw new ParseException(Attendance.PARTICIPATION_ERROR_MSG);
-        }
+        int tut = ParserUtil.parseTutorial(argMultimap.getValue(PREFIX_TUTORIAL).get());
+        int points = ParserUtil.parseParticipationPoints(argMultimap.getValue(PREFIX_PARTICIPATION_POINTS).get());
 
         return new InputGroupParticipationCommand(group, Index.fromOneBased(tut), points);
+    }
+
+    /**
+     * Returns true if none of the prefixes contains empty {@code Optional} values in the given
+     * {@code ArgumentMultimap}.
+     */
+    private static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap, Prefix... prefixes) {
+        return Stream.of(prefixes).allMatch(prefix -> argumentMultimap.getValue(prefix).isPresent());
     }
 }

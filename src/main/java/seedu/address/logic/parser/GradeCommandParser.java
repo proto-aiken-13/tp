@@ -51,7 +51,6 @@ public class GradeCommandParser implements Parser<GradeCommand> {
             } catch (ParseException e) {
                 throw new ParseException(MESSAGE_INVALID_ASSIGNMENT_NAME);
             }
-
         }
 
         if (argMultimap.getValue(PREFIX_GRADE).isPresent()) {
@@ -60,7 +59,6 @@ public class GradeCommandParser implements Parser<GradeCommand> {
             } catch (ParseException e) {
                 throw new ParseException(MESSAGE_INVALID_ASSIGNMENT_SCORE);
             }
-
         }
 
         if (score < 0) {

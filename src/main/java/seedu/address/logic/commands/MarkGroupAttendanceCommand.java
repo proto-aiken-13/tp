@@ -61,10 +61,11 @@ public class MarkGroupAttendanceCommand extends Command {
             throw new CommandException(Messages.INVALID_GROUP);
         }
 
-        for (Person student : lastShownList) {
-            if (student.getAttendance().isMarkedWeek(this.tut.getZeroBased())) {
-                return new CommandResult(Messages.MESSAGE_DUPLICATE_MARKINGS);
-            }
+        boolean allStudentsHaveDuplicateMarkings = lastShownList.stream()
+            .allMatch(student -> student.getAttendance().isMarkedWeek(this.tut.getZeroBased()));
+
+        if (allStudentsHaveDuplicateMarkings) {
+            return new CommandResult(Messages.MESSAGE_DUPLICATE_MARKINGS);
         }
 
         for (Person student : lastShownList) {

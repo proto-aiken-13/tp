@@ -13,7 +13,10 @@ public class Assignment {
         "Assignments should only contain alphanumeric characters "
         + "and spaces, and it should not be blank";
 
-    public static final String MESSAGE_INVALID_SCORE = "Assignment score should be between 0 and the maximum score";
+    public static final int MAXIMUM_ALLOWED_MAX_SCORE = 1000;
+    public static final String MESSAGE_INVALID_SCORE = "Assignment score should be between 0 and the maximum score.";
+    public static final String MESSAGE_INVALID_MAX_SCORE =
+        "Assignment score should be between 1 and " + MAXIMUM_ALLOWED_MAX_SCORE + ".";
 
     /*
      * The first character of the address must not be a whitespace,

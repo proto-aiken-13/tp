@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.InputParticipationCommand.ATTENDANCE_NOT_MARKED;
+import static seedu.address.logic.commands.InputParticipationCommand.MAXIMUM_PARTICIPATION_POINTS;
+import static seedu.address.logic.commands.InputParticipationCommand.PARTICIPATION_POINTS_OUT_OF_RANGE;
 import static seedu.address.testutil.Assert.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -55,7 +57,73 @@ public class InputParticipationCommandTest {
         }
 
         // Check if the person's participation points have been updated for week 1
-        assertEquals(50, person.getAttendance().getParticipationPoints(0));
+        assertEquals(points, person.getAttendance().getParticipationPoints(0));
+    }
+
+    @Test
+    public void execute_validZeroPoints_inputParticipationSuccessful() {
+        // Create a sample person with attendance
+        Person person = new PersonBuilder().withAttendance("1,0,0,0,0,0,0,0,0,0,0,0",
+                "0,0,0,0,0,0,0,0,0,0,0,0").build();
+
+        // Add the sample person to the model
+        model.addPerson(person);
+
+        // Index 1 corresponds to the sample person
+        int index = 1;
+
+        // Index 1 corresponds to tut 1
+        int tut = 1;
+
+        // Points to add
+        int points = 0;
+
+        // Create a new InputParticipationCommand
+        inputParticipationCommand = new InputParticipationCommand(Index.fromOneBased(index),
+                Index.fromOneBased(tut), points);
+
+        // Execute the command
+        try {
+            inputParticipationCommand.execute(model);
+        } catch (CommandException e) {
+            e.printStackTrace();
+        }
+
+        // Check if the person's participation points have been updated for week 1
+        assertEquals(points, person.getAttendance().getParticipationPoints(0));
+    }
+
+    @Test
+    public void execute_validMaxPoints_inputParticipationSuccessful() {
+        // Create a sample person with attendance
+        Person person = new PersonBuilder().withAttendance("1,0,0,0,0,0,0,0,0,0,0,0",
+                "0,0,0,0,0,0,0,0,0,0,0,0").build();
+
+        // Add the sample person to the model
+        model.addPerson(person);
+
+        // Index 1 corresponds to the sample person
+        int index = 1;
+
+        // Index 1 corresponds to tut 1
+        int tut = 1;
+
+        // Points to add
+        int points = MAXIMUM_PARTICIPATION_POINTS;
+
+        // Create a new InputParticipationCommand
+        inputParticipationCommand = new InputParticipationCommand(Index.fromOneBased(index),
+                Index.fromOneBased(tut), points);
+
+        // Execute the command
+        try {
+            inputParticipationCommand.execute(model);
+        } catch (CommandException e) {
+            e.printStackTrace();
+        }
+
+        // Check if the person's participation points have been updated for week 1
+        assertEquals(points, person.getAttendance().getParticipationPoints(0));
     }
 
     @Test
@@ -103,6 +171,58 @@ public class InputParticipationCommandTest {
 
         // Execute the command and expect a CommandException
         assertThrows(CommandException.class, () -> inputParticipationCommand.execute(model));
+    }
+
+    @Test
+    public void execute_negativePoints_throwsCommandException() {
+        // Create a sample person with attendance
+        Person person = new PersonBuilder().withAttendance("1,0,0,0,0,0,0,0,0,0,0,0",
+                "0,0,0,0,0,0,0,0,0,0,0,0").build();
+
+        // Add the sample person to the model
+        model.addPerson(person);
+
+        int personIndex = 1;
+        int tutIndex = 1;
+        int points = -1;
+
+        // Create a new InputParticipationCommand
+        inputParticipationCommand = new InputParticipationCommand(Index.fromOneBased(personIndex),
+                Index.fromOneBased(tutIndex), points);
+
+        // Execute the command and expect a error message
+        try {
+            String result = inputParticipationCommand.execute(model).getFeedbackToUser();
+            assertEquals(result, PARTICIPATION_POINTS_OUT_OF_RANGE);
+        } catch (CommandException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void execute_largePoints_throwsCommandException() {
+        // Create a sample person with attendance
+        Person person = new PersonBuilder().withAttendance("1,0,0,0,0,0,0,0,0,0,0,0",
+                "0,0,0,0,0,0,0,0,0,0,0,0").build();
+
+        // Add the sample person to the model
+        model.addPerson(person);
+
+        int personIndex = 1;
+        int tutIndex = 1;
+        int points = MAXIMUM_PARTICIPATION_POINTS + 1;
+
+        // Create a new InputParticipationCommand
+        inputParticipationCommand = new InputParticipationCommand(Index.fromOneBased(personIndex),
+                Index.fromOneBased(tutIndex), points);
+
+        // Execute the command and expect a error message
+        try {
+            String result = inputParticipationCommand.execute(model).getFeedbackToUser();
+            assertEquals(result, PARTICIPATION_POINTS_OUT_OF_RANGE);
+        } catch (CommandException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
