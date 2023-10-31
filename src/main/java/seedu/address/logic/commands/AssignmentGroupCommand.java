@@ -41,13 +41,9 @@ public class AssignmentGroupCommand extends Command {
      * @param name The name of the assignment. Must not be null.
      * @param maxScore The maximum possible score for the assignment. Must be greater than 0.
      * @throws NullPointerException If the provided name is null.
-     * @throws IllegalArgumentException If the provided maxScore is not greater than 0.
      */
     public AssignmentGroupCommand(Group group, Name name, int maxScore) {
         requireNonNull(name);
-        if (maxScore <= 0) {
-            throw new IllegalArgumentException("maxScore must be greater than 0");
-        }
 
         this.name = name;
         this.maxScore = maxScore;
@@ -67,6 +63,11 @@ public class AssignmentGroupCommand extends Command {
         if (lastShownList.isEmpty()) {
             throw new CommandException(Messages.INVALID_GROUP);
         }
+
+        if (maxScore <= 0 || maxScore > Assignment.MAXIMUM_ALLOWED_MAX_SCORE) {
+            throw new CommandException(Assignment.MESSAGE_INVALID_MAX_SCORE);
+        }
+
         // Loop through the list and update each person's assignments
         for (Person studentToEdit : lastShownList) {
             Set<Assignment> updatedAssignments = new HashSet<>();

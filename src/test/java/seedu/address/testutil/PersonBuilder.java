@@ -159,7 +159,7 @@ public class PersonBuilder {
     public Person build() {
         return new Person(name, Optional.ofNullable(phone), Optional.ofNullable(email),
                 Optional.ofNullable(telegramHandle),
-                Optional.of(attendance), tags, comments, assignments, Optional.of(group));
+                Optional.ofNullable(attendance), tags, comments, assignments, Optional.ofNullable(group));
     }
 
 }

@@ -30,7 +30,11 @@ Given below are my contributions to the project.
   * `assignIndiv`
 - Removed the intrusive help window and made the website open immediately.
 - Removed useless top bar, as it takes up precious vertical space. The app is optimised for CLI users, so it makes no sense for a clickable bar.
+- Fix Optionals to accept nulls using `.ofNullable()` instead of `.of()` to ensure code robustness.
+- Fix assignment error throwing, wrongly placed in the constructor.
+- Fix integer parsing issue, when a failed parse is detected, we should throw the specific error.
 - Added test cases and sanity check of participation points, making sure overflow errors do not occur.
+
 
 ### Contributions to the User Guide (UG)
 
