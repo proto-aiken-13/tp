@@ -6,7 +6,7 @@ package seedu.address.model.person;
  */
 public class Attendance {
     public static final String TUTORIAL_ERROR_MSG = "Tutorial number is out of range, should be integer between 1-12";
-    public static final String PARTICIPATION_ERROR_MSG = "PP number is out of range, should be >= 0";
+    public static final String PARTICIPATION_ERROR_MSG = "Please input a small non-negative number.";
     public static final String ORIGINAL_ATD = "0,0,0,0,0,0,0,0,0,0,0,0";
     public static final String ORIGINAL_PART = "0,0,0,0,0,0,0,0,0,0,0,0";
     private int totalTut;

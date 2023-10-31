@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.InputGroupParticipationCommand.ATTENDANCE_NOT_MARKED;
+import static seedu.address.logic.commands.InputGroupParticipationCommand.MAXIMUM_PARTICIPATION_POINTS;
+import static seedu.address.logic.commands.InputGroupParticipationCommand.PARTICIPATION_POINTS_OUT_OF_RANGE;
 import static seedu.address.testutil.Assert.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -55,7 +57,131 @@ public class InputGroupParticipationCommandTest {
         }
 
         // Check if the person's participation points have been updated for week 1
-        assertEquals(50, person.getAttendance().getParticipationPoints(0));
+        assertEquals(points, person.getAttendance().getParticipationPoints(0));
+    }
+
+    @Test
+    public void execute_validZeroPoints_inputParticipationSuccessful() {
+        // Create a sample person with attendance
+        // Group 1 corresponds to the group name
+        Group group = new Group("Group 1");
+        // create a sample person with group
+        Person person = new PersonBuilder().withGroup("Group 1")
+                .withAttendance("1,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0").build();
+        // Add the sample person to the model
+        model.addPerson(person);
+
+        // Index 1 corresponds to tut 1
+        int tut = 1;
+
+        // Points to add
+        int points = 0;
+
+        // Create a new InputParticipationCommand
+        inputGroupParticipationCommand = new InputGroupParticipationCommand(group,
+                Index.fromOneBased(tut), points);
+
+        // Execute the command
+        try {
+            inputGroupParticipationCommand.execute(model);
+        } catch (CommandException e) {
+            e.printStackTrace();
+        }
+
+        // Check if the person's participation points have been updated for week 1
+        assertEquals(points, person.getAttendance().getParticipationPoints(0));
+    }
+
+    @Test
+    public void execute_validMaximumPoints_inputParticipationSuccessful() {
+        // Create a sample person with attendance
+        // Group 1 corresponds to the group name
+        Group group = new Group("Group 1");
+        // create a sample person with group
+        Person person = new PersonBuilder().withGroup("Group 1")
+                .withAttendance("1,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0").build();
+        // Add the sample person to the model
+        model.addPerson(person);
+
+        // Index 1 corresponds to tut 1
+        int tut = 1;
+
+        // Points to add
+        int points = MAXIMUM_PARTICIPATION_POINTS;
+
+        // Create a new InputParticipationCommand
+        inputGroupParticipationCommand = new InputGroupParticipationCommand(group,
+                Index.fromOneBased(tut), points);
+
+        // Execute the command
+        try {
+            inputGroupParticipationCommand.execute(model);
+        } catch (CommandException e) {
+            e.printStackTrace();
+        }
+
+        // Check if the person's participation points have been updated for week 1
+        assertEquals(points, person.getAttendance().getParticipationPoints(0));
+    }
+
+    @Test
+    public void execute_invalidNegativePoints_inputParticipationSuccessful() {
+        // Create a sample person with attendance
+        // Group 1 corresponds to the group name
+        Group group = new Group("Group 1");
+        // create a sample person with group
+        Person person = new PersonBuilder().withGroup("Group 1")
+                .withAttendance("1,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0").build();
+        // Add the sample person to the model
+        model.addPerson(person);
+
+        // Index 1 corresponds to tut 1
+        int tut = 1;
+
+        // Points to add
+        int points = -1;
+
+        // Create a new InputParticipationCommand
+        inputGroupParticipationCommand = new InputGroupParticipationCommand(group,
+                Index.fromOneBased(tut), points);
+
+        // Execute the command and expect a error message
+        try {
+            String result = inputGroupParticipationCommand.execute(model).getFeedbackToUser();
+            assertEquals(result, PARTICIPATION_POINTS_OUT_OF_RANGE);
+        } catch (CommandException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void execute_invalidLargePoints_inputParticipationSuccessful() {
+        // Create a sample person with attendance
+        // Group 1 corresponds to the group name
+        Group group = new Group("Group 1");
+        // create a sample person with group
+        Person person = new PersonBuilder().withGroup("Group 1")
+                .withAttendance("1,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0").build();
+        // Add the sample person to the model
+        model.addPerson(person);
+
+        // Index 1 corresponds to tut 1
+        int tut = 1;
+
+        // Points to add
+        int points = MAXIMUM_PARTICIPATION_POINTS + 1;
+
+        // Create a new InputParticipationCommand
+        inputGroupParticipationCommand = new InputGroupParticipationCommand(group,
+                Index.fromOneBased(tut), points);
+
+        // Execute the command and expect a error message
+        try {
+            String result = inputGroupParticipationCommand.execute(model).getFeedbackToUser();
+            assertEquals(result, PARTICIPATION_POINTS_OUT_OF_RANGE);
+        } catch (CommandException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
@@ -90,9 +216,6 @@ public class InputGroupParticipationCommandTest {
 
     @Test
     public void execute_invalidGroup_throwsCommandException() {
-        // Index 1 is invalid in an empty model
-        int index = 1;
-
         // Index 1 corresponds to tut 1
         int tut = 1;
 
