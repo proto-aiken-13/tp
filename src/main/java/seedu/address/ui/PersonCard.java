@@ -12,7 +12,7 @@ import javafx.scene.layout.Region;
 import seedu.address.model.person.Person;
 
 /**
- * An UI component that displays information of a {@code Person}.
+ * A UI component that displays information of a {@code Person}.
  */
 public class PersonCard extends UiPart<Region> {
 
@@ -52,6 +52,10 @@ public class PersonCard extends UiPart<Region> {
     private FlowPane assignments;
     @FXML
     private Label group;
+    private final String absentEmoji = "X";
+    private final String presentEmoji = ":)";
+    private final String vrEmoji = ":/";
+    private final String unknownEmoji = "?";
 
     /**
      * Creates a {@code PersonCode} with the given {@code Person} and index to display.
@@ -63,10 +67,10 @@ public class PersonCard extends UiPart<Region> {
         String telegramAddress = person.getTelegramHandle() != null ? " (@" + person.getTelegramHandle().value + ")"
                 : " -";
         name.setText(person.getName().fullName + telegramAddress);
-        attendance.setText(String.format("Attendance: %d/%d  Attendance summary: %s",
+        attendance.setText(String.format("Attendance: %d/%d  %s",
                 this.person.getAttendance().getWeeksPresent(), this.person.getAttendance().getTotalMarkedTut(),
-                this.person.getAttendance().getStyledStatusList("❌", "\uD83D\uDE4B\u200D♂\uFE0F",
-                        "\uD83D\uDE47\u200D♂\uFE0F", "?")));
+                this.person.getAttendance().getStyledStatusList(absentEmoji, presentEmoji,
+                        vrEmoji, unknownEmoji)));
         participation.setText(String.format("Participation Points: %d",
                     this.person.getTotalPart()));
         String phoneString = person.getPhone() != null ? person.getPhone().value : " -";

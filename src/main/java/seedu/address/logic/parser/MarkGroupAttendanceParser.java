@@ -38,7 +38,7 @@ public class MarkGroupAttendanceParser implements Parser<MarkGroupAttendanceComm
             tutorial = ParserUtil.parseTutorial(argMultimap.getValue(PREFIX_TUTORIAL).get());
         }
 
-        //parse status
+        // parse status
         String status = null;
         if (argMultimap.getValue(PREFIX_PARTICIPATION_STATUS).isPresent()) {
             status = ParserUtil.parseParticipationStatus(argMultimap.getValue(PREFIX_PARTICIPATION_STATUS).get());

@@ -37,6 +37,7 @@ public class MarkGroupAttendanceCommand extends Command {
      *
      * @param group The group to mark group attendance for.
      * @param tut The index of the week to mark group attendance on.
+     * @param status The status of attendance to mark the entire group with.
      */
     public MarkGroupAttendanceCommand(Group group, Index tut, String status) {
         requireNonNull(group);

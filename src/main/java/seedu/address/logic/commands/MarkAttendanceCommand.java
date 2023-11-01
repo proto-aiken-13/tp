@@ -35,6 +35,7 @@ public class MarkAttendanceCommand extends Command {
      *
      * @param index The index of the student to mark attendance for.
      * @param tut The index of the week to mark attendance on.
+     * @param status The status to mark the week's attendance with.
      */
     public MarkAttendanceCommand(Index index, Index tut, String status) {
         requireNonNull(index);

@@ -23,7 +23,24 @@ public class Attendance {
 
         @Override
         public String toString() {
-            return this == PRESENT ? "P" : this == ABSENT ? "A" : this == VR ? "VR" : "U";
+            String statusString = "";
+
+            switch (this) {
+            case PRESENT:
+                statusString = "P";
+                break;
+            case ABSENT:
+                statusString = "A";
+                break;
+            case VR:
+                statusString = "VR";
+                break;
+            default:
+                statusString = "U";
+                break;
+            }
+
+            return statusString;
         }
     };
 
@@ -91,7 +108,7 @@ public class Attendance {
     /**
      * Checks if the status string is a valid status.
      * @param status The status string.
-     * @return 'true' if the status is valid, else 'false'.
+     * @return `true` if the status is valid, else `false`.
      */
     public static boolean isValidStatus(String status) {
         return status.equals("P") || status.equals("A") || status.equals("VR");
@@ -168,7 +185,7 @@ public class Attendance {
      * @return `true` if the week is marked as attended; otherwise, `false`.
      */
     public boolean isMarkedWeek(int tutorial) {
-        return !(this.attendanceList[tutorial] == AttendanceStatus.UNMARKED);
+        return this.attendanceList[tutorial] != AttendanceStatus.UNMARKED;
     }
 
     /**

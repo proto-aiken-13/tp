@@ -1,9 +1,13 @@
 package seedu.address.testutil;
 
+import static seedu.address.logic.commands.CommandTestUtil.VALID_ATTENDANCE_AMY;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_ATTENDANCE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_PART_AMY;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_PART_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_FRIEND;
@@ -57,26 +61,27 @@ public class TypicalPersons {
             .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART).build();
 
     // Manually added
-    public static final Person HOON = new PersonBuilder().withName("Hoon Meier").withPhone("8482424")
-            .withEmail("stefan@example.com").withTelegram("littleindia")
+    public static final Person HOON = new PersonBuilder().withName("Hoon Meier").withPhone("84824249")
+            .withEmail("hoon@example.com").withTelegram("hoonTelegram")
             .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART).build();
-    public static final Person IDA = new PersonBuilder().withName("Ida Mueller").withPhone("8482131")
-            .withEmail("hans@example.com").withTelegram("chicagoave")
+    public static final Person IDA = new PersonBuilder().withName("Ida Mueller").withPhone("84821318")
+            .withEmail("ida@example.com").withTelegram("idaTelegram")
             .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART).build();
 
     // Manually added - Person's details found in {@code CommandTestUtil}
     public static final Person AMY = new PersonBuilder().withName(VALID_NAME_AMY).withPhone(VALID_PHONE_AMY)
             .withEmail(VALID_EMAIL_AMY).withTelegram(VALID_TELEGRAM_AMY).withTags(VALID_TAG_FRIEND)
-            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART).build();
+            .withAttendance(VALID_ATTENDANCE_AMY, VALID_PART_AMY).build();
     public static final Person BOB = new PersonBuilder().withName(VALID_NAME_BOB).withPhone(VALID_PHONE_BOB)
             .withEmail(VALID_EMAIL_BOB).withTelegram(VALID_TELEGRAM_BOB).withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND)
-            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART).build();
+            .withAttendance(VALID_ATTENDANCE_BOB, VALID_PART_BOB).build();
 
 
-    public static final String KEYWORD_MATCHING_MEIER = "Meier"; // A keyword that matches MEIER
+    public static final String KEYWORD_MATCHING_MEIER = "Meier";
 
     private TypicalPersons() {
-    } // prevents instantiation
+        // prevents instantiation
+    }
 
     /**
      * Returns an {@code NpcTrack} with all the typical persons.

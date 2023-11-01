@@ -27,10 +27,10 @@ We help teaching assistants to be able to bring together their teaching needs in
 adding extra information for a student named Ted can easily be done using the various keyword features as listed in 
 our [Features Section](#features)
 
-`npc_track` saves teaching assistant from having to spend so much precious time by reducing the complexity by doing it in a one-stop manner using `npc_track`.
+`npc_track` saves teaching assistants from having to spend so much precious time by reducing the complexity by doing it in a one-stop manner using `npc_track`.
 
 Not ready to use `npc_track`? Fret Not, you can jump to the [Quick Start](#quick-start) section to begin your 
-`npc-track` 
+`npc_track` 
 journey
 
 If you have used `npc_track` before, you can proceed to the relevant sections via our [Table of Contents](#toc) on 
@@ -157,7 +157,7 @@ Step 5 : Start using the app
 <a name="help"></a>
 ### Viewing help : `help`
 
-If you have trouble using `npc_track`, simply type the `help` command. A link to this very user guide will be shown.
+If you have trouble using `npc_track`, simply type the `help` command. The user guide opens in the browser.
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
@@ -355,7 +355,13 @@ Format: `markGroupAtd GROUP t/TUTORIAL`
 
 `TUTORIAL`: An integer between 1 and 12 (inclusive)
 
-`STATUS`: The student's attendance status.
+`STATUS`: The student's attendance status. Valid attendance statuses are as follows:
+
+| Status        | Meaning                                                               
+|---------------|----------------------------------------------------------------
+|     **P**     | Present - If the student shows up for the tutorial.            
+|     **A**     | Absent - If the student is absent with no valid reason given.  
+|     **VR**    | VR - If the student is absent with a valid reason (e.g. MC).   
 
 Marking the attendance for a week that is already marked will result in the message
 `This week's attendance has already been marked!`
@@ -659,12 +665,11 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 <a name="glossary"></a>
 ## Glossary
 
-| Keyword       | Definition                                                     |
-|---------------|----------------------------------------------------------------|
-| **Parameter** | Details about the student that will be included in the command |
-| **Command**   | Instructions that `npc_track` will execute                     |
-| **Attendance  | The student's attendance status. Attendance statuses can either|
-|   status**    | be "present", "absent", or "valid reason".                     |                                                               
+| Keyword                  | Definition                                                     |
+|--------------------------|----------------------------------------------------------------|
+| **Parameter**            | Details about the student that will be included in the command |
+| **Command**              | Instructions that `npc_track` will execute                     |
+| **Attendance status**    | Status of attendance (Present/Absent/VR)                       |                                         
 
 --------------------------------------------------------------------------------------------------------------------
 
