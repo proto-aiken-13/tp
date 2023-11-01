@@ -55,8 +55,8 @@ public class ParserUtil {
 
     /**
      * Parses a {@code pp} into an {@code String} and returns it. Leading and trailing whitespaces will be trimmed.
-     * @param status String value of  status
-     * @return int value of status if valid
+     * @param status String value of status
+     * @return String value of status if valid
      * @throws ParseException if the given {@code status} is invalid
      */
     public static String parseParticipationStatus(String status) throws ParseException {

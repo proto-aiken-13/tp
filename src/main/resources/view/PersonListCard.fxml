@@ -38,11 +38,11 @@
           <FlowPane fx:id="tags" />
         </FlowPane>
         <FlowPane hgap="5" alignment="CENTER_LEFT">
-          <Label styleClass="cell_small_label_tags" text="🗒️ Comments:" prefWidth="200" />
+          <Label styleClass="cell_small_label_tags" text="🗒 Comments:" prefWidth="175" />
           <FlowPane fx:id="comments" />
         </FlowPane>
         <FlowPane hgap="5" alignment="CENTER_LEFT">
-          <Label styleClass="cell_small_label_tags" text="📝 Assignments:" prefWidth="200" />
+          <Label styleClass="cell_small_label_tags" text="📝 Assignments:" prefWidth="175" />
           <FlowPane fx:id="assignments" />
         </FlowPane>
         <FlowPane  alignment="BOTTOM_LEFT" hgap="10" vgap="5">

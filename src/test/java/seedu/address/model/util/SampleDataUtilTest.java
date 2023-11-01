@@ -23,7 +23,7 @@ public class SampleDataUtilTest {
         for (Person p : testerSample) {
             addr.addPerson(p);
         }
-        assertEquals(SampleDataUtil.getSampleAddressBook(), addr);
+        assertEquals(SampleDataUtil.getSampleNpcTrack(), addr);
     }
 
     @Test

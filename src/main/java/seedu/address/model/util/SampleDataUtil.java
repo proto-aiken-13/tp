@@ -26,52 +26,50 @@ public class SampleDataUtil {
         return new Person[] {
             new Person(new Name("Alex Yeoh"), Optional.of(new Phone("87438807")),
                     Optional.of(new Email("alexyeoh@example.com")),
-                Optional.of(new TelegramHandle("alexTelegram")),
-                Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
-                getTagSet("friends"),
-                getCommentSet("Is always cheerful"),
-                getAssignmentSet("lab1"), Optional.of(new Group("tut33"))),
-
+                    Optional.of(new TelegramHandle("alexTelegram")),
+                    Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
+                    getTagSet("CS2103T"),
+                    getCommentSet("Is always cheerful"),
+                    getAssignmentSet("lab1"), Optional.of(new Group("tut33"))),
             new Person(new Name("Bernice Yu"), Optional.of(new Phone("99272758")),
                     Optional.of(new Email("berniceyu@example.com")),
                     Optional.of(new TelegramHandle("berniceTelegram")),
                     Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
-                getTagSet("colleagues", "friends"),
-                    getCommentSet("Loves candy"),
-                    getAssignmentSet("lab1"), Optional.of(new Group("tut33"))),
-
+                    getTagSet("CS2103T"),
+                        getCommentSet("Loves candy"),
+                        getAssignmentSet("lab1"), Optional.of(new Group("tut33"))),
             new Person(new Name("Charlotte Oliveiro"), Optional.of(new Phone("93210283")),
                     Optional.of(new Email("charlotte@example.com")),
                     Optional.of(new TelegramHandle("charlotteTelegram")),
                     Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
-                getTagSet("neighbours"),
-                getCommentSet("Never comes on time"),
-                    getAssignmentSet("lab1"), Optional.of(new Group("tut33"))),
+                    getTagSet("CS2103T"),
+                    getCommentSet("Never comes on time"),
+                        getAssignmentSet("lab1"), Optional.of(new Group("tut33"))),
             new Person(new Name("David Li"), Optional.of(new Phone("91031282")),
-                    Optional.of(new Email("lidavid@example.com")),
+                    Optional.of(new Email("davidli@example.com")),
                     Optional.of(new TelegramHandle("davidTelegram")),
                     Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
-                getTagSet("family"),
-                getCommentSet("Needs constant attention"),
+                    getTagSet("CS2103T"),
+                    getCommentSet("Needs constant attention"),
                     getAssignmentSet("lab1"), Optional.of(new Group("tut33"))),
-            new Person(new Name("Irfan Ibrahim"), Optional.of(new Phone("92492021")),
-                    Optional.of(new Email("irfan@example.com")),
-                    Optional.of(new TelegramHandle("irfanTelegram")),
+            new Person(new Name("Evan Low"), Optional.of(new Phone("92492021")),
+                    Optional.of(new Email("evan@example.com")),
+                    Optional.of(new TelegramHandle("evanTelegram")),
                     Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
-                getTagSet("classmates"),
-                getCommentSet("Pretty average"),
-                    getAssignmentSet("lab1"), Optional.of(new Group("tut33"))),
-            new Person(new Name("Roy Balakrishnan"), Optional.of(new Phone("92624417")),
-                    Optional.of(new Email("royb@example.com")),
-                    Optional.of(new TelegramHandle("royTelegram")),
+                    getTagSet("CS2103T"),
+                    getCommentSet("Pretty average"),
+                        getAssignmentSet("lab1"), Optional.of(new Group("tut33"))),
+            new Person(new Name("Fiora Laurent"), Optional.of(new Phone("92624417")),
+                    Optional.of(new Email("fiora@example.com")),
+                    Optional.of(new TelegramHandle("fioraTelegram")),
                     Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
-                getTagSet("colleagues"),
-                getCommentSet("Happy-go-lucky attitude"),
-                getAssignmentSet("lab1"), Optional.of(new Group("tut33")))
+                    getTagSet("CS2103T"),
+                    getCommentSet("Happy-go-lucky attitude"),
+                    getAssignmentSet("lab1"), Optional.of(new Group("tut33")))
         };
     }
 
-    public static ReadOnlyAddressBook getSampleAddressBook() {
+    public static ReadOnlyAddressBook getSampleNpcTrack() {
         NpcTrack sampleAb = new NpcTrack();
         for (Person samplePerson : getSamplePersons()) {
             sampleAb.addPerson(samplePerson);
@@ -107,3 +105,4 @@ public class SampleDataUtil {
                 .collect(Collectors.toSet());
     }
 }
+

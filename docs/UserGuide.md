@@ -27,10 +27,10 @@ We help teaching assistants to be able to bring together their teaching needs in
 adding extra information for a student named Ted can easily be done using the various keyword features as listed in 
 our [Features Section](#features)
 
-`npc_track` saves teaching assistant from having to spend so much precious time by reducing the complexity by doing it in a one-stop manner using `npc_track`.
+`npc_track` saves teaching assistants from having to spend so much precious time by reducing the complexity by doing it in a one-stop manner using `npc_track`.
 
 Not ready to use `npc_track`? Fret Not, you can jump to the [Quick Start](#quick-start) section to begin your 
-`npc-track` 
+`npc_track` 
 journey
 
 If you have used `npc_track` before, you can proceed to the relevant sections via our [Table of Contents](#toc) on 
@@ -157,7 +157,7 @@ Step 5 : Start using the app
 <a name="help"></a>
 ### Viewing help : `help`
 
-If you have trouble using `npc_track`, simply type the `help` command. A link to this very user guide will be shown.
+If you have trouble using `npc_track`, simply type the `help` command. The user guide opens in the browser.
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
@@ -662,9 +662,7 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 | Keyword       | Definition                                                     |
 |---------------|----------------------------------------------------------------|
 | **Parameter** | Details about the student that will be included in the command |
-| **Command**   | Instructions that `npc_track` will execute                     |
-| **Attendance  | The student's attendance status. Attendance statuses can either|
-|   status**    | be "present", "absent", or "valid reason".                     |                                                               
+| **Command**   | Instructions that `npc_track` will execute                     |                                                               
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -680,6 +678,6 @@ has 12 weeks' worth of tutorials to grade.
 **Q**: I have two students that share the exact same name. How can npc_track support this?
 **A**: npc_track cannot handle students with the exact same name. However, you can consider adding something else to their names to distinguish between them.
 
-So for example, if you have 2 students called "Arnab Goav", you can name one student "Arnab Goav 1" and the other "Arnab Goav 2".
+So for example, if you have 2 students called "Arnab Goav", you can name one student "Arnab Goav 1" and the other "Arnab Goav 2
 
 
