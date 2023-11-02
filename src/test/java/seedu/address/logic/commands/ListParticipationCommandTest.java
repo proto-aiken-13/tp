@@ -27,7 +27,7 @@ public class ListParticipationCommandTest {
     public void execute_validIndex_listParticipationSuccessful() throws CommandException {
         // Create a sample person with attendance and participation points
         Person person = new PersonBuilder()
-                .withAttendance("1,0,1,0,1,0,1,0,1,0,1,0", "100,0,150,0,300,0,50,0,70,0,90,0")
+                .withAttendance("P,A,P,A,P,A,P,A,P,A,P,A", "100,0,150,0,300,0,50,0,70,0,90,0")
                 .build();
 
         // Add the sample person to the model
@@ -43,18 +43,18 @@ public class ListParticipationCommandTest {
         String result = listParticipationCommand.execute(model).getFeedbackToUser();
 
         // Check if the result contains the person's name, attendance, and participation points
-        assertTrue(result.contains("Tutorial 1: [X], Participation Points: [100]"));
-        assertTrue(result.contains("Tutorial 2: [ ], Participation Points: [0]"));
-        assertTrue(result.contains("Tutorial 3: [X], Participation Points: [150]"));
-        assertTrue(result.contains("Tutorial 4: [ ], Participation Points: [0]"));
-        assertTrue(result.contains("Tutorial 5: [X], Participation Points: [300]"));
-        assertTrue(result.contains("Tutorial 6: [ ], Participation Points: [0]"));
-        assertTrue(result.contains("Tutorial 7: [X], Participation Points: [50]"));
-        assertTrue(result.contains("Tutorial 8: [ ], Participation Points: [0]"));
-        assertTrue(result.contains("Tutorial 9: [X], Participation Points: [70]"));
-        assertTrue(result.contains("Tutorial 10: [ ], Participation Points: [0]"));
-        assertTrue(result.contains("Tutorial 11: [X], Participation Points: [90]"));
-        assertTrue(result.contains("Tutorial 12: [ ], Participation Points: [0]"));
+        assertTrue(result.contains("Tutorial 1: [P], Participation Points: [100]"));
+        assertTrue(result.contains("Tutorial 2: [A], Participation Points: [0]"));
+        assertTrue(result.contains("Tutorial 3: [P], Participation Points: [150]"));
+        assertTrue(result.contains("Tutorial 4: [A], Participation Points: [0]"));
+        assertTrue(result.contains("Tutorial 5: [P], Participation Points: [300]"));
+        assertTrue(result.contains("Tutorial 6: [A], Participation Points: [0]"));
+        assertTrue(result.contains("Tutorial 7: [P], Participation Points: [50]"));
+        assertTrue(result.contains("Tutorial 8: [A], Participation Points: [0]"));
+        assertTrue(result.contains("Tutorial 9: [P], Participation Points: [70]"));
+        assertTrue(result.contains("Tutorial 10: [A], Participation Points: [0]"));
+        assertTrue(result.contains("Tutorial 11: [P], Participation Points: [90]"));
+        assertTrue(result.contains("Tutorial 12: [A], Participation Points: [0]"));
     }
 
     @Test

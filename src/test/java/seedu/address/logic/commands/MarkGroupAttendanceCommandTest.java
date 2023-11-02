@@ -26,7 +26,7 @@ public class MarkGroupAttendanceCommandTest {
 
     @Test
     public void constructor_nullPerson_throwsNullPointerException() {
-        assertThrows(NullPointerException.class, () -> new MarkGroupAttendanceCommand(null, null));
+        assertThrows(NullPointerException.class, () -> new MarkGroupAttendanceCommand(null, null, null));
     }
 
     @Test
@@ -43,7 +43,7 @@ public class MarkGroupAttendanceCommandTest {
         int week = 1;
 
         // Create a new MarkAttendanceCommand
-        markGroupAttendanceCommand = new MarkGroupAttendanceCommand(group, Index.fromOneBased(week));
+        markGroupAttendanceCommand = new MarkGroupAttendanceCommand(group, Index.fromOneBased(week), "P");
 
         // Execute the command
         try {
@@ -65,7 +65,7 @@ public class MarkGroupAttendanceCommandTest {
         int week = 1;
 
         // Create a new MarkAttendanceCommand
-        markGroupAttendanceCommand = new MarkGroupAttendanceCommand(group, Index.fromOneBased(week));
+        markGroupAttendanceCommand = new MarkGroupAttendanceCommand(group, Index.fromOneBased(week), "P");
 
         // Execute the command and expect a CommandException
         assertThrows(CommandException.class, () -> markGroupAttendanceCommand.execute(model));
@@ -76,9 +76,9 @@ public class MarkGroupAttendanceCommandTest {
         // Create a MarkAttendanceCommand with the same group and tutorial
         Group group = new Group("Group 1");
         MarkGroupAttendanceCommand command1 = new MarkGroupAttendanceCommand(group,
-                Index.fromOneBased(1));
+                Index.fromOneBased(1), "P");
         MarkGroupAttendanceCommand command2 = new MarkGroupAttendanceCommand(group,
-                Index.fromOneBased(1));
+                Index.fromOneBased(1), "P");
         // They should be equal
         assertTrue(command1.equals(command2));
     }
@@ -89,9 +89,9 @@ public class MarkGroupAttendanceCommandTest {
         Group group2 = new Group("Group 2");
         // Create two different MarkAttendanceCommands
         MarkGroupAttendanceCommand command1 = new MarkGroupAttendanceCommand(group1,
-                Index.fromOneBased(1));
+                Index.fromOneBased(1), "P");
         MarkGroupAttendanceCommand command2 = new MarkGroupAttendanceCommand(group2,
-                Index.fromOneBased(2));
+                Index.fromOneBased(2), "P");
 
         // They should not be equal
         assertFalse(command1.equals(command2));

@@ -19,7 +19,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import seedu.address.model.AddressBook;
+import seedu.address.model.NpcTrack;
+import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Person;
 
 /**
@@ -31,41 +32,41 @@ public class TypicalPersons {
             .withTelegram("aliceTelegram").withEmail("alice@example.com")
             .withPhone("94351253")
             .withTags("friends")
-            .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0")
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)
             .build();
     public static final Person BENSON = new PersonBuilder().withName("Benson Meier")
             .withTelegram("bensonTelegram")
             .withEmail("benson@example.com").withPhone("98765432")
             .withTags("owesMoney", "friends")
-            .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0")
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)
             .build();
 
     public static final Person CARL = new PersonBuilder().withName("Carl Kurz").withPhone("95352563")
             .withEmail("carl@example.com").withTelegram("carlTelegram")
-            .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0").build();;
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART).build();;
     public static final Person DANIEL = new PersonBuilder().withName("Daniel Meier").withPhone("87652533")
             .withEmail("daniel@example.com").withTelegram("danielTelegram")
-            .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0")
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)
             .withTags("friends").build();
     public static final Person ELLE = new PersonBuilder().withName("Elle Meyer").withPhone("94822242")
             .withEmail("elle@example.com").withTelegram("elleTelegram")
-            .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0")
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)
             .build();
     public static final Person FIONA = new PersonBuilder().withName("Fiona Kunz").withPhone("94824271")
             .withEmail("fiona@example.com").withTelegram("fionaTelegram")
-            .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0")
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)
             .build();
     public static final Person GEORGE = new PersonBuilder().withName("George Best").withPhone("94824424")
             .withEmail("george@example.com").withTelegram("georgeTelegram")
-            .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0").build();
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART).build();
 
     // Manually added
     public static final Person HOON = new PersonBuilder().withName("Hoon Meier").withPhone("84824249")
             .withEmail("hoon@example.com").withTelegram("hoonTelegram")
-            .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0").build();
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART).build();
     public static final Person IDA = new PersonBuilder().withName("Ida Mueller").withPhone("84821318")
             .withEmail("ida@example.com").withTelegram("idaTelegram")
-            .withAttendance("0,0,0,0,0,0,0,0,0,0,0,0", "0,0,0,0,0,0,0,0,0,0,0,0").build();
+            .withAttendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART).build();
 
     // Manually added - Person's details found in {@code CommandTestUtil}
     public static final Person AMY = new PersonBuilder().withName(VALID_NAME_AMY).withPhone(VALID_PHONE_AMY)
@@ -83,10 +84,10 @@ public class TypicalPersons {
     }
 
     /**
-     * Returns an {@code AddressBook} with all the typical persons.
+     * Returns an {@code NpcTrack} with all the typical persons.
      */
-    public static AddressBook getTypicalAddressBook() {
-        AddressBook ab = new AddressBook();
+    public static NpcTrack getTypicalAddressBook() {
+        NpcTrack ab = new NpcTrack();
         for (Person person : getTypicalPersons()) {
             ab.addPerson(person);
         }

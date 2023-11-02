@@ -1,6 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PARTICIPATION_STATUS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 
 import java.util.List;
@@ -23,22 +24,27 @@ public class MarkGroupAttendanceCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Marks the attendance of all students in the same group\n"
             + "Parameters: GROUP "
-            + "[" + PREFIX_TUTORIAL + "TutorialToMark] \n"
-            + "Example: " + COMMAND_WORD + " tut1 t/1 ";
+            + "[" + PREFIX_TUTORIAL + "TutorialToMark] "
+            + "[" + PREFIX_PARTICIPATION_STATUS + "AttendanceStatus] \n"
+            + "Example: " + COMMAND_WORD + " tut1 t/1 s/P";
     private final Index tut;
     private final Group group;
+
+    private final String status;
 
     /**
      * Constructs a new MarkAttendanceCommand to mark attendance for a student on a specific week.
      *
      * @param group The group to mark group attendance for.
      * @param tut The index of the week to mark group attendance on.
+     * @param status The status of attendance to mark the entire group with.
      */
-    public MarkGroupAttendanceCommand(Group group, Index tut) {
+    public MarkGroupAttendanceCommand(Group group, Index tut, String status) {
         requireNonNull(group);
         requireNonNull(tut);
         this.group = group;
         this.tut = tut;
+        this.status = status;
     }
 
     /**
@@ -65,7 +71,7 @@ public class MarkGroupAttendanceCommand extends Command {
 
         for (Person student : lastShownList) {
             Attendance studentAtd = student.getAttendance();
-            studentAtd.markAttendance(this.tut.getZeroBased());
+            studentAtd.markAttendance(this.tut.getZeroBased(), status);
             model.updatePerson(student);
         }
 

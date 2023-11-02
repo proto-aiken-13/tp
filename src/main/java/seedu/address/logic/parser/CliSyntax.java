@@ -12,6 +12,7 @@ public class CliSyntax {
     public static final Prefix PREFIX_GROUP = new Prefix("group/");
     public static final Prefix PREFIX_MAX_SCORE = new Prefix("m/");
     public static final Prefix PREFIX_NAME = new Prefix("n/");
+    public static final Prefix PREFIX_PARTICIPATION_STATUS = new Prefix("s/");
     public static final Prefix PREFIX_PARTICIPATION_POINTS = new Prefix("pp/");
     public static final Prefix PREFIX_PHONE = new Prefix("p/");
     public static final Prefix PREFIX_TAG = new Prefix("t/");

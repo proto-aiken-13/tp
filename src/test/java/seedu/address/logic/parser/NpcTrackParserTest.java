@@ -28,7 +28,7 @@ import seedu.address.model.person.Person;
 import seedu.address.testutil.PersonBuilder;
 import seedu.address.testutil.PersonUtil;
 
-public class AddressBookParserTest {
+public class NpcTrackParserTest {
 
     private final AddressBookParser parser = new AddressBookParser();
 
@@ -56,8 +56,8 @@ public class AddressBookParserTest {
     public void parseCommand_markAttendance() throws Exception {
         MarkAttendanceCommand command = (MarkAttendanceCommand) parser
                 .parseCommand(MarkAttendanceCommand.COMMAND_WORD
-                + " " + INDEX_FIRST_PERSON.getOneBased() + " t/1");
-        assertEquals(new MarkAttendanceCommand(INDEX_FIRST_PERSON, INDEX_FIRST_PERSON), command);
+                + " " + INDEX_FIRST_PERSON.getOneBased() + " t/1" + " s/P");
+        assertEquals(new MarkAttendanceCommand(INDEX_FIRST_PERSON, INDEX_FIRST_PERSON, "P"), command);
     }
 
     @Test

@@ -47,7 +47,7 @@ public class PersonBuilder {
         phone = new Phone(DEFAULT_PHONE);
         email = new Email(DEFAULT_EMAIL);
         telegramHandle = new TelegramHandle(DEFAULT_TELEGRAM);
-        attendance = new Attendance(DEFAULT_ATTENDANCE, DEFAULT_PARTICIPATION);
+        attendance = new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART);
         tags = new HashSet<>();
         comments = new HashSet<>();
         assignments = new HashSet<>();

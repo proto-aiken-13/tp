@@ -12,9 +12,9 @@ import org.junit.jupiter.api.Test;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
-import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
+import seedu.address.model.NpcTrack;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.person.Assignment;
 import seedu.address.model.person.Name;
@@ -49,7 +49,7 @@ public class GradeCommandTest {
         gradeCommand = new GradeCommand(Index.fromOneBased(index), sampleAssignment.name, score);
 
         String expectedMessage = String.format(GradeCommand.ASSIGNMENT_GRADE_SUCCESS);
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(new NpcTrack(model.getAddressBook()), new UserPrefs());
 
         // Check if the person's assignment grade is edited
         assertCommandSuccess(gradeCommand, model, expectedMessage, expectedModel);
@@ -67,7 +67,7 @@ public class GradeCommandTest {
 
 
         String expectedMessage = String.format(GradeCommand.ASSIGNMENT_GRADE_SUCCESS);
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(new NpcTrack(model.getAddressBook()), new UserPrefs());
 
         // Check if the person's assignment grade is edited
         assertCommandSuccess(gradeCommand, model, expectedMessage, expectedModel);

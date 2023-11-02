@@ -5,7 +5,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import seedu.address.model.AddressBook;
+import seedu.address.model.NpcTrack;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.fields.Comment;
 import seedu.address.model.fields.Tag;
@@ -19,58 +19,58 @@ import seedu.address.model.person.Phone;
 import seedu.address.model.person.TelegramHandle;
 
 /**
- * Contains utility methods for populating {@code AddressBook} with sample data.
+ * Contains utility methods for populating {@code NpcTrack} with sample data.
  */
 public class SampleDataUtil {
     public static Person[] getSamplePersons() {
         return new Person[] {
             new Person(new Name("Alex Yeoh"), Optional.of(new Phone("87438807")),
                     Optional.of(new Email("alexyeoh@example.com")),
-                Optional.of(new TelegramHandle("alexTelegram")),
-                Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
-                getTagSet("CS2103T"),
-                getCommentSet("Is always cheerful"),
-                getAssignmentSet("lab1"), Optional.of(new Group("tut33"))),
+                    Optional.of(new TelegramHandle("alexTelegram")),
+                    Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
+                    getTagSet("CS2103T"),
+                    getCommentSet("Is always cheerful"),
+                    getAssignmentSet("lab1"), Optional.of(new Group("tut33"))),
             new Person(new Name("Bernice Yu"), Optional.of(new Phone("99272758")),
                     Optional.of(new Email("berniceyu@example.com")),
                     Optional.of(new TelegramHandle("berniceTelegram")),
-                Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
-                getTagSet("CS2103T"),
+                    Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
+                    getTagSet("CS2103T"),
                     getCommentSet("Loves candy"),
                     getAssignmentSet("lab1"), Optional.of(new Group("tut33"))),
             new Person(new Name("Charlotte Oliveiro"), Optional.of(new Phone("93210283")),
                     Optional.of(new Email("charlotte@example.com")),
                     Optional.of(new TelegramHandle("charlotteTelegram")),
-                Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
-                getTagSet("CS2103T"),
-                getCommentSet("Never comes on time"),
+                    Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
+                    getTagSet("CS2103T"),
+                    getCommentSet("Never comes on time"),
                     getAssignmentSet("lab1"), Optional.of(new Group("tut33"))),
             new Person(new Name("David Li"), Optional.of(new Phone("91031282")),
                     Optional.of(new Email("davidli@example.com")),
                     Optional.of(new TelegramHandle("davidTelegram")),
-                Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
-                getTagSet("CS2103T"),
-                getCommentSet("Needs constant attention"),
+                    Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
+                    getTagSet("CS2103T"),
+                    getCommentSet("Needs constant attention"),
                     getAssignmentSet("lab1"), Optional.of(new Group("tut33"))),
             new Person(new Name("Evan Low"), Optional.of(new Phone("92492021")),
                     Optional.of(new Email("evan@example.com")),
                     Optional.of(new TelegramHandle("evanTelegram")),
-                Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
-                getTagSet("CS2103T"),
-                getCommentSet("Pretty average"),
+                    Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
+                    getTagSet("CS2103T"),
+                    getCommentSet("Pretty average"),
                     getAssignmentSet("lab1"), Optional.of(new Group("tut33"))),
             new Person(new Name("Fiora Laurent"), Optional.of(new Phone("92624417")),
                     Optional.of(new Email("fiora@example.com")),
                     Optional.of(new TelegramHandle("fioraTelegram")),
-                Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
-                getTagSet("CS2103T"),
-                getCommentSet("Happy-go-lucky attitude"),
-                getAssignmentSet("lab1"), Optional.of(new Group("tut33")))
+                    Optional.of(new Attendance(Attendance.ORIGINAL_ATD, Attendance.ORIGINAL_PART)),
+                    getTagSet("CS2103T"),
+                    getCommentSet("Happy-go-lucky attitude"),
+                    getAssignmentSet("lab1"), Optional.of(new Group("tut33")))
         };
     }
 
-    public static ReadOnlyAddressBook getSampleAddressBook() {
-        AddressBook sampleAb = new AddressBook();
+    public static ReadOnlyAddressBook getSampleNpcTrack() {
+        NpcTrack sampleAb = new NpcTrack();
         for (Person samplePerson : getSamplePersons()) {
             sampleAb.addPerson(samplePerson);
         }
@@ -105,3 +105,4 @@ public class SampleDataUtil {
                 .collect(Collectors.toSet());
     }
 }
+

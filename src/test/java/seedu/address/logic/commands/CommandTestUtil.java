@@ -16,8 +16,8 @@ import java.util.List;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.exceptions.CommandException;
-import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
+import seedu.address.model.NpcTrack;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.Person;
 import seedu.address.testutil.EditPersonDescriptorBuilder;
@@ -36,8 +36,8 @@ public class CommandTestUtil {
     public static final String VALID_TELEGRAM_AMY = "AmyTelegram";
     public static final String VALID_TELEGRAM_BOB = "BobTelegram";
     public static final String VALID_TELEGRAM_ALICE = "aliceTelegram";
-    public static final String VALID_ATTENDANCE_AMY = "0,0,0,0,0,0,0,0,0,0,0,0";
-    public static final String VALID_ATTENDANCE_BOB = "0,0,0,0,0,0,0,0,0,0,0,0";
+    public static final String VALID_ATTENDANCE_AMY = "U,U,U,U,U,U,U,U,U,U,U,U";
+    public static final String VALID_ATTENDANCE_BOB = "U,U,U,U,U,U,U,U,U,U,U,U";
     public static final String VALID_PART_AMY = "0,0,0,0,0,0,0,0,0,0,0,0";
     public static final String VALID_PART_BOB = "0,0,0,0,0,0,0,0,0,0,0,0";
     public static final String VALID_GROUP_AMY = "tut33";
@@ -118,11 +118,11 @@ public class CommandTestUtil {
     public static void assertCommandFailure(Command command, Model actualModel, String expectedMessage) {
         // we are unable to defensively copy the model for comparison later, so we can
         // only do so by copying its components.
-        AddressBook expectedAddressBook = new AddressBook(actualModel.getAddressBook());
+        NpcTrack expectedNpcTrack = new NpcTrack(actualModel.getAddressBook());
         List<Person> expectedFilteredList = new ArrayList<>(actualModel.getFilteredPersonList());
 
         assertThrows(CommandException.class, expectedMessage, () -> command.execute(actualModel));
-        assertEquals(expectedAddressBook, actualModel.getAddressBook());
+        assertEquals(expectedNpcTrack, actualModel.getAddressBook());
         assertEquals(expectedFilteredList, actualModel.getFilteredPersonList());
     }
     /**
