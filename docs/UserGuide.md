@@ -794,11 +794,11 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous StudentBook home folder.
 
-**Q**: There are 12 tutorials on the attendance list, but my module has less than 12 tutorials per sem.
+**Q**: There are 12 tutorials on the attendance list, but my module has less than 12 tutorials per sem.<br>
 **A**: In a typical semester, there are 13 weeks. Tutorials can start earlier or later, so to accomodate the largest possible number of tutorials, npc_track
 has 12 weeks' worth of tutorials to grade.
 
-**Q**: I have two students that share the exact same name. How can npc_track support this?
+**Q**: I have two students that share the exact same name. How can npc_track support this?<br>
 **A**: npc_track cannot handle students with the exact same name. However, you can consider adding something else to their names to distinguish between them.
 
 So for example, if you have 2 students called "Arnab Goav", you can name one student "Arnab Goav 1" and the other "Arnab Goav 2".
