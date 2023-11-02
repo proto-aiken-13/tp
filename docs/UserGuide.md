@@ -665,12 +665,11 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 <a name="glossary"></a>
 ## Glossary
 
-| Keyword       | Definition                                                     |
-|---------------|----------------------------------------------------------------|
-| **Parameter** | Details about the student that will be included in the command |
-| **Command**   | Instructions that `npc_track` will execute                     |
-| **Attendance  | The student's attendance status. Attendance statuses can either|
-|   status**    | be "present", "absent", or "valid reason".                     |                                                               
+| Keyword                  | Definition                                                     |
+|--------------------------|----------------------------------------------------------------|
+| **Parameter**            | Details about the student that will be included in the command |
+| **Command**              | Instructions that `npc_track` will execute                     |
+| **Attendance status**    | Status of attendance (Present/Absent/VR)                       |                                         
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -686,6 +685,6 @@ has 12 weeks' worth of tutorials to grade.
 **Q**: I have two students that share the exact same name. How can npc_track support this?
 **A**: npc_track cannot handle students with the exact same name. However, you can consider adding something else to their names to distinguish between them.
 
-So for example, if you have 2 students called "Arnab Goav", you can name one student "Arnab Goav 1" and the other "Arnab Goav 2
+So for example, if you have 2 students called "Arnab Goav", you can name one student "Arnab Goav 1" and the other "Arnab Goav 2".
 
 
