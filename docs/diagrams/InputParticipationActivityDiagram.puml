@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:User indicates participation for specific student for tutorial;
+if () then ([Argument prefixes appear more than once]) 
+    :Error for duplicate prefixes is shown to user;
+    end;
+else ([Else])
+    if () then ([Student index is invalid])
+        :Error for invalid index input is shown;
+        end;
+    else ([Else])
+        if () then ([Tutorial field is invalid])
+            :Error for invalid tutorial is thrown;
+            end;
+        else ([Tutorial is valid])
+            if () then ([Student was not present])
+                :Error indicating that student was absent for the week is shown;
+                end;
+            else ([Student was present])
+                :Student's participation for the week is marked accordingly;
+                :Message is returned indicating that the student's participation has been marked succesfully;
+stop
+
+@enduml
