@@ -3,7 +3,7 @@
 
 start
 :User indicates participation for specific student for tutorial;
-if () then ([Argument prefixes appear more than once]) 
+if () then ([Argument prefixes appear more than once])
     :Error for duplicate prefixes is shown to user;
     end;
 else ([Else])
