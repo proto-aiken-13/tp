@@ -787,6 +787,9 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 | **Command**                 | Instructions that `npc_track` will execute                                          |
 | **JAR**                     | Compressed file of `npc_track` is in the form of a Java ARchive                     |
 | **Attendance status**       | The student's attendance status which can be "present", "absent", or "valid reason".|
+| **Attendance status: `:)`** | The emoji associated with "present".                                                |
+| **Attendance status: `x`**  | The emoji associated with "absent".                                                 |
+| **Attendance status: `:/`** | The emoji associated with "valid reason".                                           |
 
 
 ## FAQ
