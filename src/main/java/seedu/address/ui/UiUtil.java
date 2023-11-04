@@ -49,7 +49,7 @@ public class UiUtil {
      * Opens a link to the user guide using the default web browser
      */
     public static void openUserGuide() {
-        final String userGuideUrl = "https://ay2324s1-cs2103t-t12-1.github.io/tp/";
+        final String userGuideUrl = "https://ay2324s1-cs2103t-t12-1.github.io/tp/UserGuide.html";
         UiUtil.open(userGuideUrl);
     }
 
