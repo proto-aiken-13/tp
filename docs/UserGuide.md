@@ -602,6 +602,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 <a name="grade"></a>
 #### Grade assignments: `grade`
 
+Need to give grades to the assignments? You can use our `grade` command to do that.
 ![Grade](images/grade.png)
 
 <div markdown="span" class="alert alert-success">
@@ -631,15 +632,36 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 :top: [Back to Table Of Contents](#toc)
 
 
-### Grade assignments for a group of students: `gradeGroup`
 <a name="gradeGroup"></a>
+### Grade assignments for a group of students: `gradeGroup`
 
+Sounds tedious to grade the students individually. Try the `gradeGroup` command to collectively grade students in a 
+group.
+
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
 Grade a group of students' assignment.
+<br><br>
+***Format***: `gradeGroup GROUP n/ASSIGNMENT_NAME g/SCORE`
+</div>
 
-Format: `gradeGroup GROUP n/ASSIGNMENT_NAME g/SCORE`
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- A student's marks need to be below the maximum marks for that particular assignment and above 0.
+<br>
+- Need to specify the name of the group after the command.
+</div>
 
-Examples:
-- `gradeGroup Class33 n/Tutorial1 g/90`
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+</div>
+
+| Examples                   | Purpose                            
+|----------------------------|------------------------------------
+| `gradeGroup Class33 n/Tutorial1 g/90` | Grades students in group `Class33` for an assignment called `Tutorial1` a score of 90.
+
+
 
 ### Grouping students: `group`
 <a name="group"></a>
