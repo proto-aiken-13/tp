@@ -32,7 +32,7 @@ need to
 navigate different platforms just to search their students. Now, it can be done in a one-stop manner using `npc_track`
 
 Not ready to use `npc_track`? Fret Not, you can jump to the [Quick Start](#quick-start) section to begin your
-`npc-track`
+`npc_track`
 journey
 
 If you have used `npc_track` before, you can proceed to the relevant sections via our [Table of Contents](#toc) on
@@ -41,7 +41,7 @@ the sidebar
 
 ### How can this guide help me?
 
-**First time user?** Welcome and thank you for using our app! Check out the installation guide here!
+**First time user?** Welcome and thank you for using our app! Check out the installation guide [here](#quick-start)!
 
 Once you’re done setting up, check out the [features](#features) of `npc_track` to manage the your students' info!
 
@@ -107,18 +107,17 @@ Need help on memorizing commands? Drop by in [Command summary](#summary)!
 <a name="quick-start"></a>
 ## Quick start
 
-Step 1 : Ensure you have downloaded Java version 11 or above in your computer. Steps on how to download [Java](https://www.oracle.com/java/technologies/downloads/#java11)
+Step 1 : Ensure you have downloaded Java version 11 or above in your computer. Here are the steps on how to download [Java](https://www.oracle.com/java/technologies/downloads/#java11).
 
-Step 2 : Navigate to our [website](https://github.com/AY2324S1-CS2103T-T12-1/tp/releases/tag/v1.3.trial) and download the latest JAR file
+Step 2 : Navigate to our [website](https://github.com/AY2324S1-CS2103T-T12-1/tp/releases/tag/v1.3.trial) and download the latest JAR file.
 ![Step 2](images/download1.png)
 
-Step 3 : Save the [JAR](#glossary) file to a folder where you want to locate the file
+Step 3 : Save the [JAR](#glossary) file to a folder where you want to locate the file.
 
-Step 4 : Run the `npc_track` by double-clicking on the file that can be found on the folder where you have located
-the [JAR](#glossary) file in step 3.
+Step 4 : Run the `npc_track` by double-clicking on the [JAR](#glossary) file in step 3.
 ![Step 2](images/download2.png)
 
-Step 5 : Start using the app
+Step 5 : Start using the app!
 
 ---
 
@@ -802,5 +801,3 @@ has 12 weeks' worth of tutorials to grade.
 **A**: npc_track cannot handle students with the exact same name. However, you can consider adding something else to their names to distinguish between them.
 
 So for example, if you have 2 students called "Arnab Goav", you can name one student "Arnab Goav 1" and the other "Arnab Goav 2".
-
-
