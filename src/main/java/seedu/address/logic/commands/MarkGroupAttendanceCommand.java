@@ -24,8 +24,8 @@ public class MarkGroupAttendanceCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Marks the attendance of all students in the same group\n"
             + "Parameters: GROUP "
-            + "[" + PREFIX_TUTORIAL + "TutorialToMark] "
-            + "[" + PREFIX_PARTICIPATION_STATUS + "AttendanceStatus] \n"
+            + "[" + PREFIX_TUTORIAL + "TUTORIAL] "
+            + "[" + PREFIX_PARTICIPATION_STATUS + "STATUS] \n"
             + "Example: " + COMMAND_WORD + " tut1 t/1 s/P";
     private final Index tut;
     private final Group group;

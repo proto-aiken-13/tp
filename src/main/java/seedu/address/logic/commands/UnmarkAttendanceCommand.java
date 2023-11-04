@@ -23,7 +23,7 @@ public class UnmarkAttendanceCommand extends Command {
             + ": Unmark the attendance of the student identified\n"
             + "by the index number used in the displayed student list.\n"
             + "Parameters: INDEX (must be a positive integer) "
-            + "[" + PREFIX_TUTORIAL + "TutorialToUnmark] \n"
+            + "[" + PREFIX_TUTORIAL + "TUTORIAL] \n"
             + "Example: " + COMMAND_WORD + " 1 t/1 ";
     private final Index index;
     private final Index tut;
