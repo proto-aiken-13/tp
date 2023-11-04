@@ -693,7 +693,7 @@ Clear `npc_track` data.
 </div>
 
 <div markdown="span" class="alert alert-danger">:exclamation: **Caution:**
-Clearing the data will remove all information. Hence, it is recommended to take a backup of the file before clearing 
+Clearing the data will remove all information. Hence, it is recommended to make a backup of the file before clearing 
 it. Hence, since this is a irreversible command, type `yes` to confirm the action of wiping the data.
 ![Clear](images/clear.png)
 </div>
@@ -712,7 +712,7 @@ StudentBook data are saved in the hard disk automatically after any command that
 `npc_track` data are saved automatically as a JSON file. Advanced users are welcome to update data directly by editing that data file.
 
 <div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
-If your changes to the data file makes its format invalid, StudentBook will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.
+If your changes to the data file makes its format invalid, StudentBook will discard all data and start with an empty data file at the next run. Hence, it is recommended to make a backup of the file before editing it.
 </div>
 
 ### Archiving data files `[coming in v2.0]`
@@ -786,7 +786,10 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 | **Parameter**               | Details about the student that will be included in the command                      |
 | **Command**                 | Instructions that `npc_track` will execute                                          |
 | **JAR**                     | Compressed file of `npc_track` is in the form of a Java ARchive                     |
-| **Attendance status**       | The student's attendance status which can be "present", "absent", or "valid reason".|
+| **Attendance status**       | The student's attendance status, which can be one of the following:
+  - "Present" (represented as :))
+  - "Absent" (represented as x)
+  - "Valid Reason" (represented as :/)                                      |
 
 
 ## FAQ
