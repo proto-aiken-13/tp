@@ -67,6 +67,7 @@ public class AddCommandParser implements Parser<AddCommand> {
         Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
         Set<Comment> commentList = ParserUtil.parseComments(argMultimap.getAllValues(PREFIX_COMMENT));
         Set<Assignment> assignmentList = new HashSet<>();
+
         Group group = Group.DEFAULT_GROUP;
         if (argMultimap.getValue(PREFIX_GROUP).isPresent()) {
             group = ParserUtil.parseGroup(argMultimap.getValue(PREFIX_GROUP).get());
