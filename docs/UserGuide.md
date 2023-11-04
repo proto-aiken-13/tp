@@ -355,7 +355,7 @@ Examples:
 
 Marks the attendance of a group of students for that tutorial.
 
-Format: `markGroupAtd GROUP t/TUTORIAL`
+Format: `markGroupAtd GROUP t/TUTORIAL s/STATUS`
 
 `GROUP`: A string representing the group of students as shown in the list.
 
@@ -772,8 +772,8 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 | **Input Participation Points**        | `inputPP INDEX t/TUTORIAL pp/POINTS`                                                                                                                                                                                      |
 | **List**                              | `list​`                                                                                                                                                                                                                   |
 | **List Participation Record**         | `listParticipation INDEX`                                                                                                                                                                                                 |
-| **Mark Attendance**                   | `markAtd INDEX t/TUTORIAL`                                                                                                                                                                                                |
-| **Mark Group Attendance**             | `markGroupAtd GROUP t/TUTORIAL`                                                                                                                                                                                           |
+| **Mark Attendance**                   | `markAtd INDEX t/TUTORIAL s/STATUS`                                                                                                                                                                                                |
+| **Mark Group Attendance**             | `markGroupAtd GROUP t/TUTORIAL s/STATUS`                                                                                                                                                                                           |
 | **Unmark Attendance**                 | `unmarkAtd INDEX t/TUTORIAL`                                                                                                                                                                                              |
 | **Unmark Group Attendance**           | `unmarkGroupAtd GROUP t/TUTORIAL`                                                                                                                                                                                         |
 

@@ -23,7 +23,7 @@ public class UnmarkGroupAttendanceCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Unmark the attendance based on groups\n"
             + "Parameters: GROUP "
-            + "[" + PREFIX_TUTORIAL + "TutorialToUnmark] \n"
+            + "[" + PREFIX_TUTORIAL + "TUTORIAL] \n"
             + "Example: " + COMMAND_WORD + " tut4 t/1 ";
     private final Group group;
     private final Index tut;
