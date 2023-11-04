@@ -15,6 +15,15 @@ title: Developer Guide
 
 --------------------------------------------------------------------------------------------------------------------
 
+## **Demo video**
+
+Watch the demo here: 
+
+[![npctrack](https://github.com/proto-aiken-13/tp/assets/120178555/15ed2743-9f1c-4a81-bf81-234a93d69fae)
+](https://www.youtube.com/watch?v=EblMcXC3lXk)
+
+--------------------------------------------------------------------------------------------------------------------
+
 ## **Setting up, getting started**
 
 Refer to the guide [_Setting up and getting started_](SettingUp.md).
