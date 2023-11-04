@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.Group;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
@@ -201,7 +202,7 @@ public class JsonAdaptedPersonTest {
                 new JsonAdaptedPerson(VALID_NAME, VALID_PHONE, VALID_EMAIL,
                         VALID_TELEGRAM_HANDLE, VALID_ATTENDANCE, VALID_PARTICIPATION, VALID_TAGS,
                         VALID_COMMENTS, VALID_ASSIGNMENTS, INVALID_GROUP);
-        String expectedMessage = Name.MESSAGE_CONSTRAINTS;
+        String expectedMessage = Group.MESSAGE_CONSTRAINTS;
         System.out.println(expectedMessage);
         assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
     }
