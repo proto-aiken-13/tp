@@ -424,9 +424,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions**
 
-* 3a. User does not provide the name.
+* 2a. User does not provide the name.
 
-    * 3a1. AddressBook displays an error message and prompts the user to provide missing details.
+    * 2a1. AddressBook displays an error message and prompts the user to provide missing details.
 
       Use case resumes at step 2.
 
