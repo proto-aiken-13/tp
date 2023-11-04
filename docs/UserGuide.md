@@ -261,8 +261,7 @@ the `findGroup` command.
 :pencil2: **Purpose:**
 Finds students associated with the group.
 <br><br>
-
-***Format***: `findGroup GROUP`
+***Format***: `findGroup KEYWORD [MORE_KEYWORDS]...`
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -762,8 +761,8 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 | **Distribute Individual Assignments** | `assignIndiv INDEX n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                         |
 | **Edit**                              | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…​` <br> e.g., `n/New Name t/`                                                                                                                               |
 | **Exit**                              | `exit​`                                                                                                                                                                                                                   |
-| **Find**                              | `find KEYWORD [MORE_KEYWORDS]​` e.g., `find James Jake`                                                                                                                                                                   |
-| **Find Group**                        | `findGroup KEYWORD [MORE_KEYWORDS]​` e.g., `findGroup group1 group2`                                                                                                                                                      |
+| **Find**                              | `find KEYWORD [MORE_KEYWORDS]...` e.g., `find James Jake`                                                                                                                                                                   |
+| **Find Group**                        | `findGroup KEYWORD [MORE_KEYWORDS]...` e.g., `findGroup group1 group2`                                                                                                                                                      |
 | **Grade Assignments**                 | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                                   |
 | **Grade Group Assignments**           | `gradeGroup GROUP n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                              |
 | **Group**                             | `group PREV_GROUP UPDATED_GROUP`                                                                                                                                                                                          |
