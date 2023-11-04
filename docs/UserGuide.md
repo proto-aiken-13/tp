@@ -613,7 +613,7 @@ Grade a student's assignment.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- A student's marks need to be below the maximum marks for that particular assignment and above 0.
+- A student's marks need to between 0 (inclusive) and the maximum score assigned to the assignment (inclusive).
 <br>
 - Need to specify the index of the student after the command word
 </div>
