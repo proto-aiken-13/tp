@@ -173,6 +173,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 </div>
 
+:top: [Back to Table Of Contents](#toc)
 
 <a name="add"></a>
 ### Adding a student: `add`
@@ -208,6 +209,8 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 | `add n/James group/tut4`                                                                     | Adds James while grouping him to `tut4`                                                      |
 | `add n/Benson`                                                                               | Adds Benson only                                                                             |
 
+:top: [Back to Table Of Contents](#toc)
+
 <a name="list"></a>
 ### Listing all students : `list`
 
@@ -224,6 +227,8 @@ Shows a list of all students.
 Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
+
+:top: [Back to Table Of Contents](#toc)
 
 <a name="find"></a>
 ### Finding students : `find`
@@ -247,6 +252,8 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 |-------------------|-------------------------------------|
 | `find James Jake` | Finds a student called "James Jake" |
 
+:top: [Back to Table Of Contents](#toc)
+
 ### Finding students by group : `findGroup`
 
 Finding it difficult to scroll through the whole list of students? Don't worry just find the specific student using
@@ -267,6 +274,8 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 | Examples      | Purpose                                       |
 |---------------|-----------------------------------------------|
 | `findGroup 1` | Finds a student in group 1 and lists them out |
+
+:top: [Back to Table Of Contents](#toc)
 
 <a name="edit"></a>
 ### Editing a person : `edit`
@@ -292,68 +301,38 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 | `edit 3 t/ c/Loves cake`                  | Clears all existing tags of the 3rd person and replaces their tags with "Loves cake".                               |
 | `edit 4 group/2`                          | Moves the 4th person to group 2.                                                                                    |
 
+:top: [Back to Table Of Contents](#toc)
+
 ### Attendance
 
 For managing attendance, the following commands are available:
 * markAtd
 * unmarkAtd
 
-#### Mark Attendance : `markAtd`
 <a name="markAtd"></a>
+#### Mark Attendance : `markAtd`
 
+Want to mark a student's attendance? Use the `markAtd` command.
+
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
 Marks the attendance of a student for that tutorial.
+<br><br>
 
-Format: `markAtd INDEX t/TUTORIAL s/STATUS`
+***Format***: `markAtd INDEX t/TUTORIAL s/STATUS`
 
-`INDEX`: A positive integer representing the index of the student as shown in the list.
+</div>
 
-`TUTORIAL`: An integer between 1 and 12 (inclusive)
-
-`STATUS`: The student's attendance status. Valid attendance statuses are as follows:
-
-| Status        | Meaning                                                               
-|---------------|----------------------------------------------------------------
-|     **P**     | Present - If the student shows up for the tutorial.            
-|     **A**     | Absent - If the student is absent with no valid reason given.  
-|     **VR**    | VR - If the student is absent with a valid reason (e.g. MC).   
-
-
-Marking the attendance for a week that is already marked will result in the message
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `INDEX`: A positive integer representing the index of the student as shown in the list.
+<br>
+- `TUTORIAL`: An integer between 1 and 12 (inclusive)
+<br>
+- Marking the attendance for a week that is already marked will result in the message
 `This week's attendance has already been marked!`. In addition, the attendance status
 list will be updated.
-
-Examples:
-* `markAtd 1 t/1 s/P` (marks attendance of student with index 1 and "PRESENT" status for tutorial 1)
-* `markAtd 2 t/12 s/VR` (marks attendance of student with index 2 and "VALID REASON" for tutorial 12)
-
-#### Unmark Attendance : `unmarkAtd`
-<a name="unmarkAtd"></a>
-
-Unmark the attendance of a student for that tutorial.
-
-Format: `unmarkAtd INDEX t/TUTORIAL`
-
-`INDEX`: A positive integer representing the index of the student as shown in the list.
-
-`TUTORIAL`: An integer between 1 and 12 (inclusive)
-
-Unmarking the attendance for a week that is already unmarked will result in the message
-`This week's attendance has already been unmarked!`
-
-Examples:
-* `unmarkAtd 1 t/1` (unmark attendance of student with index 1 for tutorial 1)
-* `unmarkAtd 2 t/12` (unmark attendance of student with index 2 for tutorial 12)
-
-#### Mark Group Attendance: `markGroupAtd`
-<a name="markGroupAtd"></a>
-
-Marks the attendance of a group of students for that tutorial.
-
-Format: `markGroupAtd GROUP t/TUTORIAL s/STATUS`
-
-`GROUP`: A string representing the group of students as shown in the list.
-
-`TUTORIAL`: An integer between 1 and 12 (inclusive)
+</div>
 
 `STATUS`: The student's attendance status. Valid attendance statuses are as follows:
 
@@ -363,28 +342,134 @@ Format: `markGroupAtd GROUP t/TUTORIAL s/STATUS`
 |     **A**     | Absent - If the student is absent with no valid reason given.  
 |     **VR**    | VR - If the student is absent with a valid reason (e.g. MC).   
 
-Marking the attendance for a week that is already marked will result in the message
-`This week's attendance has already been marked!`
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+</div>
 
-Examples:
-* `markGroupAtd 1 t/1 s/P` (marks attendance of students in group 1 for tutorial 1 as all present)
+| Examples                  | Purpose                            
+|---------------------------|------------------------------------
+|`markAtd 1 t/1 s/P` | Marks attendance of student with index 1 and "PRESENT" status for tutorial 1
+|`markAtd 2 t/12 s/VR` | Marks attendance of student with index 2 and "VALID REASON" for tutorial 12
 
-#### Unmark Group Attendance: `unmarkGroupAtd`
-<a name="unmarkGroupAtd"></a>
+:top: [Back to Table Of Contents](#toc)
 
-Unmark the attendance of a group of students for that tutorial.
+<a name="unmarkAtd"></a>
+#### Unmark Attendance : `unmarkAtd`
 
-Format: `unmarkGroupAtd GROUP t/TUTORIAL`
+Want to unmark a student's attendance? Use the `unmarkAtd` command.
 
-`GROUP`: A string representing the group of students as shown in the list.
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
+Unmark the attendance of a student for that tutorial.
+<br><br>
 
-`TUTORIAL`: An integer between 1 and 12 (inclusive)
+***Format***: `unmarkAtd INDEX t/TUTORIAL`
 
-Unmarking the attendance for a week that is already unmarked will result in the message
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `INDEX`: A positive integer representing the index of the student as shown in the list.
+<br>
+- `TUTORIAL`: An integer between 1 and 12 (inclusive)
+<br>
+- Unmarking the attendance for a week that is already unmarked will result in the message
 `This week's attendance has already been unmarked!`
 
-Examples:
-* `unmarkGroupAtd 1 t/1` (unmark attendance of students in group 1 for tutorial 1)
+</div>
+
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+</div>
+
+| Examples                  | Purpose                            
+|---------------------------|------------------------------------
+|`unmarkAtd 1 t/1` | Unmark attendance of student with index 1 for tutorial 1)
+|`unmarkAtd 2 t/12` | Unmark attendance of student with index 2 for tutorial 12)
+
+:top: [Back to Table Of Contents](#toc)
+
+<a name="markGroupAtd"></a>
+#### Mark Group Attendance: `markGroupAtd`
+
+Want to mark a student's group for their attendance? Use the `markGroupAtd` command.
+
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
+Marks the attendance of a group of students for that tutorial.
+<br><br>
+
+***Format***: `markGroupAtd GROUP t/TUTORIAL s/STATUS`
+
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `GROUP`: A string representing the group of students as shown in the list.
+<br>
+- `TUTORIAL`: An integer between 1 and 12 (inclusive)
+<br>
+- Marking the attendance for a week that is already marked will result in the message
+`This week's attendance has already been marked!`
+
+</div>
+
+`STATUS`: The student's attendance status. Valid attendance statuses are as follows:
+
+| Status        | Meaning                                                               
+|---------------|----------------------------------------------------------------
+|     **P**     | Present - If the student shows up for the tutorial.            
+|     **A**     | Absent - If the student is absent with no valid reason given.  
+|     **VR**    | VR - If the student is absent with a valid reason (e.g. MC).   
+
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+</div>
+
+| Examples                  | Purpose                            
+|---------------------------|------------------------------------
+|  `markGroupAtd 1 t/1 s/P` | marks attendance of students in group 1 for tutorial 1 as all present
+
+:top: [Back to Table Of Contents](#toc)
+
+<a name="unmarkGroupAtd"></a>
+#### Unmark Group Attendance: `unmarkGroupAtd`
+
+Want to unmark a student's group for their attendance? Use the `unmarkGroupAtd` command.
+
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
+Unmark the attendance of a group of students for that tutorial.
+<br><br>
+
+***Format***: `unmarkGroupAtd GROUP t/TUTORIAL`
+
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `GROUP`: A string representing the group of students as shown in the list.
+<br>
+- `TUTORIAL`: An integer between 1 and 12 (inclusive)
+<br>
+- Unmarking the attendance for a week that is already unmarked will result in the message
+`This week's attendance has already been unmarked!`
+
+</div>
+
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+</div>
+
+| Examples                | Purpose                            
+|-------------------------|------------------------------------
+|`unmarkGroupAtd 1 t/1` | Unmark attendance of students in group 1 for tutorial 1)
+
+:top: [Back to Table Of Contents](#toc)
 
 ### Participation
 
@@ -396,62 +481,111 @@ For participation, you can make the following commands:
 #### Insert participation points to a student: `inputPP`
 <a name="inputPP"></a>
 
-input participation points for a student for that tutorial.
+Want to reward your student groups with points for their diligent participation? Use the `inputGroupPP` command.
 
-Format: `inputPP INDEX t/TUTORIAL pp/POINTS`
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
+Input participation points for a student for that tutorial.
+<br><br>
 
-`INDEX`: A positive integer representing the index of the student as shown in the list.
+***Format***:  `inputPP INDEX t/TUTORIAL pp/POINTS`
 
-`TUTORIAL`: An integer between 1 and 12 (inclusive)
+</div>
 
-`POINTS`: An integer between 0 and 1000 (inclusive)
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `INDEX`: A positive integer representing the index of the student as shown in the list.
+<br>
+- `TUTORIAL`: An integer between 1 and 12 (inclusive)
+<br>
+- `POINTS`: An integer between 0 and 1000 (inclusive)
+<br>
+- Participation points can only be inputted for a tutorial that is already marked as attended.
+  Else, it will result in the message `Before inputting participation points,
+  mark the attendance of the student first!`
 
-Participation points can only be inputted for a tutorial that is already marked as attended.
+</div>
 
-Else, it will result in the message `Before inputting participation points,
-mark the attendance of the student first!`
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+</div>
 
-Examples:
+| Examples                | Purpose                            
+|-------------------------|------------------------------------
+| `inputPP 1 t/1 pp/350`  | For student with index 1, input 350 participation points to tutorial 1
+| `inputPP 2 t/12 pp/500` | For student with index 2, input 500 participation points to tutorial 12
 
-* `inputPP 1 t/1 pp/350` (For student with index 1, input 350 participation points to tutorial 1)
-* `inputPP 2 t/12 pp/500` (For student with index 2, input 500 participation points to tutorial 12)
+:top: [Back to Table Of Contents](#toc)
 
-#### Insert participation points to a group of students: `inputGroupPP`
 <a name="inputGroupPP"></a>
+#### Insert participation points to a group of students: `inputGroupPP`
 
-input participation points for a group of students for that tutorial.
+Want to reward your student groups with points for their diligent participation? Use the `inputGroupPP` command.
 
-Format: `inputGroupPP GROUP t/TUTORIAL pp/POINTS`
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
+Input participation points for a group of students for that tutorial.
+<br><br>
 
-`GROUP`: The tutorial group name of the students as shown in the list.
+***Format***: `inputGroupPP GROUP t/TUTORIAL pp/POINTS`
 
-`TUTORIAL`: An integer between 1 and 12 (inclusive)
+</div>
 
-`POINTS`: An integer between 0 and 1000 (inclusive)
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `GROUP`: The tutorial group name of the students as shown in the list.
+<br>
+- `TUTORIAL`: An integer between 1 and 12 (inclusive)
+<br>
+- `POINTS`: An integer between 0 and 1000 (inclusive)
+<br>
+- Participation points can only be inputted for a tutorial that is already marked as attended.
+  Else, it will result in the message `Before inputting participation points,
+  mark the attendance of the student first!`
 
-Participation points can only be inputted for a tutorial that is already marked as attended.
+</div>
 
-Else, it will result in the message `Before inputting participation points,
-mark the attendance of the student first!`
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+</div>
 
-Examples:
+| Examples              | Purpose                            
+|-----------------------|------------------------------------
+|`inputGroupPP lab33 t/1 pp/350` | For students of lab33, input 350 participation points to tutorial 1
+|`inputGroupPP tut39 t/12 pp/500` | For student of tut39, input 500 participation points to tutorial 12
 
-* `inputGroupPP lab33 t/1 pp/350` (For students of lab33, input 350 participation points to tutorial 1)
-* `inputGroupPP tut39 t/12 pp/500` (For student of tut39, input 500 participation points to tutorial 12)
+:top: [Back to Table Of Contents](#toc)
 
-#### List participation records: `listParticipation`
 <a name="listParticipation"></a>
+#### List participation records: `listParticipation`
 
-list a student's participation record.
+Want to check your student's participation details? Not to worry, you can use our `listParticipation` command.
 
-Format: `listParticipation INDEX`
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
+List a student's participation record.
+<br><br>
 
-`INDEX`: A positive integer representing the index of the student as shown in the list.
+***Format***: `listParticipation INDEX`
+</div>
 
-Examples:
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `INDEX`: A positive integer representing the index of the student as shown in the list.
+</div>
 
-* `listParticipation 1` (List the participation record for the student with index 1)
-* `listParticipation 5` (List the participation record for the student with index 5)
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+</div>
+
+| Examples              | Purpose                            
+|-----------------------|------------------------------------
+| `listParticipation 1` | List the participation record for the student with index 1
+| `listParticipation 5` | List the participation record for the student with index 5
+
 
 ### Assignments
 
@@ -491,6 +625,8 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 |------------------------------------|------------------------------------
 | `assign n/Tutorial1 m/100`  | Assigns every student in the list with an assignment called Tutorial1 and maximum score is 100.
 
+:top: [Back to Table Of Contents](#toc)
+
 <a name="deassign"></a>
 #### Deassign Assignments: `deassign`
 
@@ -514,8 +650,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 |---------------|--------------------------------------------------------------------------------|
 | `deassign n/Tutorial1` | Deletes the assignment called Tutorial1 for all students with that assignment. |
 
-Examples:
-- `deassign n/Tutorial1`
+:top: [Back to Table Of Contents](#toc)
 
 <a name="deassignIndiv"></a>
 #### Deassign Individual Assignments: `deassignIndiv`
@@ -540,6 +675,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 |-------------------------------|------------------------------------------------------------------|
 | `deassignIndiv 1 n/Tutorial1` | Deletes the assignment called Tutorial1 for student with index 1 |
 
+:top: [Back to Table Of Contents](#toc)
 
 <a name="assignGroup"></a>
 #### Distribute assignments to a group of students: `assignGroup`
@@ -568,8 +704,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 | `assignGroup 1 n/Tutorial1 m/100`  | Assigns group named "1" with an assignment called Tutorial1 and maximum score is 100.
 | `assignGroup Pheonix n/Lab1 m/100` | Assigns group named "Pheonix" with an assignment called Lab1 and maximum score is 100.
 
-Examples:
-- `assignGroup 1 n/Tutorial1 m/100`
+:top: [Back to Table Of Contents](#toc)
 
 <a name="assignIndiv"></a>
 #### Distribute assignments to a student: `assignIndiv`
@@ -598,10 +733,12 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 | `assignIndiv 1 n/Tutorial1 m/100` | Assigns student #1 with an assignment called Tutorial1 and maximum score is 100.
 | `assignIndiv 10 n/Lab1 m/100`     | Assigns student #10 with an assignment called Lab1 and maximum score is 100.
 
+:top: [Back to Table Of Contents](#toc)
 
 <a name="grade"></a>
 #### Grade assignments: `grade`
 
+Need to give grades to the assignments? You can use our `grade` command to do that.
 ![Grade](images/grade.png)
 
 <div markdown="span" class="alert alert-success">
@@ -615,7 +752,9 @@ Grade a student's assignment.
 <br><br>
 - A student's marks need to be between 0 (inclusive) and the maximum score of the assignment (inclusive).
 <br>
-- Need to specify the index of the student after the command word
+- Need to specify the index of the student after the command word.
+<br>
+- `-0` is considered to be 0 in the system. 
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -630,33 +769,90 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 :top: [Back to Table Of Contents](#toc)
 
-
-### Grade assignments for a group of students: `gradeGroup`
 <a name="gradeGroup"></a>
+### Grade assignments for a group of students: `gradeGroup`
 
+Sounds tedious to grade the students individually. Try the `gradeGroup` command to collectively grade students in a 
+group.
+
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
 Grade a group of students' assignment.
+<br><br>
+***Format***: `gradeGroup GROUP n/ASSIGNMENT_NAME g/SCORE`
+</div>
 
-Format: `gradeGroup GROUP n/ASSIGNMENT_NAME g/SCORE`
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- A student's marks need to be between 0 (inclusive) and the maximum score of the assignment (inclusive).
+<br>
+- Need to specify the name of the group after the command.
+<br>
+- `-0` is considered to be 0 in the system. 
+</div>
 
-Examples:
-- `gradeGroup Class33 n/Tutorial1 g/90`
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+</div>
 
-### Grouping students: `group`
+| Examples                   | Purpose                            
+|----------------------------|------------------------------------
+| `gradeGroup Class33 n/Tutorial1 g/90` | Grades students in group `Class33` for an assignment called `Tutorial1` a score of 90.
+
+:top: [Back to Table Of Contents](#toc)
+
 <a name="group"></a>
+### Grouping students: `group`
 
-Group students by classes.
+If you ever encounter changing group names, you can always use our `group` command to do that.
 
-Format: `group PREV_GROUP UPDATED_GROUP`
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
+Change the student group names.
+<br><br>
+***Format***: `group PREV_GROUP UPDATED_GROUP`
+</div>
 
-Examples:
-- `group 1 2`
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- Student group names must be alphanumeric and **cannot** contain spaces.
+</div>
 
-### Deleting a student : `delete`
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+</div>
+
+| Examples        | Purpose                            |
+|-----------------|------------------------------------|
+| `group T01 T02` | Change the group name of `T01` to `T02`. |
+
+:top: [Back to Table Of Contents](#toc)
+
 <a name="delete"></a>
+### Deleting a student : `delete`
 
+Want to remove a student? Use the `delete` command.
+
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
 Deletes the specified person from the student book.
+<br><br>
+***Format***: `delete INDEX`
+</div>
 
-Format: `delete INDEX`
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `INDEX` must be a valid index. 
+</div>
+
+<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
+Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
+***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+</div>
+
+:top: [Back to Table Of Contents](#toc)
 
 <a name="exit"></a>
 ### Exiting the program : `exit`
