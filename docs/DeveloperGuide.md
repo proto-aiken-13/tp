@@ -19,7 +19,8 @@ title: Developer Guide
 
 Watch the demo here: 
 
-[![Watch the video]](https://www.youtube.com/watch?v=EblMcXC3lXk)
+[![npctrack](https://github.com/proto-aiken-13/tp/assets/120178555/15ed2743-9f1c-4a81-bf81-234a93d69fae)
+](https://www.youtube.com/watch?v=EblMcXC3lXk)
 
 --------------------------------------------------------------------------------------------------------------------
 
