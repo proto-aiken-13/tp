@@ -32,7 +32,7 @@ need to
 navigate different platforms just to search their students. Now, it can be done in a one-stop manner using `npc_track`
 
 Not ready to use `npc_track`? Fret Not, you can jump to the [Quick Start](#quick-start) section to begin your
-`npc-track`
+`npc_track`
 journey
 
 If you have used `npc_track` before, you can proceed to the relevant sections via our [Table of Contents](#toc) on
@@ -41,7 +41,7 @@ the sidebar
 
 ### How can this guide help me?
 
-**First time user?** Welcome and thank you for using our app! Check out the installation guide here!
+**First time user?** Welcome and thank you for using our app! Check out the installation guide [here](#quick-start)!
 
 Once you’re done setting up, check out the [features](#features) of `npc_track` to manage the your students' info!
 
@@ -107,18 +107,17 @@ Need help on memorizing commands? Drop by in [Command summary](#summary)!
 <a name="quick-start"></a>
 ## Quick start
 
-Step 1 : Ensure you have downloaded Java version 11 or above in your computer. Steps on how to download [Java](https://www.oracle.com/java/technologies/downloads/#java11)
+Step 1 : Ensure you have downloaded Java version 11 or above in your computer. Here are the steps on how to download [Java](https://www.oracle.com/java/technologies/downloads/#java11).
 
-Step 2 : Navigate to our [website](https://github.com/AY2324S1-CS2103T-T12-1/tp/releases/tag/v1.3.trial) and download the latest JAR file
+Step 2 : Navigate to our [website](https://github.com/AY2324S1-CS2103T-T12-1/tp/releases/tag/v1.3.trial) and download the latest JAR file.
 ![Step 2](images/download1.png)
 
-Step 3 : Save the [JAR](#glossary) file to a folder where you want to locate the file
+Step 3 : Save the [JAR](#glossary) file to a folder where you want to locate the file.
 
-Step 4 : Run the `npc_track` by double-clicking on the file that can be found on the folder where you have located
-the [JAR](#glossary) file in step 3.
+Step 4 : Run the `npc_track` by double-clicking on the [JAR](#glossary) file in step 3.
 ![Step 2](images/download2.png)
 
-Step 5 : Start using the app
+Step 5 : Start using the app!
 
 ---
 
@@ -128,10 +127,6 @@ Step 5 : Start using the app
 | Parameters | Description        | Constraints                                                                                                                                                     | Valid Examples                  | Invalid Examples
 |------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------| -------------- 
 | `n/`       | Specifies the name | Must be alphanumeric and can contain spaces                                    <br/>                                                                            | John Doe                        | $5money        
-| `a/`       | Telegram handle    | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters and maximum 32 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop | $telegram, _tele, 56thperson
-| `a/`       | Telegram handle    | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters and maximum 32 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop | $telegram, _tele, 56thperson
-| `a/`       | Telegram handle    | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters and maximum 32 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop | $telegram, _tele, 56thperson
-| `a/`       | Telegram handle    | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters and maximum 32 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop | $telegram, _tele, 56thperson
 | `a/`       | Telegram handle    | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters and maximum 32 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop | $telegram, _tele, 56thperson
 
 --------------------------------------------------------------------------------------------------------------------
@@ -261,8 +256,7 @@ the `findGroup` command.
 :pencil2: **Purpose:**
 Finds students associated with the group.
 <br><br>
-
-***Format***: `findGroup GROUP`
+***Format***: `findGroup KEYWORD [MORE_KEYWORDS]...`
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -355,7 +349,7 @@ Examples:
 
 Marks the attendance of a group of students for that tutorial.
 
-Format: `markGroupAtd GROUP t/TUTORIAL`
+Format: `markGroupAtd GROUP t/TUTORIAL s/STATUS`
 
 `GROUP`: A string representing the group of students as shown in the list.
 
@@ -399,7 +393,7 @@ For participation, you can make the following commands:
 * inputGroupPP
 * listParticipation
 
-#### Insert participation points to a student: inputPP
+#### Insert participation points to a student: `inputPP`
 <a name="inputPP"></a>
 
 input participation points for a student for that tutorial.
@@ -422,7 +416,7 @@ Examples:
 * `inputPP 1 t/1 pp/350` (For student with index 1, input 350 participation points to tutorial 1)
 * `inputPP 2 t/12 pp/500` (For student with index 2, input 500 participation points to tutorial 12)
 
-#### Insert participation points to a group of students: inputGroupPP
+#### Insert participation points to a group of students: `inputGroupPP`
 <a name="inputGroupPP"></a>
 
 input participation points for a group of students for that tutorial.
@@ -762,8 +756,8 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 | **Distribute Individual Assignments** | `assignIndiv INDEX n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                         |
 | **Edit**                              | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…​` <br> e.g., `n/New Name t/`                                                                                                                               |
 | **Exit**                              | `exit​`                                                                                                                                                                                                                   |
-| **Find**                              | `find KEYWORD [MORE_KEYWORDS]​` e.g., `find James Jake`                                                                                                                                                                   |
-| **Find Group**                        | `findGroup KEYWORD [MORE_KEYWORDS]​` e.g., `findGroup group1 group2`                                                                                                                                                      |
+| **Find**                              | `find KEYWORD [MORE_KEYWORDS]...` e.g., `find James Jake`                                                                                                                                                                   |
+| **Find Group**                        | `findGroup KEYWORD [MORE_KEYWORDS]...` e.g., `findGroup group1 group2`                                                                                                                                                      |
 | **Grade Assignments**                 | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                                   |
 | **Grade Group Assignments**           | `gradeGroup GROUP n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                              |
 | **Group**                             | `group PREV_GROUP UPDATED_GROUP`                                                                                                                                                                                          |
@@ -772,8 +766,8 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 | **Input Participation Points**        | `inputPP INDEX t/TUTORIAL pp/POINTS`                                                                                                                                                                                      |
 | **List**                              | `list​`                                                                                                                                                                                                                   |
 | **List Participation Record**         | `listParticipation INDEX`                                                                                                                                                                                                 |
-| **Mark Attendance**                   | `markAtd INDEX t/TUTORIAL`                                                                                                                                                                                                |
-| **Mark Group Attendance**             | `markGroupAtd GROUP t/TUTORIAL`                                                                                                                                                                                           |
+| **Mark Attendance**                   | `markAtd INDEX t/TUTORIAL s/STATUS`                                                                                                                                                                                                |
+| **Mark Group Attendance**             | `markGroupAtd GROUP t/TUTORIAL s/STATUS`                                                                                                                                                                                           |
 | **Unmark Attendance**                 | `unmarkAtd INDEX t/TUTORIAL`                                                                                                                                                                                              |
 | **Unmark Group Attendance**           | `unmarkGroupAtd GROUP t/TUTORIAL`                                                                                                                                                                                         |
 
@@ -786,10 +780,10 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 | **Parameter**               | Details about the student that will be included in the command                      |
 | **Command**                 | Instructions that `npc_track` will execute                                          |
 | **JAR**                     | Compressed file of `npc_track` is in the form of a Java ARchive                     |
-| **Attendance status**       | The student's attendance status, which can be one of the following:
-  - "Present" (represented as :))
-  - "Absent" (represented as x)
-  - "Valid Reason" (represented as :/)                                      |
+| **Attendance status**       | The student's attendance status which can be "present", "absent", or "valid reason".|
+| **Attendance status: `:)`** | The emoji associated with "present".                                                |
+| **Attendance status: `x`**  | The emoji associated with "absent".                                                 |
+| **Attendance status: `:/`** | The emoji associated with "valid reason".                                           |
 
 
 ## FAQ
@@ -805,5 +799,3 @@ has 12 weeks' worth of tutorials to grade.
 **A**: npc_track cannot handle students with the exact same name. However, you can consider adding something else to their names to distinguish between them.
 
 So for example, if you have 2 students called "Arnab Goav", you can name one student "Arnab Goav 1" and the other "Arnab Goav 2".
-
-

@@ -424,9 +424,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions**
 
-* 3a. User does not provide the name.
+* 2a. User does not provide the name.
 
-    * 3a1. AddressBook displays an error message and prompts the user to provide missing details.
+    * 2a1. AddressBook displays an error message and prompts the user to provide missing details.
 
       Use case resumes at step 2.
 
@@ -434,18 +434,31 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. User requests to mark the attendance of a specified tutorial for a specified student.
-2. `npc_track` updates the current tutorial attendance of that student as marked.
+1. User requests to mark the attendance of a specified tutorial for a specified student with a given status.
+2. `npc_track` updates the current tutorial attendance of that student as marked with the status.
 
     Use case ends.
 
 **Extensions**
 
-* 1a. User does not provide the correct index/tutorial.
+* 1a. User does not provide the correct index/tutorial/status.
   * 1a1. `npc_track` displays an error message and prompts the user to provide the correct details.
 
     Use case ends.
 
+* 1b. Student's attendance in question is not marked to begin with.
+
+    Use case ends.
+
+* 1b. User attempts to mark a tutorial that has already been marked.
+  * 1b1. `npc_track` displays an error message and informs the user that the tutorial in question has already been marked.
+
+    Use case ends.
+
+*1c. User attempts to update using the unknown status.
+  * 1c1. `npc_track` displays an error message and prompts the user to provide a valid status.
+
+    Use case ends.
 
 **Use case: Unmark a student's attendance**
 
@@ -475,6 +488,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 1a. User does not provide the correct index/tutorial.
     * 1a1. `npc_track` displays an error message and prompts the user to provide the correct details.
 
+    Use case ends.
+* 1b. User was absent for the tutorial.
+    * 1b1. `npc_track` displays an error message and tells the user that the student is absent.
+	
     Use case ends.
 
 **Use case: List a students participation record**
@@ -632,6 +649,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * **UI**: User Interface
 * **TA**: Teaching Assistant
 * **MSS**: Main Success Scenario
+* **Attendance status**: The attendance status of a student, which can be either present, absent, valid reason (VR) or unknown.
+
 
 --------------------------------------------------------------------------------------------------------------------
 
