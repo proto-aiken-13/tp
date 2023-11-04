@@ -732,8 +732,6 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 
 | Component               | Function                                                                                           |
 |-------------------------|----------------------------------------------------------------------------------------------------|
-| **Menu**                | Contains a dropdown section to exit `npc_track`                                                    |
-| **Help**                | A link that leads to the user guide                                                                |
 | **Command Result**      | The result of the commands that user types in the command box                                      |
 | **Command Box**         | A placeholder for users to type the various command as listed in the [Features](#features) section |
 | **Student Information** | A display of the different information regarding the student                                       |
