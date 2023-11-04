@@ -398,7 +398,7 @@ For participation, you can make the following commands:
 * inputGroupPP
 * listParticipation
 
-#### Insert participation points to a student: inputPP
+#### Insert participation points to a student: `inputPP`
 <a name="inputPP"></a>
 
 input participation points for a student for that tutorial.
@@ -421,7 +421,7 @@ Examples:
 * `inputPP 1 t/1 pp/350` (For student with index 1, input 350 participation points to tutorial 1)
 * `inputPP 2 t/12 pp/500` (For student with index 2, input 500 participation points to tutorial 12)
 
-#### Insert participation points to a group of students: inputGroupPP
+#### Insert participation points to a group of students: `inputGroupPP`
 <a name="inputGroupPP"></a>
 
 input participation points for a group of students for that tutorial.
