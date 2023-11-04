@@ -27,7 +27,7 @@ public class AssignmentGroupCommand extends Command {
     public static final String MESSAGE_FAIL = "Assignment not created.";
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Creates an assignment for students in the same group.\n"
-            + "Compulsory Parameters: GROUP"
+            + "Compulsory Parameters: GROUP "
             + PREFIX_NAME + "ASSIGNMENT_NAME " + PREFIX_MAX_SCORE + "MAX_SCORE "
             + "\nExample: " + COMMAND_WORD + " group1 "
             + PREFIX_NAME + "Tutorial1 " + PREFIX_MAX_SCORE + "100";
