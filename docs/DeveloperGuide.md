@@ -15,6 +15,14 @@ title: Developer Guide
 
 --------------------------------------------------------------------------------------------------------------------
 
+## **Demo video**
+
+Watch the demo here: 
+
+[![Watch the video]](https://www.youtube.com/watch?v=EblMcXC3lXk)
+
+--------------------------------------------------------------------------------------------------------------------
+
 ## **Setting up, getting started**
 
 Refer to the guide [_Setting up and getting started_](SettingUp.md).
