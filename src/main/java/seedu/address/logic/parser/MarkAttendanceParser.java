@@ -24,9 +24,15 @@ public class MarkAttendanceParser implements Parser<MarkAttendanceCommand> {
         requireNonNull(args);
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_TUTORIAL, PREFIX_PARTICIPATION_STATUS);
 
+        if (!ParserUtil.arePrefixesPresent(argMultimap, PREFIX_TUTORIAL, PREFIX_PARTICIPATION_STATUS)) {
+            throw new ParseException(
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, MarkAttendanceCommand.MESSAGE_USAGE));
+        }
+
         Index index;
         int tutorial = 0;
         String status = null;
+
         try {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (IllegalValueException ive) {

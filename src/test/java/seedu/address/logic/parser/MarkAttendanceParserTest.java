@@ -25,7 +25,11 @@ public class MarkAttendanceParserTest {
 
         // Test case 2: Missing week (tutorial)
         String userInput2 = "1 s/P";
-        assertParseFailure(parser, userInput2, Attendance.TUTORIAL_ERROR_MSG);
+        assertParseFailure(parser, userInput2, MESSAGE_INVALID_FORMAT);
+
+        // Test case 3: Missing status
+        String userInput3 = "1 t/1";
+        assertParseFailure(parser, userInput3, MESSAGE_INVALID_FORMAT);
 
         // Missing both index, tutorial and status
         assertParseFailure(parser, "", MESSAGE_INVALID_FORMAT);
