@@ -125,9 +125,10 @@ public class AddCommandParserTest {
         assertParseFailure(parser, validExpectedPersonString + INVALID_PHONE_DESC,
                 Messages.getErrorMessageForDuplicatePrefixes(PREFIX_PHONE));
 
-        // invalid address
+        // invalid telegram handle
         assertParseFailure(parser, validExpectedPersonString + INVALID_TELEGRAM_DESC,
                 Messages.getErrorMessageForDuplicatePrefixes(PREFIX_TELEGRAM_HANDLE));
+
     }
 
     @Test

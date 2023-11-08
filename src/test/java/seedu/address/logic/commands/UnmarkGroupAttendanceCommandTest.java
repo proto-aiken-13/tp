@@ -31,7 +31,7 @@ public class UnmarkGroupAttendanceCommandTest {
     @Test
     public void execute_validGroupAndTutorial_markAttendanceSuccessful() {
         // Group 1 is invalid because of empty model
-        Group group = new Group("Group 1");
+        Group group = new Group("Group1");
 
         // Index 1 corresponds to week 1
         int week = 1;
@@ -45,7 +45,7 @@ public class UnmarkGroupAttendanceCommandTest {
 
     @Test
     public void execute_invalidIndex_throwsCommandException() {
-        Group group = new Group("Group 1");
+        Group group = new Group("Group1");
         // Index 1 corresponds to week 1
         int week = 1;
 
@@ -59,7 +59,7 @@ public class UnmarkGroupAttendanceCommandTest {
     @Test
     public void equals_sameCommand_returnsTrue() {
         // Create a MarkAttendanceCommand with the same index and tutorial
-        Group group = new Group("Group 1");
+        Group group = new Group("Group1");
         UnmarkGroupAttendanceCommand command1 = new UnmarkGroupAttendanceCommand(group,
                 Index.fromOneBased(1));
         UnmarkGroupAttendanceCommand command2 = new UnmarkGroupAttendanceCommand(group,
@@ -72,8 +72,8 @@ public class UnmarkGroupAttendanceCommandTest {
     @Test
     public void equals_differentCommands_returnsFalse() {
         // Create two different MarkAttendanceCommands
-        Group group = new Group("Group 1");
-        Group group2 = new Group("Group 2");
+        Group group = new Group("Group1");
+        Group group2 = new Group("Group2");
         UnmarkGroupAttendanceCommand command1 = new UnmarkGroupAttendanceCommand(group,
                 Index.fromOneBased(1));
         UnmarkGroupAttendanceCommand command2 = new UnmarkGroupAttendanceCommand(group2,

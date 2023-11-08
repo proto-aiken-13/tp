@@ -10,9 +10,9 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class Group {
     public static final Group DEFAULT_GROUP = new Group("Default");
-    public static final String MESSAGE_CONSTRAINTS = "Group name should only contain alphanumeric characters and"
-            + " spaces, and it should not be blank";
-    private static final String VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
+    public static final String MESSAGE_CONSTRAINTS = "Group name should only contain alphanumeric characters"
+            + " and it should not be blank or have any space";
+    private static final String VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum}]*";
     public final String value;
 
     /**

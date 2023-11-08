@@ -43,6 +43,8 @@ Given below are my contributions to the project.
 - Contributed some ideas.
 - Added some features to the system and changed the UI.
 - Helped with other admin TP requirements.
+- Added test cases for my peers' code contribution.
+- Fixed bugs after the PE mock test
 
 ### Review and Mentoring Contributions
 

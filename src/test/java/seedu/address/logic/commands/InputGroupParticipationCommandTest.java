@@ -31,9 +31,9 @@ public class InputGroupParticipationCommandTest {
     public void execute_validIndexAndTutorial_inputParticipationSuccessful() {
         // Create a sample person with attendance
         // Group 1 corresponds to the group name
-        Group group = new Group("Group 1");
+        Group group = new Group("Group1");
         // create a sample person with group
-        Person person = new PersonBuilder().withGroup("Group 1")
+        Person person = new PersonBuilder().withGroup("Group1")
                 .withAttendance("P,U,U,U,U,U,U,U,U,U,U,U", "0,0,0,0,0,0,0,0,0,0,0,0").build();
         // Add the sample person to the model
         model.addPerson(person);
@@ -63,9 +63,9 @@ public class InputGroupParticipationCommandTest {
     public void execute_validZeroPoints_inputParticipationSuccessful() {
         // Create a sample person with attendance
         // Group 1 corresponds to the group name
-        Group group = new Group("Group 1");
+        Group group = new Group("Group1");
         // create a sample person with group
-        Person person = new PersonBuilder().withGroup("Group 1")
+        Person person = new PersonBuilder().withGroup("Group1")
                 .withAttendance("P,U,U,U,U,U,U,U,U,U,U,U,U", "0,0,0,0,0,0,0,0,0,0,0,0").build();
         // Add the sample person to the model
         model.addPerson(person);
@@ -95,9 +95,9 @@ public class InputGroupParticipationCommandTest {
     public void execute_validMaximumPoints_inputParticipationSuccessful() {
         // Create a sample person with attendance
         // Group 1 corresponds to the group name
-        Group group = new Group("Group 1");
+        Group group = new Group("Group1");
         // create a sample person with group
-        Person person = new PersonBuilder().withGroup("Group 1")
+        Person person = new PersonBuilder().withGroup("Group1")
                 .withAttendance("P,U,U,U,U,U,U,U,U,U,U,U", "0,0,0,0,0,0,0,0,0,0,0,0").build();
         // Add the sample person to the model
         model.addPerson(person);
@@ -127,9 +127,9 @@ public class InputGroupParticipationCommandTest {
     public void execute_invalidNegativePoints_inputParticipationSuccessful() {
         // Create a sample person with attendance
         // Group 1 corresponds to the group name
-        Group group = new Group("Group 1");
+        Group group = new Group("Group1");
         // create a sample person with group
-        Person person = new PersonBuilder().withGroup("Group 1")
+        Person person = new PersonBuilder().withGroup("Group1")
                 .withAttendance("P,U,U,U,U,U,U,U,U,U,U,U,U", "0,0,0,0,0,0,0,0,0,0,0,0").build();
         // Add the sample person to the model
         model.addPerson(person);
@@ -157,9 +157,9 @@ public class InputGroupParticipationCommandTest {
     public void execute_invalidLargePoints_inputParticipationSuccessful() {
         // Create a sample person with attendance
         // Group 1 corresponds to the group name
-        Group group = new Group("Group 1");
+        Group group = new Group("Group1");
         // create a sample person with group
-        Person person = new PersonBuilder().withGroup("Group 1")
+        Person person = new PersonBuilder().withGroup("Group1")
                 .withAttendance("P,U,U,U,U,U,U,U,U,U,U,U,U", "0,0,0,0,0,0,0,0,0,0,0,0").build();
         // Add the sample person to the model
         model.addPerson(person);
