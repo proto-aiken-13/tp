@@ -3,7 +3,6 @@ package seedu.address.logic.commands;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.commands.InputGroupParticipationCommand.ATTENDANCE_NOT_MARKED;
 import static seedu.address.logic.commands.InputGroupParticipationCommand.MAXIMUM_PARTICIPATION_POINTS;
 import static seedu.address.logic.commands.InputGroupParticipationCommand.PARTICIPATION_POINTS_OUT_OF_RANGE;
 import static seedu.address.testutil.Assert.assertThrows;

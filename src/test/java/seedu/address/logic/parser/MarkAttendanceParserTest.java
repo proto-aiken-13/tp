@@ -25,16 +25,38 @@ public class MarkAttendanceParserTest {
 
         // Test case 2: Missing week (tutorial)
         String userInput2 = "1 s/P";
-        assertParseFailure(parser, userInput2, Attendance.TUTORIAL_ERROR_MSG);
+        assertParseFailure(parser, userInput2, MESSAGE_INVALID_FORMAT);
+
+        // Test case 3: Missing status
+        String userInput3 = "1 t/1";
+        assertParseFailure(parser, userInput3, MESSAGE_INVALID_FORMAT);
 
         // Missing both index, tutorial and status
         assertParseFailure(parser, "", MESSAGE_INVALID_FORMAT);
     }
 
     @Test
+    public void parse_incorrectFormat_failure() {
+        // Incorrect parse prefix for tutorial
+        assertParseFailure(parser, "1 a/1 s/P", MESSAGE_INVALID_FORMAT);
+
+        // Incorrect parse prefix for status
+        assertParseFailure(parser, "1 t/1 n/P", MESSAGE_INVALID_FORMAT);
+
+        // Incorrect command prefixes in general
+        assertParseFailure(parser, "n/Jerry Seinfeld", MESSAGE_INVALID_FORMAT);
+    }
+
+    @Test
     public void parse_invalidIndex_failure() {
         // Invalid index (not a positive integer)
-        assertParseFailure(parser, "a t/1", MESSAGE_INVALID_FORMAT);
+        assertParseFailure(parser, "a t/1 s/P", MESSAGE_INVALID_FORMAT);
+
+        // Invalid index (zero)
+        assertParseFailure(parser, "0 t/1 s/P", MESSAGE_INVALID_FORMAT);
+
+        // Invalid index (negative integer)
+        assertParseFailure(parser, "-1 t/1 S/P", MESSAGE_INVALID_FORMAT);
     }
 
     @Test
@@ -44,6 +66,9 @@ public class MarkAttendanceParserTest {
 
         // Invalid tutorial (0)
         assertParseFailure(parser, "1 t/0 s/P", Attendance.TUTORIAL_ERROR_MSG);
+
+        // Invalid tutorial (negative)
+        assertParseFailure(parser, "1 t/-5 s/P", Attendance.TUTORIAL_ERROR_MSG);
 
         // Invalid tutorial (greater than 12)
         assertParseFailure(parser, "1 t/13 s/P", Attendance.TUTORIAL_ERROR_MSG);
@@ -66,6 +91,9 @@ public class MarkAttendanceParserTest {
         // Valid input
         assertParseSuccess(parser, "1 t/1 s/P", new MarkAttendanceCommand(Index.fromOneBased(1),
                 Index.fromOneBased(1), "P"));
+
+        assertParseSuccess(parser, "1 t/12 s/P", new MarkAttendanceCommand(Index.fromOneBased(1),
+                Index.fromOneBased(12), "P"));
 
         // Valid input with different indices and tutorial
         assertParseSuccess(parser, "2 t/5 s/P", new MarkAttendanceCommand(Index.fromOneBased(2),

@@ -48,6 +48,10 @@ public class InputParticipationParserTest {
     public void parse_invalidIndex_failure() {
         // Invalid index (not a positive integer)
         assertParseFailure(parser, "a t/1 pp/50", MESSAGE_INVALID_FORMAT);
+
+        assertParseFailure(parser, "-1 t/1 pp/50", MESSAGE_INVALID_FORMAT);
+
+        assertParseFailure(parser, "0 t/1 pp/50", MESSAGE_INVALID_FORMAT);
     }
 
     @Test
@@ -57,6 +61,9 @@ public class InputParticipationParserTest {
 
         // Invalid tutorial (0)
         assertParseFailure(parser, "1 t/0 pp/50", Attendance.TUTORIAL_ERROR_MSG);
+
+        // Invalid tutorial (negative)
+        assertParseFailure(parser, "1 t/-5 pp/50", Attendance.TUTORIAL_ERROR_MSG);
 
         // Invalid tutorial (greater than 12)
         assertParseFailure(parser, "1 t/13 pp/50", Attendance.TUTORIAL_ERROR_MSG);
@@ -69,5 +76,8 @@ public class InputParticipationParserTest {
 
         // Invalid points (negative)
         assertParseFailure(parser, "1 t/1 pp/-50", Attendance.PARTICIPATION_ERROR_MSG);
+
+        // Invalid points (more than 1000)
+        assertParseFailure(parser, "1 t/1 pp/5000", Attendance.PARTICIPATION_ERROR_MSG);
     }
 }

@@ -35,6 +35,8 @@ public class UnmarkAttendanceParserTest {
     public void parse_invalidIndex_failure() {
         // Invalid index (not a positive integer)
         assertParseFailure(parser, "a t/1", MESSAGE_INVALID_FORMAT);
+        assertParseFailure(parser, "0 t/1", MESSAGE_INVALID_FORMAT);
+        assertParseFailure(parser, "-1 t/1", MESSAGE_INVALID_FORMAT);
     }
 
     @Test
@@ -45,6 +47,9 @@ public class UnmarkAttendanceParserTest {
         // Invalid tutorial (0)
         assertParseFailure(parser, "1 t/0", Attendance.TUTORIAL_ERROR_MSG);
 
+        // Invalid tutorial (negative)
+        assertParseFailure(parser, "1 t/-5", Attendance.TUTORIAL_ERROR_MSG);
+
         // Invalid tutorial (greater than 12)
         assertParseFailure(parser, "1 t/13", Attendance.TUTORIAL_ERROR_MSG);
     }
@@ -54,6 +59,9 @@ public class UnmarkAttendanceParserTest {
         // Valid input
         assertParseSuccess(parser, "1 t/1", new UnmarkAttendanceCommand(Index.fromOneBased(1),
                 Index.fromOneBased(1)));
+
+        assertParseSuccess(parser, "1 t/12", new UnmarkAttendanceCommand(Index.fromOneBased(1),
+                Index.fromOneBased(12)));
 
         // Valid input with different indices and tutorial
         assertParseSuccess(parser, "2 t/5", new UnmarkAttendanceCommand(Index.fromOneBased(2),

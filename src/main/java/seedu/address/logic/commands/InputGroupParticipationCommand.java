@@ -19,7 +19,8 @@ import seedu.address.model.person.Person;
  */
 public class InputGroupParticipationCommand extends Command {
     public static final String COMMAND_WORD = "inputGroupPP";
-    public static final String SUCCESS_MSG = "Participation points input successfully!";
+    public static final String SUCCESS_MSG = "Participation points input successfully!\n"
+            + "For students with unmarked attendance, they will not get any participation points.";
     public static final String ATTENDANCE_NOT_MARKED = "Before inputting participation points, "
             + "mark the attendance of the student first!";
     public static final String ATTENDANCE_ABSENT = "A student was absent for this tutorial!";
@@ -70,24 +71,12 @@ public class InputGroupParticipationCommand extends Command {
             throw new CommandException(PARTICIPATION_POINTS_OUT_OF_RANGE);
         }
 
-        for (Person person : lastShownList) {
-            if (!person.getAttendance().isMarkedWeek(this.tut.getZeroBased())) {
-                return new CommandResult(ATTENDANCE_NOT_MARKED);
-            }
-
-            if (!person.getAttendance().isPresent(this.tut.getZeroBased())) {
-                return new CommandResult(ATTENDANCE_ABSENT);
-            }
-
-            if (!person.getAttendance().isPresent(this.tut.getZeroBased())) {
-                return new CommandResult(ATTENDANCE_ABSENT);
-            }
-        }
-
         for (Person studentToEdit : lastShownList) {
             Attendance studentAtd = studentToEdit.getAttendance();
-            studentAtd.inputParticipationPoints(this.tut.getZeroBased(), this.points);
-            model.updatePerson(studentToEdit);
+            if (studentAtd.isPresent(this.tut.getZeroBased())) {
+                studentAtd.inputParticipationPoints(this.tut.getZeroBased(), this.points);
+                model.updatePerson(studentToEdit);
+            }
         }
         return new CommandResult(SUCCESS_MSG);
     }
