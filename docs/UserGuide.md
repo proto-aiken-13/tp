@@ -243,6 +243,12 @@ Finds students associated with the keyword.
 ***Format***: `find KEYWORD [MORE_KEYWORDS]…`
 </div>
 
+
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `KEYWORD` : Case insensitive and can involve any character. 
+</div>
+
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
@@ -264,6 +270,11 @@ the `findGroup` command.
 Finds students associated with the group.
 <br><br>
 ***Format***: `findGroup KEYWORD [MORE_KEYWORDS]...`
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `KEYWORD` : Case insensitive and can involve any character. 
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
