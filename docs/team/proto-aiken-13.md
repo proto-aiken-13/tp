@@ -43,9 +43,9 @@ Given below are my contributions to the project:
 - Helped to make the video demos for both v1.2 and v1.3
 
 ### Contributions to the Developer Guide (DG) and UML Diagrams
-- Added extensions for use cases of all attendance-marking commands.
+- Added extensions for use cases for attendance-marking commands.
 	- Specifically, added extensions for invalid statuses.
-- Added activity PUML diagrams for marking attendance.
+- Added activity PUML diagrams for marking attendance and inputting participation.
 
 ### Review and Mentoring Contributions
 

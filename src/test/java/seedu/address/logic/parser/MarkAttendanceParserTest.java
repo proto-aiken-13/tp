@@ -34,15 +34,29 @@ public class MarkAttendanceParserTest {
         // Missing both index, tutorial and status
         assertParseFailure(parser, "", MESSAGE_INVALID_FORMAT);
     }
+    
+    @Test
+    public void parse_incorrectFormat_failure() {
+        // Incorrect parse prefix for tutorial
+        assertParseFailure(parser, "1 a/1 s/P", MESSAGE_INVALID_FORMAT);
+
+        // Incorrect parse prefix for status
+        assertParseFailure(parser, "1 t/1 n/P", MESSAGE_INVALID_FORMAT);
+
+        // Incorrect command prefixes in general
+        assertParseFailure(parser, "n/Jerry Seinfeld", MESSAGE_INVALID_FORMAT);
+    }
 
     @Test
     public void parse_invalidIndex_failure() {
         // Invalid index (not a positive integer)
-        assertParseFailure(parser, "a t/1", MESSAGE_INVALID_FORMAT);
+        assertParseFailure(parser, "a t/1 s/P", MESSAGE_INVALID_FORMAT);
 
-        assertParseFailure(parser, "0 t/1", MESSAGE_INVALID_FORMAT);
+        // Invalid index (zero)
+        assertParseFailure(parser, "0 t/1 s/P", MESSAGE_INVALID_FORMAT);
 
-        assertParseFailure(parser, "-1 t/1", MESSAGE_INVALID_FORMAT);
+        // Invalid index (negative integer)
+        assertParseFailure(parser, "-1 t/1 S/P", MESSAGE_INVALID_FORMAT);
     }
 
     @Test
