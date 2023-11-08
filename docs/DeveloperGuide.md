@@ -208,6 +208,30 @@ The `AssignmentCommand` looks through all the `Person`s, and attempts to add the
   * Cons: Not universally understood, certain letters may mean different things to people.
   For example, S in Japan could be amazing, but not as ideal in Singapore.
 
+### Mark Attendance
+
+#### Implementation
+
+Mark attendance command is handled by MarkAttendanceCommand, MarkAttendanceParser, and Model.
+* `MarkAttendanceParser`: Parse user inputs.
+* `MarkAttendanceCommand`: Given the parsed user input, execute the command.
+* `Model`: Updates the student list accordingly.
+
+Below is the sequence diagram for marking of a students tutorial attendance.
+
+<img src="images/MarkAttendanceSequenceDiagram.png" width="650"/>
+
+#### Design considerations
+
+**Aspect: How should we mark the attendance?**
+* **Alternative 1 (Chosen): 4 Status (Present, Valid Reasons, Absent, and Unmarked)**
+  * Pros: Provides more detailed and granular information about the students' attendance status.
+  * Pros: Allows for the recognition of valid reasons for missing a class.
+  * Cons: The system with four status options may be more complex to implement and manage.
+* **Alternative 2: Only 2 status (Present, Absent)**
+  * Pros: It simplifies the attendance tracking system, making it easier to implement and use.
+  * Cons:  It lacks the ability to differentiate between different reasons for absences.
+
 ### Input Participation Points
 
 #### Implementation
