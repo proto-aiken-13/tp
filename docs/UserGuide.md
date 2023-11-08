@@ -112,12 +112,24 @@ Step 1 : Ensure you have downloaded Java version 11 or above in your computer. H
 Step 2 : Navigate to our [website](https://github.com/AY2324S1-CS2103T-T12-1/tp/releases/tag/v1.3.trial) and download the latest JAR file.
 ![Step 2](images/download1.png)
 
-Step 3 : Save the [JAR](#glossary) file to a folder where you want to locate the file.
+Step 3 : Save the [JAR](#glossary) file to a folder where you want to locate the file. Right click and copy the path 
+where the file is located.
+![Step 3](images/download2.png)
 
-Step 4 : Run the `npc_track` by double-clicking on the [JAR](#glossary) file in step 3.
-![Step 2](images/download2.png)
+If you are a **windows** user, [click on the following instructions.](#windows)
 
-Step 5 : Start using the app!
+<a name="windows"></a>
+### For windows user :
+
+Step 4 : Open your computer's terminal. 
+![Step 4](images/download3.png)
+
+Step 5 : Type in `cd` followed by the location of the file you copied in step 3. Remove the "" (double quotes) and 
+the file name as shown in the figure.  
+![Step 5](images/download4.png)
+
+Step 6 : Type the following command `java -jar npctrack.jar` to run the app.
+![Step 6](images/download5.png)
 
 ---
 
