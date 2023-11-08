@@ -6,11 +6,11 @@ package seedu.address.model.person;
  * It provides methods for managing and querying attendance information.
  */
 public class Attendance {
-    public static final String TUTORIAL_ERROR_MSG = "Tutorial number is out of range, should be integer between 1-12";
+    public static final String TUTORIAL_ERROR_MSG = "Tutorial number is out of range, should be integer between 1-12 (inclusive)";
     public static final String STATUS_ERROR_MSG = "Status is invalid! It should either be P, VR or A.";
     public static final String ORIGINAL_ATD = "U,U,U,U,U,U,U,U,U,U,U,U";
     public static final String PARTICIPATION_ERROR_MSG =
-            "Participation points is out of range, should be integer between 0-1000.";
+            "Participation points is out of range, should be integer between 0-1000 (inclusive).";
     public static final String ORIGINAL_PART = "0,0,0,0,0,0,0,0,0,0,0,0";
     private static int totalTut = 12;
     private final int[] participationList = new int[totalTut];
@@ -92,7 +92,7 @@ public class Attendance {
     }
 
     /**
-     * Checks if the participation points is a valid value (Non-negative integer).
+     * Checks if the participation points is a valid value (0 to 1000 inclusive).
      * @param pp String version of points to be checked
      * @return 'true' if points is valid, else 'false'.
      */
