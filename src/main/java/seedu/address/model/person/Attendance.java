@@ -6,7 +6,8 @@ package seedu.address.model.person;
  * It provides methods for managing and querying attendance information.
  */
 public class Attendance {
-    public static final String TUTORIAL_ERROR_MSG = "Tutorial number is out of range, should be integer between 1-12 (inclusive)";
+    public static final String TUTORIAL_ERROR_MSG = "Tutorial number is out of range, " +
+            "should be integer between 1-12 (inclusive)";
     public static final String STATUS_ERROR_MSG = "Status is invalid! It should either be P, VR or A.";
     public static final String ORIGINAL_ATD = "U,U,U,U,U,U,U,U,U,U,U,U";
     public static final String PARTICIPATION_ERROR_MSG =
