@@ -112,19 +112,19 @@ Step 1 : Ensure you have downloaded Java version 11 or above in your computer. H
 Step 2 : Navigate to our [website](https://github.com/AY2324S1-CS2103T-T12-1/tp/releases/tag/v1.3.trial) and download the latest JAR file.
 ![Step 2](images/download1.png)
 
-Step 3 : Save the [JAR](#glossary) file to a folder where you want to locate the file. Right click and copy the path 
-where the file is located.
+Step 3 : Save the [JAR](#glossary) file to the folder where you want to locate the file. Right click and copy the 
+path of where the file is located.
 ![Step 3](images/download2.png)
 
-If you are a **windows** user, [click on the following instructions.](#windows)
+If you are a **windows** user, [click here](#windows)
 
 <a name="windows"></a>
-### For windows user :
+### Windows users :
 
 Step 4 : Open your computer's terminal. 
 ![Step 4](images/download3.png)
 
-Step 5 : Type in `cd` followed by the location of the file you copied in step 3. Remove the "" (double quotes) and 
+Step 5 : Type in `cd` followed by the location of the file you copied in step 3. Remove the `""` (double quotes) and 
 the file name as shown in the figure.  
 ![Step 5](images/download4.png)
 
