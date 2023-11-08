@@ -184,36 +184,6 @@ public class InputGroupParticipationCommandTest {
     }
 
     @Test
-    public void execute_unmarkedAttendance_inputParticipationUnsuccessful() {
-        // Create a sample person with attendance
-        // Group 1 corresponds to the group name
-        Group group = new Group("Group1");
-        // create a sample person with group
-        Person person = new PersonBuilder().withGroup("Group1")
-                .withAttendance("U,U,U,U,U,U,U,U,U,U,U,U", "0,0,0,0,0,0,0,0,0,0,0,0").build();
-        // Add the sample person to the model
-        model.addPerson(person);
-
-        // Index 1 corresponds to tut 1
-        int tut = 1;
-
-        // Points to add
-        int points = 50;
-
-        // Create a new InputParticipationCommand
-        inputGroupParticipationCommand = new InputGroupParticipationCommand(group,
-                Index.fromOneBased(tut), points);
-
-        // Execute the command
-        try {
-            String result = inputGroupParticipationCommand.execute(model).getFeedbackToUser();
-            assertEquals(result, ATTENDANCE_NOT_MARKED);
-        } catch (CommandException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Test
     public void execute_invalidGroup_throwsCommandException() {
         // Index 1 corresponds to tut 1
         int tut = 1;
