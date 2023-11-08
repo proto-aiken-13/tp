@@ -34,7 +34,7 @@ public class MarkAttendanceParserTest {
         // Missing both index, tutorial and status
         assertParseFailure(parser, "", MESSAGE_INVALID_FORMAT);
     }
-    
+
     @Test
     public void parse_incorrectFormat_failure() {
         // Incorrect parse prefix for tutorial
