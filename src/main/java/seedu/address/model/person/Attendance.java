@@ -1,5 +1,6 @@
 package seedu.address.model.person;
 
+// Solution below inspired by https://github.com/AY2223S2-CS2103T-T14-4/tp
 /**
  * The `Attendance` class represents a student's attendance, attendance status
  * and participation record for a 12-week period.
