@@ -19,7 +19,8 @@ import seedu.address.model.person.Person;
  */
 public class InputGroupParticipationCommand extends Command {
     public static final String COMMAND_WORD = "inputGroupPP";
-    public static final String SUCCESS_MSG = "Participation points input successfully!";
+    public static final String SUCCESS_MSG = "Participation points input successfully!\n"
+            + "For students with unmarked attendance, they will not get any participation points.";
     public static final String ATTENDANCE_NOT_MARKED = "Before inputting participation points, "
             + "mark the attendance of the student first!";
     public static final String ATTENDANCE_ABSENT = "A student was absent for this tutorial!";
