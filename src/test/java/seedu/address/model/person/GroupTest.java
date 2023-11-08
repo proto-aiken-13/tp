@@ -20,14 +20,14 @@ public class GroupTest {
 
     @Test
     public void isValidGroup() {
-        // null phone number
+        // null group
         assertThrows(NullPointerException.class, () -> Group.isValidGroup(null));
 
-        // invalid phone numbers
+        // invalid group
         assertFalse(Group.isValidGroup("group 1")); // space
         assertFalse(Group.isValidGroup("group-1")); // contains non-alphanumeric
 
-        // valid phone numbers
+        // valid group
         assertTrue(Group.isValidGroup("123")); // exactly 3 numbers
         assertTrue(Group.isValidGroup("groupone")); // exactly letters
         assertTrue(Group.isValidGroup("group1")); // exactly mix of letters and numbers
