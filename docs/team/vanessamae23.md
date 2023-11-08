@@ -23,6 +23,7 @@ Given below are my contributions to the project.
 - Changed the corresponding test cases after changing from address to telegram
 - Added the `grade` command and all the other test cases
 - Added the `deassignIndiv` command and all the other test cases
+- Created several test cases for the different models
 
 ### Contributions to the User Guide (UG)
 
