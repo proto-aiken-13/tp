@@ -24,10 +24,25 @@ public class MarkGroupAttendanceParserTest {
 
         // Test case 2: Missing week (tutorial)
         String userInput2 = "1 s/P";
-        assertParseFailure(parser, userInput2, Attendance.TUTORIAL_ERROR_MSG);
+        assertParseFailure(parser, userInput2, MESSAGE_INVALID_FORMAT);
 
         // Missing both group and tutorial
         assertParseFailure(parser, "", MESSAGE_INVALID_FORMAT);
+    }
+
+    @Test
+    public void parse_incorrectPrefixes_failure() {
+        // Test case 1: Incorrect prefix for tutorial
+        String userInput1 = "Group1 a/1 s/P";
+        assertParseFailure(parser, userInput1, MESSAGE_INVALID_FORMAT);
+
+        // Test case 2: Incorrect prefix for status
+        String userInput2 = "Group1 t/1 n/P";
+        assertParseFailure(parser, userInput2, MESSAGE_INVALID_FORMAT);
+
+        // Test case 3: Incorrect command in general
+        String userInput3 = "n/John GoodMan";
+        assertParseFailure(parser, userInput3, MESSAGE_INVALID_FORMAT);
     }
 
     @Test

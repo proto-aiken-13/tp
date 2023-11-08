@@ -24,6 +24,12 @@ public class MarkGroupAttendanceParser implements Parser<MarkGroupAttendanceComm
     public MarkGroupAttendanceCommand parse(String args) throws ParseException {
         requireNonNull(args);
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_TUTORIAL, PREFIX_PARTICIPATION_STATUS);
+
+        if (!ParserUtil.arePrefixesPresent(argMultimap, PREFIX_TUTORIAL, PREFIX_PARTICIPATION_STATUS)) {
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                    MarkGroupAttendanceCommand.MESSAGE_USAGE));
+        }
+
         // parse group
         Group group;
         try {
