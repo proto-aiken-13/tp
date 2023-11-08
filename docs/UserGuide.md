@@ -623,6 +623,10 @@ Create an assignment and assign it to all students.
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
 - `MAX_SCORE`: An integer between 1 and 1000.
+<br>
+- If the student already has the assignment, assigning the same assignment will overwrite the current assignment.
+<br>
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -650,6 +654,11 @@ Delete an assignment for all students.
 ***Format***: `deassign n/ASSIGNMENT_NAME`
 </div>
 
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
+</div>
+
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems.
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
@@ -673,6 +682,11 @@ Delete an assignment for a particular student.
 <br><br>
 
 ***Format***: `deassignIndiv INDEX n/ASSIGNMENT_NAME`
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -701,6 +715,10 @@ Create an assignment and assign it to a group of students.
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
 - `MAX_SCORE`: An integer between 1 and 1000.
+<br>
+- If the student already has the assignment, assigning the same assignment will overwrite the current assignment.
+<br>
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -730,6 +748,10 @@ Create an assignment and assign it to a student.
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
 - `MAX_SCORE`: An integer between 1 and 1000.
+<br>
+- If the student already has the assignment, assigning the same assignment will overwrite the current assignment.
+<br>
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -764,6 +786,8 @@ Grade a student's assignment.
 - Need to specify the index of the student after the command word.
 <br>
 - `-0` is considered to be 0 in the system. 
+<br>
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -798,6 +822,8 @@ Grade a group of students' assignment.
 - Need to specify the name of the group after the command.
 <br>
 - `-0` is considered to be 0 in the system. 
+<br>
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
