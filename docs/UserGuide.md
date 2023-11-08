@@ -124,10 +124,10 @@ Step 5 : Start using the app!
 <a name="parameter"></a>
 ## Common Parameters
 
-| Parameters | Description        | Constraints                                                                                                                                                     | Valid Examples                  | Invalid Examples
-|------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------| -------------- 
-| `n/`       | Specifies the name | Must be alphanumeric and can contain spaces                                    <br/>                                                                            | John Doe                        | $5money        
-| `a/`       | Telegram handle    | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters and maximum 32 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop | $telegram, _tele, 56thperson
+| Parameters | Description        | Constraints                                                                                                                                                       | Valid Examples                  | Invalid Examples             |
+|------------|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|------------------------------|
+| `n/`       | Specifies the name | Must be alphanumeric and can contain spaces                                    <br/>                                                                              | John Doe                        | $5money                      |
+| `a/`       | Telegram handle    | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters and maximum 32 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop | $telegram, _tele, 56thperson |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -336,21 +336,21 @@ list will be updated.
 
 `STATUS`: The student's attendance status. Valid attendance statuses are as follows:
 
-| Status        | Meaning                                                               
-|---------------|----------------------------------------------------------------
-|     **P**     | Present - If the student shows up for the tutorial.            
-|     **A**     | Absent - If the student is absent with no valid reason given.  
-|     **VR**    | VR - If the student is absent with a valid reason (e.g. MC).   
+| Status | Meaning                                                       |
+|--------|---------------------------------------------------------------|
+| **P**  | Present - If the student shows up for the tutorial.           |
+| **A**  | Absent - If the student is absent with no valid reason given. |
+| **VR** | VR - If the student is absent with a valid reason (e.g. MC).  |
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
-| Examples                  | Purpose                            
-|---------------------------|------------------------------------
-|`markAtd 1 t/1 s/P` | Marks attendance of student with index 1 and "PRESENT" status for tutorial 1
-|`markAtd 2 t/12 s/VR` | Marks attendance of student with index 2 and "VALID REASON" for tutorial 12
+| Examples              | Purpose                                                                      |
+|-----------------------|------------------------------------------------------------------------------|
+| `markAtd 1 t/1 s/P`   | Marks attendance of student with index 1 and "PRESENT" status for tutorial 1 |
+| `markAtd 2 t/12 s/VR` | Marks attendance of student with index 2 and "VALID REASON" for tutorial 12  |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -384,10 +384,10 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
-| Examples                  | Purpose                            
-|---------------------------|------------------------------------
-|`unmarkAtd 1 t/1` | Unmark attendance of student with index 1 for tutorial 1)
-|`unmarkAtd 2 t/12` | Unmark attendance of student with index 2 for tutorial 12)
+| Examples           | Purpose                                                    |
+|--------------------|------------------------------------------------------------|
+| `unmarkAtd 1 t/1`  | Unmark attendance of student with index 1 for tutorial 1)  |
+| `unmarkAtd 2 t/12` | Unmark attendance of student with index 2 for tutorial 12) |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -418,20 +418,20 @@ Marks the attendance of a group of students for that tutorial.
 
 `STATUS`: The student's attendance status. Valid attendance statuses are as follows:
 
-| Status        | Meaning                                                               
-|---------------|----------------------------------------------------------------
-|     **P**     | Present - If the student shows up for the tutorial.            
-|     **A**     | Absent - If the student is absent with no valid reason given.  
-|     **VR**    | VR - If the student is absent with a valid reason (e.g. MC).   
+| Status | Meaning                                                       |
+|--------|---------------------------------------------------------------|
+| **P**  | Present - If the student shows up for the tutorial.           |
+| **A**  | Absent - If the student is absent with no valid reason given. |
+| **VR** | VR - If the student is absent with a valid reason (e.g. MC).  |
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
-| Examples                  | Purpose                            
-|---------------------------|------------------------------------
-|  `markGroupAtd 1 t/1 s/P` | marks attendance of students in group 1 for tutorial 1 as all present
+| Examples                 | Purpose                                                               |
+|--------------------------|-----------------------------------------------------------------------|
+| `markGroupAtd 1 t/1 s/P` | marks attendance of students in group 1 for tutorial 1 as all present |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -465,9 +465,9 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
-| Examples                | Purpose                            
-|-------------------------|------------------------------------
-|`unmarkGroupAtd 1 t/1` | Unmark attendance of students in group 1 for tutorial 1)
+| Examples               | Purpose                                                  |
+|------------------------|----------------------------------------------------------|
+| `unmarkGroupAtd 1 t/1` | Unmark attendance of students in group 1 for tutorial 1) |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -511,10 +511,10 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
-| Examples                | Purpose                            
-|-------------------------|------------------------------------
-| `inputPP 1 t/1 pp/350`  | For student with index 1, input 350 participation points to tutorial 1
-| `inputPP 2 t/12 pp/500` | For student with index 2, input 500 participation points to tutorial 12
+| Examples                | Purpose                                                                 |
+|-------------------------|-------------------------------------------------------------------------|
+| `inputPP 1 t/1 pp/350`  | For student with index 1, input 350 participation points to tutorial 1  |
+| `inputPP 2 t/12 pp/500` | For student with index 2, input 500 participation points to tutorial 12 |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -541,8 +541,7 @@ Input participation points for a group of students for that tutorial.
 - `POINTS`: An integer between 0 and 1000 (inclusive)
 <br>
 - Participation points can only be inputted for a tutorial that is already marked as attended.
-  Else, it will result in the message `Before inputting participation points,
-  mark the attendance of the student first!`
+  Else, the student(s) with unmarked attendance will not receive the any participation points.
 
 </div>
 
@@ -551,10 +550,10 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
-| Examples              | Purpose                            
-|-----------------------|------------------------------------
-|`inputGroupPP lab33 t/1 pp/350` | For students of lab33, input 350 participation points to tutorial 1
-|`inputGroupPP tut39 t/12 pp/500` | For student of tut39, input 500 participation points to tutorial 12
+| Examples                         | Purpose                                                             |
+|----------------------------------|---------------------------------------------------------------------|
+| `inputGroupPP lab33 t/1 pp/350`  | For students of lab33, input 350 participation points to tutorial 1 |
+| `inputGroupPP tut39 t/12 pp/500` | For student of tut39, input 500 participation points to tutorial 12 |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -581,11 +580,10 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
-| Examples              | Purpose                            
-|-----------------------|------------------------------------
-| `listParticipation 1` | List the participation record for the student with index 1
-| `listParticipation 5` | List the participation record for the student with index 5
-
+| Examples              | Purpose                                                    |
+|-----------------------|------------------------------------------------------------|
+| `listParticipation 1` | List the participation record for the student with index 1 |
+| `listParticipation 5` | List the participation record for the student with index 5 |
 
 ### Assignments
 
@@ -621,9 +619,9 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
-| Examples                           | Purpose                            
-|------------------------------------|------------------------------------
-| `assign n/Tutorial1 m/100`  | Assigns every student in the list with an assignment called Tutorial1 and maximum score is 100.
+| Examples                   | Purpose                                                                                         |
+|----------------------------|-------------------------------------------------------------------------------------------------|
+| `assign n/Tutorial1 m/100` | Assigns every student in the list with an assignment called Tutorial1 and maximum score is 100. |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -699,10 +697,10 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
-| Examples                           | Purpose                            
-|------------------------------------|------------------------------------
-| `assignGroup 1 n/Tutorial1 m/100`  | Assigns group named "1" with an assignment called Tutorial1 and maximum score is 100.
-| `assignGroup Pheonix n/Lab1 m/100` | Assigns group named "Pheonix" with an assignment called Lab1 and maximum score is 100.
+| Examples                           | Purpose                                                                                |
+|------------------------------------|----------------------------------------------------------------------------------------|
+| `assignGroup 1 n/Tutorial1 m/100`  | Assigns group named "1" with an assignment called Tutorial1 and maximum score is 100.  |
+| `assignGroup Pheonix n/Lab1 m/100` | Assigns group named "Pheonix" with an assignment called Lab1 and maximum score is 100. |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -728,10 +726,10 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
-| Examples                          | Purpose                            
-|-----------------------------------|------------------------------------
-| `assignIndiv 1 n/Tutorial1 m/100` | Assigns student #1 with an assignment called Tutorial1 and maximum score is 100.
-| `assignIndiv 10 n/Lab1 m/100`     | Assigns student #10 with an assignment called Lab1 and maximum score is 100.
+| Examples                          | Purpose                                                                          |
+|-----------------------------------|----------------------------------------------------------------------------------|
+| `assignIndiv 1 n/Tutorial1 m/100` | Assigns student #1 with an assignment called Tutorial1 and maximum score is 100. |
+| `assignIndiv 10 n/Lab1 m/100`     | Assigns student #10 with an assignment called Lab1 and maximum score is 100.     |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -762,10 +760,10 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
-| Examples                   | Purpose                            
-|----------------------------|------------------------------------
-| `grade 1 n/tutorial2 g/80` | Grades student #1 a score of 80 for his tutorial2.
-| `grade 10 n/lab2 g/35`     | Grades student #10 a score of 35 for his lab2.
+| Examples                   | Purpose                                            |
+|----------------------------|----------------------------------------------------|
+| `grade 1 n/tutorial2 g/80` | Grades student #1 a score of 80 for his tutorial2. |
+| `grade 10 n/lab2 g/35`     | Grades student #10 a score of 35 for his lab2.     |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -796,9 +794,9 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
-| Examples                   | Purpose                            
-|----------------------------|------------------------------------
-| `gradeGroup Class33 n/Tutorial1 g/90` | Grades students in group `Class33` for an assignment called `Tutorial1` a score of 90.
+| Examples                              | Purpose                                                                                |
+|---------------------------------------|----------------------------------------------------------------------------------------|
+| `gradeGroup Class33 n/Tutorial1 g/90` | Grades students in group `Class33` for an assignment called `Tutorial1` a score of 90. |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -937,47 +935,47 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 <a name="summary"></a>
 ## Command summary
 
-| Action                                | Format, Examples                                                                                                                                                                                                          |
-|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Action                                | Format, Examples                                                                                                                                                                                                              |
+|---------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Add**                               | `add n/NAME p/[PHONE_NUMBER] e/[EMAIL] a/[TELEGRAM_HANDLE] [t/TAG]… [c/COMMENT]… [group/GROUP]` <br> e.g., `add n/James Ho p/92224444 e/jamesho@example.com a/jamesTele t/CS2103T t/CS2103R c/Owes an assignment group/tut33` |
-| **Clear**                             | `clear​`                                                                                                                                                                                                                  |
-| **Confirm Clear**                     | `yes`                                                                                                                                                                                                                     |
-| **Deassign Assignments**              | `deassign n/ASSIGNMENT_NAME`                                                                                                                                                                                              |
-| **Deassign Individual Assignments**   | `deassigIndiv INDEX​ n/ASSIGNMENT_NAME`                                                                                                                                                                                   |
-| **Delete**                            | `delete INDEX​` <br> e.g., `delete 3`                                                                                                                                                                                     |
-| **Distribute Assignments**            | `assign n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                                    |
-| **Distribute Group Assignments**      | `assignGroup GROUP n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                         |
-| **Distribute Individual Assignments** | `assignIndiv INDEX n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                         |
-| **Edit**                              | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…​` <br> e.g., `n/New Name t/`                                                                                                                               |
-| **Exit**                              | `exit​`                                                                                                                                                                                                                   |
-| **Find**                              | `find KEYWORD [MORE_KEYWORDS]...` e.g., `find James Jake`                                                                                                                                                                   |
-| **Find Group**                        | `findGroup KEYWORD [MORE_KEYWORDS]...` e.g., `findGroup group1 group2`                                                                                                                                                      |
-| **Grade Assignments**                 | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                                   |
-| **Grade Group Assignments**           | `gradeGroup GROUP n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                              |
-| **Group**                             | `group PREV_GROUP UPDATED_GROUP`                                                                                                                                                                                          |
-| **Help**                              | `help​`                                                                                                                                                                                                                   |
-| **Input Group Participation Points**  | `inputGroupPP GROUP t/TUTORIAL pp/POINTS`                                                                                                                                                                                 |
-| **Input Participation Points**        | `inputPP INDEX t/TUTORIAL pp/POINTS`                                                                                                                                                                                      |
-| **List**                              | `list​`                                                                                                                                                                                                                   |
-| **List Participation Record**         | `listParticipation INDEX`                                                                                                                                                                                                 |
-| **Mark Attendance**                   | `markAtd INDEX t/TUTORIAL s/STATUS`                                                                                                                                                                                                |
-| **Mark Group Attendance**             | `markGroupAtd GROUP t/TUTORIAL s/STATUS`                                                                                                                                                                                           |
-| **Unmark Attendance**                 | `unmarkAtd INDEX t/TUTORIAL`                                                                                                                                                                                              |
-| **Unmark Group Attendance**           | `unmarkGroupAtd GROUP t/TUTORIAL`                                                                                                                                                                                         |
+| **Clear**                             | `clear​`                                                                                                                                                                                                                      |
+| **Confirm Clear**                     | `yes`                                                                                                                                                                                                                         |
+| **Deassign Assignments**              | `deassign n/ASSIGNMENT_NAME`                                                                                                                                                                                                  |
+| **Deassign Individual Assignments**   | `deassigIndiv INDEX​ n/ASSIGNMENT_NAME`                                                                                                                                                                                       |
+| **Delete**                            | `delete INDEX​` <br> e.g., `delete 3`                                                                                                                                                                                         |
+| **Distribute Assignments**            | `assign n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                                        |
+| **Distribute Group Assignments**      | `assignGroup GROUP n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                             |
+| **Distribute Individual Assignments** | `assignIndiv INDEX n/ASSIGNMENT_NAME m/MAX_SCORE`                                                                                                                                                                             |
+| **Edit**                              | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]…​` <br> e.g., `n/New Name t/`                                                                                                                                   |
+| **Exit**                              | `exit​`                                                                                                                                                                                                                       |
+| **Find**                              | `find KEYWORD [MORE_KEYWORDS]...` e.g., `find James Jake`                                                                                                                                                                     |
+| **Find Group**                        | `findGroup KEYWORD [MORE_KEYWORDS]...` e.g., `findGroup group1 group2`                                                                                                                                                        |
+| **Grade Assignments**                 | `grade INDEX n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                                       |
+| **Grade Group Assignments**           | `gradeGroup GROUP n/ASSIGNMENT_NAME g/SCORE`                                                                                                                                                                                  |
+| **Group**                             | `group PREV_GROUP UPDATED_GROUP`                                                                                                                                                                                              |
+| **Help**                              | `help​`                                                                                                                                                                                                                       |
+| **Input Group Participation Points**  | `inputGroupPP GROUP t/TUTORIAL pp/POINTS`                                                                                                                                                                                     |
+| **Input Participation Points**        | `inputPP INDEX t/TUTORIAL pp/POINTS`                                                                                                                                                                                          |
+| **List**                              | `list​`                                                                                                                                                                                                                       |
+| **List Participation Record**         | `listParticipation INDEX`                                                                                                                                                                                                     |
+| **Mark Attendance**                   | `markAtd INDEX t/TUTORIAL s/STATUS`                                                                                                                                                                                           |
+| **Mark Group Attendance**             | `markGroupAtd GROUP t/TUTORIAL s/STATUS`                                                                                                                                                                                      |
+| **Unmark Attendance**                 | `unmarkAtd INDEX t/TUTORIAL`                                                                                                                                                                                                  |
+| **Unmark Group Attendance**           | `unmarkGroupAtd GROUP t/TUTORIAL`                                                                                                                                                                                             |
 
 --------------------------------------------------------------------------------------------------------------------
 <a name="glossary"></a>
 ## Glossary
 
-| Keyword                     | Definition                                                                          |
-|-----------------------------|-------------------------------------------------------------------------------------|
-| **Parameter**               | Details about the student that will be included in the command                      |
-| **Command**                 | Instructions that `npc_track` will execute                                          |
-| **JAR**                     | Compressed file of `npc_track` is in the form of a Java ARchive                     |
-| **Attendance status**       | The student's attendance status which can be "present", "absent", or "valid reason".|
-| **Attendance status: `:)`** | The emoji associated with "present".                                                |
-| **Attendance status: `x`**  | The emoji associated with "absent".                                                 |
-| **Attendance status: `:/`** | The emoji associated with "valid reason".                                           |
+| Keyword                     | Definition                                                                           |
+|-----------------------------|--------------------------------------------------------------------------------------|
+| **Parameter**               | Details about the student that will be included in the command                       |
+| **Command**                 | Instructions that `npc_track` will execute                                           |
+| **JAR**                     | Compressed file of `npc_track` is in the form of a Java ARchive                      |
+| **Attendance status**       | The student's attendance status which can be "present", "absent", or "valid reason". |
+| **Attendance status: `:)`** | The emoji associated with "present".                                                 |
+| **Attendance status: `x`**  | The emoji associated with "absent".                                                  |
+| **Attendance status: `:/`** | The emoji associated with "valid reason".                                            |
 
 
 ## FAQ

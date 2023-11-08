@@ -43,6 +43,9 @@ public class InputGroupParticipationParserTest {
         // Invalid tutorial (0)
         assertParseFailure(parser, "Group1 t/0", MESSAGE_INVALID_FORMAT);
 
+        // Invalid tutorial (negative)
+        assertParseFailure(parser, "Group1 t/-5", MESSAGE_INVALID_FORMAT);
+
         // Invalid tutorial (greater than 12)
         assertParseFailure(parser, "Group1 t/13", MESSAGE_INVALID_FORMAT);
     }
@@ -53,6 +56,11 @@ public class InputGroupParticipationParserTest {
         assertParseSuccess(parser, "Group1 t/1 pp/350",
                 new InputGroupParticipationCommand(ParserUtil.parseGroup("Group1"),
                 Index.fromOneBased(1), 350));
+
+        // Valid input
+        assertParseSuccess(parser, "Group1 t/12 pp/350",
+                new InputGroupParticipationCommand(ParserUtil.parseGroup("Group1"),
+                        Index.fromOneBased(12), 350));
 
         // Valid input with different indices and tutorial
         assertParseSuccess(parser, "Group2 t/5 pp/350",
