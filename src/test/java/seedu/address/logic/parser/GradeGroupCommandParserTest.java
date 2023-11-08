@@ -65,7 +65,7 @@ public class GradeGroupCommandParserTest {
     @Test
     public void parse_invalidAssignmentName_failure() {
         // Test case 1: Invalid name
-        String userInput1 = "group tut1 n/L)(&% g/1";
+        String userInput1 = "group n/L)(&% g/1";
         assertParseFailure(parser, userInput1, MESSAGE_INVALID_ASSIGNMENT_NAME);
     }
 

@@ -33,9 +33,9 @@ public class MarkGroupAttendanceCommandTest {
     public void execute_validGroupAndTutorial_markAttendanceSuccessful() {
 
         // Group 1 corresponds to the group name
-        Group group = new Group("Group 1");
+        Group group = new Group("Group1");
         // create a sample person with group
-        Person person = new PersonBuilder().withGroup("Group 1").build();
+        Person person = new PersonBuilder().withGroup("Group1").build();
         // Add the sample person to the model
         model.addPerson(person);
 
@@ -59,7 +59,7 @@ public class MarkGroupAttendanceCommandTest {
     @Test
     public void execute_invalidGroup_throwsCommandException() {
         // Group 1 is invalid because of empty model
-        Group group = new Group("Group 1");
+        Group group = new Group("Group1");
 
         // Index 1 corresponds to week 1
         int week = 1;
@@ -74,7 +74,7 @@ public class MarkGroupAttendanceCommandTest {
     @Test
     public void equals_sameCommand_returnsTrue() {
         // Create a MarkAttendanceCommand with the same group and tutorial
-        Group group = new Group("Group 1");
+        Group group = new Group("Group1");
         MarkGroupAttendanceCommand command1 = new MarkGroupAttendanceCommand(group,
                 Index.fromOneBased(1), "P");
         MarkGroupAttendanceCommand command2 = new MarkGroupAttendanceCommand(group,
@@ -85,8 +85,8 @@ public class MarkGroupAttendanceCommandTest {
 
     @Test
     public void equals_differentCommands_returnsFalse() {
-        Group group1 = new Group("Group 1");
-        Group group2 = new Group("Group 2");
+        Group group1 = new Group("Group1");
+        Group group2 = new Group("Group2");
         // Create two different MarkAttendanceCommands
         MarkGroupAttendanceCommand command1 = new MarkGroupAttendanceCommand(group1,
                 Index.fromOneBased(1), "P");
