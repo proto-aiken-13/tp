@@ -47,12 +47,16 @@ public class MarkGroupAttendanceParserTest {
         // Test case 3: Incorrect command in general
         String userInput3 = "n/John GoodMan";
         assertParseFailure(parser, userInput3, MESSAGE_INVALID_FORMAT);
+
+        //Test case 4: Incorrect prefixes
+        String userInput4 = "Group 1 n/1 a/P";
+        assertParseFailure(parser, userInput4, MESSAGE_INVALID_FORMAT);
     }
 
     @Test
     public void parse_invalidGroup_failure() {
         // Invalid group (not alphanumeric)
-        assertParseFailure(parser, "t/1", MESSAGE_INVALID_FORMAT);
+        assertParseFailure(parser, "t/1 s/P", MESSAGE_INVALID_FORMAT);
     }
 
     @Test
