@@ -49,12 +49,20 @@ public class MarkGroupAttendanceParserTest {
         assertParseFailure(parser, userInput3, MESSAGE_INVALID_FORMAT);
 
         // Test case 4: Incorrect prefixes in general
-        String userInput4 = "Group 1 n/1 a/P";
+        String userInput4 = "Group1 n/1 a/P";
         assertParseFailure(parser, userInput4, MESSAGE_INVALID_FORMAT);
 
         // Test case 5: Not a command!
         String userInput5 = "Loresium Imporium Wanchum";
         assertParseFailure(parser, userInput5, MESSAGE_INVALID_FORMAT);
+
+        // Test case 6: Incorrect prefix for tutorial
+        String userInput6 = "Group1 -1/1 s/P";
+        assertParseFailure(parser, userInput6, MESSAGE_INVALID_FORMAT);
+
+        // Test case 6: Incorrect prefix for status
+        String userInput7 = "Group1 t/1 -1/P";
+        assertParseFailure(parser, userInput7, MESSAGE_INVALID_FORMAT);
     }
 
     @Test
