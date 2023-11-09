@@ -26,6 +26,10 @@ public class MarkGroupAttendanceParserTest {
         String userInput2 = "1 s/P";
         assertParseFailure(parser, userInput2, MESSAGE_INVALID_FORMAT);
 
+        //Test case 3: Missing status
+        String userInput3 = "1 t/1";
+        assertParseFailure(parser, userInput3, MESSAGE_INVALID_FORMAT);
+
         // Missing both group and tutorial
         assertParseFailure(parser, "", MESSAGE_INVALID_FORMAT);
     }
@@ -58,6 +62,9 @@ public class MarkGroupAttendanceParserTest {
 
         // Invalid tutorial (0)
         assertParseFailure(parser, "Group1 t/0 s/P", Attendance.TUTORIAL_ERROR_MSG);
+
+        // Invalid tutorial (negative integer)
+        assertParseFailure(parser, "Group1 t/-1 s/P", Attendance.TUTORIAL_ERROR_MSG);
 
         // Invalid tutorial (greater than 12)
         assertParseFailure(parser, "Group1 t/13 s/P", Attendance.TUTORIAL_ERROR_MSG);
