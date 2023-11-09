@@ -9,7 +9,6 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.logic.commands.MarkGroupAttendanceCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Group;
 
 /**
@@ -24,6 +23,12 @@ public class MarkGroupAttendanceParser implements Parser<MarkGroupAttendanceComm
     public MarkGroupAttendanceCommand parse(String args) throws ParseException {
         requireNonNull(args);
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_TUTORIAL, PREFIX_PARTICIPATION_STATUS);
+
+        if (!ParserUtil.arePrefixesPresent(argMultimap, PREFIX_TUTORIAL, PREFIX_PARTICIPATION_STATUS)) {
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                    MarkGroupAttendanceCommand.MESSAGE_USAGE));
+        }
+
         // parse group
         Group group;
         try {
@@ -34,23 +39,10 @@ public class MarkGroupAttendanceParser implements Parser<MarkGroupAttendanceComm
         }
         // parse tutorial
         int tutorial = 0;
-        if (argMultimap.getValue(PREFIX_TUTORIAL).isPresent()) {
-            tutorial = ParserUtil.parseTutorial(argMultimap.getValue(PREFIX_TUTORIAL).get());
-        }
+        tutorial = ParserUtil.parseTutorial(argMultimap.getValue(PREFIX_TUTORIAL).get());
 
         // parse status
-        String status = null;
-        if (argMultimap.getValue(PREFIX_PARTICIPATION_STATUS).isPresent()) {
-            status = ParserUtil.parseParticipationStatus(argMultimap.getValue(PREFIX_PARTICIPATION_STATUS).get());
-        }
-
-        if (!(tutorial >= 1 && tutorial <= 12)) {
-            throw new ParseException(Attendance.TUTORIAL_ERROR_MSG);
-        }
-
-        if (status == null) {
-            throw new ParseException(Attendance.STATUS_ERROR_MSG);
-        }
+        String status = ParserUtil.parseParticipationStatus(argMultimap.getValue(PREFIX_PARTICIPATION_STATUS).get());
 
         return new MarkGroupAttendanceCommand(group, Index.fromOneBased(tutorial), status);
     }
