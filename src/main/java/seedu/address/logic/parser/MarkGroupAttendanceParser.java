@@ -45,10 +45,6 @@ public class MarkGroupAttendanceParser implements Parser<MarkGroupAttendanceComm
         // parse status
         String status = ParserUtil.parseParticipationStatus(argMultimap.getValue(PREFIX_PARTICIPATION_STATUS).get());
 
-        if (!(tutorial >= 1 && tutorial <= 12)) {
-            throw new ParseException(Attendance.TUTORIAL_ERROR_MSG);
-        }
-
         return new MarkGroupAttendanceCommand(group, Index.fromOneBased(tutorial), status);
     }
 }

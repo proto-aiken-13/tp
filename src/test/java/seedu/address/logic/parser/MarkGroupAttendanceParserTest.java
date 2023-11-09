@@ -69,6 +69,9 @@ public class MarkGroupAttendanceParserTest {
     public void parse_invalidGroup_failure() {
         // Invalid group (not alphanumeric)
         assertParseFailure(parser, "t/1 s/P", MESSAGE_INVALID_FORMAT);
+
+        // Invalid group (not alphanumeric)
+        assertParseFailure(parser, " @#! t/1 s/P", MESSAGE_INVALID_FORMAT);
     }
 
     @Test
