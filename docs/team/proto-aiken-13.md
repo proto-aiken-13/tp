@@ -26,7 +26,8 @@ Given below are my contributions to the project:
 	- Refactored the attendance class to support different attendance statuses (Present, Absent, VR, and Unmarked attendances)
 	- Added tutorial attendance status support to the attendance class.
 	- Added a new parameter in the mark attendance commands (`markAtd` and `markGroupAtd`) to support a status parameter.
-	- Fix `markAtd` error throwing, which returned the wrong message if the markAttendance format was incorrect/missing parameters.
+	- Fix `markAtd` error throwing if the markAtd format was incorrect/missing parameters.
+	- Fix `markGroupAtd` error throwing if the markGroupAtd format format was incorrect/missing parameters.
 	- Helped to add test cases to the markAttendance using partition testing principles and made sure that all inputted statuses were valid, building on the already existing test cases made by fellow teammates Choon Yan and Si Yuan.
 
 ### Contributions to the User Guide (UG)
