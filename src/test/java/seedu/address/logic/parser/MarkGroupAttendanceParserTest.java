@@ -23,11 +23,11 @@ public class MarkGroupAttendanceParserTest {
         assertParseFailure(parser, userInput1, MESSAGE_INVALID_FORMAT);
 
         // Test case 2: Missing week (tutorial)
-        String userInput2 = "1 s/P";
+        String userInput2 = "Group1 s/P";
         assertParseFailure(parser, userInput2, MESSAGE_INVALID_FORMAT);
 
         //Test case 3: Missing status
-        String userInput3 = "1 t/1";
+        String userInput3 = "Group1 t/1";
         assertParseFailure(parser, userInput3, MESSAGE_INVALID_FORMAT);
 
         // Missing both group and tutorial
@@ -48,9 +48,13 @@ public class MarkGroupAttendanceParserTest {
         String userInput3 = "n/John GoodMan";
         assertParseFailure(parser, userInput3, MESSAGE_INVALID_FORMAT);
 
-        //Test case 4: Incorrect prefixes
+        // Test case 4: Incorrect prefixes in general
         String userInput4 = "Group 1 n/1 a/P";
         assertParseFailure(parser, userInput4, MESSAGE_INVALID_FORMAT);
+
+        // Test case 5: Not a command!
+        String userInput5 = "Loresium Imporium Wanchum";
+        assertParseFailure(parser, userInput5, MESSAGE_INVALID_FORMAT);
     }
 
     @Test
@@ -78,6 +82,9 @@ public class MarkGroupAttendanceParserTest {
     public void parse_invalidStatus_failure() {
         // Invalid status (Not a letter)
         assertParseFailure(parser, "Group1 t/1 s/1", Attendance.STATUS_ERROR_MSG);
+
+        // Invalid status (Not a letter)
+        assertParseFailure(parser, "Group1 t/1 s/#", Attendance.STATUS_ERROR_MSG);
 
         // Invalid status (Not recognised as a valid status)
         assertParseFailure(parser, "Group1 t/1 s/G", Attendance.STATUS_ERROR_MSG);
