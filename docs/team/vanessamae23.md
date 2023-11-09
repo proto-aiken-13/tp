@@ -23,6 +23,7 @@ Given below are my contributions to the project.
 - Changed the corresponding test cases after changing from address to telegram
 - Added the `grade` command and all the other test cases
 - Added the `deassignIndiv` command and all the other test cases
+- Created several test cases for the different models
 
 ### Contributions to the User Guide (UG)
 
@@ -42,6 +43,8 @@ Given below are my contributions to the project.
 - Contributed some ideas.
 - Added some features to the system and changed the UI.
 - Helped with other admin TP requirements.
+- Added test cases for my peers' code contribution.
+- Fixed bugs after the PE mock test
 
 ### Review and Mentoring Contributions
 

@@ -112,22 +112,36 @@ Step 1 : Ensure you have downloaded Java version 11 or above in your computer. H
 Step 2 : Navigate to our [website](https://github.com/AY2324S1-CS2103T-T12-1/tp/releases/tag/v1.3.trial) and download the latest JAR file.
 ![Step 2](images/download1.png)
 
-Step 3 : Save the [JAR](#glossary) file to a folder where you want to locate the file.
+Step 3 : Save the [JAR](#glossary) file to the folder where you want to locate the file. Right click and copy the 
+path of where the file is located.
+![Step 3](images/download2.png)
 
-Step 4 : Run the `npc_track` by double-clicking on the [JAR](#glossary) file in step 3.
-![Step 2](images/download2.png)
+If you are a **windows** user, [click here](#windows)
 
-Step 5 : Start using the app!
+<a name="windows"></a>
+### Windows users :
+
+Step 4 : Open your computer's terminal. 
+![Step 4](images/download3.png)
+
+Step 5 : Type in `cd` followed by the location of the file you copied in step 3. Remove the `""` (double quotes) and 
+the file name as shown in the figure.  
+![Step 5](images/download4.png)
+
+Step 6 : Type the following command `java -jar npctrack.jar` to run the app.
+![Step 6](images/download5.png)
 
 ---
 
 <a name="parameter"></a>
 ## Common Parameters
 
-| Parameters | Description        | Constraints                                                                                                                                                       | Valid Examples                  | Invalid Examples             |
-|------------|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|------------------------------|
-| `n/`       | Specifies the name | Must be alphanumeric and can contain spaces                                    <br/>                                                                              | John Doe                        | $5money                      |
-| `a/`       | Telegram handle    | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters and maximum 32 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop | $telegram, _tele, 56thperson |
+| Parameters | Description     | Constraints                                                                                                                                                       | Valid Examples                  | Invalid Examples             |
+|------------|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|------------------------------|
+| `n/`       | Names           | Must be alphanumeric and can contain spaces                                    <br/><br/>                                                                         | John Doe                        | $5money                      |
+| `a/`       | Telegram handle | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters and maximum 32 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop | $telegram, _tele, 56thperson |
+| `group/`   | Group names     | Must be alphanumeric and cannot contain spaces                                    <br/><br/>                                                                      | group1, T01, LEC1               | $group, _grp, group 1        |
+
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -243,6 +257,12 @@ Finds students associated with the keyword.
 ***Format***: `find KEYWORD [MORE_KEYWORDS]…`
 </div>
 
+
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `KEYWORD` : Case insensitive and can involve any character. 
+</div>
+
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
@@ -264,6 +284,11 @@ the `findGroup` command.
 Finds students associated with the group.
 <br><br>
 ***Format***: `findGroup KEYWORD [MORE_KEYWORDS]...`
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `KEYWORD` : Case insensitive and can involve any character. 
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -612,6 +637,10 @@ Create an assignment and assign it to all students.
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
 - `MAX_SCORE`: An integer between 1 and 1000.
+<br>
+- If the student already has the assignment, assigning the same assignment will overwrite the current assignment.
+<br>
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -639,6 +668,11 @@ Delete an assignment for all students.
 ***Format***: `deassign n/ASSIGNMENT_NAME`
 </div>
 
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
+</div>
+
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems.
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
@@ -662,6 +696,11 @@ Delete an assignment for a particular student.
 <br><br>
 
 ***Format***: `deassignIndiv INDEX n/ASSIGNMENT_NAME`
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -690,6 +729,10 @@ Create an assignment and assign it to a group of students.
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
 - `MAX_SCORE`: An integer between 1 and 1000.
+<br>
+- If the student already has the assignment, assigning the same assignment will overwrite the current assignment.
+<br>
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -719,6 +762,10 @@ Create an assignment and assign it to a student.
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
 - `MAX_SCORE`: An integer between 1 and 1000.
+<br>
+- If the student already has the assignment, assigning the same assignment will overwrite the current assignment.
+<br>
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -753,6 +800,8 @@ Grade a student's assignment.
 - Need to specify the index of the student after the command word.
 <br>
 - `-0` is considered to be 0 in the system. 
+<br>
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -787,6 +836,8 @@ Grade a group of students' assignment.
 - Need to specify the name of the group after the command.
 <br>
 - `-0` is considered to be 0 in the system. 
+<br>
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**

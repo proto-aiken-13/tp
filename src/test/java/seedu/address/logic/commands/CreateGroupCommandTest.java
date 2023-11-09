@@ -29,4 +29,5 @@ public class CreateGroupCommandTest {
         CreateGroupCommand command = new CreateGroupCommand("tut33", "tut34");
         assertTrue(!command.equals(new ClearCommand()));
     }
+
 }
