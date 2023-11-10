@@ -25,10 +25,21 @@ public class UnmarkAttendanceParserTest {
 
         // Test case 2: Missing week (tutorial)
         String userInput2 = "1";
-        assertParseFailure(parser, userInput2, Attendance.TUTORIAL_ERROR_MSG);
+        assertParseFailure(parser, userInput2, MESSAGE_INVALID_FORMAT);
 
         // Missing both index and tutorial
         assertParseFailure(parser, "", MESSAGE_INVALID_FORMAT);
+    }
+
+    @Test
+    public void parse_incorrectParts_failure() {
+        // Test case 1: Incorrect prefix for tutorial
+        String userInput1 = "a/1";
+        assertParseFailure(parser, userInput1, MESSAGE_INVALID_FORMAT);
+
+        // Test case 2: Incorrect command in general
+        String userInput2 = "n/Homura Akemi";
+        assertParseFailure(parser, userInput2, MESSAGE_INVALID_FORMAT);
     }
 
     @Test
