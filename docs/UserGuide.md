@@ -1042,3 +1042,6 @@ has 12 weeks' worth of tutorials to grade.
 **A**: npc_track cannot handle students with the exact same name. However, you can consider adding something else to their names to distinguish between them.
 
 So for example, if you have 2 students called "Arnab Goav", you can name one student "Arnab Goav 1" and the other "Arnab Goav 2".
+
+**Q**: The user display looks weird when I add a very long name or minimise it to very small sizes.<br>
+**A**: npc_track does not support extreme inputs. It is optimised for sane usage with a standard screen size and normal names. We will add support in a future version.
