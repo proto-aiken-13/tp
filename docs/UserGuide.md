@@ -1043,6 +1043,6 @@ has 12 weeks' worth of tutorials to grade.
 
 For example, if you have 2 students called "Arnab Goel", you can name one student "Arnab Goel 1" and the other "Arnab Goel 2".
 
-**Q**: I can enter two students with the same telegram handle or same phone number. Why is this allowed?<br>
+**Q**: I can enter two students with the same telegram handle or same phone number (or something similar). Why is this allowed?<br>
 **A**: npc_track allows this, much like a normal contacts application in your phone. We do not enforce too many checks as we want to enable
 our users to use our app how they like, and support various unforeseen scenarios.
