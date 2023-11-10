@@ -837,6 +837,8 @@ Grade a group of students' assignment.
 <br>
 - `-0` is considered to be 0 in the system. 
 <br>
+- The grade given must be below the maximum score of all the assignments in the group.
+<br>
 - `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
