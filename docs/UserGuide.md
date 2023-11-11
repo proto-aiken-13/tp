@@ -6,50 +6,40 @@ title: npc_track User Guide
 
 ![Ui](images/ug-image.png)
 
-### Making student tracking easy.
+## Student tracking made easy, one `_track` at a time!
 
-`npc_track` is the application for all teaching assistants, streamlining student management processes to help combat the tediousness of keeping track of
-student particulars and performance.
+***`npc_track`*** is the choice application for **all** teaching assistants. Say goodbye to the tediousness of keeping track of student particulars and performance!
 
-Here’s an overview of how `npc_track` can help you streamline your student management process:
+Here’s an overview of how ***`npc_track`*** can help you manage students!
 - Manage your student contacts (with working Telegram links!)
 - Manage tutorial groups!
-- Keep track of their attendance and participation levels.
-- Keep track of their grades!
+- Keep track of attendance and participation.
+- Keep track of grades!
 
-But more than that, the application is *simple to use* and efficient. The application has a command line interface (CLI) in which you can type in commands without having to scroll through contacts and lists to click on buttons. The application sports a simple and very readable look!
+And we guarantee that this application will allow you to do so in a simple and efficient manner!
+
+Npc_track makes use of a [command line interface (CLI)](#glossary) where you can type in commands without having to scroll through contacts and lists and clicking many buttons!
+
 
 ### How can `npc_track` help you in your teaching journey?
 
-***`npc_track` is for all TA’s, and is adaptable for their management and organisational styles!***
+***`npc_track` caters to ALL kinds of TA’s, and perfectly fits for every management and organizational styles.*** 
 
-We help teaching assistants to be able to bring together their teaching needs in a hassle-free manner. For instance,
-adding extra information for a student named Ted can easily be done using the various keyword features as listed in
-our [Features Section](#features)
+Say goodbye to having to navigate to different platforms and applications to search and manage students! With `npc_track`, you can do so in one powerful application!
 
-`npc_track` saves teaching assistant from having to spend so much precious time by reducing the complexity and the
-need to
-navigate different platforms just to search their students. Now, it can be done in a one-stop manner using `npc_track`
-
-Not ready to use `npc_track`? Fret Not, you can jump to the [Quick Start](#quick-start) section to begin your
-`npc_track`
-journey
-
-If you have used `npc_track` before, you can proceed to the relevant sections via our [Table of Contents](#toc) on
-the sidebar
-
+We help teaching assistants to be able to bring meet teaching needs in **a hassle-free manner.**
 
 ### How can this guide help me?
 
-**First time user?** Welcome and thank you for using our app! Check out the installation guide [here](#quick-start)!
+**First time user?** Welcome and thank you for using our app! Check out the **installation guide [here](#quick-start)!**
 
-Once you’re done setting up, check out the [features](#features) of `npc_track` to manage the your students' info!
+Once you’re done setting up, **check out the [features](#features)** of `npc_track` to manage the your students' details!
 
-If you are an intermediary user and are confused or unclear of some of our features, check out the [FAQ](#FAQ) as well!
+If you are an intermediary user and are **confused or unclear** of some of our features, **check out the [FAQ](#FAQ)** as well!
 
-Encountered some bugs or unexpected events when using the app? Maybe [Known Issues](#issues) will give you some guidance on what the known bugs (and their status) are!
+Encountered some **bugs or unexpected events** when using the app? Maybe **[Known Issues](#issues)** will give you some guidance on what the known bugs (and their status) are!
 
-Need help on memorizing commands? Drop by in [Command summary](#summary)!
+Need help on **memorizing commands?** Drop by in **[Command summary](#summary)!**
 
 
 ---
@@ -58,43 +48,58 @@ Need help on memorizing commands? Drop by in [Command summary](#summary)!
 ## Table of Contents
 
 {:toc}
+- **[Quick start](#quick-start)**
 
 - [Features](#features)
+  - **[Overview of Features](#Overview)**
+    
+    - [Navigating `npc_track`](#gui)
+      
+    - [How commands work](#command-work)
+     
+    - [Common details](#common-details)
+      
+    - [Reading commands](#read-commands)  
 
-  - [Viewing Help](#help) `help`
+  - **[Viewing Help](#help) `help`**
+  - **Managing student particulars**
 
-  - [Adding a Student](#add) `add`
+    - [Adding a Student](#add) `add`
 
-  - [Editing a Student](#edit) `edit`
+    - [Editing a Student](#edit) `edit`
 
-  - [Deleting a Student](#delete) `delete`
+    - [Deleting a Student](#delete) `delete`
 
-  - [Listing All Students](#list) `list`
+    - [Listing All Students](#list) `list`
 
-  - [Finding a Student](#find) `find`
+    - [Finding a Student](#find) `find`
 
-  - [Finding a Group of Students](#findGroup) `findGroup`
+    - [Finding a Group of Students](#findGroup) `findGroup`
+  
+  - **Managing Assignments**
 
-  - [Distributing Assignments](#assign) `assign`
+    - [Distributing Assignments](#assign) `assign`
 
-  - [Distributing Assignments to a Group of Students](#assignGroup) `assignGroup`
+    - [Distributing Assignments to a Group of Students](#assignGroup) `assignGroup`
 
-  - [Distributing Assignments to an individual](#assignIndiv) `assignIndiv`
+    - [Distributing Assignments to an individual](#assignIndiv) `assignIndiv`
 
-  - [Distributing Assignments](#deassign) `deassign`
+    - [Distributing Assignments](#deassign) `deassign`
 
-  - [Grading a Student](#grade) `grade`
+    - [Grading a Student](#grade) `grade`
 
-  - [Grading a Group of Students](#gradeGroup) `gradeGroup`
+    - [Grading a Group of Students](#gradeGroup) `gradeGroup`
+  - **Managing Participation**
 
-  - [Marking Attendance](#markAtd) `markAtd`
+    - [Marking Attendance](#markAtd) `markAtd`
 
-  - [Unmarking Attendance](#unmarkAtd) `unmarkAtd`
+    - [Unmarking Attendance](#unmarkAtd) `unmarkAtd`
 
-  - [Marking Attendance for a Group of Students](#markGroupAtd) `markGroupAtd`
+    - [Marking Attendance for a Group of Students](#markGroupAtd) `markGroupAtd`
 
-  - [Unmarking Attendance for a Group of Students](#unmarkGroupAtd) `unmarkGroupAtd`
+    - [Unmarking Attendance for a Group of Students](#unmarkGroupAtd) `unmarkGroupAtd`
 
+  **Miscallaneous**
   - [Exiting the Program](#exit)
 
 
@@ -107,7 +112,11 @@ Need help on memorizing commands? Drop by in [Command summary](#summary)!
 <a name="quick-start"></a>
 ## Quick start
 
-Step 1 : Ensure you have downloaded Java version 11 or above in your computer. Here are the steps on how to download [Java](https://www.oracle.com/java/technologies/downloads/#java11).
+Step 1 : Ensure you have downloaded Java version 11 or above in your computer.
+
+*Pro Tips:*
+- **Unsure about what version of Java you have?** You can check what version you have in this [link](https://economictimes.indiatimes.com/news/international/us/which-version-of-java-are-you-using-in-windows-10-11-heres-how-to-check-it/articleshow/101438400.cms)
+- Otherwise, you can download the **latest version** of Java using this [link](https://www.oracle.com/java/technologies/downloads/#java11).
 
 Step 2 : Navigate to our [website](https://github.com/AY2324S1-CS2103T-T12-1/tp/releases/tag/v1.3.trial) and download the latest JAR file.
 ![Step 2](images/download1.png)
@@ -116,25 +125,70 @@ Step 3 : Save the [JAR](#glossary) file to the folder where you want to locate t
 path of where the file is located.
 ![Step 3](images/download2.png)
 
-The following steps will be illustrated with **Windows**.
-However, the process is the same for **Mac** and **Linux**.
+**NOTE:**
+- The following steps are done using **Windows**.
+  - However, the process is the same for **Mac** and **Linux**.
 
 Step 4 : Open your computer's terminal. 
 ![Step 4](images/download3.png)
 
 Step 5 : Type in `cd` followed by the location of the file you copied in step 3. Remove the `""` (double quotes) and 
-the file name as shown in the figure.  
+the file name (npctrack.jar) as shown in the figure.  
 ![Step 5](images/download4.png)
 
-Step 6 : Type the command `java -jar npctrack.jar` to run the app.
+Step 6 : Simply type the command `java -jar npctrack.jar` to run the app.
 ![Step 6](images/download5.png)
 
+And voila, just like that, your application should appear!
+
+**(Image to be put in here)**
 ---
 
-<a name="parameter"></a>
-## Common Parameters
+<a name="Overview"></a>
+## Overview of Features
 
-| Parameters | Description     | Constraints                                                                                                                                                       | Valid Examples                  | Invalid Examples             |
+<a name="gui"></a>
+### Navigating `npc_track`
+
+Our user-friendly interface allows quick navigation for teaching assistants. 
+
+Below is an overview of how our app looks like!
+
+![Ui](images/npctrack-guide.png)
+
+| Component               | Function                                                                                           |
+|-------------------------|----------------------------------------------------------------------------------------------------|
+| **Command Result**      | The result of the commands that user types in the command box                                      |
+| **Command Box**         | A placeholder for users to type the various command as listed in the [Features](#features) section |
+| **Student Information** | A display of the different information regarding the student                                       |
+| **Student Index**       | The `INDEX` of the student that users want to change / view                                        |
+
+--------------------------------------------------------------------------------------------------------------------
+
+<a name="command-work"></a>
+### How commands work:
+
+[Commands](#glossary) are made of a **keyword** , typically followed by **details.** 
+
+For example, unmarking attendance is
+
+`unmarkAtd 1 t/1`.
+
+- The **keyword** is ‘unmarkAtd`. 
+- The **details** are `1 t/1`.
+
+Some commands **don't need details.** For example, exiting the application is simply:
+
+`exit`
+
+There is only one keyword, and that's **`exit`** itself.
+
+--------------------------------------------------------------------------------------------------------------------
+
+<a name="details"></a>
+### Common details
+
+| Details | Description     | Constraints                                                                                                                                                       | Valid Examples                  | Invalid Examples             |
 |------------|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|------------------------------|
 | `n/`       | Names           | Must be alphanumeric and can contain spaces                                    <br/><br/>                                                                         | John Doe                        | $5money                      |
 | `a/`       | Telegram handle | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters and maximum 32 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop | $telegram, _tele, 56thperson |
@@ -143,29 +197,51 @@ Step 6 : Type the command `java -jar npctrack.jar` to run the app.
 
 --------------------------------------------------------------------------------------------------------------------
 
-<a name="features"></a>
-## Features
+<a name="reading-commands"></a>
+## Reading commands  
 <div markdown="block" class="alert alert-info">
 
-**:information_source: How to read our commands:**<br>
+**:information_source: What to look out for in our commands.**<br>
 
-* Words in `UPPER_CASE` are the details to be given by the user.<br>
+* **Words in `UPPER_CASE` are the details to be given by the user.<br>**
+
   e.g. in `add n/NAME`, `NAME` is a detail which can be used as `add n/John Doe`.
 
-* Details in square brackets are optional.<br>
-  e.g `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
+* **Details in square brackets are optional.<br>**
 
-* Items with `…`​ after them can be used multiple times or none at all.<br>
-  e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+  e.g `n/NAME [t/TAG]`</br>
+  
+  means that the `TAG` detail is optional and not needed.
 
-* Details can be in any order.<br>
+* **Details that end with “...” means that it can be used any number of times in the command!.<br>**
+
+  e.g. `[t/TAG]`…​ can be used as: `t/The t/Quick t/Brown t/Fox`</br>
+  
+  Alternatively, you can just not use it at all.
+
+
+* **Details can be in any order.<br>**
+
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
+* **Extraneous details for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>**
+
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
-* If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
+* **For all our commands:**
+  * **Having problems with the command?**
+    * Do not worry! Each command has a quick link to the [troubleshooting](#issues) guide for common problems. 
+  * If you are **confused with some terms...**
+    * You can refer to our [glossary](#glossary) to find out, which is available in each command.
+
+**NOTE: If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.**
+
 </div>
+
+--------------------------------------------------------------------------------------------------------------------
+
+<a name="features"></a>
+## Features
 
 <a name="help"></a>
 ### Viewing help : `help`
@@ -179,10 +255,8 @@ Helps user navigate through the app.
 ***Format***: `help`
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
-
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[glossary](#glossary)
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -208,11 +282,9 @@ Adds a student to the student book.
 - Cannot add a student with the same name in the list.
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
 </div>
-
 
 | Examples                                                                                     | Purpose                                                                                      |
 |----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
@@ -235,9 +307,8 @@ Shows a list of all students.
 ***Format***: `list`
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -261,9 +332,8 @@ Finds students associated with the keyword.
 - `KEYWORD` : Case insensitive and can involve any character. 
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
 </div>
 
 | Examples          | Purpose                             |
@@ -289,9 +359,8 @@ Finds students associated with the group.
 - `KEYWORD` : Case insensitive and can involve any character. 
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems.
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
 </div>
 
 | Examples      | Purpose                                       |
@@ -312,9 +381,8 @@ Edits an existing student.
 ***Format***: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]… [a/TELEGRAM_HANDLE] [group/GROUP]`
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
 </div>
 
 | Examples                                  | Purpose                                                                                                             |
@@ -326,7 +394,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 :top: [Back to Table Of Contents](#toc)
 
-### Attendance
+### Marking Attendance
 
 For managing attendance, the following commands are available:
 * markAtd
@@ -365,15 +433,15 @@ list will be updated.
 | **A**  | Absent - If the student is absent with no valid reason given. |
 | **VR** | VR - If the student is absent with a valid reason (e.g. MC).  |
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
-</div>
 
 | Examples              | Purpose                                                                      |
 |-----------------------|------------------------------------------------------------------------------|
 | `markAtd 1 t/1 s/P`   | Marks attendance of student with index 1 and "PRESENT" status for tutorial 1 |
 | `markAtd 2 t/12 s/VR` | Marks attendance of student with index 2 and "VALID REASON" for tutorial 12  |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -402,15 +470,15 @@ Unmark the attendance of a student for that tutorial.
 
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
-</div>
 
 | Examples           | Purpose                                                    |
 |--------------------|------------------------------------------------------------|
 | `unmarkAtd 1 t/1`  | Unmark attendance of student with index 1 for tutorial 1)  |
 | `unmarkAtd 2 t/12` | Unmark attendance of student with index 2 for tutorial 12) |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -447,14 +515,13 @@ Marks the attendance of a group of students for that tutorial.
 | **A**  | Absent - If the student is absent with no valid reason given. |
 | **VR** | VR - If the student is absent with a valid reason (e.g. MC).  |
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
-</div>
-
 | Examples                 | Purpose                                                               |
 |--------------------------|-----------------------------------------------------------------------|
 | `markGroupAtd 1 t/1 s/P` | marks attendance of students in group 1 for tutorial 1 as all present |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -483,14 +550,13 @@ Unmark the attendance of a group of students for that tutorial.
 
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
-</div>
-
 | Examples               | Purpose                                                  |
 |------------------------|----------------------------------------------------------|
 | `unmarkGroupAtd 1 t/1` | Unmark attendance of students in group 1 for tutorial 1) |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -529,15 +595,14 @@ Input participation points for a student for that tutorial.
 
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
-</div>
-
 | Examples                | Purpose                                                                 |
 |-------------------------|-------------------------------------------------------------------------|
 | `inputPP 1 t/1 pp/350`  | For student with index 1, input 350 participation points to tutorial 1  |
 | `inputPP 2 t/12 pp/500` | For student with index 2, input 500 participation points to tutorial 12 |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -568,15 +633,14 @@ Input participation points for a group of students for that tutorial.
 
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
-</div>
-
 | Examples                         | Purpose                                                             |
 |----------------------------------|---------------------------------------------------------------------|
 | `inputGroupPP lab33 t/1 pp/350`  | For students of lab33, input 350 participation points to tutorial 1 |
 | `inputGroupPP tut39 t/12 pp/500` | For student of tut39, input 500 participation points to tutorial 12 |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -598,17 +662,17 @@ List a student's participation record.
 - `INDEX`: A positive integer representing the index of the student as shown in the list.
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
-</div>
-
 | Examples              | Purpose                                                    |
 |-----------------------|------------------------------------------------------------|
 | `listParticipation 1` | List the participation record for the student with index 1 |
 | `listParticipation 5` | List the participation record for the student with index 5 |
 
-### Assignments
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
+</div>
+
+<a name="assignments"></a>
+### Managing Assignments
 
 For allocating and grading assignments , you can make the following commands:
 * assign
@@ -641,14 +705,13 @@ Create an assignment and assign it to all students.
 - `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
-</div>
-
 | Examples                   | Purpose                                                                                         |
 |----------------------------|-------------------------------------------------------------------------------------------------|
 | `assign n/Tutorial1 m/100` | Assigns every student in the list with an assignment called Tutorial1 and maximum score is 100. |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -671,14 +734,13 @@ Delete an assignment for all students.
 - `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems.
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
-</div>
-
 | Examples      | Purpose                                                                        |
 |---------------|--------------------------------------------------------------------------------|
 | `deassign n/Tutorial1` | Deletes the assignment called Tutorial1 for all students with that assignment. |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -701,14 +763,13 @@ Delete an assignment for a particular student.
 - `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems.
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
-</div>
-
 | Examples                      | Purpose                                                          |
 |-------------------------------|------------------------------------------------------------------|
 | `deassignIndiv 1 n/Tutorial1` | Deletes the assignment called Tutorial1 for student with index 1 |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -733,15 +794,14 @@ Create an assignment and assign it to a group of students.
 - `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
-</div>
-
 | Examples                           | Purpose                                                                                |
 |------------------------------------|----------------------------------------------------------------------------------------|
 | `assignGroup 1 n/Tutorial1 m/100`  | Assigns group named "1" with an assignment called Tutorial1 and maximum score is 100.  |
 | `assignGroup Pheonix n/Lab1 m/100` | Assigns group named "Pheonix" with an assignment called Lab1 and maximum score is 100. |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -766,15 +826,14 @@ Create an assignment and assign it to a student.
 - `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
-</div>
-
 | Examples                          | Purpose                                                                          |
 |-----------------------------------|----------------------------------------------------------------------------------|
 | `assignIndiv 1 n/Tutorial1 m/100` | Assigns student #1 with an assignment called Tutorial1 and maximum score is 100. |
 | `assignIndiv 10 n/Lab1 m/100`     | Assigns student #10 with an assignment called Lab1 and maximum score is 100.     |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -802,15 +861,14 @@ Grade a student's assignment.
 - `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
-</div>
-
 | Examples                   | Purpose                                            |
 |----------------------------|----------------------------------------------------|
 | `grade 1 n/tutorial2 g/80` | Grades student #1 a score of 80 for his tutorial2. |
 | `grade 10 n/lab2 g/35`     | Grades student #10 a score of 35 for his lab2.     |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -840,14 +898,13 @@ Grade a group of students' assignment.
 - `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
-</div>
-
 | Examples                              | Purpose                                                                                |
 |---------------------------------------|----------------------------------------------------------------------------------------|
 | `gradeGroup Class33 n/Tutorial1 g/90` | Grades students in group `Class33` for an assignment called `Tutorial1` a score of 90. |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -868,14 +925,13 @@ Change the student group names.
 - Student group names must be alphanumeric and **cannot** contain spaces.
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
-</div>
-
 | Examples        | Purpose                            |
 |-----------------|------------------------------------|
 | `group T01 T02` | Change the group name of `T01` to `T02`. |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -896,9 +952,8 @@ Deletes the specified person from the student book.
 - `INDEX` must be a valid index. 
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -915,10 +970,11 @@ Exits the program.
 ***Format***: `exit`
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
 </div>
+
+:top: [Back to Table Of Contents](#toc)
 
 ### Clearing the Data : `clear`
 
@@ -937,10 +993,11 @@ it. Hence, since this is a irreversible command, type `yes` to confirm the actio
 ![Clear](images/clear.png)
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
-Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
-***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
 </div>
+
+:top: [Back to Table Of Contents](#toc)
 
 ### Saving the data
 
@@ -966,21 +1023,6 @@ _Details coming soon ..._
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
 --------------------------------------------------------------------------------------------------------------------
-<a name="gui"></a>
-## Navigating `npc_track`
-
-### GUI Interface
-Our user-friendly interface allows quick navigation for teaching assistants. Below is an overview of the interface
-followed by a quick summary guide of the Graphical User Interface (GUI)
-
-![Ui](images/npctrack-guide.png)
-
-| Component               | Function                                                                                           |
-|-------------------------|----------------------------------------------------------------------------------------------------|
-| **Command Result**      | The result of the commands that user types in the command box                                      |
-| **Command Box**         | A placeholder for users to type the various command as listed in the [Features](#features) section |
-| **Student Information** | A display of the different information regarding the student                                       |
-| **Student Index**       | The `INDEX` of the student that users want to change / view                                        |
 
 --------------------------
 <a name="summary"></a>
@@ -1021,7 +1063,9 @@ followed by a quick summary guide of the Graphical User Interface (GUI)
 | Keyword                     | Definition                                                                           |
 |-----------------------------|--------------------------------------------------------------------------------------|
 | **Parameter**               | Details about the student that will be included in the command                       |
+| **Alphanumeric**            | Containing **only** numbers and letters. Spaces and other characters (%, #, *, etc) are not allowed|
 | **Command**                 | Instructions that `npc_track` will execute                                           |
+| **Command Line Interface (CLI)** | An application interface where you interact with the application by typing commands.  |
 | **JAR**                     | Compressed file of `npc_track` is in the form of a Java ARchive                      |
 | **Attendance status**       | The student's attendance status which can be "present", "absent", or "valid reason". |
 | **Attendance status: `:)`** | The emoji associated with "present".                                                 |
