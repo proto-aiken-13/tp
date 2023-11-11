@@ -302,17 +302,17 @@ Below is the sequence diagram for finding a group of students.
 
 #### Design considerations
 
-**Aspect: Allowing teaching assistants to find using what keyword**
+**Aspect: Allowing teaching assistants to find group using what keyword**
 
-* **Alternative 1 (Chosen):** `npc_track` will output students based on what TA exactly input.
-    * Pros: Reduced Chance of Error: Gives uses the exact student they want and reduces chances of error since it needs 
-      to be exact match.
+* **Alternative 1 (Chosen):** `npc_track` will output the group of students based on what TA exactly input for the particular group.
+    * Pros: Reduced Chance of Error: Gives users the exact group of students they want and reduces chances of error since it needs 
+      to be exact match to the group name.
     * Cons: Increased Complexity: Users need to know the exact name of the group, or else they will not be able 
-      to find the group.
+      to find the group of students.
 
-* **Alternative 2:** `npc_track` allows users to find just a part of the group's name.
-    * Pros: Better User Experience: Users can just input a partial part of their name to be able to find and get a 
-       list of groups that contain a part of the keyword
+* **Alternative 2:** `npc_track` allows users to find the group of students using just a part of the group's name.
+    * Pros: Better User Experience: Users can just input a partial part of their group name to be able to find and get a 
+       list of students in the same group that contain a part of the keyword
     * Cons: Increased Chance of Error: Since it is more complex, there is higher chance of error.
 
 ### Grade Students
