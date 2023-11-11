@@ -116,10 +116,8 @@ Step 3 : Save the [JAR](#glossary) file to the folder where you want to locate t
 path of where the file is located.
 ![Step 3](images/download2.png)
 
-If you are a **windows** user, [click here](#windows)
-
-<a name="windows"></a>
-### Windows users :
+The following steps will be illustrated with **Windows**.
+However, the process is the same for **Mac** and **Linux**.
 
 Step 4 : Open your computer's terminal. 
 ![Step 4](images/download3.png)
@@ -128,7 +126,7 @@ Step 5 : Type in `cd` followed by the location of the file you copied in step 3.
 the file name as shown in the figure.  
 ![Step 5](images/download4.png)
 
-Step 6 : Type the following command `java -jar npctrack.jar` to run the app.
+Step 6 : Type the command `java -jar npctrack.jar` to run the app.
 ![Step 6](images/download5.png)
 
 ---
