@@ -290,7 +290,7 @@ Below is the sequence diagram for finding students.
 
 **Aspect: Allowing teaching assistants to find using what keyword**
 * **Alternative 1 (Chosen):** `npc_track` will output students based on what TA exactly input.
-    * Pros: Reduced Chance of Error: Gives uses the exact student they want and reduces chances of error since it needs 
+    * Pros: Reduced Chance of Error: Gives users the exact student they want and reduces chances of error since it needs 
       to be exact match.
     * Cons: Increased Complexity: Users need to know the exact name of their student, or else they will not be able 
       to find the student.
@@ -298,6 +298,33 @@ Below is the sequence diagram for finding students.
 * **Alternative 2:** `npc_track` allows users to find just a part of the student's name.
     * Pros: Better User Experience: Users can just input a partial part of their name to be able to find and get a 
       list of students that contain a part of the keyword
+    * Cons: Increased Chance of Error: Since it is more complex, there is higher chance of error.
+
+### Find Group of Students
+
+#### Implementation
+Find Group of Students command is handled by FindGroupCommand, FindGroupCommandParser, and Model.
+* `FindGroupCommandParser`: Parse user inputs.
+* `FindGroupCommand`: Given the parsed user input, execute the command.
+* `Model`: Updates the student list according to the keyword that the user keys in.
+
+Below is the sequence diagram for finding a group of students.
+
+<img src="images/FindGroupSequenceDiagram.png" width="650"/>
+
+#### Design considerations
+
+**Aspect: Allowing teaching assistants to find group using what keyword**
+
+* **Alternative 1 (Chosen):** `npc_track` will output the group of students based on what TA exactly input for the particular group.
+    * Pros: Reduced Chance of Error: Gives users the exact group of students they want and reduces chances of error since it needs 
+      to be exact match to the group name.
+    * Cons: Increased Complexity: Users need to know the exact name of the group, or else they will not be able 
+      to find the group of students.
+
+* **Alternative 2:** `npc_track` allows users to find the group of students using just a part of the group's name.
+    * Pros: Better User Experience: Users can just input a partial part of their group name to be able to find and get a 
+       list of students in the same group that contain a part of the keyword
     * Cons: Increased Chance of Error: Since it is more complex, there is higher chance of error.
 
 ### Grade Students

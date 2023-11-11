@@ -50,6 +50,7 @@ navigates to the link.
 - Modified the Use Case for add such that it only shows error if name is not provided.
 - Helped generate Non-Functional Requirements.
 - Helped generate the Use Case for findGroup.
+- Created the UML diagram for findGroup and contributed to its description of design considerations.
 
 ### Contributions to Team-Based Tasks
 
