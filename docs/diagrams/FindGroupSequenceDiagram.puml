@@ -4,7 +4,7 @@ skinparam ArrowFontStyle plain
 
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
-participant ":NpcTrackParser" as NpcTrackParser LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
 participant ":FindGroupCommandParser" as FindGroupCommandParser LOGIC_COLOR
 participant "predicate:GroupContainsKeywordsPredicate" as GroupContainsKeywordsPredicate LOGIC_COLOR
 participant "name:FindGroupCommand" as FindGroupCommand LOGIC_COLOR
@@ -18,17 +18,17 @@ end box
 [-> LogicManager : execute("findGroup tut33")
 activate LogicManager
 
-LogicManager -> NpcTrackParser : parseCommand("findGroup tut33")
-activate NpcTrackParser
+LogicManager -> AddressBookParser : parseCommand("findGroup tut33")
+activate AddressBookParser
 
 create FindGroupCommandParser
-NpcTrackParser -> FindGroupCommandParser
+AddressBookParser -> FindGroupCommandParser
 activate FindGroupCommandParser
 
-FindGroupCommandParser --> NpcTrackParser
+FindGroupCommandParser --> AddressBookParser
 deactivate FindGroupCommandParser
 
-NpcTrackParser -> FindGroupCommandParser : parse("tut33")
+AddressBookParser -> FindGroupCommandParser : parse("tut33")
 activate FindGroupCommandParser
 
 create GroupContainsKeywordsPredicate
@@ -46,14 +46,14 @@ activate FindGroupCommand
 FindGroupCommand --> FindGroupCommandParser : name
 deactivate FindGroupCommand
 
-FindGroupCommandParser --> NpcTrackParser : name
+FindGroupCommandParser --> AddressBookParser : name
 deactivate FindGroupCommandParser
 'Hidden arrow to position the destroy marker below the end of the activation bar.`
-FindGroupCommandParser -[hidden]-> NpcTrackParser
+FindGroupCommandParser -[hidden]-> AddressBookParser
 destroy FindGroupCommandParser
 
-NpcTrackParser --> LogicManager : name
-deactivate NpcTrackParser
+AddressBookParser --> LogicManager : name
+deactivate AddressBookParser
 
 LogicManager -> FindGroupCommand : execute()
 activate FindGroupCommand
