@@ -232,6 +232,10 @@ Below is the sequence diagram for marking of a students tutorial attendance.
   * Pros: It simplifies the attendance tracking system, making it easier to implement and use.
   * Cons:  It lacks the ability to differentiate between different reasons for absences.
 
+The activity diagram shows the flow of how the final implementation of marking attendance has been implemented:
+
+<img src="images/MarkAttendanceActivityDiagram.png" width="650"/>
+
 ### Input Participation Points
 
 #### Implementation
@@ -260,6 +264,10 @@ Below is the sequence diagram for inputting participation points of a student.
   * Cons: Data Inconsistencies: Allowing participation points without ensuring attendance may lead to
   data inconsistencies. For example, TAs might accidentally skip marking attendance and input participation points,
   causing inaccuracies in student records.
+
+The activity diagram shows the flow of how the final implementation of inputting participation has been implemented:
+
+<img src="images/InputParticipationActivityDiagram.png" width="650"/>
 
 ### Find Students
 
