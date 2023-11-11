@@ -51,6 +51,8 @@ Given below are my contributions to the project.
 
 - Highlighted the MSS and use cases of command commands such as `add` and `list`.
 - Wrote about the implementation of `Assignment`s, and alternatives considered when assigning `Assignment`s to people.
+- Added the sequence diagram for what happens when the assignment command is executed.
+- Added the activity diagram for how the assignment command is parsed.
 
 ### Contributions to Team-Based Tasks
 
