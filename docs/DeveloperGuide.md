@@ -303,6 +303,10 @@ Grade Student command is handled by GradeCommand, GradeCommandParser, Assignment
 * `Person`: Updates the particular Person model to change the grade to.
 * `Assignment`: Updates the student's assignment grade.
 
+Below is the activity diagram for parsing an assignment command.
+
+<img src="images/AssignParserActivityDiagram.png" width="650"/>
+
 Below is the sequence diagram for grading students.
 
 <img src="images/GradeSequenceDiagram.png" width="650"/>
