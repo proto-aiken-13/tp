@@ -50,7 +50,7 @@ Need help on **memorizing commands?** Drop by in **[Command summary](#summary)!*
 {:toc}
 - **[Quick start](#quick-start)**
 
-- [Features](#features)
+- **[Features](#features)**
   - **[Overview of Features](#Overview)**
     
     - [Navigating `npc_track`](#gui)
@@ -62,7 +62,7 @@ Need help on **memorizing commands?** Drop by in **[Command summary](#summary)!*
     - [Reading commands](#read-commands)  
 
   - **[Viewing Help](#help) `help`**
-  - **Managing student particulars**
+  - **[Managing student particulars](#details)**
 
     - [Adding a Student](#add) `add`
 
@@ -75,8 +75,24 @@ Need help on **memorizing commands?** Drop by in **[Command summary](#summary)!*
     - [Finding a Student](#find) `find`
 
     - [Finding a Group of Students](#findGroup) `findGroup`
+   
+  - **[Managing Attendance](#attendance)**
+
+    - [Marking Attendance](#markAtd) `markAtd`
+
+    - [Unmarking Attendance](#unmarkAtd) `unmarkAtd`
+
+    - [Marking Attendance for a Group of Students](#markGroupAtd) `markGroupAtd`
+
+    - [Unmarking Attendance for a Group of Students](#unmarkGroupAtd) `unmarkGroupAtd`
   
-  - **Managing Assignments**
+  - **[Managing Participation](#participation)**
+
+    - [Inputting Participation](#inputPP) `inputPP`
+
+    - [Inputting Group Participation](#inputGroupPP) `inputGroupPP`
+  
+  - **[Managing Assignments](#assignments)**
 
     - [Distributing Assignments](#assign) `assign`
 
@@ -89,25 +105,18 @@ Need help on **memorizing commands?** Drop by in **[Command summary](#summary)!*
     - [Grading a Student](#grade) `grade`
 
     - [Grading a Group of Students](#gradeGroup) `gradeGroup`
-  - **Managing Participation**
 
-    - [Marking Attendance](#markAtd) `markAtd`
-
-    - [Unmarking Attendance](#unmarkAtd) `unmarkAtd`
-
-    - [Marking Attendance for a Group of Students](#markGroupAtd) `markGroupAtd`
-
-    - [Unmarking Attendance for a Group of Students](#unmarkGroupAtd) `unmarkGroupAtd`
-
-  **Miscallaneous**
-  - [Exiting the Program](#exit)
+  - **[Miscallaneous](#misc)**
+    - [Deleting the Program](#delete) `delete`
+    - [Exiting the Program](#exit) `exit`
+    - [Clearing the Program](#clear) `clear`
 
 
-- [FAQ](#FAQ)
+- **[FAQ](#FAQ)**
 
-- [Known Issues](#issues)
+- **[Known Issues](#issues)**
 
-- [Command Summary](#summary)
+- **[Command Summary](#summary)**
 
 <a name="quick-start"></a>
 ## Quick start
@@ -261,6 +270,17 @@ Helps user navigate through the app.
 
 :top: [Back to Table Of Contents](#toc)
 
+<a name="details"></a>
+## Managing Student Details
+
+For adding and managing students, you can use the following commands:
+* add
+* edit
+* group
+* list
+* find
+* findGroup
+
 <a name="add"></a>
 ### Adding a student: `add`
 
@@ -292,6 +312,60 @@ Adds a student to the student book.
 | `add n/Betsy Crowe e/betsycrowe@example.com a/newTelegram p/91234567 t/CS2103T c/Quiet Student` | Adds Betsy Crowe <br/>(Telegram : @newTelegram) with extra comments and tags                 |
 | `add n/James group/tut4`                                                                     | Adds James while grouping him to `tut4`                                                      |
 | `add n/Benson`                                                                               | Adds Benson only                                                                             |
+
+:top: [Back to Table Of Contents](#toc)
+
+
+<a name="edit"></a>
+### Editing a person : `edit`
+
+Have anything you want to change ? Not to worry, your student details is editable.
+
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
+Edits an existing student.
+<br><br>
+***Format***: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]… [a/TELEGRAM_HANDLE] [group/GROUP]`
+</div>
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
+</div>
+
+| Examples                                  | Purpose                                                                                                             |
+|-------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| `edit 1 p/91234567 e/johndoe@example.com` | Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively. |
+| `edit 2 n/Betsy Crower t/`                | Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.                                 |
+| `edit 3 t/ c/Loves cake`                  | Clears all existing tags of the 3rd person and replaces their tags with "Loves cake".                               |
+| `edit 4 group/2`                          | Moves the 4th person to group 2.                                                                                    |
+
+:top: [Back to Table Of Contents](#toc)
+
+
+<a name="group"></a>
+### Grouping students: `group`
+
+If you ever encounter changing [group](#glossary) names, or want to assign students to groups in general, you can always use our `group` command to do that.
+
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
+Change the student group names.
+<br><br>
+***Format***: `group PREV_GROUP UPDATED_GROUP`
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- Student group names must be alphanumeric and **cannot** contain spaces.
+</div>
+
+| Examples        | Purpose                            |
+|-----------------|------------------------------------|
+| `group T01 T02` | Change the group name of `T01` to `T02`. |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
+[Glossary](#glossary)
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -369,36 +443,14 @@ Finds students associated with the group.
 
 :top: [Back to Table Of Contents](#toc)
 
-<a name="edit"></a>
-### Editing a person : `edit`
-
-Have anything you want to change ? Not to worry, your student details is editable.
-
-<div markdown="span" class="alert alert-success">
-:pencil2: **Purpose:**
-Edits an existing student.
-<br><br>
-***Format***: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]… [a/TELEGRAM_HANDLE] [group/GROUP]`
-</div>
-
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
-</div>
-
-| Examples                                  | Purpose                                                                                                             |
-|-------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
-| `edit 1 p/91234567 e/johndoe@example.com` | Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively. |
-| `edit 2 n/Betsy Crower t/`                | Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.                                 |
-| `edit 3 t/ c/Loves cake`                  | Clears all existing tags of the 3rd person and replaces their tags with "Loves cake".                               |
-| `edit 4 group/2`                          | Moves the 4th person to group 2.                                                                                    |
-
-:top: [Back to Table Of Contents](#toc)
-
-### Marking Attendance
+<a name="attendance"></a>
+## Marking Attendance
 
 For managing attendance, the following commands are available:
 * markAtd
 * unmarkAtd
+* markGroupAtd
+* unmarkGroupAtd
 
 <a name="markAtd"></a>
 #### Mark Attendance : `markAtd`
@@ -452,7 +504,9 @@ Want to unmark a student's attendance? Use the `unmarkAtd` command.
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
-Unmark the attendance of a student for that tutorial.
+Unmark the attendance of a student for that tutorial.</br> 
+  
+This removes the current status marked for the attendance, as well as any participation points inputted for that tutorial.
 <br><br>
 
 ***Format***: `unmarkAtd INDEX t/TUTORIAL`
@@ -532,7 +586,9 @@ Want to unmark a student's group for their attendance? Use the `unmarkGroupAtd` 
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
-Unmark the attendance of a group of students for that tutorial.
+Unmark the attendance of a group of students for that tutorial.</br> 
+  
+This removes the current status marked for the attendance, as well as any participation points inputted for that tutorial across the entire group.
 <br><br>
 
 ***Format***: `unmarkGroupAtd GROUP t/TUTORIAL`
@@ -560,7 +616,8 @@ Unmark the attendance of a group of students for that tutorial.
 
 :top: [Back to Table Of Contents](#toc)
 
-### Participation
+<a name="participation"></a>
+## Participation
 
 For participation, you can make the following commands:
 * inputPP
@@ -570,11 +627,11 @@ For participation, you can make the following commands:
 #### Insert participation points to a student: `inputPP`
 <a name="inputPP"></a>
 
-Want to reward your student groups with points for their diligent participation? Use the `inputGroupPP` command.
+Want to reward your student with points for their diligent participation? Use the `inputGroupPP` command.
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
-Input participation points for a student for that tutorial.
+Input arbitary participation points for a student for that tutorial.
 <br><br>
 
 ***Format***:  `inputPP INDEX t/TUTORIAL pp/POINTS`
@@ -613,7 +670,7 @@ Want to reward your student groups with points for their diligent participation?
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
-Input participation points for a group of students for that tutorial.
+Input arbitrary participation points for a group of students for that tutorial.
 <br><br>
 
 ***Format***: `inputGroupPP GROUP t/TUTORIAL pp/POINTS`
@@ -672,9 +729,9 @@ List a student's participation record.
 </div>
 
 <a name="assignments"></a>
-### Managing Assignments
+## Managing Assignments
 
-For allocating and grading assignments , you can make the following commands:
+For allocating and grading assignments , you can use the following commands:
 * assign
 * deassign
 * deassignIndiv
@@ -908,32 +965,12 @@ Grade a group of students' assignment.
 
 :top: [Back to Table Of Contents](#toc)
 
-<a name="group"></a>
-### Grouping students: `group`
-
-If you ever encounter changing group names, you can always use our `group` command to do that.
-
-<div markdown="span" class="alert alert-success">
-:pencil2: **Purpose:**
-Change the student group names.
-<br><br>
-***Format***: `group PREV_GROUP UPDATED_GROUP`
-</div>
-
-<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
-<br><br>
-- Student group names must be alphanumeric and **cannot** contain spaces.
-</div>
-
-| Examples        | Purpose                            |
-|-----------------|------------------------------------|
-| `group T01 T02` | Change the group name of `T01` to `T02`. |
-
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
-</div>
-
-:top: [Back to Table Of Contents](#toc)
+<a name="misc"></a>
+## Miscallaneous commands
+Besides the aforementioned commands, here are other commands that could be used:
+- delete
+- exit
+- clear
 
 <a name="delete"></a>
 ### Deleting a student : `delete`
@@ -976,6 +1013,7 @@ Exits the program.
 
 :top: [Back to Table Of Contents](#toc)
 
+<a name="clear"></a>
 ### Clearing the Data : `clear`
 
 Do you need to remove all data in your `npc_track`. You can always do it in a very simple way using the `clear` command.
@@ -1062,8 +1100,9 @@ _Details coming soon ..._
 
 | Keyword                     | Definition                                                                           |
 |-----------------------------|--------------------------------------------------------------------------------------|
+| **Group**                   | The tutorial group you are teaching                                                  |
 | **Parameter**               | Details about the student that will be included in the command                       |
-| **Alphanumeric**            | Containing **only** numbers and letters. Spaces and other characters (%, #, *, etc) are not allowed|
+| **Alphanumeric**            | Containing **only** numbers and letters. Spaces and other characters (%, #, *, etc) do **not count**|
 | **Command**                 | Instructions that `npc_track` will execute                                           |
 | **Command Line Interface (CLI)** | An application interface where you interact with the application by typing commands.  |
 | **JAR**                     | Compressed file of `npc_track` is in the form of a Java ARchive                      |
@@ -1082,6 +1121,9 @@ _Details coming soon ..._
 **A**: In a typical semester, there are 13 weeks. Tutorials can start earlier or later, so to accomodate the largest possible number of tutorials, npc_track
 has 12 weeks' worth of tutorials to grade.
 
+**Q**: How do I decide how many "participation points" to use?</br>
+**A**: The command is dependent on arbitrary participation levels or any guidelines on measuring student participation that your course has made.
+
 **Q**: I have two students that share the exact same name. How can npc_track support this?<br>
 **A**: npc_track cannot handle students with the exact same name. However, you can consider adding something else to their names to distinguish between them.
 So for example, if you have 2 students called "Arnab Goav", you can name one student "Arnab Goav 1" and the other "Arnab Goav 2".
@@ -1092,4 +1134,7 @@ So for example, if you have 2 students called "Arnab Goav", you can name one stu
 **Q**: I can enter two students with the same telegram handle or same phone number (or something similar). Why is this allowed?<br>
 **A**: npc_track allows this, much like a normal contacts application in your phone. We do not enforce too many checks as we want to enable
 our users to use our app how they like, and support various unforeseen scenarios.
+
+**Q**: I am a recitation tutor and/or a professor. Can this application extend to my lessons?</br>
+**A**: npc_track is primarily designed for teaching assistants, but it can also be scalable towards **recitation-sized** classes. It cannot track student participations or attendance for lecture-sized classes, however.
 
