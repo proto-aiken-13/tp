@@ -8,7 +8,6 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.logic.commands.UnmarkAttendanceCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.person.Attendance;
 
 /**
  * Parses input arguments and creates a new {@code UnMarkAttendanceCommand} object
@@ -23,8 +22,12 @@ public class UnmarkAttendanceParser implements Parser<UnmarkAttendanceCommand> {
         requireNonNull(args);
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_TUTORIAL);
 
+        if (!ParserUtil.arePrefixesPresent(argMultimap, PREFIX_TUTORIAL)) {
+            throw new ParseException(
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, UnmarkAttendanceCommand.MESSAGE_USAGE));
+        }
+
         Index index;
-        int week = 0;
         try {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (IllegalValueException ive) {
@@ -32,13 +35,7 @@ public class UnmarkAttendanceParser implements Parser<UnmarkAttendanceCommand> {
                     UnmarkAttendanceCommand.MESSAGE_USAGE), ive);
         }
 
-        if (argMultimap.getValue(PREFIX_TUTORIAL).isPresent()) {
-            week = ParserUtil.parseTutorial(argMultimap.getValue(PREFIX_TUTORIAL).get());
-        }
-
-        if (week == 0) {
-            throw new ParseException(Attendance.TUTORIAL_ERROR_MSG);
-        }
+        int week = ParserUtil.parseTutorial(argMultimap.getValue(PREFIX_TUTORIAL).get());
 
         return new UnmarkAttendanceCommand(index, Index.fromOneBased(week));
     }
