@@ -33,7 +33,7 @@ activate GradeCommandParser
 
 create GradeCommand
 GradeCommandParser -> GradeCommand
-
+activate GradeCommand
 
 GradeCommand --> GradeCommandParser : g
 deactivate GradeCommand
@@ -77,7 +77,7 @@ deactivate Person
 
 group loop [for assignment in studentAssignments]
     opt assignment equals studentAssignment
-        Assignment -> GradeCommand : setScore(score)
+        Assignment <- GradeCommand : setScore(score)
     end
 end
 
