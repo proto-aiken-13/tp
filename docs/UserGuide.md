@@ -1040,9 +1040,12 @@ has 12 weeks' worth of tutorials to grade.
 
 **Q**: I have two students that share the exact same name. How can npc_track support this?<br>
 **A**: npc_track cannot handle students with the exact same name. However, you can consider adding something else to their names to distinguish between them.
+So for example, if you have 2 students called "Arnab Goav", you can name one student "Arnab Goav 1" and the other "Arnab Goav 2".
 
-For example, if you have 2 students called "Arnab Goel", you can name one student "Arnab Goel 1" and the other "Arnab Goel 2".
+**Q**: The user display looks weird when I add a very long name or minimise it to very small sizes.<br>
+**A**: npc_track does not support extreme inputs. It is optimised for sane usage with a standard screen size and normal names. We will add support in a future version.
 
 **Q**: I can enter two students with the same telegram handle or same phone number (or something similar). Why is this allowed?<br>
 **A**: npc_track allows this, much like a normal contacts application in your phone. We do not enforce too many checks as we want to enable
 our users to use our app how they like, and support various unforeseen scenarios.
+
