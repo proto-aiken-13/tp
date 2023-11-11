@@ -278,7 +278,7 @@ Below is the sequence diagram for finding students.
 
 **Aspect: Allowing teaching assistants to find using what keyword**
 * **Alternative 1 (Chosen):** `npc_track` will output students based on what TA exactly input.
-    * Pros: Reduced Chance of Error: Gives uses the exact student they want and reduces chances of error since it needs 
+    * Pros: Reduced Chance of Error: Gives users the exact student they want and reduces chances of error since it needs 
       to be exact match.
     * Cons: Increased Complexity: Users need to know the exact name of their student, or else they will not be able 
       to find the student.
