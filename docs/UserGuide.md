@@ -357,7 +357,7 @@ Marks the attendance of a student for that tutorial.
 list will be updated.
 </div>
 
-`STATUS`: The student's attendance status. Valid attendance statuses are as follows:
+`STATUS`: The student's attendance status (case sensitive). Valid attendance statuses are as follows:
 
 | Status | Meaning                                                       |
 |--------|---------------------------------------------------------------|
@@ -439,7 +439,7 @@ Marks the attendance of a group of students for that tutorial.
 
 </div>
 
-`STATUS`: The student's attendance status. Valid attendance statuses are as follows:
+`STATUS`: The student's attendance status (case sensitive). Valid attendance statuses are as follows:
 
 | Status | Meaning                                                       |
 |--------|---------------------------------------------------------------|
