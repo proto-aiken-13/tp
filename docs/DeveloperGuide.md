@@ -177,6 +177,10 @@ Each `Person` will contain `assignments` in the form of a `Set<Assignment>`. We 
 We can give an `Assignment` to everybody in the address book, through the `AssignmentCommand`.
 The `AssignmentCommand` looks through all the `Person`s, and attempts to add the `Assignment` to each `Person`.
 
+Below is the sequence diagram for an assignment command.
+
+<img src="images/AssignSequenceDiagram.png" width="650"/>
+
 #### Design considerations:
 
 **Aspect: Who to give assignment to by default**
