@@ -22,13 +22,11 @@ public class UnmarkGroupAttendanceParser implements Parser<UnmarkGroupAttendance
     public UnmarkGroupAttendanceCommand parse(String args) throws ParseException {
         requireNonNull(args);
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_TUTORIAL);
-
         if (!ParserUtil.arePrefixesPresent(argMultimap, PREFIX_TUTORIAL)) {
             throw new ParseException(
                     String.format(MESSAGE_INVALID_COMMAND_FORMAT, UnmarkGroupAttendanceCommand.MESSAGE_USAGE));
         }
         // parse group
-        Group group;
         try {
             group = ParserUtil.parseGroup(argMultimap.getPreamble());
         } catch (IllegalValueException ive) {
