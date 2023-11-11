@@ -116,10 +116,8 @@ Step 3 : Save the [JAR](#glossary) file to the folder where you want to locate t
 path of where the file is located.
 ![Step 3](images/download2.png)
 
-If you are a **windows** user, [click here](#windows)
-
-<a name="windows"></a>
-### Windows users :
+The following steps will be illustrated with **Windows**.
+However, the process is the same for **Mac** and **Linux**.
 
 Step 4 : Open your computer's terminal. 
 ![Step 4](images/download3.png)
@@ -128,7 +126,7 @@ Step 5 : Type in `cd` followed by the location of the file you copied in step 3.
 the file name as shown in the figure.  
 ![Step 5](images/download4.png)
 
-Step 6 : Type the following command `java -jar npctrack.jar` to run the app.
+Step 6 : Type the command `java -jar npctrack.jar` to run the app.
 ![Step 6](images/download5.png)
 
 ---
@@ -140,7 +138,7 @@ Step 6 : Type the following command `java -jar npctrack.jar` to run the app.
 |------------|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|------------------------------|
 | `n/`       | Names           | Must be alphanumeric and can contain spaces                                    <br/><br/>                                                                         | John Doe                        | $5money                      |
 | `a/`       | Telegram handle | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters and maximum 32 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop | $telegram, _tele, 56thperson |
-| `group/`   | Group names     | Must be alphanumeric and cannot contain spaces                                    <br/><br/>                                                                      | group1, T01, LEC1               | $group, _grp, group 1        |
+| `group/`   | Group names     | Must be alphanumeric and cannot contain spaces <br/> Case sensitive                                    <br/><br/>                                                                      | group1, T01, LEC1               | $group, _grp, group 1        |
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -359,7 +357,7 @@ Marks the attendance of a student for that tutorial.
 list will be updated.
 </div>
 
-`STATUS`: The student's attendance status. Valid attendance statuses are as follows:
+`STATUS`: The student's attendance status (case sensitive). Valid attendance statuses are as follows:
 
 | Status | Meaning                                                       |
 |--------|---------------------------------------------------------------|
@@ -441,7 +439,7 @@ Marks the attendance of a group of students for that tutorial.
 
 </div>
 
-`STATUS`: The student's attendance status. Valid attendance statuses are as follows:
+`STATUS`: The student's attendance status (case sensitive). Valid attendance statuses are as follows:
 
 | Status | Meaning                                                       |
 |--------|---------------------------------------------------------------|
@@ -837,7 +835,9 @@ Grade a group of students' assignment.
 <br>
 - `-0` is considered to be 0 in the system. 
 <br>
-- The grade given must be below the maximum score of all the assignments in the group.
+- The grade given must be at most the maximum score of every assignment in the group.
+<br>
+- Every student in the group must have the assignment. This command pairs well with `assignGroup`!
 <br>
 - `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
@@ -1042,5 +1042,12 @@ has 12 weeks' worth of tutorials to grade.
 
 **Q**: I have two students that share the exact same name. How can npc_track support this?<br>
 **A**: npc_track cannot handle students with the exact same name. However, you can consider adding something else to their names to distinguish between them.
-
 So for example, if you have 2 students called "Arnab Goav", you can name one student "Arnab Goav 1" and the other "Arnab Goav 2".
+
+**Q**: The user display looks weird when I add a very long name or minimise it to very small sizes.<br>
+**A**: npc_track does not support extreme inputs. It is optimised for sane usage with a standard screen size and normal names. We will add support in a future version.
+
+**Q**: I can enter two students with the same telegram handle or same phone number (or something similar). Why is this allowed?<br>
+**A**: npc_track allows this, much like a normal contacts application in your phone. We do not enforce too many checks as we want to enable
+our users to use our app how they like, and support various unforeseen scenarios.
+
