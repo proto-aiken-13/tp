@@ -177,6 +177,10 @@ Each `Person` will contain `assignments` in the form of a `Set<Assignment>`. We 
 We can give an `Assignment` to everybody in the address book, through the `AssignmentCommand`.
 The `AssignmentCommand` looks through all the `Person`s, and attempts to add the `Assignment` to each `Person`.
 
+Below is the sequence diagram for an assignment command.
+
+<img src="images/AssignSequenceDiagram.png" width="650"/>
+
 #### Design considerations:
 
 **Aspect: Who to give assignment to by default**
@@ -298,6 +302,10 @@ Grade Student command is handled by GradeCommand, GradeCommandParser, Assignment
 * `Model`: Updates the student list according to the keyword that the user keys in.
 * `Person`: Updates the particular Person model to change the grade to.
 * `Assignment`: Updates the student's assignment grade.
+
+Below is the activity diagram for parsing an assignment command.
+
+<img src="images/AssignParserActivityDiagram.png" width="650"/>
 
 Below is the sequence diagram for grading students.
 
