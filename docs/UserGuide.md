@@ -138,7 +138,7 @@ Step 6 : Type the command `java -jar npctrack.jar` to run the app.
 |------------|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|------------------------------|
 | `n/`       | Names           | Must be alphanumeric and can contain spaces                                    <br/><br/>                                                                         | John Doe                        | $5money                      |
 | `a/`       | Telegram handle | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters and maximum 32 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop | $telegram, _tele, 56thperson |
-| `group/`   | Group names     | Must be alphanumeric and cannot contain spaces                                    <br/><br/>                                                                      | group1, T01, LEC1               | $group, _grp, group 1        |
+| `group/`   | Group names     | Must be alphanumeric and cannot contain spaces <br/> Case sensitive                                    <br/><br/>                                                                      | group1, T01, LEC1               | $group, _grp, group 1        |
 
 
 --------------------------------------------------------------------------------------------------------------------
