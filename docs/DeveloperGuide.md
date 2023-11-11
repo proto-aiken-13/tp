@@ -311,8 +311,8 @@ Below is the sequence diagram for finding a group of students.
       to find the group.
 
 * **Alternative 2:** `npc_track` allows users to find just a part of the group's name.
-*  * Pros: Better User Experience: Users can just input a partial part of their name to be able to find and get a 
-      list of groups that contain a part of the keyword
+    * Pros: Better User Experience: Users can just input a partial part of their name to be able to find and get a 
+       list of groups that contain a part of the keyword
     * Cons: Increased Chance of Error: Since it is more complex, there is higher chance of error.
 
 ### Grade Students
