@@ -835,6 +835,8 @@ Grade a group of students' assignment.
 <br>
 - `-0` is considered to be 0 in the system. 
 <br>
+- The grade given must be at most the maximum score of every assignment in the group.
+<br>
 - Every student in the group must have the assignment. This command pairs well with `assignGroup`!
 <br>
 - `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
