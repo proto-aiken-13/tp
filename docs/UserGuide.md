@@ -263,8 +263,8 @@ Helps user navigate through the app.
 ***Format***: `help`
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -1135,9 +1135,9 @@ So for example, if you have 2 students called "Arnab Goav", you can name one stu
 **A**: npc_track allows this, much like a normal contacts application in your phone. We do not enforce too many checks as we want to enable
 our users to use our app how they like, and support various unforeseen scenarios.
 
-**Q**: I am a recitation tutor and/or a professor. Can this application extend to my lessons?</br>
+**Q**: I am a recitation tutor and/or a professor. Can this application extend to my lessons?<br>
 **A**: npc_track is primarily designed for teaching assistants, but it can also be scalable towards **recitation-sized** classes. It cannot track student participations or attendance for lecture-sized classes, however.
 
-**Q**: Why Telegram? What if my students prefer something like WhatsApp or LINE?</br>
+**Q**: Why Telegram? What if my students prefer something like WhatsApp or LINE?<br>
 **A**: Students are more likely to use telegram to contact their TA's and tutorial groups within NUS. For applications like WhatsApp or LINE, you can simply consider using something like their associate phone numbers or use tags to refer to their usernames on such platforms.
 
