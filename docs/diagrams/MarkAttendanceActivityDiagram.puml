@@ -14,16 +14,17 @@ else ([Else])
         if () then ([Tutorial field is invalid])
             :Error for invalid tutorial is thrown;
             end;
-        else if () then ([Tutorial has been marked for the week])
-            :Error indicating attendance for the week has been marked;
-            end;
-        else ([Tutorial is valid])
-            if () then ([Attendance is invalid or not present])
-                :Error for invalid attendance status is shown;
+        else ([Else])
+            if () then ([Tutorial has been marked for the week])
+                :Error indicating attendance for the week has been marked;
                 end;
-            else ([Status is valid])
-                :Student's attendance for the week is marked with the status;
-                :Message is returned indicating that the student's attendance has been marked succesfully;
+            else ([Tutorial is valid])
+                if () then ([Attendance status is invalid])
+                    :Error for invalid attendance status is shown;
+                    end;
+                else ([Else])
+                    :Student's attendance for the week is marked with the status;
+                    :Message is returned indicating that the student's attendance has been marked successfully;
 stop
 
 @enduml

@@ -265,6 +265,10 @@ The activity diagram shows the flow of how the final implementation of marking a
 
 <img src="images/MarkAttendanceActivityDiagram.png" width="650"/>
 
+For reference, the activity diagram shows the flow of the final implementation of unmark attendance.
+
+<img src="images/UnmarkAttendanceActivityDiagram.png" width="650"/>
+
 ### Input Participation Points
 
 #### Implementation
