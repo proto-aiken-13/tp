@@ -417,8 +417,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* *`    | TA       | list all students in a class        | have an overview of all the students in a class         |
 | `*`      | TA       | exit the app                        | close the program                                       |
 
-*{More to be added}*
-
 ### Use cases
 
 (For all use cases below, the **System** is the `npc_track` and the **Actor** is the `user`, unless specified otherwise)
@@ -648,8 +646,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 4.  Any teaching assistant from any faculty should know how to use it.
 5.  Data of the students should not be easily accessible.
-
-*{More to be added}*
 
 ### Glossary
 
