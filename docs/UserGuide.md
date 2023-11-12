@@ -150,7 +150,6 @@ Step 6 : Simply type the command `java -jar npctrack.jar` to run the app.
 
 And voila, just like that, your application should appear!
 
-**(Image to be put in here)**
 ---
 
 <a name="Overview"></a>
@@ -1139,6 +1138,6 @@ our users to use our app how they like, and support various unforeseen scenarios
 **Q**: I am a recitation tutor and/or a professor. Can this application extend to my lessons?</br>
 **A**: npc_track is primarily designed for teaching assistants, but it can also be scalable towards **recitation-sized** classes. It cannot track student participations or attendance for lecture-sized classes, however.
 
-**Q**: Why Telegram? What if my students prefer something like WhatsApp or LINE?
-**A**: npc_track uses telegram handles as statistically speaking, students are more likely to use telegram to contact their TA's and tutorial groups within NUS. For applications like WhatsApp or LINE, you can simply consider using something like their associate phone numbers or use tags to refer to their usernames on such platforms.
+**Q**: Why Telegram? What if my students prefer something like WhatsApp or LINE?</br>
+**A**: Students are more likely to use telegram to contact their TA's and tutorial groups within NUS. For applications like WhatsApp or LINE, you can simply consider using something like their associate phone numbers or use tags to refer to their usernames on such platforms.
 
