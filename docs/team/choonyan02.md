@@ -56,6 +56,8 @@ Given below are my contributions to the project.
 - Helped with the use cases for the features I implemented.
 - Helped create the UML diagram for InputParticipationSequenceDiagram.
 - Helped create the UML diagram for MarkAttendanceSequenceDiagram.
+- Helped create the UML diagram for UnmarkAttendanceActivityDiagram.
+- Helped to correct the UML diagram for MarkAttendanceActivityDiagram.
 - Helped with explaining the process for Input Participation implementation.
 - Helped with explaining the process for Mark Attendance implementation.
 
