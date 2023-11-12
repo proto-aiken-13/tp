@@ -62,7 +62,7 @@ Need help on **memorizing commands?** Drop by in **[Command summary](#summary)!*
     - [Reading commands](#read-commands)  
 
   - **[Viewing Help](#help) `help`**
-  - **[Managing student particulars](#details)**
+  - **[Managing Student Details](#details)**
 
     - [Adding a Student](#add) `add`
 
@@ -302,16 +302,16 @@ Adds a student to the student book.
 - Cannot add a student with the same name in the list.
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
-</div>
-
 | Examples                                                                                     | Purpose                                                                                      |
 |----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | `add n/John Doe p/98765432 e/johnd@example.com a/johnTelegram`                               | Adds John Doe (Telegram : @johnTelegram) with additional details like phone number and email |
 | `add n/Betsy Crowe e/betsycrowe@example.com a/newTelegram p/91234567 t/CS2103T c/Quiet Student` | Adds Betsy Crowe <br/>(Telegram : @newTelegram) with extra comments and tags                 |
 | `add n/James group/tut4`                                                                     | Adds James while grouping him to `tut4`                                                      |
 | `add n/Benson`                                                                               | Adds Benson only                                                                             |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -328,16 +328,16 @@ Edits an existing student.
 ***Format***: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]… [a/TELEGRAM_HANDLE] [group/GROUP]`
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
-</div>
-
 | Examples                                  | Purpose                                                                                                             |
 |-------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
 | `edit 1 p/91234567 e/johndoe@example.com` | Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively. |
 | `edit 2 n/Betsy Crower t/`                | Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.                                 |
 | `edit 3 t/ c/Loves cake`                  | Clears all existing tags of the 3rd person and replaces their tags with "Loves cake".                               |
 | `edit 4 group/2`                          | Moves the 4th person to group 2.                                                                                    |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -363,8 +363,8 @@ Change the student group names.
 |-----------------|------------------------------------|
 | `group T01 T02` | Change the group name of `T01` to `T02`. |
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -381,8 +381,8 @@ Shows a list of all students.
 ***Format***: `list`
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -406,13 +406,13 @@ Finds students associated with the keyword.
 - `KEYWORD` : Case insensitive and can involve any character. 
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
-</div>
-
 | Examples          | Purpose                             |
 |-------------------|-------------------------------------|
 | `find James Jake` | Finds a student called "James Jake" |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
+</div>
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -433,18 +433,19 @@ Finds students associated with the group.
 - `KEYWORD` : Case insensitive and can involve any character. 
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
-</div>
 
 | Examples      | Purpose                                       |
 |---------------|-----------------------------------------------|
 | `findGroup 1` | Finds a student in group 1 and lists them out |
 
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
+</div>
+
 :top: [Back to Table Of Contents](#toc)
 
 <a name="attendance"></a>
-## Marking Attendance
+## Managing Attendance
 
 For managing attendance, the following commands are available:
 * markAtd
@@ -491,8 +492,8 @@ list will be updated.
 | `markAtd 1 t/1 s/P`   | Marks attendance of student with index 1 and "PRESENT" status for tutorial 1 |
 | `markAtd 2 t/12 s/VR` | Marks attendance of student with index 2 and "VALID REASON" for tutorial 12  |
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -530,8 +531,8 @@ This removes the current status marked for the attendance, as well as any partic
 | `unmarkAtd 1 t/1`  | Unmark attendance of student with index 1 for tutorial 1)  |
 | `unmarkAtd 2 t/12` | Unmark attendance of student with index 2 for tutorial 12) |
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -573,8 +574,8 @@ Marks the attendance of a group of students for that tutorial.
 |--------------------------|-----------------------------------------------------------------------|
 | `markGroupAtd 1 t/1 s/P` | marks attendance of students in group 1 for tutorial 1 as all present |
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -610,14 +611,14 @@ This removes the current status marked for the attendance, as well as any partic
 |------------------------|----------------------------------------------------------|
 | `unmarkGroupAtd 1 t/1` | Unmark attendance of students in group 1 for tutorial 1) |
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
 
 <a name="participation"></a>
-## Participation
+## Managing Participation
 
 For participation, you can make the following commands:
 * inputPP
@@ -657,8 +658,8 @@ Input arbitary participation points for a student for that tutorial.
 | `inputPP 1 t/1 pp/350`  | For student with index 1, input 350 participation points to tutorial 1  |
 | `inputPP 2 t/12 pp/500` | For student with index 2, input 500 participation points to tutorial 12 |
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -695,8 +696,8 @@ Input arbitrary participation points for a group of students for that tutorial.
 | `inputGroupPP lab33 t/1 pp/350`  | For students of lab33, input 350 participation points to tutorial 1 |
 | `inputGroupPP tut39 t/12 pp/500` | For student of tut39, input 500 participation points to tutorial 12 |
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -724,8 +725,8 @@ List a student's participation record.
 | `listParticipation 1` | List the participation record for the student with index 1 |
 | `listParticipation 5` | List the participation record for the student with index 5 |
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 <a name="assignments"></a>
@@ -766,8 +767,8 @@ Create an assignment and assign it to all students.
 |----------------------------|-------------------------------------------------------------------------------------------------|
 | `assign n/Tutorial1 m/100` | Assigns every student in the list with an assignment called Tutorial1 and maximum score is 100. |
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -795,8 +796,8 @@ Delete an assignment for all students.
 |---------------|--------------------------------------------------------------------------------|
 | `deassign n/Tutorial1` | Deletes the assignment called Tutorial1 for all students with that assignment. |
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -824,8 +825,8 @@ Delete an assignment for a particular student.
 |-------------------------------|------------------------------------------------------------------|
 | `deassignIndiv 1 n/Tutorial1` | Deletes the assignment called Tutorial1 for student with index 1 |
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -856,8 +857,8 @@ Create an assignment and assign it to a group of students.
 | `assignGroup 1 n/Tutorial1 m/100`  | Assigns group named "1" with an assignment called Tutorial1 and maximum score is 100.  |
 | `assignGroup Pheonix n/Lab1 m/100` | Assigns group named "Pheonix" with an assignment called Lab1 and maximum score is 100. |
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -888,8 +889,8 @@ Create an assignment and assign it to a student.
 | `assignIndiv 1 n/Tutorial1 m/100` | Assigns student #1 with an assignment called Tutorial1 and maximum score is 100. |
 | `assignIndiv 10 n/Lab1 m/100`     | Assigns student #10 with an assignment called Lab1 and maximum score is 100.     |
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -923,8 +924,8 @@ Grade a student's assignment.
 | `grade 1 n/tutorial2 g/80` | Grades student #1 a score of 80 for his tutorial2. |
 | `grade 10 n/lab2 g/35`     | Grades student #10 a score of 35 for his lab2.     |
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -959,8 +960,8 @@ Grade a group of students' assignment.
 |---------------------------------------|----------------------------------------------------------------------------------------|
 | `gradeGroup Class33 n/Tutorial1 g/90` | Grades students in group `Class33` for an assignment called `Tutorial1` a score of 90. |
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -989,8 +990,8 @@ Deletes the specified person from the student book.
 - `INDEX` must be a valid index. 
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -1007,8 +1008,8 @@ Exits the program.
 ***Format***: `exit`
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -1031,8 +1032,8 @@ it. Hence, since this is a irreversible command, type `yes` to confirm the actio
 ![Clear](images/clear.png)
 </div>
 
-<div markdown="span" class="alert alert-warning">:pushpin: **[Troubleshooting](#issues)**
-[Glossary](#glossary)
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**</br>
+:question: **[Glossary](#glossary)**
 </div>
 
 :top: [Back to Table Of Contents](#toc)
@@ -1122,7 +1123,7 @@ _Details coming soon ..._
 has 12 weeks' worth of tutorials to grade.
 
 **Q**: How do I decide how many "participation points" to use?</br>
-**A**: The command is dependent on arbitrary participation levels or any guidelines on measuring student participation that your course has made.
+**A**: The command is dependent on relative participation levels of your students or any guidelines on measuring student participation that your course has made.
 
 **Q**: I have two students that share the exact same name. How can npc_track support this?<br>
 **A**: npc_track cannot handle students with the exact same name. However, you can consider adding something else to their names to distinguish between them.
@@ -1137,4 +1138,7 @@ our users to use our app how they like, and support various unforeseen scenarios
 
 **Q**: I am a recitation tutor and/or a professor. Can this application extend to my lessons?</br>
 **A**: npc_track is primarily designed for teaching assistants, but it can also be scalable towards **recitation-sized** classes. It cannot track student participations or attendance for lecture-sized classes, however.
+
+**Q**: Why Telegram? What if my students prefer something like WhatsApp or LINE?
+**A**: npc_track uses telegram handles as statistically speaking, students are more likely to use telegram to contact their TA's and tutorial groups within NUS. For applications like WhatsApp or LINE, you can simply consider using something like their associate phone numbers or use tags to refer to their usernames on such platforms.
 
