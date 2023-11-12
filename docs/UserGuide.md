@@ -374,8 +374,8 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 ![Attendance](images/attendance.png)
 
 For managing attendance, the following commands are available:
-* markAtd
-* unmarkAtd
+* [markAtd](#markAtd)
+* [unmarkAtd](#unmarkAtd)
 
 <a name="markAtd"></a>
 #### Mark Attendance : `markAtd`
