@@ -17,7 +17,7 @@ title: Developer Guide
 
 ## **Demo video**
 
-Watch the demo [here.](https://www.youtube.com/watch?v=EblMcXC3lXk)
+Watch the demo [here](https://www.youtube.com/watch?v=EblMcXC3lXk).
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -177,6 +177,10 @@ Each `Person` will contain `assignments` in the form of a `Set<Assignment>`. We 
 We can give an `Assignment` to everybody in the address book, through the `AssignmentCommand`.
 The `AssignmentCommand` looks through all the `Person`s, and attempts to add the `Assignment` to each `Person`.
 
+Below is the activity diagram for parsing an assignment command.
+
+<img src="images/AssignParserActivityDiagram.png" width="650"/>
+
 Below is the sequence diagram for an assignment command.
 
 <img src="images/AssignSequenceDiagram.png" width="650"/>
@@ -269,7 +273,7 @@ The activity diagram shows the flow of how the final implementation of marking a
 
 #### Implementation
 
-Input participation command is handled by InputParticipationCommand, InputParticipationParser, and Model.
+Input participation command is handled by `InputParticipationCommand`, `InputParticipationParser`, and `Model`.
 * `InputParticipationParser`: Parse user inputs.
 * `InputParticipationCommand`: Given the parsed user input, execute the command.
 * `Model`: Updates the student list accordingly.
@@ -302,7 +306,7 @@ The activity diagram shows the flow of how the final implementation of inputting
 
 #### Implementation
 
-Find Student command is handled by FindCommand, FindCommandParser, and Model.
+Find Student command is handled by `FindCommand`, `FindCommandParser`, and `Model`.
 * `FindCommandParser`: Parse user inputs.
 * `FindCommand`: Given the parsed user input, execute the command.
 * `Model`: Updates the student list according to the keyword that the user keys in.
@@ -328,7 +332,7 @@ Below is the sequence diagram for finding students.
 ### Find Group of Students
 
 #### Implementation
-Find Group of Students command is handled by FindGroupCommand, FindGroupCommandParser, and Model.
+Find Group of Students command is handled by `FindGroupCommand`, `FindGroupCommandParser`, and `Model`.
 * `FindGroupCommandParser`: Parse user inputs.
 * `FindGroupCommand`: Given the parsed user input, execute the command.
 * `Model`: Updates the student list according to the keyword that the user keys in.
@@ -356,16 +360,12 @@ Below is the sequence diagram for finding a group of students.
 
 #### Implementation
 
-Grade Student command is handled by GradeCommand, GradeCommandParser, Assignment, Person and Model.
+Grade Student command is handled by `GradeCommand`, `GradeCommandParser`, `Assignment`, `Person` and `Model`.
 * `GradeCommandParser`: Parse user inputs.
 * `GradeCommand`: Given the parsed user input, execute the command.
 * `Model`: Updates the student list according to the keyword that the user keys in.
 * `Person`: Updates the particular Person model to change the grade to.
 * `Assignment`: Updates the student's assignment grade.
-
-Below is the activity diagram for parsing an assignment command.
-
-<img src="images/AssignParserActivityDiagram.png" width="650"/>
 
 Below is the sequence diagram for grading students.
 
