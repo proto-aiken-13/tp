@@ -613,7 +613,7 @@ Input participation points for a group of students for that tutorial.
 - `POINTS`: An integer between 0 and 1000 (inclusive)
 <br>
 - Participation points can only be given for a tutorial that is already marked as attended.
-  Else, the student(s) with unmarked attendance will not receive the any participation points.
+  Else, the student(s) with unmarked attendance will not receive any participation points.
 
 </div>
 
