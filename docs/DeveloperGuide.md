@@ -414,7 +414,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *`  | TA       | find students by keyword            | reduce time taken to locate student details             |
 | `* *`    | TA       | hide private contact details        | minimize chance of someone else seeing them by accident |
 | `* *`    | TA       | mark and unmark students attendance | track the class participation records                   |
-| `* *`    | TA       | input participation points          | track how much each student participate in lessons      |
+| `* *`    | TA       | input participation points          | track how much each student participates in lessons      |
 | `* *`    | TA       | list all students in a class        | have an overview of all the students in a class         |
 | `*`      | TA       | exit the app                        | close the program                                       |
 
