@@ -102,7 +102,7 @@ public class AssignmentGroupCommand extends Command {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof AssignmentCommand)) {
+        if (!(other instanceof AssignmentGroupCommand)) {
             return false;
         }
         AssignmentGroupCommand otherAssignmentCommand = (AssignmentGroupCommand) other;
