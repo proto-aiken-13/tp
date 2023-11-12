@@ -134,12 +134,20 @@ Step 6 : Type the command `java -jar npctrack.jar` to run the app.
 <a name="parameter"></a>
 ## Common Parameters
 
-| Parameters | Description     | Constraints                                                                                                                                                       | Valid Examples                  | Invalid Examples             |
-|------------|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|------------------------------|
-| `n/`       | Names           | Must be alphanumeric and can contain spaces                                    <br/><br/>                                                                         | John Doe                        | $5money                      |
-| `a/`       | Telegram handle | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters and maximum 32 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop | $telegram, _tele, 56thperson |
-| `group/`   | Group names     | Must be alphanumeric and cannot contain spaces <br/> Case sensitive                                    <br/><br/>                                                                      | group1, T01, LEC1               | $group, _grp, group 1        |
-
+| Parameters | Description          | Constraints                                                                                                                                                       | Valid Examples                        | Invalid Examples              |
+|------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|-------------------------------|
+| `n/`       | Names                | Must be alphanumeric and can contain spaces                                    <br/><br/>                                                                         | John Doe                              | $5money                       |
+| `a/`       | Telegram handle      | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters and maximum 32 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop       | $telegram, _tele, 56thperson  |
+| `group/`   | Group names          | Must be alphanumeric and cannot contain spaces <br/> Case sensitive                                    <br/><br/>                                                 | group1, T01, LEC1                     | $group, _grp, group 1         |
+| `p/`       | Phone Numbers        | Must only contain numbers, and it should be at least 3 digits long                                    <br/><br/>                                                  | 85879384, 0812738239                  | $732642, 62-382914, 321 39812 |
+| `e/`       | Email Address        | Must be in valid email format   <br/> This is followed by a '@' and then a domain name.                                 <br/>                                     | email@domain.com, email123@domain.com | email@%domain.com             |
+| `t/` (1)   | Tags                 | Must only contain alphanumerics                                <br/>                                                                                              | validversion                          | #^weirdTags, invalid version  |
+| `t/` (2)   | Tutorial Number      | An integer between 1 and 12 (inclusive)                                                                                                                           | 1, 2, 3, 12                           | 0, -1, #200                   |
+| `c/`       | Comments             | Comments can take any values, and it should not be blank                                <br/>                                                                     | Valid Comment                         |                               |
+| `s/`       | Status               | The student’s attendance status (case-sensitive).     <br/>                                                                                                       | P, A, VR                              | p, Absent, VALIDREASON        |
+| `pp/`      | Participation Points | An integer between 0 and 1000 (inclusive) <br/>                                                                                                                   | 1, 1000, 500                          | points100, 1000pts, -100      |
+| `m/`       | Maximum Marks        | An integer between 0 and 1000 (inclusive) <br/>                                                                                                                   | 1, 1000, 500                          | 0, -100                       |
+| `g/`       | Grade                | A student's marks need to be an integer between 0 (inclusive) and the maximum score of <br/><br/><br/>the assignment (inclusive). <br/>                           | 1, 1000, 500, 0                       | -100, one-hundred             |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -205,7 +213,19 @@ Adds a student to the student book.
 <br>
 - A student can have any number of optional comments
 <br>
-- Cannot add a student with the same name in the list.
+- Cannot add a student with the same name in the list. Student names are case-insensitive.
+<br>
+- `NAME` : Must be alphanumeric and can contain spaces. 
+<br>
+- `PHONE` : Should only contain numbers, and it should be at least 3 digits long. 
+<br>
+- `TELEGRAM_HANDLE` : Must be a valid telegram handle ID. 
+<br>
+- `GROUP` : A string representing the group of students as shown in the list. Must not contain space.
+<br>
+- `TAG` : Must only contain alphanumerics. 
+<br>
+- `COMMENT` : Comments can take any values, and it should not be blank.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -258,7 +278,7 @@ Finds students associated with the keyword.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `KEYWORD` : Case insensitive and can involve any character. 
+- `KEYWORD` : Case-insensitive and can involve any character. 
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -286,7 +306,7 @@ Finds students associated with the group.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `KEYWORD` : Case insensitive and can involve any character. 
+- `KEYWORD` : Case-insensitive and can involve any character. 
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -312,6 +332,29 @@ Edits an existing student.
 ***Format***: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]… [a/TELEGRAM_HANDLE] [group/GROUP]`
 </div>
 
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- A student can have any number of optional tags
+<br>
+- A student can have any number of optional comments
+<br>
+- Cannot add a student with the same name in the list. Student names are case-insensitive.
+<br>
+- `INDEX`: A positive integer representing the index of the student as shown in the list.
+<br>
+- `NAME` : Must be alphanumeric and can contain spaces. 
+<br>
+- `PHONE` : Should only contain numbers, and it should be at least 3 digits long. 
+<br>
+- `TELEGRAM_HANDLE` : Must be a valid telegram handle ID. 
+<br>
+- `GROUP` : A string representing the group of students as shown in the list. Must not contain space.
+<br>
+- `TAG` : Must only contain alphanumerics. 
+<br>
+- `COMMENT` : Comments can take any values, and it should not be blank.
+</div>
+
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
 Do not worry! You can refer to our [troubleshooting](#issues) guide for common problems. 
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
@@ -327,6 +370,8 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 :top: [Back to Table Of Contents](#toc)
 
 ### Attendance
+
+![Attendance](images/attendance.png)
 
 For managing attendance, the following commands are available:
 * markAtd
@@ -350,14 +395,14 @@ Marks the attendance of a student for that tutorial.
 <br><br>
 - `INDEX`: A positive integer representing the index of the student as shown in the list.
 <br>
-- `TUTORIAL`: An integer between 1 and 12 (inclusive)
+- `TUTORIAL`: An integer between 1 and 12 (inclusive).
 <br>
 - Marking the attendance for a week that is already marked will result in the message
 `This week's attendance has already been marked!`. In addition, the attendance status
 list will be updated.
 </div>
 
-`STATUS`: The student's attendance status (case sensitive). Valid attendance statuses are as follows:
+`STATUS`: The student's attendance status (case-sensitive). Valid attendance statuses are as follows:
 
 | Status | Meaning                                                       |
 |--------|---------------------------------------------------------------|
@@ -430,7 +475,7 @@ Marks the attendance of a group of students for that tutorial.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `GROUP`: A string representing the group of students as shown in the list.
+- `GROUP`: A string representing the group of students as shown in the list. Must not contain space.
 <br>
 - `TUTORIAL`: An integer between 1 and 12 (inclusive)
 <br>
@@ -474,7 +519,7 @@ Unmark the attendance of a group of students for that tutorial.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `GROUP`: A string representing the group of students as shown in the list.
+- `GROUP`: A string representing the group of students as shown in the list. Must not contain space.
 <br>
 - `TUTORIAL`: An integer between 1 and 12 (inclusive)
 <br>
@@ -496,13 +541,15 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 ### Participation
 
-For participation, you can make the following commands:
-* inputPP
-* inputGroupPP
-* listParticipation
+![Participation](images/participation.png)
 
-#### Insert participation points to a student: `inputPP`
+For participation, you can make the following commands:
+* [inputPP](#inputPP)
+* [inputGroupPP](#inputGroupPP)
+* [listParticipation](#listParticipation)
+
 <a name="inputPP"></a>
+#### Insert participation points to a student: `inputPP`
 
 Want to reward your student groups with points for their diligent participation? Use the `inputGroupPP` command.
 
@@ -557,7 +604,7 @@ Input participation points for a group of students for that tutorial.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `GROUP`: The tutorial group name of the students as shown in the list.
+- `GROUP`: The tutorial group name of the students as shown in the list. Must not contain space.
 <br>
 - `TUTORIAL`: An integer between 1 and 12 (inclusive)
 <br>
@@ -610,14 +657,16 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 ### Assignments
 
+![Assignments](images/assignments.png)
+
 For allocating and grading assignments , you can make the following commands:
-* assign
-* deassign
-* deassignIndiv
-* assignGroup
-* assignIndiv
-* grade
-* gradeGroup
+* [assign](#assign)
+* [deassign](#deassign)
+* [deassignIndiv](#deassignIndiv)
+* [assignGroup](#assignGroup)
+* [assignIndiv](#assignIndiv)
+* [grade](#grade)
+* [gradeGroup](#gradeGroup)
 
 <a name="assign"></a>
 #### Distribute assignments: `assign`
@@ -634,11 +683,11 @@ Create an assignment and assign it to all students.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `MAX_SCORE`: An integer between 1 and 1000.
+- `MAX_SCORE`: An integer between 1 and 1000 (inclusive).
+<br>
+- `ASSIGNMENT_NAME`: Case-sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 <br>
 - If the student already has the assignment, assigning the same assignment will overwrite the current assignment.
-<br>
-- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -698,6 +747,8 @@ Delete an assignment for a particular student.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
+- `INDEX`: A positive integer representing the index of the student as shown in the list.
+<br/>
 - `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
@@ -726,11 +777,13 @@ Create an assignment and assign it to a group of students.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `MAX_SCORE`: An integer between 1 and 1000.
+- `GROUP`: The tutorial group name of the students as shown in the list. Must not contain space.
+<br>
+- `MAX_SCORE`: An integer between 1 and 1000 (inclusive).
+<br>
+- `ASSIGNMENT_NAME`: Case-sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 <br>
 - If the student already has the assignment, assigning the same assignment will overwrite the current assignment.
-<br>
-- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -759,11 +812,13 @@ Create an assignment and assign it to a student.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `MAX_SCORE`: An integer between 1 and 1000.
-<br>
-- If the student already has the assignment, assigning the same assignment will overwrite the current assignment.
+- `INDEX`: A positive integer representing the index of the student as shown in the list.
+<br/>
+- `MAX_SCORE`: An integer between 1 and 1000 (inclusive).
 <br>
 - `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
+<br>
+- If the student already has the assignment, assigning the same assignment will overwrite the current assignment.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -782,7 +837,6 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 #### Grade assignments: `grade`
 
 Need to give grades to the assignments? You can use our `grade` command to do that.
-![Grade](images/grade.png)
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
@@ -793,11 +847,13 @@ Grade a student's assignment.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- A student's marks need to be between 0 (inclusive) and the maximum score of the assignment (inclusive).
-<br>
 - Need to specify the index of the student after the command word.
 <br>
 - `-0` is considered to be 0 in the system. 
+<br/>
+- `INDEX`: A positive integer representing the index of the student as shown in the list.
+<br>
+- `SCORE`: A student's marks need to be between 0 (inclusive) and the maximum score of the assignment (inclusive).
 <br>
 - `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
@@ -829,8 +885,6 @@ Grade a group of students' assignment.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- A student's marks need to be between 0 (inclusive) and the maximum score of the assignment (inclusive).
-<br>
 - Need to specify the name of the group after the command.
 <br>
 - `-0` is considered to be 0 in the system. 
@@ -838,6 +892,10 @@ Grade a group of students' assignment.
 - The grade given must be at most the maximum score of every assignment in the group.
 <br>
 - Every student in the group must have the assignment. This command pairs well with `assignGroup`!
+<br>
+- `GROUP`: The tutorial group name of the students as shown in the list. Must not contain space.
+<br>
+- `SCORE`: A student's marks need to be between 0 (inclusive) and the maximum score of the assignment (inclusive).
 <br>
 - `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
@@ -856,6 +914,8 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 <a name="group"></a>
 ### Grouping students: `group`
 
+![Group](images/group.png)
+
 If you ever encounter changing group names, you can always use our `group` command to do that.
 
 <div markdown="span" class="alert alert-success">
@@ -867,7 +927,9 @@ Change the student group names.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- Student group names must be alphanumeric and **cannot** contain spaces.
+- `PREV_GROUP`: Student group names must be alphanumeric and **cannot** contain spaces.
+<br/>
+- `UPDATED_GROUP`: Student group names must be alphanumeric and **cannot** contain spaces.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -895,7 +957,7 @@ Deletes the specified person from the student book.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `INDEX` must be a valid index. 
+- `INDEX`: A positive integer representing the index of the student as shown in the list.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -922,6 +984,9 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 ***Confused with some terms?*** You can refer to our [glossary](#glossary) to find out.
 </div>
 
+:top: [Back to Table Of Contents](#toc)
+
+<a name="clear"></a>
 ### Clearing the Data : `clear`
 
 Do you need to remove all data in your `npc_track`. You can always do it in a very simple way using the `clear` command.
@@ -971,7 +1036,7 @@ _Details coming soon ..._
 <a name="gui"></a>
 ## Navigating `npc_track`
 
-### GUI Interface
+### User Interface
 Our user-friendly interface allows quick navigation for teaching assistants. Below is an overview of the interface
 followed by a quick summary guide of the Graphical User Interface (GUI)
 
