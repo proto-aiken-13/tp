@@ -147,7 +147,7 @@ Step 6 : Type the command `java -jar npctrack.jar` to run the app.
 | `s/`       | Status               | The student’s attendance status (case-sensitive).     <br/>                                                                                                       | P, A, VR                              | p, Absent, VALIDREASON        |
 | `pp/`      | Participation Points | An integer between 0 and 1000 (inclusive) <br/>                                                                                                                   | 1, 1000, 500                          | points100, 1000pts, -100      |
 | `m/`       | Maximum Marks        | An integer between 0 and 1000 (inclusive) <br/>                                                                                                                   | 1, 1000, 500                          | 0, -100                       |
-| `g/`       | Grade                | A student's marks need to be an integer between 0 (inclusive) and the maximum score of <br/><br/><br/>the assignment (inclusive). <br/>                           | 1, 1000, 500, 0                       | -100, one-hundred             |
+| `g/`       | Grade                | A student's marks need to be an integer between 0 (inclusive) and the maximum score of the assignment (inclusive). <br/>                           | 1, 1000, 500, 0                       | -100, one-hundred             |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -246,7 +246,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 <a name="list"></a>
 ### Listing all students : `list`
 
-Want to see all your students' details? Simply type in the one-word `list` command.
+Want to see all your students' details? Simply type in the `list` command.
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
@@ -265,8 +265,8 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 <a name="find"></a>
 ### Finding students : `find`
 
-Finding it difficult to scroll through the whole list of students? Don't worry just find the specific student using
-the `find` command.
+Finding it difficult to scroll through the whole list of students?
+If you remember their name, use `find`!
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
@@ -294,8 +294,8 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 ### Finding students by group : `findGroup`
 
-Finding it difficult to scroll through the whole list of students? Don't worry just find the specific student using
-the `findGroup` command.
+Finding it difficult to scroll through the whole list of students?
+If you remember their group, use `findGroup`!
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
@@ -323,7 +323,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 <a name="edit"></a>
 ### Editing a person : `edit`
 
-Have anything you want to change ? Not to worry, your student details is editable.
+Have anything you want to change? Fret not, your student details are editable.
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
@@ -338,7 +338,7 @@ Edits an existing student.
 <br>
 - A student can have any number of optional comments
 <br>
-- Cannot add a student with the same name in the list. Student names are case-insensitive.
+- You cannot add a student with the same name in the list. Student names are case-insensitive.
 <br>
 - `INDEX`: A positive integer representing the index of the student as shown in the list.
 <br>
@@ -376,6 +376,8 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 For managing attendance, the following commands are available:
 * [markAtd](#markAtd)
 * [unmarkAtd](#unmarkAtd)
+* [markGroupAtd](#markGroupAtd)
+* [unmarkGroupAtd](#unmarkGroupAtd)
 
 <a name="markAtd"></a>
 #### Mark Attendance : `markAtd`
@@ -454,8 +456,8 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 | Examples           | Purpose                                                    |
 |--------------------|------------------------------------------------------------|
-| `unmarkAtd 1 t/1`  | Unmark attendance of student with index 1 for tutorial 1)  |
-| `unmarkAtd 2 t/12` | Unmark attendance of student with index 2 for tutorial 12) |
+| `unmarkAtd 1 t/1`  | Unmark attendance of student with index 1 for tutorial 1  |
+| `unmarkAtd 2 t/12` | Unmark attendance of student with index 2 for tutorial 12 |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -475,7 +477,7 @@ Marks the attendance of a group of students for that tutorial.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `GROUP`: A string representing the group of students as shown in the list. Must not contain space.
+- `GROUP`: A string representing the group of students as shown in the list. Must not contain spaces.
 <br>
 - `TUTORIAL`: An integer between 1 and 12 (inclusive)
 <br>
@@ -535,7 +537,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 | Examples               | Purpose                                                  |
 |------------------------|----------------------------------------------------------|
-| `unmarkGroupAtd 1 t/1` | Unmark attendance of students in group 1 for tutorial 1) |
+| `unmarkGroupAtd 1 t/1` | Unmark attendance of students in group 1 for tutorial 1 |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -570,7 +572,7 @@ Input participation points for a student for that tutorial.
 <br>
 - `POINTS`: An integer between 0 and 1000 (inclusive)
 <br>
-- Participation points can only be inputted for a tutorial that is already marked as attended.
+- Participation points can only be given for a tutorial that is already marked as attended.
   Else, it will result in the message `Before inputting participation points,
   mark the attendance of the student first!`
 
@@ -583,8 +585,8 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 | Examples                | Purpose                                                                 |
 |-------------------------|-------------------------------------------------------------------------|
-| `inputPP 1 t/1 pp/350`  | For student with index 1, input 350 participation points to tutorial 1  |
-| `inputPP 2 t/12 pp/500` | For student with index 2, input 500 participation points to tutorial 12 |
+| `inputPP 1 t/1 pp/350`  | For student with index 1, give 350 participation points for tutorial 1  |
+| `inputPP 2 t/12 pp/500` | For student with index 2, give 500 participation points for tutorial 12 |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -610,7 +612,7 @@ Input participation points for a group of students for that tutorial.
 <br>
 - `POINTS`: An integer between 0 and 1000 (inclusive)
 <br>
-- Participation points can only be inputted for a tutorial that is already marked as attended.
+- Participation points can only be given for a tutorial that is already marked as attended.
   Else, the student(s) with unmarked attendance will not receive the any participation points.
 
 </div>
@@ -622,8 +624,8 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 | Examples                         | Purpose                                                             |
 |----------------------------------|---------------------------------------------------------------------|
-| `inputGroupPP lab33 t/1 pp/350`  | For students of lab33, input 350 participation points to tutorial 1 |
-| `inputGroupPP tut39 t/12 pp/500` | For student of tut39, input 500 participation points to tutorial 12 |
+| `inputGroupPP lab33 t/1 pp/350`  | For students of lab33, give 350 participation points for tutorial 1 |
+| `inputGroupPP tut39 t/12 pp/500` | For students of tut39, give 500 participation points for tutorial 12 |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -697,15 +699,15 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 | Examples                   | Purpose                                                                                         |
 |----------------------------|-------------------------------------------------------------------------------------------------|
-| `assign n/Tutorial1 m/100` | Assigns every student in the list with an assignment called Tutorial1 and maximum score is 100. |
+| `assign n/Tutorial1 m/100` | Assigns every student in the list with an assignment called Tutorial1 and a maximum score of 100. |
 
 :top: [Back to Table Of Contents](#toc)
 
 <a name="deassign"></a>
 #### Deassign Assignments: `deassign`
 
-Did you accidentally assign the wrong assignment or just want to change the assignment? You can now
-do it using the `deassign` command.
+Did you accidentally assign the wrong assignment or just want to change the assignment? You can
+fix it using the `deassign` command.
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
@@ -734,8 +736,8 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 <a name="deassignIndiv"></a>
 #### Deassign Individual Assignments: `deassignIndiv`
 
-Did you accidentally assign a student with the wrong assignment or just want to change the assignment? You can now
-do it using the `deassignIndiv` command
+Did you accidentally assign a student with the wrong assignment or just want to change the assignment? You can
+fix it using the `deassignIndiv` command.
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
@@ -759,7 +761,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 | Examples                      | Purpose                                                          |
 |-------------------------------|------------------------------------------------------------------|
-| `deassignIndiv 1 n/Tutorial1` | Deletes the assignment called Tutorial1 for student with index 1 |
+| `deassignIndiv 1 n/Tutorial1` | Deletes the assignment called Tutorial1 for the student with index 1 |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -793,8 +795,8 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 | Examples                           | Purpose                                                                                |
 |------------------------------------|----------------------------------------------------------------------------------------|
-| `assignGroup 1 n/Tutorial1 m/100`  | Assigns group named "1" with an assignment called Tutorial1 and maximum score is 100.  |
-| `assignGroup Pheonix n/Lab1 m/100` | Assigns group named "Pheonix" with an assignment called Lab1 and maximum score is 100. |
+| `assignGroup 1 n/Tutorial1 m/100`  | Assigns the group named "1" with an assignment called Tutorial1 and a maximum score of 100.  |
+| `assignGroup Phoenix n/Lab1 m/100` | Assigns the group named "Phoenix" with an assignment called Lab1 and a maximum score of 100. |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -828,8 +830,8 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 | Examples                          | Purpose                                                                          |
 |-----------------------------------|----------------------------------------------------------------------------------|
-| `assignIndiv 1 n/Tutorial1 m/100` | Assigns student #1 with an assignment called Tutorial1 and maximum score is 100. |
-| `assignIndiv 10 n/Lab1 m/100`     | Assigns student #10 with an assignment called Lab1 and maximum score is 100.     |
+| `assignIndiv 1 n/Tutorial1 m/100` | Assigns student with index 1 with an assignment called Tutorial1 and a maximum score of 100. |
+| `assignIndiv 10 n/Lab1 m/100`     | Assigns student with index 10 with an assignment called Lab1 and a maximum score of 100.     |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -865,20 +867,20 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 | Examples                   | Purpose                                            |
 |----------------------------|----------------------------------------------------|
-| `grade 1 n/tutorial2 g/80` | Grades student #1 a score of 80 for his tutorial2. |
-| `grade 10 n/lab2 g/35`     | Grades student #10 a score of 35 for his lab2.     |
+| `grade 1 n/tutorial2 g/80` | Grades the student with index 1 a score of 80 for their tutorial2 assignment. |
+| `grade 10 n/lab2 g/35`     | Grades the student with index 10 a score of 35 for their lab2 assignment.     |
 
 :top: [Back to Table Of Contents](#toc)
 
 <a name="gradeGroup"></a>
 ### Grade assignments for a group of students: `gradeGroup`
 
-Sounds tedious to grade the students individually. Try the `gradeGroup` command to collectively grade students in a 
+It's tedious to grade the students individually. Try the `gradeGroup` command to collectively grade students in a 
 group.
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
-Grade a group of students' assignment.
+Grade a group of students' assignments.
 <br><br>
 ***Format***: `gradeGroup GROUP n/ASSIGNMENT_NAME g/SCORE`
 </div>
@@ -891,13 +893,13 @@ Grade a group of students' assignment.
 <br>
 - The grade given must be at most the maximum score of every assignment in the group.
 <br>
-- Every student in the group must have the assignment. This command pairs well with `assignGroup`!
+- Every student in the group must have the assignment. This command pairs well with `assignGroup`.
 <br>
 - `GROUP`: The tutorial group name of the students as shown in the list. Must not contain space.
 <br>
 - `SCORE`: A student's marks need to be between 0 (inclusive) and the maximum score of the assignment (inclusive).
 <br>
-- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
+- `ASSIGNMENT_NAME`: Case sensitive. For example, `Tutorial 1` and `tutorial 1` are two different assignments.
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **Having Problems?**
@@ -907,7 +909,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 | Examples                              | Purpose                                                                                |
 |---------------------------------------|----------------------------------------------------------------------------------------|
-| `gradeGroup Class33 n/Tutorial1 g/90` | Grades students in group `Class33` for an assignment called `Tutorial1` a score of 90. |
+| `gradeGroup Class33 n/Tutorial1 g/90` | Grades students in the group `Class33` a score of 90 for their `Tutorial1` assignment. |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -916,7 +918,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 ![Group](images/group.png)
 
-If you ever encounter changing group names, you can always use our `group` command to do that.
+If you ever encounter changing group names, you can always use our `group` command to do rename them quickly.
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
@@ -939,7 +941,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 | Examples        | Purpose                            |
 |-----------------|------------------------------------|
-| `group T01 T02` | Change the group name of `T01` to `T02`. |
+| `group T01 T02` | Changes the group name of `T01` to `T02`. |
 
 :top: [Back to Table Of Contents](#toc)
 
@@ -970,7 +972,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 <a name="exit"></a>
 ### Exiting the program : `exit`
 
-Are you done using `npc_track` and want to terminate the program. Just type the `exit` command to do that.
+Done with `npc_track` and want to quit? Use `exit`.
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
@@ -989,7 +991,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 <a name="clear"></a>
 ### Clearing the Data : `clear`
 
-Do you need to remove all data in your `npc_track`. You can always do it in a very simple way using the `clear` command.
+Want to remove all data in your `npc_track`? Do it quickly with `clear`.
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
@@ -1000,7 +1002,7 @@ Clear `npc_track` data.
 
 <div markdown="span" class="alert alert-danger">:exclamation: **Caution:**
 Clearing the data will remove all information. Hence, it is recommended to make a backup of the file before clearing 
-it. Hence, since this is a irreversible command, type `yes` to confirm the action of wiping the data.
+it. This is irreversible - we require you to type `yes` to confirm.
 ![Clear](images/clear.png)
 </div>
 
@@ -1011,19 +1013,15 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 ### Saving the data
 
-StudentBook data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+The data is saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
 ### Editing the data file
 
 `npc_track` data are saved automatically as a JSON file. Advanced users are welcome to update data directly by editing that data file.
 
 <div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
-If your changes to the data file makes its format invalid, StudentBook will discard all data and start with an empty data file at the next run. Hence, it is recommended to make a backup of the file before editing it.
+If your changes to the data file makes its format invalid, the program will discard all data and start with an empty data file at the next run. Hence, it is recommended to make a backup of the file before editing it.
 </div>
-
-### Archiving data files `[coming in v2.0]`
-
-_Details coming soon ..._
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -1038,16 +1036,16 @@ _Details coming soon ..._
 
 ### User Interface
 Our user-friendly interface allows quick navigation for teaching assistants. Below is an overview of the interface
-followed by a quick summary guide of the Graphical User Interface (GUI)
+followed by a quick summary guide of the Graphical User Interface (GUI).
 
 ![Ui](images/npctrack-guide.png)
 
 | Component               | Function                                                                                           |
 |-------------------------|----------------------------------------------------------------------------------------------------|
-| **Command Result**      | The result of the commands that user types in the command box                                      |
-| **Command Box**         | A placeholder for users to type the various command as listed in the [Features](#features) section |
-| **Student Information** | A display of the different information regarding the student                                       |
-| **Student Index**       | The `INDEX` of the student that users want to change / view                                        |
+| **Command Result**      | The result of the commands that the user types in the command box                                      |
+| **Command Box**         | A text box for users to type the various commands as listed in the [Features](#features) section |
+| **Student Information** | Summarised information of the student                                       |
+| **Student Index**       | The `INDEX` of the student, counting from 1 |
 
 --------------------------
 <a name="summary"></a>
