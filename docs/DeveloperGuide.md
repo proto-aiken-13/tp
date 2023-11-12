@@ -193,9 +193,6 @@ Below is the sequence diagram for an assignment command.
   itself.
   * Pros: More control and more tailorable to each person.
   * Cons: Troublesome and infeasible at worst for a large address book.
-*  **Alternative 3:** Give it to a group of people, specified by a group name.
-  * Pros: More control and more tailorable to each person.
-  * Cons: Troublesome and infeasible at worst for a large address book.
 
 **Aspect: What grade to store in the assignment**
 
@@ -211,6 +208,34 @@ Below is the sequence diagram for an assignment command.
   * Pros: Easy to implement.
   * Cons: Not universally understood, certain letters may mean different things to people.
   For example, S in Japan could be amazing, but not as ideal in Singapore.
+
+### Assignment Group Distribution Feature
+
+#### Implementation
+The implementation is an extension of Assignment Distribution Feature in recognition of the
+possible limitation of giving assignment to everyone. 
+
+Instead, we can give an `Assignment` to a group of people, through the `AssignmentGroupCommand`.
+The `AssignmentGroupCommand` looks through all the `Person`s in the same group, and attempts to add the `Assignment` to each `Person` 
+in the group.
+
+#### Design considerations:
+
+**Aspect: Which group to give assignment to by default**
+
+* **Alternative 1 (current choice):** Give it to a group of people, specified by the exact full group name.
+  * Pros: Reduced Chance of Error: Gives users the exact group they want to assign and reduces chances of error since it needs
+    to be exact match.
+  * Cons: Troublesome for the user to type the full group name.
+
+* **Alternative 2:** Give it to a group of people, specified by its prefix.
+    * Pros: Reduced Chance of Error: Easier to be used by users as they can just input a partial part of their group name to be able to assign
+      to list of students in the same group.
+    * Cons: Higher Chance of Error: Since it is more complex and multiple group name may contain the same prefix, it has higher chance of error.
+
+The activity diagram of the parser shows the flow of the final implementation of assigning to a group of students.
+
+<img src="images/AssignGroupParserActivityDiagram.png" width="650"/>
 
 ### Mark Attendance
 
