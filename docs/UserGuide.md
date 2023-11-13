@@ -1162,29 +1162,32 @@ If your changes to the data file makes the format invalid, the program will disc
 <a name="FAQ"></a>
 
 <div markdown="span" class="alert alert-warning">
-:question: : How do I transfer my data to another Computer?<br>
+:question:: **How do I transfer my data to another Computer?**<br>
 </div>
 <div markdown="span" class="alert alert-success">
 :bulb:: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous npc_track home folder.
 </div>
+<br><br>
 
 <div markdown="span" class="alert alert-warning">
-:question: : There are 12 tutorials on the attendance list, but my module has less than 12 tutorials per sem.<br>
+:question:: **There are 12 tutorials on the attendance list, but my module has less than 12 tutorials per sem.**<br>
 </div>
 <div markdown="span" class="alert alert-success">
 :bulb:: In a typical semester, there are 13 weeks. Tutorials can start earlier or later, so to accomodate the largest possible number of tutorials, npc_track
 has 12 weeks' worth of tutorials to grade.
 </div>
+<br><br>
 
 <div markdown="span" class="alert alert-warning">
-:question: : How do I decide how many "participation points" to use?<br>
+:question:: **How do I decide how many "participation points" to use?**<br>
 </div>
 <div markdown="span" class="alert alert-success">
 :bulb:: The command is dependent on relative participation levels of your students or any guidelines on measuring student participation that your course has made.
 </div>
+<br><br>
 
 <div markdown="span" class="alert alert-warning">
-**Q**: I have two students that share the exact same name. How can npc_track support this?<br>
+:question:: **I have two students that share the exact same name. How can npc_track support this?**<br>
 </div>
 <div markdown="span" class="alert alert-success">
 :bulb:: npc_track cannot handle students with the exact same name. <br>
@@ -1192,35 +1195,39 @@ has 12 weeks' worth of tutorials to grade.
 However, you can consider adding something else to their names to distinguish between them.
 So for example, if you have 2 students called "Arnab Goav", you can name one student "Arnab Goav 1" and the other "Arnab Goav 2".
 </div>
+<br><br>
 
 <div markdown="span" class="alert alert-warning">
-:question: : The user display looks weird when I add a very long name or minimise it to very small sizes.<br>
+:question:: **The user display looks weird when I add a very long name or minimise it to very small sizes.**<br>
 </div>
 <div markdown="span" class="alert alert-success">
 :bulb:: npc_track does not support extreme inputs. It is optimised for sane usage with a standard screen size and normal names. We will add support in a future version.
 </div>
+<br><br>
 
 <div markdown="span" class="alert alert-warning">
-:question: : I can enter two students with the same telegram handle or same phone number (or something similar). Why is this allowed?<br>
+:question:: **I can enter two students with the same telegram handle or same phone number (or something similar). Why is this allowed?**<br>
 </div>
 <div markdown="span" class="alert alert-success">
 :bulb:: npc_track allows this, much like a normal contacts application in your phone. We do not enforce too many checks as we want to enable
 our users to use our app how they like, and support various unforeseen scenarios.
 </div>
+<br><br>
 
 <div markdown="span" class="alert alert-warning">
-:question: : I am a recitation tutor and/or a professor. Can this application extend to my lessons?<br>
+:question:: **I am a recitation tutor and/or a professor. Can this application extend to my lessons?**<br>
 </div>
 <div markdown="span" class="alert alert-success">
 :bulb:: npc_track is primarily designed for teaching assistants, but it can also be scalable towards **recitation-sized** classes.<br>
 
 It is impractical to track student participations or attendance for lecture-sized classes using this application, however.
 </div>
+<br><br>
 
 <div markdown="span" class="alert alert-warning">
-:question: : Why Telegram? What if my students prefer something like WhatsApp or LINE?<br>
+:question:: **Why Telegram? What if my students prefer something like WhatsApp or LINE?**<br>
 </div>
-<div markdown="span" class="alert alert-warning">
+<div markdown="span" class="alert alert-success">
 :bulb:: Students are more likely to use telegram to contact their TA's and tutorial groups within NUS.<br> 
 For applications like WhatsApp or LINE, you can simply consider using something like their associate phone numbers or use tags to refer to their usernames on such platforms.
 </div>
