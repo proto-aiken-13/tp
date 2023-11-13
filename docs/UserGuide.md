@@ -1031,7 +1031,8 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 ### Saving the data
 
-The data is saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+The data is saved in your system automatically after any command that changes the data. There is no need to save 
+manually.
 
 ### Editing the data file
 
@@ -1089,6 +1090,7 @@ If your changes to the data file makes its format invalid, the program will disc
 | **Parameter**               | Details about the student that will be included in the command                       |
 | **Command**                 | Instructions that `npc_track` will execute                                           |
 | **JAR**                     | Compressed file of `npc_track` is in the form of a Java ARchive                      |
+| **JSON**                    | Lightweight file format for storing and transferring data                            |
 | **Attendance status**       | The student's attendance status which can be "present", "absent", or "valid reason". |
 | **Attendance status: `:)`** | The emoji associated with "present".                                                 |
 | **Attendance status: `x`**  | The emoji associated with "absent".                                                  |
