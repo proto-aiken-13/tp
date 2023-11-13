@@ -317,7 +317,7 @@ Find Student command is handled by `FindCommand`, `FindCommandParser`, and `Mode
 
 Below is the sequence diagram for finding students.
 
-<img src="images/FindSequenceDiagram.png" width="650"/>
+<img src="images/FindSequenceDiagram.png" width="100%"/>
 
 #### Design considerations
 
@@ -373,7 +373,7 @@ Grade Student command is handled by `GradeCommand`, `GradeCommandParser`, `Assig
 
 Below is the sequence diagram for grading students.
 
-<img src="images/GradeSequenceDiagram.png" width="650"/>
+<img src="images/GradeSequenceDiagram.png" width="100%"/>
 
 --------------------------------------------------------------------------------------------------------------------
 
