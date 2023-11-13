@@ -894,7 +894,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 :top: [Back to Table Of Contents](#toc)
 
 <a name="gradeGroup"></a>
-### Grade assignments for a group of students: `gradeGroup`
+#### Grade assignments for a group of students: `gradeGroup`
 
 It's tedious to grade the students individually. Try the `gradeGroup` command to collectively grade students in a 
 group.
@@ -935,7 +935,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 :top: [Back to Table Of Contents](#toc)
 
 <a name="group"></a>
-### Grouping students: `group`
+### Changing Student Groups: `group`
 
 ![Group](images/group.png)
 
