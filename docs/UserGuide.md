@@ -389,6 +389,8 @@ Edits an existing student.
 <a name="group"></a>
 ### Grouping students: `group`
 
+![Group](images/group.png)
+
 If you ever encounter changing [group](#glossary) names, or want to assign students to groups in general, you can always use our `group` command to name or rename them quickly.
 
 <div markdown="span" class="alert alert-success">
@@ -493,6 +495,8 @@ Finds students associated with the group.
 
 <a name="attendance"></a>
 ## Managing Attendance
+
+![Attendance](images/attendance.png)
 
 For managing attendance, the following commands are available:
 * [markAtd](#markAtd)
@@ -666,6 +670,8 @@ This removes the current status marked for the attendance, as well as any partic
 <a name="participation"></a>
 ## Managing Participation
 
+![Participation](images/participation.png)
+
 For participation, you can make the following commands:
 * [inputPP](#inputPP)
 * [inputGroupPP](#inputGroupPP)
@@ -777,6 +783,8 @@ List a student's participation record.
 
 <a name="assignments"></a>
 ## Managing Assignments
+
+![Assignments](images/assignments.png)
 
 For allocating and grading assignments , you can use the following commands:
 * [assign](#assign)
