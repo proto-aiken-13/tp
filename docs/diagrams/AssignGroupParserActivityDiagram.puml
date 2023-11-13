@@ -21,10 +21,10 @@ else ([Else])
                 #FF6666:Error for invalid score is thrown;
                 stop
             else ([Else])
-               #palegreen:Group is parsed;
-               #palegreen:Name of assignment is parsed;
-               #palegreen:Score of assignment is parsed;
-               #palegreen:AssignmentGroup command is returned;
+               #66FF66:Group is parsed;
+               #66FF66:Name of assignment is parsed;
+               #66FF66:Score of assignment is parsed;
+               #66FF66:AssignmentGroup command is returned;
             endif
         endif
     endif
