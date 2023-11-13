@@ -1051,7 +1051,9 @@ If your changes to the data file makes its format invalid, the program will disc
 ## Troubleshooting
 <a name="issues"></a>
 
-1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
+1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using 
+   only the primary screen, the user interface will open off-screen. The remedy is to delete the `preferences.json` 
+   file created by the application before running the application again.
 
 --------------------------
 <a name="summary"></a>
