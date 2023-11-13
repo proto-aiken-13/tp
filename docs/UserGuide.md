@@ -242,8 +242,7 @@ Adds a student to the student book.
 <br>
 - `TELEGRAM_HANDLE` : Must be a valid telegram handle ID. 
 <br>
-- `GROUP` : A string representing the group of students as shown in the list. Must only be alphanumeric and cannot 
-contain space.
+- `GROUP` : A string representing the group of students as shown in the list.  Student group names must be alphanumeric and **cannot** contain spaces.
 <br>
 - `TAG` : Must only contain alphanumerics. 
 <br>
@@ -370,8 +369,7 @@ Edits an existing student.
 <br>
 - `TELEGRAM_HANDLE` : Must be a valid telegram handle ID. 
 <br>
-- `GROUP` : A string representing the group of students as shown in the list. Must only be alphanumeric and cannot 
-contain space.
+- `GROUP` : A string representing the group of students as shown in the list.  Student group names must be alphanumeric and **cannot** contain spaces.
 <br>
 - `TAG` : Must only contain alphanumerics. 
 <br>
@@ -500,8 +498,7 @@ Marks the attendance of a group of students for that tutorial.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `GROUP`: A string representing the group of students as shown in the list. Must only be alphanumeric and cannot 
-contain space.
+- `GROUP`: A string representing the group of students as shown in the list.  Student group names must be alphanumeric and **cannot** contain spaces.
 <br>
 - `TUTORIAL`: An integer between 1 and 12 (inclusive)
 <br>
@@ -545,8 +542,7 @@ Unmark the attendance of a group of students for that tutorial.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `GROUP`: A string representing the group of students as shown in the list. Must only be alphanumeric and cannot 
-contain space.
+- `GROUP`: A string representing the group of students as shown in the list.  Student group names must be alphanumeric and **cannot** contain spaces.
 <br>
 - `TUTORIAL`: An integer between 1 and 12 (inclusive)
 <br>
@@ -631,7 +627,8 @@ Input participation points for a group of students for that tutorial.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `GROUP`: The tutorial group name of the students as shown in the list. Must not contain space.
+- `GROUP`: The tutorial group name of the students as shown in the list.  Group names must be alphanumeric and 
+**cannot** contain spaces.
 <br>
 - `TUTORIAL`: An integer between 1 and 12 (inclusive)
 <br>
@@ -804,7 +801,8 @@ Create an assignment and assign it to a group of students.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `GROUP`: The tutorial group name of the students as shown in the list. Must not contain space.
+- `GROUP`: The tutorial group name of the students as shown in the list.  Group names must be alphanumeric and 
+**cannot** contain spaces.
 <br>
 - `MAX_SCORE`: An integer between 1 and 1000 (inclusive).
 <br>
@@ -920,7 +918,8 @@ Grade a group of students' assignments.
 <br>
 - Every student in the group must have the assignment. This command pairs well with `assignGroup`.
 <br>
-- `GROUP`: The tutorial group name of the students as shown in the list. Must not contain space.
+- `GROUP`: The tutorial group name of the students as shown in the list.  Group names must be alphanumeric and 
+**cannot** contain spaces.
 <br>
 - `SCORE`: A student's marks need to be between 0 (inclusive) and the maximum score of the assignment (inclusive).
 <br>
