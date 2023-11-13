@@ -9,7 +9,6 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.logic.commands.MarkAttendanceCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.person.Attendance;
 
 /**
  * Parses input arguments and creates a new {@code MarkAttendanceCommand} object
@@ -30,8 +29,6 @@ public class MarkAttendanceParser implements Parser<MarkAttendanceCommand> {
         }
 
         Index index;
-        int tutorial = 0;
-        String status = null;
 
         try {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
@@ -40,21 +37,9 @@ public class MarkAttendanceParser implements Parser<MarkAttendanceCommand> {
                     MarkAttendanceCommand.MESSAGE_USAGE), ive);
         }
 
-        if (argMultimap.getValue(PREFIX_TUTORIAL).isPresent()) {
-            tutorial = ParserUtil.parseTutorial(argMultimap.getValue(PREFIX_TUTORIAL).get());
-        }
+        int tutorial = ParserUtil.parseTutorial(argMultimap.getValue(PREFIX_TUTORIAL).get());
 
-        if (argMultimap.getValue(PREFIX_PARTICIPATION_STATUS).isPresent()) {
-            status = ParserUtil.parseParticipationStatus(argMultimap.getValue(PREFIX_PARTICIPATION_STATUS).get());
-        }
-
-        if (!(tutorial >= 1 && tutorial <= 12)) {
-            throw new ParseException(Attendance.TUTORIAL_ERROR_MSG);
-        }
-
-        if (status == null) {
-            throw new ParseException(Attendance.STATUS_ERROR_MSG);
-        }
+        String status = ParserUtil.parseParticipationStatus(argMultimap.getValue(PREFIX_PARTICIPATION_STATUS).get());
 
         return new MarkAttendanceCommand(index, Index.fromOneBased(tutorial), status);
     }
