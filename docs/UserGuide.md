@@ -962,13 +962,14 @@ Grade a student's assignment.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- A student's marks need to be between 0 (inclusive) and the maximum score of the assignment (inclusive).
+- `INDEX`: A positive integer representing the index of the student as shown in the list.
 <br>
-- Need to specify the index of the student after the command word.
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
+<br>
+- `SCORE`: The exact mark scored by the student. It must be at between 0 (inclusive) and the maximum score (inclusive).
 <br>
 - `-0` is considered to be 0 in the system. 
 <br>
-- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
 | Examples                   | Purpose                                            |
@@ -997,17 +998,16 @@ Grade a group of students' assignments.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- A student's marks need to be between 0 (inclusive) and the maximum score of the assignment (inclusive).
+- `GROUP`: The tutorial group name of the students as shown in the list.
 <br>
-- Need to specify the name of the group after the command.
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
+<br>
+- `SCORE`: The exact mark scored by the student. It must be at between 0 (inclusive) and the maximum score (inclusive).
 <br>
 - `-0` is considered to be 0 in the system. 
 <br>
 - Every student in the group must have the assignment. This command pairs well with `assignGroup`!
 <br>
-- `GROUP`: The tutorial group name of the students as shown in the list.
-<br>
-- `ASSIGNMENT_NAME`: Case sensitive. For example, `Tutorial 1` and `tutorial 1` are two different assignments.
 </div>
 
 | Examples                              | Purpose                                                                                |
