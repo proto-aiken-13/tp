@@ -107,7 +107,9 @@ Need help on memorizing commands? Drop by in [Command summary](#summary)!
 <a name="quick-start"></a>
 ## Quick start
 
-Step 1 : Ensure you have downloaded Java version 11 or above in your computer. Here are the steps on how to download [Java](https://www.oracle.com/java/technologies/downloads/#java11).
+Step 1 : Ensure you have downloaded [Java](#glossary) version 11 or above in your computer. Here are the steps on 
+how to 
+download [Java](https://www.oracle.com/java/technologies/downloads/#java11).
 
 Step 2 : Navigate to our [website](https://github.com/AY2324S1-CS2103T-T12-1/tp/releases/tag/v1.3.trial) and download the latest JAR file.
 ![Step 2](images/download1.png)
@@ -1036,7 +1038,9 @@ manually.
 
 ### Editing the data file
 
-`npc_track` data are saved automatically as a JSON file. Advanced users are welcome to update data directly by editing that data file.
+`npc_track` data are saved automatically as a [JSON](#glossary) file. Advanced users are welcome to update data 
+directly by 
+editing that data file.
 
 <div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
 If your changes to the data file makes its format invalid, the program will discard all data and start with an empty data file at the next run. Hence, it is recommended to make a backup of the file before editing it.
@@ -1090,6 +1094,7 @@ If your changes to the data file makes its format invalid, the program will disc
 | **Parameter**               | Details about the student that will be included in the command                       |
 | **Command**                 | Instructions that `npc_track` will execute                                           |
 | **JAR**                     | Compressed file of `npc_track` is in the form of a Java ARchive                      |
+| **Java**                    | Programming language used to develop `npc_track`                                      |
 | **JSON**                    | Lightweight file format for storing and transferring data                            |
 | **Attendance status**       | The student's attendance status which can be "present", "absent", or "valid reason". |
 | **Attendance status: `:)`** | The emoji associated with "present".                                                 |
