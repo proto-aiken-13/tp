@@ -54,6 +54,10 @@ Given below are my contributions to the project.
 
 - Helped manage the user stories.
 - Helped with the use cases for the features I implemented.
+  - Mark Attendance
+  - Unmark Attendance
+  - Input Participation Points
+  - List Participation Records
 - Helped create the UML diagram for InputParticipationSequenceDiagram.
 - Helped create the UML diagram for MarkAttendanceSequenceDiagram.
 - Helped create the UML diagram for UnmarkAttendanceActivityDiagram.
@@ -65,11 +69,14 @@ Given below are my contributions to the project.
 
 - Brainstormed for features to be implemented.
 - Created milestone v1.2, v1.3, v1.4
+- Created issues
+- Helped review and merge PRs
 
 ### Review and Mentoring Contributions
 
 - Ensured that testing has been done, if not, then ensured that it is done at a later stage.
+- Fix some bugs reported during the Mock PE
 
 ### Contributions Beyond the Project Team
 
-- to be added
+- Helped boost morale!
