@@ -149,7 +149,7 @@ followed by a quick summary guide of the Graphical User Interface (GUI).
 ---
 
 <a name="parameter"></a>
-## Common Parameters
+## Common Instructions
 
 | Parameters | Description          | Constraints                                                                                                                                                       | Valid Examples                        | Invalid Examples              |
 |------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|-------------------------------|
