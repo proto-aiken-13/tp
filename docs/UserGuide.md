@@ -17,7 +17,8 @@ Here’s an overview of how `npc_track` can help you streamline your student man
 - Keep track of their attendance and participation levels.
 - Keep track of their grades!
 
-But more than that, the application is *simple to use* and efficient. The application has a command line interface (CLI) in which you can type in commands without having to scroll through contacts and lists to click on buttons. The application sports a simple and very readable look!
+But more than that, the application is *simple to use* and efficient. The application allows you to type in commands 
+without having to scroll through contacts and lists to click on buttons. The application sports a simple and very readable look!
 
 ### How can `npc_track` help you in your teaching journey?
 
@@ -28,8 +29,7 @@ adding extra information for a student named Ted can easily be done using the va
 our [Features Section](#features)
 
 `npc_track` saves teaching assistant from having to spend so much precious time by reducing the complexity and the
-need to
-navigate different platforms just to search their students. Now, it can be done in a one-stop manner using `npc_track`
+need to navigate different platforms just to search their students. Now, it can be done in a one-stop manner using `npc_track`
 
 Not ready to use `npc_track`? Fret Not, you can jump to the [Quick Start](#quick-start) section to begin your
 `npc_track`
@@ -41,9 +41,10 @@ the sidebar
 
 ### How can this guide help me?
 
-**First time user?** Welcome and thank you for using our app! Check out the installation guide [here](#quick-start)!
+**First time user?** Welcome and thank you for using our app! This guide will help you in navigating and becoming a 
+pro `npc_track` user. If you have yet to install the app, check out the installation guide [here](#quick-start)!
 
-Once you’re done setting up, check out the [features](#features) of `npc_track` to manage the your students' info!
+Once you’re done setting up, check out the [features](#features) of `npc_track` to manage your students' info!
 
 If you are an intermediary user and are confused or unclear of some of our features, check out the [FAQ](#FAQ) as well!
 
@@ -107,7 +108,9 @@ Need help on memorizing commands? Drop by in [Command summary](#summary)!
 <a name="quick-start"></a>
 ## Quick start
 
-Step 1 : Ensure you have downloaded Java version 11 or above in your computer. Here are the steps on how to download [Java](https://www.oracle.com/java/technologies/downloads/#java11).
+Step 1 : Ensure you have downloaded [Java](#glossary) version 11 or above in your computer. Here are the steps on 
+how to 
+download [Java](https://www.oracle.com/java/technologies/downloads/#java11).
 
 Step 2 : Navigate to our [website](https://github.com/AY2324S1-CS2103T-T12-1/tp/releases/tag/v1.3.trial) and download the latest JAR file.
 ![Step 2](images/download1.png)
@@ -129,25 +132,42 @@ the file name as shown in the figure.
 Step 6 : Type the command `java -jar npctrack.jar` to run the app.
 ![Step 6](images/download5.png)
 
+--------------------------------------------------------------------------------------------------------------------
+<a name="gui"></a>
+## Navigating `npc_track`
+
+### User Interface
+Our user-friendly interface allows quick navigation for teaching assistants. Below is an overview of the interface
+followed by a quick summary guide of the User Interface (UI).
+
+![Ui](images/npctrack-guide.png)
+
+| Component               | Function                                                                                           |
+|-------------------------|:---------------------------------------------------------------------------------------------------|
+| **Command Result**      | The result of the commands that the user types in the command box                                      |
+| **Command Box**         | A text box for users to type the various commands as listed in the [Features](#features) section |
+| **Student Information** | Summarised information of the student                                       |
+| **Student Index**       | The `INDEX` of the student, counting from 1 |
+
 ---
 
 <a name="parameter"></a>
-## Common Parameters
+## Common Values
 
-| Parameters | Description          | Constraints                                                                                                                                                       | Valid Examples                        | Invalid Examples              |
-|------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|-------------------------------|
-| `n/`       | Names                | Must be alphanumeric and can contain spaces                                    <br/><br/>                                                                         | John Doe                              | $5money                       |
-| `a/`       | Telegram handle      | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters and maximum 32 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop       | $telegram, _tele, 56thperson  |
-| `group/`   | Group names          | Must be alphanumeric and cannot contain spaces <br/> Case sensitive                                    <br/><br/>                                                 | group1, T01, LEC1                     | $group, _grp, group 1         |
-| `p/`       | Phone Numbers        | Must only contain numbers, and it should be at least 3 digits long                                    <br/><br/>                                                  | 85879384, 0812738239                  | $732642, 62-382914, 321 39812 |
-| `e/`       | Email Address        | Must be in valid email format   <br/> This is followed by a '@' and then a domain name.                                 <br/>                                     | email@domain.com, email123@domain.com | email@%domain.com             |
-| `t/` (1)   | Tags                 | Must only contain alphanumerics                                <br/>                                                                                              | validversion                          | #^weirdTags, invalid version  |
-| `t/` (2)   | Tutorial Number      | An integer between 1 and 12 (inclusive)                                                                                                                           | 1, 2, 3, 12                           | 0, -1, #200                   |
-| `c/`       | Comments             | Comments can take any values, and it should not be blank                                <br/>                                                                     | Valid Comment                         |                               |
-| `s/`       | Status               | The student’s attendance status (case-sensitive).     <br/>                                                                                                       | P, A, VR                              | p, Absent, VALIDREASON        |
-| `pp/`      | Participation Points | An integer between 0 and 1000 (inclusive) <br/>                                                                                                                   | 1, 1000, 500                          | points100, 1000pts, -100      |
-| `m/`       | Maximum Marks        | An integer between 0 and 1000 (inclusive) <br/>                                                                                                                   | 1, 1000, 500                          | 0, -100                       |
-| `g/`       | Grade                | A student's marks need to be an integer between 0 (inclusive) and the maximum score of the assignment (inclusive). <br/>                           | 1, 1000, 500, 0                       | -100, one-hundred             |
+| Value      | Description          | Constraints                                                                                                                                                       | Valid Examples                        | Invalid Examples              |
+|----------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|-------------------------------|
+| `n/`     | Names                | Must be alphanumeric and can contain spaces                                    <br/><br/>                                                                         | John Doe                              | $5money                       |
+| `a/`     | Telegram handle      | Must be a-z, 0-9 or underscore. <br/> Minimum Length is 5 characters and maximum 32 characters <br/> Cannot end with an underscore <br/> Must start with a letter | harukaNaruto, loli_pop, l0l1pop       | $telegram, _tele, 56thperson  |
+| `group/` | Group names          | Must be alphanumeric and cannot contain spaces <br/> Case sensitive                                    <br/><br/>                                                 | group1, T01, LEC1                     | $group, _grp, group 1         |
+| `p/`     | Phone Numbers        | Must only contain numbers, and it should be at least 3 digits long                                    <br/><br/>                                                  | 85879384, 0812738239                  | $732642, 62-382914, 321 39812 |
+| `e/`     | Email Address        | Must be in valid email format   <br/> This is followed by a '@' and then a domain name.                                 <br/>                                     | email@domain.com, email123@domain.com | email@%domain.com             |
+| `t/` (1) | Tags                 | Must only contain alphanumerics                                <br/>                                                                                              | validversion                          | #^weirdTags, invalid version  |
+| `t/` (2) | Tutorial Number      | An integer between 1 and 12 (inclusive)                                                                                                                           | 1, 2, 3, 12                           | 0, -1, #200                   |
+| `c/`     | Comments             | Comments can take any values, and it should not be blank                                <br/>                                                                     | Valid Comment                         |                               |
+| `s/`     | Status               | The student’s attendance status (case-sensitive).     <br/>                                                                                                       | P, A, VR                              | p, Absent, VALIDREASON        |
+| `pp/`    | Participation Points | An integer between 0 and 1000 (inclusive) <br/>                                                                                                                   | 1, 1000, 500                          | points100, 1000pts, -100      |
+| `m/`     | Maximum Marks        | An integer between 0 and 1000 (inclusive) <br/>                                                                                                                   | 1, 1000, 500                          | 0, -100                       |
+| `g/`     | Grade                | A student's marks need to be an integer between 0 (inclusive) and the maximum score of the assignment (inclusive). <br/>                           | 1, 1000, 500, 0                       | -100, one-hundred             |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -169,7 +189,8 @@ Step 6 : Type the command `java -jar npctrack.jar` to run the app.
 * Details can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
+* Extraneous information for commands like (such as `help`, `list`, `exit` and `clear`) will be 
+  ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
@@ -873,7 +894,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 :top: [Back to Table Of Contents](#toc)
 
 <a name="gradeGroup"></a>
-### Grade assignments for a group of students: `gradeGroup`
+#### Grade assignments for a group of students: `gradeGroup`
 
 It's tedious to grade the students individually. Try the `gradeGroup` command to collectively grade students in a 
 group.
@@ -914,7 +935,7 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 :top: [Back to Table Of Contents](#toc)
 
 <a name="group"></a>
-### Grouping students: `group`
+### Changing Student Groups: `group`
 
 ![Group](images/group.png)
 
@@ -1013,11 +1034,14 @@ Do not worry! You can refer to our [troubleshooting](#issues) guide for common p
 
 ### Saving the data
 
-The data is saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+The data is saved in your system automatically after any command that changes the data. There is no need to save 
+manually.
 
 ### Editing the data file
 
-`npc_track` data are saved automatically as a JSON file. Advanced users are welcome to update data directly by editing that data file.
+`npc_track` data are saved automatically as a [JSON](#glossary) file. Advanced users are welcome to update data 
+directly by 
+editing that data file.
 
 <div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
 If your changes to the data file makes its format invalid, the program will discard all data and start with an empty data file at the next run. Hence, it is recommended to make a backup of the file before editing it.
@@ -1028,24 +1052,9 @@ If your changes to the data file makes its format invalid, the program will disc
 ## Troubleshooting
 <a name="issues"></a>
 
-1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
-
---------------------------------------------------------------------------------------------------------------------
-<a name="gui"></a>
-## Navigating `npc_track`
-
-### User Interface
-Our user-friendly interface allows quick navigation for teaching assistants. Below is an overview of the interface
-followed by a quick summary guide of the Graphical User Interface (GUI).
-
-![Ui](images/npctrack-guide.png)
-
-| Component               | Function                                                                                           |
-|-------------------------|----------------------------------------------------------------------------------------------------|
-| **Command Result**      | The result of the commands that the user types in the command box                                      |
-| **Command Box**         | A text box for users to type the various commands as listed in the [Features](#features) section |
-| **Student Information** | Summarised information of the student                                       |
-| **Student Index**       | The `INDEX` of the student, counting from 1 |
+1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using 
+   only the primary screen, the user interface will open off-screen. The remedy is to delete the `preferences.json` 
+   file created by the application before running the application again.
 
 --------------------------
 <a name="summary"></a>
@@ -1088,6 +1097,8 @@ followed by a quick summary guide of the Graphical User Interface (GUI).
 | **Parameter**               | Details about the student that will be included in the command                       |
 | **Command**                 | Instructions that `npc_track` will execute                                           |
 | **JAR**                     | Compressed file of `npc_track` is in the form of a Java ARchive                      |
+| **Java**                    | Programming language used to develop `npc_track`                                      |
+| **JSON**                    | Lightweight file format for storing and transferring data                            |
 | **Attendance status**       | The student's attendance status which can be "present", "absent", or "valid reason". |
 | **Attendance status: `:)`** | The emoji associated with "present".                                                 |
 | **Attendance status: `x`**  | The emoji associated with "absent".                                                  |

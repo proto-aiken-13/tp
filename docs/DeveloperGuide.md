@@ -179,11 +179,11 @@ The `AssignmentCommand` looks through all the `Person`s, and attempts to add the
 
 Below is the activity diagram for parsing an assignment command.
 
-<img src="images/AssignParserActivityDiagram.png" width="650"/>
+<img src="images/AssignParserActivityDiagram.png" width="100%"/>
 
 Below is the sequence diagram for an assignment command.
 
-<img src="images/AssignSequenceDiagram.png" width="650"/>
+<img src="images/AssignSequenceDiagram.png" width="100%"/>
 
 #### Design considerations:
 
@@ -239,7 +239,7 @@ in the group.
 
 The activity diagram of the parser shows the flow of the final implementation of assigning to a group of students.
 
-<img src="images/AssignGroupParserActivityDiagram.png" width="650"/>
+<img src="images/AssignGroupParserActivityDiagram.png" width="100%"/>
 
 ### Mark Attendance
 
@@ -252,7 +252,7 @@ Mark attendance command is handled by MarkAttendanceCommand, MarkAttendanceParse
 
 Below is the sequence diagram for marking of a students tutorial attendance.
 
-<img src="images/MarkAttendanceSequenceDiagram.png" width="650"/>
+<img src="images/MarkAttendanceSequenceDiagram.png" width="100%"/>
 
 #### Design considerations
 
@@ -267,11 +267,11 @@ Below is the sequence diagram for marking of a students tutorial attendance.
 
 The activity diagram shows the flow of how the final implementation of marking attendance has been implemented:
 
-<img src="images/MarkAttendanceActivityDiagram.png" width="650"/>
+<img src="images/MarkAttendanceActivityDiagram.png" width="100%"/>
 
 For reference, the activity diagram shows the flow of the final implementation of unmark attendance.
 
-<img src="images/UnmarkAttendanceActivityDiagram.png" width="650"/>
+<img src="images/UnmarkAttendanceActivityDiagram.png" width="100%"/>
 
 ### Input Participation Points
 
@@ -284,7 +284,7 @@ Input participation command is handled by `InputParticipationCommand`, `InputPar
 
 Below is the sequence diagram for inputting participation points of a student.
 
-<img src="images/InputParticipationSequenceDiagram.png" width="650"/>
+<img src="images/InputParticipationSequenceDiagram.png" width="100%"/>
 
 #### Design considerations
 
@@ -304,7 +304,7 @@ Below is the sequence diagram for inputting participation points of a student.
 
 The activity diagram shows the flow of how the final implementation of inputting participation has been implemented:
 
-<img src="images/InputParticipationActivityDiagram.png" width="650"/>
+<img src="images/InputParticipationActivityDiagram.png" width="100%"/>
 
 ### Find Students
 
@@ -317,7 +317,7 @@ Find Student command is handled by `FindCommand`, `FindCommandParser`, and `Mode
 
 Below is the sequence diagram for finding students.
 
-<img src="images/FindSequenceDiagram.png" width="650"/>
+<img src="images/FindSequenceDiagram.png" width="100%"/>
 
 #### Design considerations
 
@@ -343,7 +343,7 @@ Find Group of Students command is handled by `FindGroupCommand`, `FindGroupComma
 
 Below is the sequence diagram for finding a group of students.
 
-<img src="images/FindGroupSequenceDiagram.png" width="650"/>
+<img src="images/FindGroupSequenceDiagram.png" width="100%"/>
 
 #### Design considerations
 
@@ -373,7 +373,7 @@ Grade Student command is handled by `GradeCommand`, `GradeCommandParser`, `Assig
 
 Below is the sequence diagram for grading students.
 
-<img src="images/GradeSequenceDiagram.png" width="650"/>
+<img src="images/GradeSequenceDiagram.png" width="100%"/>
 
 --------------------------------------------------------------------------------------------------------------------
 
