@@ -4,7 +4,7 @@
 start
 :User marks attendance for specific student;
 if () then ([Argument prefixes appear more than once])
-    :Error for duplicate prefixes is shown to user;
+    #FF6666:Error for duplicate prefixes is shown to user;
     stop;
 else ([Else])
     if () then ([Student index is invalid])
