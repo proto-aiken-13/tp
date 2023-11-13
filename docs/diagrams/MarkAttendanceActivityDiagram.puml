@@ -5,23 +5,23 @@ start
 :User marks attendance for specific student;
 if () then ([Argument prefixes appear more than once])
     :Error for duplicate prefixes is shown to user;
-    end;
+    stop;
 else ([Else])
     if () then ([Student index is invalid])
         :Error for invalid index input is shown;
-        end;
+        stop;
     else ([Else])
         if () then ([Tutorial field is invalid])
             :Error for invalid tutorial is thrown;
-            end;
+            stop;
         else ([Else])
             if () then ([Tutorial has been marked for the week])
                 :Error indicating attendance for the week has been marked;
-                end;
+                stop;
             else ([Tutorial is valid])
                 if () then ([Attendance status is invalid])
                     :Error for invalid attendance status is shown;
-                    end;
+                    stop;
                 else ([Else])
                     :Student's attendance for the week is marked with the status;
                     :Message is returned indicating that the student's attendance has been marked successfully;

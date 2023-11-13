@@ -5,19 +5,19 @@ start
 :User unmark attendance for specific student;
 if () then ([Argument prefixes appear more than once])
     :Error for duplicate prefixes is shown to user;
-    end;
+    stop;
 else ([Else])
     if () then ([Student index is invalid])
         :Error for invalid index input is shown;
-        end;
+        stop;
     else ([Else])
         if () then ([Tutorial field is invalid])
             :Error for invalid tutorial is thrown;
-            end;
+            stop;
         else ([Else])
             if ()  then ([Tutorial has been marked for the week])
             :Error indicating attendance for the week has been unmarked;
-            end;
+            stop;
         else ([Else])
             :Student's attendance for the week is unmarked;
             :Message is returned indicating that the student's attendance has been unmarked successfully;
