@@ -125,7 +125,7 @@ Step 1 : Ensure you have downloaded Java version 11 or above in your computer.
 
 *Pro Tips:*
 - **Unsure about what version of Java you have?** You can check what version you have in this [link](https://economictimes.indiatimes.com/news/international/us/which-version-of-java-are-you-using-in-windows-10-11-heres-how-to-check-it/articleshow/101438400.cms)
-- Otherwise, you can download the **latest version** of Java using this [link](https://www.oracle.com/java/technologies/downloads/#java11).
+- Otherwise, you can download the **Java 11** using this [link](https://www.oracle.com/java/technologies/downloads/#java11).
 
 Step 2 : Navigate to our [website](https://github.com/AY2324S1-CS2103T-T12-1/tp/releases/tag/v1.3.trial) and download the latest JAR file.
 ![Step 2](images/download1.png)
@@ -166,10 +166,10 @@ Below is an overview of how our app looks like!
 
 | Component               | Function                                                                                           |
 |-------------------------|----------------------------------------------------------------------------------------------------|
-| **Command Result**      | The result of the commands that user types in the command box                                      |
-| **Command Box**         | A placeholder for users to type the various command as listed in the [Features](#features) section |
-| **Student Information** | A display of the different information regarding the student                                       |
-| **Student Index**       | The `INDEX` of the student that users want to change / view                                        |
+| **Command Result**      | The result of the commands that the user types in the command box                                      |
+| **Command Box**         | A text bpx for users to type the various command as listed in the [Features](#features) section |
+| **Student Information** | All summarised information regarding the student                                       |
+| **Student Index**       | The `INDEX` of the student, starting from 1. The index is based on when the student's details were added to the application.                                    |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -292,13 +292,37 @@ Adds a student to the student book.
 ***Format***: `add n/NAME [p/PHONE_NUMBER] [e/EMAIL] [a/TELEGRAM_HANDLE] [t/TAG]… [c/COMMENT]… [group/GROUP]`
 </div>
 
+
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
 - A student can have any number of optional tags
 <br>
 - A student can have any number of optional comments
 <br>
-- Cannot add a student with the same name in the list.
+- Cannot add a student with the same name in the list. Student names are case-insensitive.
+<br>
+- `NAME` : Must be [alphanumeric](#glossary) and can contain spaces. 
+<br>
+- `PHONE` : Should only contain numbers, and it should be at least 3 digits long. 
+<br>
+- `TELEGRAM_HANDLE` : Must be a valid telegram handle ID. 
+<br>
+- `GROUP` : A string representing the group of students as shown in the list. Must be alphanumeric.
+<br>
+- `TAG` : Must only contain alphanumeric values.
+<br>
+- `COMMENT` : Comments can take any values, and it should not be blank.
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- A student can have any number of optional tags
+<br>
+- A student can have any number of optional comments
+<br>
+- You cannot add a student with the same name in the list.
+<br>
+- Student names are case-insensitive.
 </div>
 
 | Examples                                                                                     | Purpose                                                                                      |
@@ -318,13 +342,34 @@ Adds a student to the student book.
 <a name="edit"></a>
 ### Editing a person : `edit`
 
-Have anything you want to change ? Not to worry, your student details is editable.
+Need to update student details? Fret not, as you can edit your student details!
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
 Edits an existing student.
 <br><br>
 ***Format***: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]… [c/COMMENT]… [a/TELEGRAM_HANDLE] [group/GROUP]`
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- A student can have any number of optional tags
+<br>
+- A student can have any number of optional comments
+<br>
+- Cannot add a student with the same name in the list. Student names are case-insensitive.
+<br>
+- `NAME` : Must be [alphanumeric](#glossary) and can contain spaces. 
+<br>
+- `PHONE` : Should only contain numbers, and it should be at least 3 digits long. 
+<br>
+- `TELEGRAM_HANDLE` : Must be a valid telegram handle ID. 
+<br>
+- `GROUP` : A string representing the group of students as shown in the list. Must be alphanumeric.
+<br>
+- `TAG` : Must only contain alphanumeric values.
+<br>
+- `COMMENT` : Comments can take any values, and it should not be blank.
 </div>
 
 | Examples                                  | Purpose                                                                                                             |
@@ -344,7 +389,7 @@ Edits an existing student.
 <a name="group"></a>
 ### Grouping students: `group`
 
-If you ever encounter changing [group](#glossary) names, or want to assign students to groups in general, you can always use our `group` command to do that.
+If you ever encounter changing [group](#glossary) names, or want to assign students to groups in general, you can always use our `group` command to name or rename them quickly.
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
@@ -355,7 +400,9 @@ Change the student group names.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- Student group names must be alphanumeric and **cannot** contain spaces.
+- `PREV_GROUP`: Student group names must be alphanumeric and **cannot** contain spaces.
+<br/>
+- `UPDATED_GROUP`: Student group names must be alphanumeric and **cannot** contain spaces.
 </div>
 
 | Examples        | Purpose                            |
@@ -402,7 +449,7 @@ Finds students associated with the keyword.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `KEYWORD` : Case insensitive and can involve any character. 
+- `KEYWORD` : Case insensitive. You can just use any part of the student's name and it will still work!
 </div>
 
 | Examples          | Purpose                             |
@@ -417,7 +464,7 @@ Finds students associated with the keyword.
 
 ### Finding students by group : `findGroup`
 
-Finding it difficult to scroll through the whole list of students? Don't worry just find the specific student using
+Finding it difficult to scroll through the whole list of students? Don't worry just find the specific group using
 the `findGroup` command.
 
 <div markdown="span" class="alert alert-success">
@@ -521,14 +568,13 @@ This removes the current status marked for the attendance, as well as any partic
 <br>
 - Unmarking the attendance for a week that is already unmarked will result in the message
 `This week's attendance has already been unmarked!`
-
 </div>
 
 
 | Examples           | Purpose                                                    |
 |--------------------|------------------------------------------------------------|
-| `unmarkAtd 1 t/1`  | Unmark attendance of student with index 1 for tutorial 1)  |
-| `unmarkAtd 2 t/12` | Unmark attendance of student with index 2 for tutorial 12) |
+| `unmarkAtd 1 t/1`  | Unmark attendance of student with index 1 for tutorial 1  |
+| `unmarkAtd 2 t/12` | Unmark attendance of student with index 2 for tutorial 12 |
 
 <div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**<br>
 :question: **[Glossary](#glossary)**
@@ -552,9 +598,9 @@ Marks the attendance of a group of students for that tutorial.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `GROUP`: A string representing the group of students as shown in the list.
+- `GROUP`: A string representing the group of students as shown in the list. Must be alphanumeric.
 <br>
-- `TUTORIAL`: An integer between 1 and 12 (inclusive)
+- `TUTORIAL`: An integer between 1 and 12 (inclusive).
 <br>
 - Marking the attendance for a week that is already marked will result in the message
 `This week's attendance has already been marked!`
@@ -608,7 +654,7 @@ This removes the current status marked for the attendance, as well as any partic
 
 | Examples               | Purpose                                                  |
 |------------------------|----------------------------------------------------------|
-| `unmarkGroupAtd 1 t/1` | Unmark attendance of students in group 1 for tutorial 1) |
+| `unmarkGroupAtd 1 t/1` | Unmark attendance of students in group 1 for tutorial 1 |
 
 <div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**<br>
 :question: **[Glossary](#glossary)**
@@ -646,7 +692,7 @@ Input arbitary participation points for a student for that tutorial.
 <br>
 - `POINTS`: An integer between 0 and 1000 (inclusive)
 <br>
-- Participation points can only be inputted for a tutorial that is already marked as attended.
+- Participation points can only be given for a tutorial that is already marked as present.
   Else, it will result in the message `Before inputting participation points,
   mark the attendance of the student first!`
 
@@ -654,8 +700,8 @@ Input arbitary participation points for a student for that tutorial.
 
 | Examples                | Purpose                                                                 |
 |-------------------------|-------------------------------------------------------------------------|
-| `inputPP 1 t/1 pp/350`  | For student with index 1, input 350 participation points to tutorial 1  |
-| `inputPP 2 t/12 pp/500` | For student with index 2, input 500 participation points to tutorial 12 |
+| `inputPP 1 t/1 pp/350`  | For student with index 1, 350 participation points are given to tutorial 1  |
+| `inputPP 2 t/12 pp/500` | For student with index 2, 500 participation points are given to tutorial 12 |
 
 <div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**<br>
 :question: **[Glossary](#glossary)**
@@ -685,15 +731,15 @@ Input arbitrary participation points for a group of students for that tutorial.
 <br>
 - `POINTS`: An integer between 0 and 1000 (inclusive)
 <br>
-- Participation points can only be inputted for a tutorial that is already marked as attended.
+- Participation points can only be given for a tutorial that is already marked as present.
   Else, the student(s) with unmarked attendance will not receive the any participation points.
 
 </div>
 
 | Examples                         | Purpose                                                             |
 |----------------------------------|---------------------------------------------------------------------|
-| `inputGroupPP lab33 t/1 pp/350`  | For students of lab33, input 350 participation points to tutorial 1 |
-| `inputGroupPP tut39 t/12 pp/500` | For student of tut39, input 500 participation points to tutorial 12 |
+| `inputGroupPP lab33 t/1 pp/350`  | For students of lab33, 350 participation points are given to tutorial 1 |
+| `inputGroupPP tut39 t/12 pp/500` | For student of tut39, 500 participation points are given to tutorial 12 |
 
 <div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**<br>
 :question: **[Glossary](#glossary)**
@@ -733,10 +779,10 @@ List a student's participation record.
 
 For allocating and grading assignments , you can use the following commands:
 * assign
-* deassign
-* deassignIndiv
 * assignGroup
 * assignIndiv
+* deassign
+* deassignIndiv
 * grade
 * gradeGroup
 
@@ -755,7 +801,7 @@ Create an assignment and assign it to all students.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `MAX_SCORE`: An integer between 1 and 1000.
+- `MAX_SCORE`: An integer between 1 and 1000. Represents the maximum score of the assignment.
 <br>
 - If the student already has the assignment, assigning the same assignment will overwrite the current assignment.
 <br>
@@ -764,65 +810,7 @@ Create an assignment and assign it to all students.
 
 | Examples                   | Purpose                                                                                         |
 |----------------------------|-------------------------------------------------------------------------------------------------|
-| `assign n/Tutorial1 m/100` | Assigns every student in the list with an assignment called Tutorial1 and maximum score is 100. |
-
-<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**<br>
-:question: **[Glossary](#glossary)**
-</div>
-
-:top: [Back to Table Of Contents](#toc)
-
-<a name="deassign"></a>
-#### Deassign Assignments: `deassign`
-
-Did you accidentally assign the wrong assignment or just want to change the assignment? You can now
-do it using the `deassign` command.
-
-<div markdown="span" class="alert alert-success">
-:pencil2: **Purpose:**
-Delete an assignment for all students.
-<br><br>
-
-***Format***: `deassign n/ASSIGNMENT_NAME`
-</div>
-
-<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
-<br><br>
-- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
-</div>
-
-| Examples      | Purpose                                                                        |
-|---------------|--------------------------------------------------------------------------------|
-| `deassign n/Tutorial1` | Deletes the assignment called Tutorial1 for all students with that assignment. |
-
-<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**<br>
-:question: **[Glossary](#glossary)**
-</div>
-
-:top: [Back to Table Of Contents](#toc)
-
-<a name="deassignIndiv"></a>
-#### Deassign Individual Assignments: `deassignIndiv`
-
-Did you accidentally assign a student with the wrong assignment or just want to change the assignment? You can now
-do it using the `deassignIndiv` command
-
-<div markdown="span" class="alert alert-success">
-:pencil2: **Purpose:**
-Delete an assignment for a particular student.
-<br><br>
-
-***Format***: `deassignIndiv INDEX n/ASSIGNMENT_NAME`
-</div>
-
-<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
-<br><br>
-- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
-</div>
-
-| Examples                      | Purpose                                                          |
-|-------------------------------|------------------------------------------------------------------|
-| `deassignIndiv 1 n/Tutorial1` | Deletes the assignment called Tutorial1 for student with index 1 |
+| `assign n/Tutorial1 m/100` | Assigns every student in the list with an assignment called Tutorial1 with a maximum score of 100. |
 
 <div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**<br>
 :question: **[Glossary](#glossary)**
@@ -853,8 +841,8 @@ Create an assignment and assign it to a group of students.
 
 | Examples                           | Purpose                                                                                |
 |------------------------------------|----------------------------------------------------------------------------------------|
-| `assignGroup 1 n/Tutorial1 m/100`  | Assigns group named "1" with an assignment called Tutorial1 and maximum score is 100.  |
-| `assignGroup Pheonix n/Lab1 m/100` | Assigns group named "Pheonix" with an assignment called Lab1 and maximum score is 100. |
+| `assignGroup 1 n/Tutorial1 m/100`  | Assigns the group named "1" with an assignment called Tutorial1 and maximum score of 100.  |
+| `assignGroup Pheonix n/Lab1 m/100` | Assigns the group named "Pheonix" with an assignment called Lab1 and maximum score of 100. |
 
 <div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**<br>
 :question: **[Glossary](#glossary)**
@@ -885,8 +873,66 @@ Create an assignment and assign it to a student.
 
 | Examples                          | Purpose                                                                          |
 |-----------------------------------|----------------------------------------------------------------------------------|
-| `assignIndiv 1 n/Tutorial1 m/100` | Assigns student #1 with an assignment called Tutorial1 and maximum score is 100. |
-| `assignIndiv 10 n/Lab1 m/100`     | Assigns student #10 with an assignment called Lab1 and maximum score is 100.     |
+| `assignIndiv 1 n/Tutorial1 m/100` | Assigns student with index 1 with an assignment called Tutorial1 and a maximum score of 100. |
+| `assignIndiv 10 n/Lab1 m/100`     | Assigns student with index 10 with an assignment called Lab1 and a maximum score of 100.     |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**<br>
+:question: **[Glossary](#glossary)**
+</div>
+
+:top: [Back to Table Of Contents](#toc)
+
+<a name="deassign"></a>
+#### Deassign Assignments: `deassign`
+
+Did you accidentally assign the wrong assignment or just want to change the assignment? You can now
+fix it using the `deassign` command.
+
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
+Delete an assignment for all students.
+<br><br>
+
+***Format***: `deassign n/ASSIGNMENT_NAME`
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
+</div>
+
+| Examples      | Purpose                                                                        |
+|---------------|--------------------------------------------------------------------------------|
+| `deassign n/Tutorial1` | Deletes the assignment called Tutorial1 for all students with that assignment. |
+
+<div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**<br>
+:question: **[Glossary](#glossary)**
+</div>
+
+:top: [Back to Table Of Contents](#toc)
+
+<a name="deassignIndiv"></a>
+#### Deassign Individual Assignments: `deassignIndiv`
+
+Did you accidentally assign a student with the wrong assignment or just want to change the assignment? You can now
+fix it using the `deassignIndiv` command
+
+<div markdown="span" class="alert alert-success">
+:pencil2: **Purpose:**
+Delete an assignment for a particular student.
+<br><br>
+
+***Format***: `deassignIndiv INDEX n/ASSIGNMENT_NAME`
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
+<br><br>
+- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
+</div>
+
+| Examples                      | Purpose                                                          |
+|-------------------------------|------------------------------------------------------------------|
+| `deassignIndiv 1 n/Tutorial1` | Deletes the assignment called Tutorial1 for student with index 1 |
 
 <div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**<br>
 :question: **[Glossary](#glossary)**
@@ -920,8 +966,8 @@ Grade a student's assignment.
 
 | Examples                   | Purpose                                            |
 |----------------------------|----------------------------------------------------|
-| `grade 1 n/tutorial2 g/80` | Grades student #1 a score of 80 for his tutorial2. |
-| `grade 10 n/lab2 g/35`     | Grades student #10 a score of 35 for his lab2.     |
+| `grade 1 n/tutorial2 g/80` | Grades student with index 1 a score of 80 for their tutorial2. |
+| `grade 10 n/lab2 g/35`     | Grades student with index 10 a score of 35 for their lab2.     |
 
 <div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**<br>
 :question: **[Glossary](#glossary)**
@@ -932,12 +978,12 @@ Grade a student's assignment.
 <a name="gradeGroup"></a>
 ### Grade assignments for a group of students: `gradeGroup`
 
-Sounds tedious to grade the students individually. Try the `gradeGroup` command to collectively grade students in a 
+It's tedious to grade students individually. You can use the `gradeGroup` command to collectively grade students in a 
 group.
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
-Grade a group of students' assignment.
+Grade a group of students' assignments.
 <br><br>
 ***Format***: `gradeGroup GROUP n/ASSIGNMENT_NAME g/SCORE`
 </div>
@@ -952,12 +998,12 @@ Grade a group of students' assignment.
 <br>
 - Every student in the group must have the assignment. This command pairs well with `assignGroup`!
 <br>
-- `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
+- `ASSIGNMENT_NAME`: Case sensitive. For example, `Tutorial 1` and `tutorial 1` are two different assignments.
 </div>
 
 | Examples                              | Purpose                                                                                |
 |---------------------------------------|----------------------------------------------------------------------------------------|
-| `gradeGroup Class33 n/Tutorial1 g/90` | Grades students in group `Class33` for an assignment called `Tutorial1` a score of 90. |
+| `gradeGroup Class33 n/Tutorial1 g/90` | Grades all students in the group `Class33` with a score of 90 for their `Tutorial1` assignment. |
 
 <div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**<br>
 :question: **[Glossary](#glossary)**
@@ -998,7 +1044,9 @@ Deletes the specified person from the student book.
 <a name="exit"></a>
 ### Exiting the program : `exit`
 
-Are you done using `npc_track` and want to terminate the program. Just type the `exit` command to do that.
+Done using `npc_track` for the time being? Use `exit`<br>
+
+(Alternatively, closing the application window works.)
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
@@ -1016,7 +1064,7 @@ Exits the program.
 <a name="clear"></a>
 ### Clearing the Data : `clear`
 
-Do you need to remove all data in your `npc_track`. You can always do it in a very simple way using the `clear` command.
+Want to remove all data in your `npc_track`? Do it quickly with `clear`.
 
 <div markdown="span" class="alert alert-success">
 :pencil2: **Purpose:**
@@ -1027,7 +1075,8 @@ Clear `npc_track` data.
 
 <div markdown="span" class="alert alert-danger">:exclamation: **Caution:**
 Clearing the data will remove all information. Hence, it is recommended to make a backup of the file before clearing 
-it. Hence, since this is a irreversible command, type `yes` to confirm the action of wiping the data.
+it.<br> 
+**This operation is IRREVERSIBLE - Type `yes` to confirm if you are sure that all data should be cleared.**
 ![Clear](images/clear.png)
 </div>
 
@@ -1039,19 +1088,15 @@ it. Hence, since this is a irreversible command, type `yes` to confirm the actio
 
 ### Saving the data
 
-StudentBook data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+The data is saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
 ### Editing the data file
 
-`npc_track` data are saved automatically as a JSON file. Advanced users are welcome to update data directly by editing that data file.
+`npc_track` data is saved automatically as a JSON file. For advanced and tech-savvy users, you are welcome to update data directly by editing that data file.
 
 <div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
-If your changes to the data file makes its format invalid, StudentBook will discard all data and start with an empty data file at the next run. Hence, it is recommended to make a backup of the file before editing it.
+If your changes to the data file makes the format invalid, the program will discard all saved data and start with an empty data file when you open the application again. Hence, it is recommended to make a backup of the file before editing it.
 </div>
-
-### Archiving data files `[coming in v2.0]`
-
-_Details coming soon ..._
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -1114,30 +1159,47 @@ _Details coming soon ..._
 
 ## FAQ
 <a name="FAQ"></a>
-**Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous StudentBook home folder.
 
+<div markdown="span" class="alert alert-warning">
+**Q**: How do I transfer my data to another Computer?<br>
+**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous npc_track home folder.
+</div>
+
+<div markdown="span" class="alert alert-warning">
 **Q**: There are 12 tutorials on the attendance list, but my module has less than 12 tutorials per sem.<br>
 **A**: In a typical semester, there are 13 weeks. Tutorials can start earlier or later, so to accomodate the largest possible number of tutorials, npc_track
 has 12 weeks' worth of tutorials to grade.
+</div>
 
+<div markdown="span" class="alert alert-warning">
 **Q**: How do I decide how many "participation points" to use?<br>
 **A**: The command is dependent on relative participation levels of your students or any guidelines on measuring student participation that your course has made.
+</div>
 
+<div markdown="span" class="alert alert-warning">
 **Q**: I have two students that share the exact same name. How can npc_track support this?<br>
 **A**: npc_track cannot handle students with the exact same name. However, you can consider adding something else to their names to distinguish between them.
 So for example, if you have 2 students called "Arnab Goav", you can name one student "Arnab Goav 1" and the other "Arnab Goav 2".
+</div>
 
+<div markdown="span" class="alert alert-warning">
 **Q**: The user display looks weird when I add a very long name or minimise it to very small sizes.<br>
 **A**: npc_track does not support extreme inputs. It is optimised for sane usage with a standard screen size and normal names. We will add support in a future version.
+</div>
 
+<div markdown="span" class="alert alert-warning">
 **Q**: I can enter two students with the same telegram handle or same phone number (or something similar). Why is this allowed?<br>
 **A**: npc_track allows this, much like a normal contacts application in your phone. We do not enforce too many checks as we want to enable
 our users to use our app how they like, and support various unforeseen scenarios.
+</div>
 
+<div markdown="span" class="alert alert-warning">
 **Q**: I am a recitation tutor and/or a professor. Can this application extend to my lessons?<br>
-**A**: npc_track is primarily designed for teaching assistants, but it can also be scalable towards **recitation-sized** classes. It cannot track student participations or attendance for lecture-sized classes, however.
+**A**: npc_track is primarily designed for teaching assistants, but it can also be scalable towards **recitation-sized** classes. It is impractical to track student participations or attendance for lecture-sized classes, however.
+</div>
 
+<div markdown="span" class="alert alert-warning">
 **Q**: Why Telegram? What if my students prefer something like WhatsApp or LINE?<br>
 **A**: Students are more likely to use telegram to contact their TA's and tutorial groups within NUS. For applications like WhatsApp or LINE, you can simply consider using something like their associate phone numbers or use tags to refer to their usernames on such platforms.
+</div>
 
