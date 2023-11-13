@@ -135,7 +135,7 @@ Step 6 : Type the command `java -jar npctrack.jar` to run the app.
 
 ### User Interface
 Our user-friendly interface allows quick navigation for teaching assistants. Below is an overview of the interface
-followed by a quick summary guide of the Graphical User Interface (GUI).
+followed by a quick summary guide of the User Interface (UI).
 
 ![Ui](images/npctrack-guide.png)
 
@@ -149,7 +149,7 @@ followed by a quick summary guide of the Graphical User Interface (GUI).
 ---
 
 <a name="parameter"></a>
-## Common Instructions
+## Common Values
 
 | Parameters | Description          | Constraints                                                                                                                                                       | Valid Examples                        | Invalid Examples              |
 |------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|-------------------------------|
@@ -186,7 +186,8 @@ followed by a quick summary guide of the Graphical User Interface (GUI).
 * Details can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
+* Extraneous information for commands like (such as `help`, `list`, `exit` and `clear`) will be 
+  ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
