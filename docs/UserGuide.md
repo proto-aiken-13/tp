@@ -242,7 +242,8 @@ Adds a student to the student book.
 <br>
 - `TELEGRAM_HANDLE` : Must be a valid telegram handle ID. 
 <br>
-- `GROUP` : A string representing the group of students as shown in the list. Must not contain space.
+- `GROUP` : A string representing the group of students as shown in the list. Must only be alphanumeric and cannot 
+contain space.
 <br>
 - `TAG` : Must only contain alphanumerics. 
 <br>
@@ -369,7 +370,8 @@ Edits an existing student.
 <br>
 - `TELEGRAM_HANDLE` : Must be a valid telegram handle ID. 
 <br>
-- `GROUP` : A string representing the group of students as shown in the list. Must not contain space.
+- `GROUP` : A string representing the group of students as shown in the list. Must only be alphanumeric and cannot 
+contain space.
 <br>
 - `TAG` : Must only contain alphanumerics. 
 <br>
@@ -498,7 +500,8 @@ Marks the attendance of a group of students for that tutorial.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `GROUP`: A string representing the group of students as shown in the list. Must not contain spaces.
+- `GROUP`: A string representing the group of students as shown in the list. Must only be alphanumeric and cannot 
+contain space.
 <br>
 - `TUTORIAL`: An integer between 1 and 12 (inclusive)
 <br>
@@ -542,7 +545,8 @@ Unmark the attendance of a group of students for that tutorial.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `GROUP`: A string representing the group of students as shown in the list. Must not contain space.
+- `GROUP`: A string representing the group of students as shown in the list. Must only be alphanumeric and cannot 
+contain space.
 <br>
 - `TUTORIAL`: An integer between 1 and 12 (inclusive)
 <br>

@@ -77,7 +77,6 @@ The sections below give more details of each component.
 
 ### UI component
 
-The **API** of this component is specified in [`Ui.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java)
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
@@ -136,7 +135,9 @@ The `Model` component,
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `AddressBook`, which `Person` references. This allows `AddressBook` to only require one `Tag` object per unique tag, instead of each `Person` needing their own `Tag` objects.<br>
+<div markdown="span" class="alert alert-info">:information_source: **Note:** An alternative (arguably, a more OOP) 
+model is given below. It has a `Tag` list in the `NpcTrack`, which `Person` references. This allows `NpcTrack` to 
+only require one `Tag` object per unique tag, instead of each `Person` needing their own `Tag` objects.<br>
 
 <img src="images/BetterModelClassDiagram.png" width="450" />
 
@@ -440,7 +441,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 2a. User does not provide the name.
 
-    * 2a1. AddressBook displays an error message and prompts the user to provide missing details.
+    * 2a1. `npc_track` displays an error message and prompts the user to provide missing details.
 
       Use case resumes at step 2.
 
@@ -552,9 +553,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to list persons
-2.  AddressBook shows a list of persons
+2.  `npc_track`  shows a list of persons
 3.  User requests to delete a specific person in the list
-4.  AddressBook deletes the person
+4.  `npc_track`  deletes the person
 
     Use case ends.
 
@@ -566,7 +567,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 3a. The given index is invalid.
 
-    * 3a1. AddressBook shows an error message.
+    * 3a1. `npc_track`  shows an error message.
 
       Use case resumes at step 2.
 
@@ -575,7 +576,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1. User requests to Edit persons
-2. AddressBook shows the edited person
+2. `npc_track` shows the edited person
 
     Use case ends.
 
@@ -585,8 +586,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 1.  User requests to find a person.
 2.  User provides the full or partial search keyword.
-3.  AddressBook searches for persons matching the keyword.
-4.  AddressBook displays a list of matching persons.
+3.  `npc_track` searches for persons matching the keyword.
+4.  `npc_track` displays a list of matching persons.
 
     Use case ends.
 
@@ -594,7 +595,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 5a. No persons match the search keyword.
 
-    * 5a1. AddressBook displays a message indicating no matching persons were found.
+    * 5a1. `npc_track` displays a message indicating no matching persons were found.
 
       Use case ends.
 
@@ -603,8 +604,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 1. User requests to find a group of persons.
 2. User provides the full or partial search keyword.
-3. AddressBook searches for persons matching the keyword.
-4. AddressBook displays a list of matching persons.
+3. `npc_track` searches for persons matching the keyword.
+4. `npc_track` displays a list of matching persons.
 
    Use case ends.
 
@@ -612,7 +613,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 5a. No persons match the search keyword.
 
-    * 5a1. AddressBook displays a message indicating no matching persons were found.
+    * 5a1. `npc_track` displays a message indicating no matching persons were found.
 
       Use case ends.
 
@@ -621,8 +622,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to list all persons.
-2.  AddressBook retrieves the list of all persons.
-3.  AddressBook displays a list of all persons.
+2.  `npc_track` retrieves the list of all persons.
+3.  `npc_track` displays a list of all persons.
 
     Use case ends.
 
@@ -630,7 +631,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 2a. There are no persons in the address book.
 
-    * 2a1. AddressBook displays a message indicating that the address book is empty.
+    * 2a1. `npc_track` displays a message indicating that the `npc_track` book is empty.
 
       Use case ends.
 
@@ -640,7 +641,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 1. User requests to change the current groupings.
 2. User provides the new groupings.
-3. AddressBook changes the current groupings.
+3. `npc_track` changes the current groupings.
 
     Use case ends.
 
