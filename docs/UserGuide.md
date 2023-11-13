@@ -273,12 +273,12 @@ Helps user navigate through the app.
 ## Managing Student Details
 
 For adding and managing students, you can use the following commands:
-* add
-* edit
-* group
-* list
-* find
-* findGroup
+* [add](#add)
+* [edit](#edit)
+* [group](#group)
+* [list](#list)
+* [find](#find)
+* [findGroup](#findGroup)
 
 <a name="add"></a>
 ### Adding a student: `add`
@@ -462,6 +462,7 @@ Finds students associated with the keyword.
 
 :top: [Back to Table Of Contents](#toc)
 
+<a name="findGroup"></a>
 ### Finding students by group : `findGroup`
 
 Finding it difficult to scroll through the whole list of students? Don't worry just find the specific group using
@@ -494,10 +495,10 @@ Finds students associated with the group.
 ## Managing Attendance
 
 For managing attendance, the following commands are available:
-* markAtd
-* unmarkAtd
-* markGroupAtd
-* unmarkGroupAtd
+* [markAtd](#markAtd)
+* [unmarkAtd](#unmarkAtd)
+* [markGroupAtd](#markGroupAtd)
+* [unmarkGroupAtd](#unmarkGroupAtd)
 
 <a name="markAtd"></a>
 #### Mark Attendance : `markAtd`
@@ -666,9 +667,9 @@ This removes the current status marked for the attendance, as well as any partic
 ## Managing Participation
 
 For participation, you can make the following commands:
-* inputPP
-* inputGroupPP
-* listParticipation
+* [inputPP](#inputPP)
+* [inputGroupPP](#inputGroupPP)
+* [listParticipation](#listParticipation)
 
 #### Insert participation points to a student: `inputPP`
 <a name="inputPP"></a>
@@ -778,13 +779,13 @@ List a student's participation record.
 ## Managing Assignments
 
 For allocating and grading assignments , you can use the following commands:
-* assign
-* assignGroup
-* assignIndiv
-* deassign
-* deassignIndiv
-* grade
-* gradeGroup
+* [assign](#assign)
+* [assignGroup](#assignGroup)
+* [assignIndiv](#assignIndiv)
+* [deassign](#deassign)
+* [deassignIndiv](#deassignIndiv)
+* [grade](#grade)
+* [gradeGroup](#gradeGroup)
 
 <a name="assign"></a>
 #### Distribute assignments: `assign`
@@ -1014,9 +1015,9 @@ Grade a group of students' assignments.
 <a name="misc"></a>
 ## Miscallaneous commands
 Besides the aforementioned commands, here are other commands that could be used:
-- delete
-- exit
-- clear
+* [delete](#delete)
+* [exit](#exit)
+* [clear](#clear)
 
 <a name="delete"></a>
 ### Deleting a student : `delete`
@@ -1161,45 +1162,66 @@ If your changes to the data file makes the format invalid, the program will disc
 <a name="FAQ"></a>
 
 <div markdown="span" class="alert alert-warning">
-**Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous npc_track home folder.
+:question: : How do I transfer my data to another Computer?<br>
+</div>
+<div markdown="span" class="alert alert-success">
+:bulb:: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous npc_track home folder.
 </div>
 
 <div markdown="span" class="alert alert-warning">
-**Q**: There are 12 tutorials on the attendance list, but my module has less than 12 tutorials per sem.<br>
-**A**: In a typical semester, there are 13 weeks. Tutorials can start earlier or later, so to accomodate the largest possible number of tutorials, npc_track
+:question: : There are 12 tutorials on the attendance list, but my module has less than 12 tutorials per sem.<br>
+</div>
+<div markdown="span" class="alert alert-success">
+:bulb:: In a typical semester, there are 13 weeks. Tutorials can start earlier or later, so to accomodate the largest possible number of tutorials, npc_track
 has 12 weeks' worth of tutorials to grade.
 </div>
 
 <div markdown="span" class="alert alert-warning">
-**Q**: How do I decide how many "participation points" to use?<br>
-**A**: The command is dependent on relative participation levels of your students or any guidelines on measuring student participation that your course has made.
+:question: : How do I decide how many "participation points" to use?<br>
+</div>
+<div markdown="span" class="alert alert-success">
+:bulb:: The command is dependent on relative participation levels of your students or any guidelines on measuring student participation that your course has made.
 </div>
 
 <div markdown="span" class="alert alert-warning">
 **Q**: I have two students that share the exact same name. How can npc_track support this?<br>
-**A**: npc_track cannot handle students with the exact same name. However, you can consider adding something else to their names to distinguish between them.
+</div>
+<div markdown="span" class="alert alert-success">
+:bulb:: npc_track cannot handle students with the exact same name. <br>
+  
+However, you can consider adding something else to their names to distinguish between them.
 So for example, if you have 2 students called "Arnab Goav", you can name one student "Arnab Goav 1" and the other "Arnab Goav 2".
 </div>
 
 <div markdown="span" class="alert alert-warning">
-**Q**: The user display looks weird when I add a very long name or minimise it to very small sizes.<br>
-**A**: npc_track does not support extreme inputs. It is optimised for sane usage with a standard screen size and normal names. We will add support in a future version.
+:question: : The user display looks weird when I add a very long name or minimise it to very small sizes.<br>
+</div>
+<div markdown="span" class="alert alert-success">
+:bulb:: npc_track does not support extreme inputs. It is optimised for sane usage with a standard screen size and normal names. We will add support in a future version.
 </div>
 
 <div markdown="span" class="alert alert-warning">
-**Q**: I can enter two students with the same telegram handle or same phone number (or something similar). Why is this allowed?<br>
-**A**: npc_track allows this, much like a normal contacts application in your phone. We do not enforce too many checks as we want to enable
+:question: : I can enter two students with the same telegram handle or same phone number (or something similar). Why is this allowed?<br>
+</div>
+<div markdown="span" class="alert alert-success">
+:bulb:: npc_track allows this, much like a normal contacts application in your phone. We do not enforce too many checks as we want to enable
 our users to use our app how they like, and support various unforeseen scenarios.
 </div>
 
 <div markdown="span" class="alert alert-warning">
-**Q**: I am a recitation tutor and/or a professor. Can this application extend to my lessons?<br>
-**A**: npc_track is primarily designed for teaching assistants, but it can also be scalable towards **recitation-sized** classes. It is impractical to track student participations or attendance for lecture-sized classes, however.
+:question: : I am a recitation tutor and/or a professor. Can this application extend to my lessons?<br>
+</div>
+<div markdown="span" class="alert alert-success">
+:bulb:: npc_track is primarily designed for teaching assistants, but it can also be scalable towards **recitation-sized** classes.<br>
+
+It is impractical to track student participations or attendance for lecture-sized classes using this application, however.
 </div>
 
 <div markdown="span" class="alert alert-warning">
-**Q**: Why Telegram? What if my students prefer something like WhatsApp or LINE?<br>
-**A**: Students are more likely to use telegram to contact their TA's and tutorial groups within NUS. For applications like WhatsApp or LINE, you can simply consider using something like their associate phone numbers or use tags to refer to their usernames on such platforms.
+:question: : Why Telegram? What if my students prefer something like WhatsApp or LINE?<br>
+</div>
+<div markdown="span" class="alert alert-warning">
+:bulb:: Students are more likely to use telegram to contact their TA's and tutorial groups within NUS.<br> 
+For applications like WhatsApp or LINE, you can simply consider using something like their associate phone numbers or use tags to refer to their usernames on such platforms.
 </div>
 
