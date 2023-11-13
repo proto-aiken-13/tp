@@ -17,7 +17,8 @@ Here’s an overview of how `npc_track` can help you streamline your student man
 - Keep track of their attendance and participation levels.
 - Keep track of their grades!
 
-But more than that, the application is *simple to use* and efficient. The application has a command line interface (CLI) in which you can type in commands without having to scroll through contacts and lists to click on buttons. The application sports a simple and very readable look!
+But more than that, the application is *simple to use* and efficient. The application allows you to type in commands 
+without having to scroll through contacts and lists to click on buttons. The application sports a simple and very readable look!
 
 ### How can `npc_track` help you in your teaching journey?
 
@@ -28,8 +29,7 @@ adding extra information for a student named Ted can easily be done using the va
 our [Features Section](#features)
 
 `npc_track` saves teaching assistant from having to spend so much precious time by reducing the complexity and the
-need to
-navigate different platforms just to search their students. Now, it can be done in a one-stop manner using `npc_track`
+need to navigate different platforms just to search their students. Now, it can be done in a one-stop manner using `npc_track`
 
 Not ready to use `npc_track`? Fret Not, you can jump to the [Quick Start](#quick-start) section to begin your
 `npc_track`
@@ -43,7 +43,7 @@ the sidebar
 
 **First time user?** Welcome and thank you for using our app! Check out the installation guide [here](#quick-start)!
 
-Once you’re done setting up, check out the [features](#features) of `npc_track` to manage the your students' info!
+Once you’re done setting up, check out the [features](#features) of `npc_track` to manage your students' info!
 
 If you are an intermediary user and are confused or unclear of some of our features, check out the [FAQ](#FAQ) as well!
 
@@ -128,6 +128,23 @@ the file name as shown in the figure.
 
 Step 6 : Type the command `java -jar npctrack.jar` to run the app.
 ![Step 6](images/download5.png)
+
+--------------------------------------------------------------------------------------------------------------------
+<a name="gui"></a>
+## Navigating `npc_track`
+
+### User Interface
+Our user-friendly interface allows quick navigation for teaching assistants. Below is an overview of the interface
+followed by a quick summary guide of the Graphical User Interface (GUI).
+
+![Ui](images/npctrack-guide.png)
+
+| Component               | Function                                                                                           |
+|-------------------------|:---------------------------------------------------------------------------------------------------|
+| **Command Result**      | The result of the commands that the user types in the command box                                      |
+| **Command Box**         | A text box for users to type the various commands as listed in the [Features](#features) section |
+| **Student Information** | Summarised information of the student                                       |
+| **Student Index**       | The `INDEX` of the student, counting from 1 |
 
 ---
 
@@ -1029,23 +1046,6 @@ If your changes to the data file makes its format invalid, the program will disc
 <a name="issues"></a>
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
-
---------------------------------------------------------------------------------------------------------------------
-<a name="gui"></a>
-## Navigating `npc_track`
-
-### User Interface
-Our user-friendly interface allows quick navigation for teaching assistants. Below is an overview of the interface
-followed by a quick summary guide of the Graphical User Interface (GUI).
-
-![Ui](images/npctrack-guide.png)
-
-| Component               | Function                                                                                           |
-|-------------------------|----------------------------------------------------------------------------------------------------|
-| **Command Result**      | The result of the commands that the user types in the command box                                      |
-| **Command Box**         | A text box for users to type the various commands as listed in the [Features](#features) section |
-| **Student Information** | Summarised information of the student                                       |
-| **Student Index**       | The `INDEX` of the student, counting from 1 |
 
 --------------------------
 <a name="summary"></a>
