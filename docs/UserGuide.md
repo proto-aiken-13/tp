@@ -41,7 +41,7 @@ the sidebar
 
 ### How can this guide help me?
 
-**First time user?** Welcome and thank you for using our app! This guide will help you in navigating and become a 
+**First time user?** Welcome and thank you for using our app! This guide will help you in navigating and becoming a 
 pro `npc_track` user. If you have yet to install the app, check out the installation guide [here](#quick-start)!
 
 Once you’re done setting up, check out the [features](#features) of `npc_track` to manage your students' info!
