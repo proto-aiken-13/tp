@@ -79,4 +79,4 @@ Given below are my contributions to the project.
 
 ### Contributions Beyond the Project Team
 
-- to be added
+- Helped boost morale!
