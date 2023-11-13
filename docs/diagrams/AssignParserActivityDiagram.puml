@@ -1,24 +1,33 @@
 @startuml
+scale 5.0
 'https://plantuml.com/activity-diagram-beta
 
 start
 :User types in a command to assign something to everybody;
+
 if () then ([If the required argument prefixes are not provided])
-    #pink:Error for missing prefixes is shown to the user;
-    kill
-([Else]) elseif () then ([If there are duplicate argument prefixes])
-    #pink:Error for duplicate prefixes is shown to the user;
-    kill
-([Else]) elseif () then ([Name of assignment is invalid])
-    #pink:Error for invalid name is thrown;
-    kill
-([Else]) elseif () then ([Score of assignment is not an integer])
-    #pink:Error for invalid score is thrown;
-    kill
+    #FF6666:Error for missing prefixes is shown to the user;
+    stop
 else ([Else])
-    #palegreen:Name of assignment is parsed;
-    #palegreen:Score of assignment is parsed;
-    #palegreen:Assignment command is returned;
+    if () then ([If there are duplicate argument prefixes])
+        #FF6666:Error for duplicate prefixes is shown to the user;
+        stop
+    else ([Else])
+        if () then ([Name of assignment is invalid])
+            #FF6666:Error for invalid name is thrown;
+            stop
+        else ([Else])
+            if () then ([Score of assignment is not an integer])
+                #FF6666:Error for invalid score is thrown;
+                stop
+            else ([Else])
+                #66FF66:Name of assignment is parsed;
+                #66FF66:Score of assignment is parsed;
+                #66FF66:Assignment command is returned;
+            endif
+        endif
+    endif
 endif
+
 stop
 @enduml
