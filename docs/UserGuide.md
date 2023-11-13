@@ -833,7 +833,9 @@ Create an assignment and assign it to a group of students.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `MAX_SCORE`: An integer between 1 and 1000.
+- `GROUP`: A string representing the group of students as shown in the list. Must be alphanumeric.
+<br>
+- `MAX_SCORE`: An integer between 1 and 1000 representing the maximum score of an assignment.
 <br>
 - If the student already has the assignment, assigning the same assignment will overwrite the current assignment.
 <br>
@@ -865,6 +867,8 @@ Create an assignment and assign it to a student.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
+- `INDEX`: A positive integer representing the index of the student as shown in the list.
+<br>
 - `MAX_SCORE`: An integer between 1 and 1000.
 <br>
 - If the student already has the assignment, assigning the same assignment will overwrite the current assignment.
@@ -928,6 +932,8 @@ Delete an assignment for a particular student.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
+- `INDEX`: A positive integer representing the index of the student as shown in the list.
+<br>
 - `ASSIGNMENT_NAME`: Case sensitive. For example, 'Tutorial 1' and 'tutorial 1' are two different assignments.
 </div>
 
@@ -999,6 +1005,8 @@ Grade a group of students' assignments.
 <br>
 - Every student in the group must have the assignment. This command pairs well with `assignGroup`!
 <br>
+- `GROUP`: The tutorial group name of the students as shown in the list.
+<br>
 - `ASSIGNMENT_NAME`: Case sensitive. For example, `Tutorial 1` and `tutorial 1` are two different assignments.
 </div>
 
@@ -1033,7 +1041,7 @@ Deletes the specified person from the student book.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Extra Information**
 <br><br>
-- `INDEX` must be a valid index. 
+- INDEX`: A positive integer representing the index of the student as shown in the list. 
 </div>
 
 <div markdown="span" class="alert alert-warning">:pushpin: **[Check for any issues here!](#issues)**<br>
@@ -1093,7 +1101,7 @@ The data is saved in the hard disk automatically after any command that changes 
 
 ### Editing the data file
 
-`npc_track` data is saved automatically as a JSON file. For advanced and tech-savvy users, you are welcome to update data directly by editing that data file.
+`npc_track` data is saved automatically as a [JSON file](#glossary). For advanced and tech-savvy users, you are welcome to update data directly by editing that data file.
 
 <div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
 If your changes to the data file makes the format invalid, the program will discard all saved data and start with an empty data file when you open the application again. Hence, it is recommended to make a backup of the file before editing it.
@@ -1146,12 +1154,13 @@ If your changes to the data file makes the format invalid, the program will disc
 
 | Keyword                     | Definition                                                                           |
 |-----------------------------|--------------------------------------------------------------------------------------|
-| **Group**                   | The tutorial group you are teaching                                                  |
-| **Parameter**               | Details about the student that will be included in the command                       |
-| **Alphanumeric**            | Containing **only** numbers and letters. Spaces and other characters (%, #, *, etc) do **not count**|
-| **Command**                 | Instructions that `npc_track` will execute                                           |
+| **Group**                   | The tutorial group you are teaching.                                                  |
+| **Parameter**               | Details about the student that will be included in the command.                       |
+| **Alphanumeric**            | Containing **only** numbers and letters. Spaces and other characters (%, #, *, etc) do **not count.**|
+| **Command**                 | Instructions that `npc_track` will execute.                                           |
 | **Command Line Interface (CLI)** | An application interface where you interact with the application by typing commands.  |
-| **JAR**                     | Compressed file of `npc_track` is in the form of a Java ARchive                      |
+| **JAR**                     | Compressed file of `npc_track`, which essentially launches the entire application.                     |
+| **JSON File**                     | The file used to save data in `npc_track`.                  |
 | **Attendance status**       | The student's attendance status which can be "present", "absent", or "valid reason". |
 | **Attendance status: `:)`** | The emoji associated with "present".                                                 |
 | **Attendance status: `x`**  | The emoji associated with "absent".                                                  |
